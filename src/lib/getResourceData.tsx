@@ -3,11 +3,13 @@ import { getPlaiceholder } from "plaiceholder";
 
 const getResourceData = async ({ params }: { params: any }) => {
   const slugs = await possibleSlugs();
-  const id = slugs.find((x) => x.slug === params.slug).id;
-  const data = await getResourceById(id);
+  const id = slugs.find((x: any) => x.slug === params.slug).id;
+  const data: any = await getResourceById(id);
   if (data.fields.Subresource && data.fields.Subresource.length > 0) {
     for (let i = 0; i < data.fields.Subresource.length; i++) {
-      const subresource = await getResourceById(data.fields.Subresource[i]);
+      const subresource: any = await getResourceById(
+        data.fields.Subresource[i]
+      );
       data.fields.Subresource[i] = {
         imagePath: subresource.imagePath,
         ...subresource.fields,
