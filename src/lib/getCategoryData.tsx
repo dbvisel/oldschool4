@@ -1,3 +1,4 @@
+import fs from "fs/promises";
 import { getPlaiceholder } from "plaiceholder";
 import { getCategoryById, getResourcesOfType } from "./../utils/airtable";
 import { allTypes } from "./../utils/categories";
@@ -43,7 +44,8 @@ const getCategoryData = async ({ params }: { params: any }) => {
       if (x.imagePath) {
         x.blurPath = x.imagePath;
         try {
-          const { base64 } = await getPlaiceholder(x.imagePath);
+          const theFile = await fs.readFile(`./public${x.imagePath}`);
+          const { base64 } = await getPlaiceholder(theFile);
           x.blurPath = base64;
         } catch (error) {
           console.error("Error with blurpath!", x.Title, x.imagePath);

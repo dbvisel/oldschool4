@@ -4,14 +4,19 @@ import { possibleSlugs } from "@/utils/airtable";
 const ResourcePage = async ({
   params: { slug },
 }: {
-  params: { slug: String };
+  params: { slug: string };
 }) => {
-  const data = await getResourceData({ params: { slug } });
-  // console.log(data);
-  return (
+  // console.log("slug:", slug);
+  const resource = await getResourceData(slug);
+  // console.log(resource);
+  return resource.title ? (
     <div>
-      <h1>My Resource: {slug}</h1>
-      <p>{JSON.stringify(data)}</p>
+      <h1>My Resource: {resource.title}</h1>
+      <p>{JSON.stringify(resource)}</p>
+    </div>
+  ) : (
+    <div>
+      <p>Resource not found!</p>
     </div>
   );
 };

@@ -13,6 +13,7 @@
     "postbuild": "node scripts/algolia-next.js"
   },
   "dependencies": {
+    "@plaiceholder/next": "^3.0.0",
     "@types/node": "^20.11.19",
     "@types/react": "^18.2.56",
     "@types/react-dom": "^18",

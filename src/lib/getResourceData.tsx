@@ -1,51 +1,68 @@
-import { possibleSlugs, getResourceById } from "@/utils/airtable";
+import fs from "fs/promises";
 import { getPlaiceholder } from "plaiceholder";
+import { possibleSlugs, getResourceById } from "@/utils/airtable";
+import { ResourceItem } from "@/types/index";
 
-const getResourceData = async ({ params }: { params: any }) => {
+const cleanData = (resource: any, slug: string): ResourceItem => {
+  // console.log("original:", resource);
+  const newResource = {
+    id: resource.id,
+    title: resource.fields.Title,
+    tags: resource.fields.Tags,
+    imagePath: resource.imagePath,
+    blurPath: resource.blurPath,
+    shortDescription: resource.fields["Short Description"],
+    subresources: resource.fields.Subresouce
+      ? resource.fields.Subresource.map((x: any) => ({ id: x }))
+      : [],
+    types: resource.fields.Types,
+    slug: slug,
+    contactInfoEmail: resource.fields["Contact info email"],
+  };
+  // console.log("cleaned:", newResource);
+  return newResource;
+};
+
+const getResourceData = async (slug: string) => {
   const slugs = await possibleSlugs();
-  const record = slugs.find((x: any) => x.slug === params.slug);
+  const record = slugs.find((x: any) => x.slug === slug);
   if (!record) {
-    console.error("Invalid slug:", params.slug);
+    console.error("Invalid slug:", slug);
+    // Is this the best way to do this?
     return {
-      notFound: true,
+      title: "",
     };
   }
   const id = record.id;
   const data: any = await getResourceById(id);
-  if (data.fields.Subresource && data.fields.Subresource.length > 0) {
-    for (let i = 0; i < data.fields.Subresource.length; i++) {
+  const resource = cleanData(data, slug);
+  if (resource.subresources && resource.subresources.length > 0) {
+    for (let i = 0; i < resource.subresources.length; i++) {
       const subresource: any = await getResourceById(
-        data.fields.Subresource[i]
+        resource.subresources[i].id
       );
-      data.fields.Subresource[i] = {
-        imagePath: subresource.imagePath,
-        ...subresource.fields,
-      };
+      resource.subresources[i] = cleanData(
+        subresource,
+        subresource.fields.Slug // TODO: slugify this!
+      );
     }
   }
-  if (data.imagePath) {
-    data.blurPath = data.imagePath;
+  if (resource.imagePath) {
+    resource.blurPath = resource.imagePath;
     try {
       // why is this failing?
-      const { base64 } = await getPlaiceholder(data.imagePath);
-      data.blurPath = base64;
+      const theFile = await fs.readFile(`./public${resource.imagePath}`);
+      const { base64 } = await getPlaiceholder(theFile);
+      resource.blurPath = base64;
     } catch (error) {
-      console.error("Error with blurpath!", data.Title, data.imagePath);
+      console.error("Error with blurpath!", resource.title, resource.imagePath);
     }
   } else {
-    console.log("No imagePath found for image: ", data.fields.Title);
-    data.blurPath = "";
+    console.error("No imagePath found for image: ", resource.title);
+    resource.blurPath = "";
   }
 
-  return {
-    props: {
-      id: id || "",
-      slug: params.slug,
-      imagePath: data.imagePath,
-      blurPath: data.blurPath,
-      resource: data.fields,
-    },
-  };
+  return resource;
 };
 
 export default getResourceData;
