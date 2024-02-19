@@ -3,7 +3,14 @@ import { getPlaiceholder } from "plaiceholder";
 
 const getResourceData = async ({ params }: { params: any }) => {
   const slugs = await possibleSlugs();
-  const id = slugs.find((x: any) => x.slug === params.slug).id;
+  const record = slugs.find((x: any) => x.slug === params.slug);
+  if (!record) {
+    console.error("Invalid slug:", params.slug);
+    return {
+      notFound: true,
+    };
+  }
+  const id = record.id;
   const data: any = await getResourceById(id);
   if (data.fields.Subresource && data.fields.Subresource.length > 0) {
     for (let i = 0; i < data.fields.Subresource.length; i++) {
@@ -19,6 +26,7 @@ const getResourceData = async ({ params }: { params: any }) => {
   if (data.imagePath) {
     data.blurPath = data.imagePath;
     try {
+      // why is this failing?
       const { base64 } = await getPlaiceholder(data.imagePath);
       data.blurPath = base64;
     } catch (error) {
