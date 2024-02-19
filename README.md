@@ -6,8 +6,6 @@ This is using Next 13 and App Router. Will that make things more complicated? Ma
 
 ## TODO:
 
- - figure out how to get fonts to work (what fonts are wanted?)
- - basic site-wide CSS
  - import pages
  - import components
  - import routing
