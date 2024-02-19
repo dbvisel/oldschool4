@@ -33,6 +33,9 @@ const getMinifiedRecords = async (records) => {
 
 // gets the data we want and puts it into variables
 const minifyRecord = (record) => {
+  if (!record) {
+    console.error("record is undefined!");
+  }
   return {
     id: record.id,
     fields: record.fields,

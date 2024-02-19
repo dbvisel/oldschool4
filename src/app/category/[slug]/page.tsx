@@ -9,7 +9,7 @@ const CategoryPage = async ({
   params: { slug: String };
 }) => {
   const data = await getCategoryData({ params: { slug } });
-  console.log(data);
+  // console.log(data);
   return (
     <div>
       <h1>Category: {slug}</h1>
