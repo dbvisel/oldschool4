@@ -1,24 +1,40 @@
 {
   "name": "oldschool4",
-  "version": "0.1.0",
+  "version": "0.4.0",
   "private": true,
+  "description": "Old School v4",
+  "author": "Dan Visel <dbvisel@gmail.com>",
   "scripts": {
+		"prebuild": "node scripts/prebuild.js",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "postbuild": "node scripts/algolia-next.js"
   },
   "dependencies": {
+    "airtable": "^0.12.2",
+    "algoliasearch": "^4.22.1",
+    "dotenv": "^16.4.4",
+    "got": "^14.2.0",
+    "next": "14.1.0",
+    "node-fetch": "^2.7.0",
     "react": "^18",
-    "react-dom": "^18",
-    "next": "14.1.0"
+    "react-dom": "^18"
   },
   "devDependencies": {
-    "typescript": "^5",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "eslint": "^8",
-    "eslint-config-next": "14.1.0"
+    "eslint-config-next": "14.1.0",
+    "typescript": "^5"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dbvisel/oldschool4"
+  },
+  "bugs": {
+    "url": "https://github.com/dbvisel/oldschool4/issues"
   }
 }
