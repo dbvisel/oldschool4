@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 import Menu from './components/Menu';
 import Footer from './components/Footer';
-import { Inter } from "next/font/google";
+import { Figtree } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+const figtree = Figtree({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Old School",
@@ -27,9 +27,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={figtree.className}>
 				<Menu />
-				<main>
+				<main className="main">
 					{children}
 				</main>
 				<Footer />
