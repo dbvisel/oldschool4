@@ -20,16 +20,15 @@
 	flex-direction: column;
 }
 
-.search {
-	align-self: flex-end;
-	margin-left: auto;
-}
-
 .menu {
 	font-size: 24px;
 }
 
-.menu li a:hover {
+.menu li {
+	user-select: none;
+}
+
+.menu li a:hover, .active {
 	text-decoration: underline;
 }
 
