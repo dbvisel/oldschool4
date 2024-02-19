@@ -19,16 +19,17 @@
     "airtable": "^0.12.2",
     "algoliasearch": "^4.22.1",
     "dotenv": "^16.4.4",
+    "eslint": "^8",
+    "eslint-config-next": "14.1.0",
     "got": "^14.2.0",
     "next": "14.1.0",
     "node-fetch": "^2.7.0",
     "react": "^18",
     "react-dom": "^18",
-		"typescript": "^5.3.3"
+    "typescript": "^5.3.3"
   },
   "devDependencies": {
-    "eslint": "^8",
-    "eslint-config-next": "14.1.0"
+    "prettier": "^3.2.5"
   },
   "repository": {
     "type": "git",
