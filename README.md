@@ -6,6 +6,19 @@ This is using Next 13 and App Router. Will that make things more complicated? Ma
 
 ## TODO:
 
- - import pages
- - import components
- - import routing
+ - [ ] get search working
+   - [ ] move old search in
+   - [ ] move styling out of styled-components
+   - [ ] get resource component into the results
+   - [ ] get events into search
+ - [ ] import pages
+   - [ ] front page: 12 newest resources on front page below the fold, some kind of splash above, some kind of about below
+   - [ ] about page: this gets the carousel
+   - [ ] hire us: content TK
+   - [ ] learn page maybe doesn't exist?
+ - [ ] import components
+   - [ ] rework PDF viewer
+   - [ ] rework YouTube player
+   - [ ] make standard resource component
+ - [ ] responsiveness
+ - [ ] accessibility testing

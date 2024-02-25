@@ -1,4 +1,7 @@
 .footer {
 	margin-top: auto;
 	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: var(--outside-padding);
 }

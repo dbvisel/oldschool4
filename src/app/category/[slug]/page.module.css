@@ -1,0 +1,12 @@
+.category {
+	max-width: 100%;
+	overflow-x: wrap;
+	box-sizing: border-box;
+}
+
+.category > div {
+	max-width: 100%;
+	overflow-x: wrap;
+	box-sizing: border-box;
+
+}

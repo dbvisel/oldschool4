@@ -8,8 +8,6 @@ require("dotenv").config({
 // This prebuild downloads all the images from Airtable and saves them to the public folder
 // TODO: maybe get thumbnails rather than full-size versions? We're never using the biggest one.
 
-// n.b. I've installed node-fetch@2 and got because I needed those in the old version. Not sure if that's still the case?
-
 // Authenticate
 Airtable.configure({ apiKey: process.env.AIRTABLE_API_KEY });
 
@@ -68,6 +66,27 @@ const downloadFile = async (url, filename) => {
 
   await fs.writeFile(filename, buffer);
   return `Downloaded ${url} to ${filename}.`;
+};
+
+const downloadPdf = async (url, filename) => {
+  try {
+    const response = await fetch(url);
+    const blob = await response.blob();
+
+    const arrayBuffer = await blob.arrayBuffer();
+
+    const buffer = Buffer.from(arrayBuffer);
+    const fileType = buffer.toString("utf8", 0, 4);
+    if (fileType === "%PDF") {
+      await fs.writeFile(filename, buffer);
+      return true;
+    } else {
+      return false;
+    }
+  } catch (e) {
+    // console.error(`Error downloading PDF at ${url}: `, e);
+    return false;
+  }
 };
 
 const content = async (path) => {
@@ -164,6 +183,107 @@ const prebuild = async () => {
     }
     fs.writeFile("./public/images/resources/cache.json", resourcesCurrent);
   }
+
+  let pdfCache;
+  try {
+    pdfCache = await content("./public/pdfs/cache.json");
+  } catch (e) {
+    console.log("\n\nPDF cache not found.");
+    pdfCache = "";
+  }
+
+  console.log("\n\nLooking for new PDFs to download...\n\n");
+  const pdfsCurrent = [];
+  const failureList = [];
+  for (let i = 0; i < resources.length; i++) {
+    const thisResourceId = resources[i].id;
+    if (pdfCache.indexOf(thisResourceId) > -1) {
+      // if we're here, we already have the PDF
+      // console.log("We already have the PDF for", thisResourceId);
+    } else {
+      const thisUrl = resources[i].fields["Resource URL"];
+      const isThisAPdf = thisUrl && thisUrl.includes(".pdf");
+      if (isThisAPdf) {
+        const theFilename = thisResourceId;
+        const theExtension = "pdf";
+        const done = await downloadPdf(
+          thisUrl,
+          `./public/pdfs/${theFilename}.${theExtension}`
+        );
+        if (done) {
+          console.log(
+            pdfsCurrent.length + 1,
+            "Downloaded PDF as",
+            thisResourceId,
+            ": ",
+            thisUrl
+          );
+
+          pdfsCurrent.push(thisResourceId);
+        } else {
+          failureList.push({ title: resources[i].fields.Title, url: thisUrl });
+          // console.log("Failed!");
+        }
+      } else {
+        const maybeAGooglePDF = thisUrl.includes("drive.google.com");
+        if (maybeAGooglePDF) {
+          try {
+            const googleDriveId = thisUrl
+              .split("file/d/")
+              .pop()
+              .split("/")
+              .shift();
+            // from this: https://drive.google.com/file/d/1psya7KDxaIsgJjz44h9Ni4TOYU5MP-b0/view
+            // to this: https://drive.google.com/uc?export=download&id=1psya7KDxaIsgJjz44h9Ni4TOYU5MP-b0
+            const downloadURL = `https://drive.google.com/uc?export=download&id=${googleDriveId}`;
+            const theFilename = thisResourceId;
+            const theExtension = "pdf";
+            const done = await downloadPdf(
+              downloadURL,
+              `./public/pdfs/${theFilename}.${theExtension}`
+            );
+            if (done) {
+              console.log(
+                pdfsCurrent.length + 1,
+                "Downloaded Google PDF as",
+                thisResourceId,
+                ": ",
+                downloadURL
+              );
+
+              pdfsCurrent.push(thisResourceId);
+            } else {
+              failureList.push({
+                title: resources[i].fields.Title,
+                url: thisUrl,
+              });
+              console.log(
+                "Google PDF failed:",
+                resources[i].fields.Title,
+                thisUrl
+              );
+            }
+          } catch (e) {
+            console.log("This Google URL didn't work? ", thisUrl);
+          }
+        }
+      }
+    }
+  }
+  const completeList = JSON.stringify(pdfCache.concat(pdfsCurrent));
+  fs.writeFile("./public/pdfs/cache.json", completeList);
+  fs.writeFile("./src/caches/pdfs/cache.json", completeList);
+
+  console.log(
+    "\n\nPDF download failures:",
+    failureList.length,
+    "\n\n",
+    failureList
+      .map((x, i) => i + 1 + ": " + x.title + " – " + x.url)
+      .join("\n"),
+    "\n\n"
+  );
+
   console.log("Prebuild done!");
 };
 

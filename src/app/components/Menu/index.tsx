@@ -21,15 +21,6 @@ const Menu = () => {
         <Search />
         <ul className={styles.menu}>
           <li>
-            <Link href="/">Learn</Link>
-          </li>
-          <li>
-            <Link href="/events">Events</Link>
-          </li>
-          <li>
-            <Link href="/resource">Hire us</Link>
-          </li>
-          <li>
             <Link
               href="/#"
               // onMouseEnter={()=>setSubmenuShown(true)}
@@ -40,12 +31,12 @@ const Menu = () => {
               }}
               className={submenuShown ? styles.active : ""}
             >
-              School supplies
+              Learn
             </Link>
             {submenuShown && (
               <ul onClick={() => setSubmenuShown(false)}>
                 {definedTypes.map((type, index) => (
-                  <li key={`menu-${index}`}>
+                  <li key={`menu-${index}`} onClick={(e) => e.preventDefault()}>
                     <Link href={`/category/${type.id}`}>{type.name}</Link>
                   </li>
                 ))}
@@ -53,13 +44,22 @@ const Menu = () => {
             )}
           </li>
           <li>
-            <Link href="/submit">About</Link>
+            <Link href="/events">Events</Link>
           </li>
           <li>
-            <Link href="/submit">Subscribe</Link>
+            <Link href="/hire-us">Hire us</Link>
           </li>
           <li>
-            <Link href="/submit">Donate</Link>
+            <Link href="/school-supplies">School supplies</Link>
+          </li>
+          <li>
+            <Link href="/about">About</Link>
+          </li>
+          <li>
+            <Link href="/subscribe">Subscribe</Link>
+          </li>
+          <li>
+            <Link href="/donate">Donate</Link>
           </li>
         </ul>
       </div>

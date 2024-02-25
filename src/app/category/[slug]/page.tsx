@@ -1,5 +1,6 @@
 import { allTypes } from "@/utils/categories";
 import getCategoryData from "@/lib/getCategoryData";
+import styles from "./page.module.css";
 
 // TODO: does this need to be one level higher?
 
@@ -11,10 +12,10 @@ const CategoryPage = async ({
   const data = await getCategoryData({ params: { slug } });
   // console.log(data);
   return (
-    <div>
-      <h1>Category: {slug}</h1>
+    <article className={styles.category}>
+      <h2>Category: {slug}</h2>
       <div>{JSON.stringify(data)}</div>
-    </div>
+    </article>
   );
 };
 

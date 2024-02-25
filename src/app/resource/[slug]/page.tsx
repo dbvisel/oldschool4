@@ -1,3 +1,4 @@
+import Image from "next/image";
 import getResourceData from "@/lib/getResourceData";
 import { possibleSlugs } from "@/utils/airtable";
 
@@ -10,10 +11,20 @@ const ResourcePage = async ({
   const resource = await getResourceData(slug);
   // console.log(resource);
   return resource.title ? (
-    <div>
-      <h1>My Resource: {resource.title}</h1>
+    <article>
+      <h2>My Resource: {resource.title}</h2>
       <p>{JSON.stringify(resource)}</p>
-    </div>
+      {resource.imagePath && resource.blurPath && (
+        <Image
+          src={resource.imagePath}
+          alt="image"
+          placeholder="blur"
+          blurDataURL={resource.blurPath}
+          width={400}
+          height={400}
+        />
+      )}
+    </article>
   ) : (
     <div>
       <p>Resource not found!</p>

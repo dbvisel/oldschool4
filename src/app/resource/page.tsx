@@ -1,6 +1,6 @@
-import styles from "./../page.module.css";
+import styles from "./page.module.css";
 
-export default function Home() {
+export default function GenericResourcePage() {
   return (
     <article>
       <h2>Generic resource page</h2>

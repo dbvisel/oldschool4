@@ -31,6 +31,8 @@ const getResourceData = async (slug: string) => {
     // Is this the best way to do this?
     return {
       title: "",
+      imagePath: "",
+      blurPath: "",
     };
   }
   const id = record.id;

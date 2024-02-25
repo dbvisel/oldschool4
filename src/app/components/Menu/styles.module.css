@@ -28,8 +28,14 @@
 	user-select: none;
 }
 
+.menu li a {
+	color: var(--white);
+	text-decoration: none;
+}
+
 .menu li a:hover, .active {
 	text-decoration: underline;
+	font-weight: normal;
 }
 
 .menu > li + li {
@@ -52,6 +58,10 @@
 	line-height: 1.5;
 }
 
+.menu ul li a {
+	color: var(--orange);
+}
+
 .menu ul.off {
 	display: none;
 }
@@ -59,3 +69,4 @@
 .menu ul.on {
 	display: block;
 }
+
