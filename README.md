@@ -4,11 +4,18 @@ This is a redesign of the Old School site, working off of this: https://github.c
 
 This is using Next 13 and App Router. Will that make things more complicated? Maybe!
 
+## ISSUES
+
+build error: 
+```
+2:40:35 PM: Invalid slug: ageism-does-it-exist-among-children%20
+```
+
 ## TODO:
 
  - [ ] get search working
    - [ ] move old search in
-   - [ ] move styling out of styled-components
+   - [ ] update to use current model for react-instantsearch
    - [ ] get resource component into the results
    - [ ] get events into search
  - [ ] import pages
@@ -20,5 +27,6 @@ This is using Next 13 and App Router. Will that make things more complicated? Ma
    - [ ] rework PDF viewer
    - [ ] rework YouTube player
    - [ ] make standard resource component
+     - [ ] make subresources that are PDFs open in their own page with local PDF.
  - [ ] responsiveness
  - [ ] accessibility testing

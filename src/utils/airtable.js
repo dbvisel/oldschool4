@@ -20,6 +20,7 @@ const slugify = (record) =>
   encodeURIComponent(
     (record.fields.Title || "")
       .toLowerCase()
+      .trim() // adding this just in case
       .normalize("NFD")
       .replace(/[\u0300-\u036f]/g, "")
       .replace(/[?|.,/#!$%^&*;¿:{}'"“”‘’––=\-_`~()æœ]/g, "")

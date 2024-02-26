@@ -71,6 +71,7 @@ const addSubresources = true; // If this is true, subresources will be added to 
         x.fields.Slug ||
         encodeURIComponent(
           x.fields.Title.toLowerCase()
+            .trim()
             .normalize("NFD")
             .replace(/[\u0300-\u036f]/g, "")
             .replace(/[?|.,/#!$%^&*;¿:{}'"“”‘’––=\-_`~()æœ]/g, "")

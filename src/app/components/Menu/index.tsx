@@ -15,7 +15,7 @@ const Menu = () => {
   return (
     <header className={styles.header}>
       <Link href="/">
-        <Image src={logo} alt="old school" height={100} />
+        <Image src={logo} alt="old school" height={100} priority />
       </Link>
       <div className={styles.rightSide}>
         <Search />
