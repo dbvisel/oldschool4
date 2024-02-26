@@ -1,6 +1,11 @@
 import Link from "next/link";
 
-const Hit = ({ hit }) => {
+interface ResourceRecord {
+  title: string;
+  slug: string;
+}
+
+const Hit = ({ hit }: { hit: any }) => {
   // console.log(hit);
   return (
     <div>

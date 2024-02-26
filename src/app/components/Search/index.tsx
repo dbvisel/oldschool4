@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useState, Suspense } from "react";
 import { renderToString } from "react-dom/server";
 import {
   InstantSearchServerState,
@@ -41,29 +41,31 @@ export default function SearchPage({ serverState }: SearchPageProps) {
   };
 
   return (
-    <div className={styles.search}>
-      <InstantSearchSSRProvider {...serverState}>
-        <InstantSearchNext
-          indexName="nextindex"
-          searchClient={searchClient}
-          future={{ preserveSharedStateOnUnmount: true }}
-          onStateChange={onStateChange}
-        >
-          <Configure hitsPerPage={10} />
-
-          <SearchBox
-            placeholder="Search Old School resources and events"
-            // queryHook={(query, search) => setQuery(query)}
-          />
-          <div
-            className={`${styles.searchresults} ${currentQuery.length ? "on" : ""}`}
+    <Suspense fallback="Loading...">
+      <div className={styles.search}>
+        <InstantSearchSSRProvider {...serverState}>
+          <InstantSearchNext
+            indexName="nextindex"
+            searchClient={searchClient}
+            future={{ preserveSharedStateOnUnmount: true }}
+            onStateChange={onStateChange}
           >
-            <Hits hitComponent={Hit} />
-            <Pagination />
-          </div>
-        </InstantSearchNext>
-      </InstantSearchSSRProvider>
-    </div>
+            <Configure hitsPerPage={10} />
+
+            <SearchBox
+              placeholder="Search Old School resources and events"
+              // queryHook={(query, search) => setQuery(query)}
+            />
+            <div
+              className={`${styles.searchresults} ${currentQuery.length ? "on" : ""}`}
+            >
+              <Hits hitComponent={Hit} />
+              <Pagination />
+            </div>
+          </InstantSearchNext>
+        </InstantSearchSSRProvider>
+      </div>
+    </Suspense>
   );
 }
 
