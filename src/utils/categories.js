@@ -148,6 +148,8 @@ Shorter takes by experts across many domains
 
 */
 
+// why is this separate from definedTypes?
+
 export const allTypes = [
   ...(Config.useCovidSection
     ? []
