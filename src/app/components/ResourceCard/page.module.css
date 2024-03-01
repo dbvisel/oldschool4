@@ -1,0 +1,23 @@
+.card {
+	background-color: var(--orange);
+	border: 1px solid var(--black);
+	color: var(--white);
+	padding: var(--inside-padding);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	border-radius: 4px;
+	max-width: calc(var(--imageWidth) + var(--inside-padding) * 2);
+	box-sizing: border-box;
+	height: max-content;
+}
+
+.card a {
+	color: var(--white);
+}
+
+.card h2 {
+	font-size: var(--font-size) !important;
+	margin: var(--inside-padding) 0 0 0;
+	text-align: center;
+}

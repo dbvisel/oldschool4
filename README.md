@@ -10,6 +10,7 @@ build error:
 ```
 2:40:35 PM: Invalid slug: ageism-does-it-exist-among-children%20
 ```
+This is still coming up even after adding in a `trim()`! 
 
 ## TODO:
 

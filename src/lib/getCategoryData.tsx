@@ -2,8 +2,10 @@ import fs from "fs/promises";
 import { getPlaiceholder } from "plaiceholder";
 import { getCategoryById, getResourcesOfType } from "./../utils/airtable";
 import { allTypes } from "./../utils/categories";
+import { cleanResource } from "./getResourceData";
+import { slugify } from "./../utils/misc";
 
-const getCategoryData = async ({ params }: { params: any }) => {
+const getCategoryData = async ({ params }: { params: any }): Promise<any> => {
   const thisType = allTypes.filter((x) => x.id === params.slug)[0];
   const categoryData = await getCategoryById(params.slug);
   const data = await getResourcesOfType(thisType.airtableName);
@@ -45,34 +47,37 @@ const getCategoryData = async ({ params }: { params: any }) => {
         x.blurPath = x.imagePath;
         try {
           const theFile = await fs.readFile(`./public${x.imagePath}`);
-          const { base64 } = await getPlaiceholder(theFile);
+          const {
+            base64,
+            metadata: { width, height },
+          } = await getPlaiceholder(theFile);
           x.blurPath = base64;
+          x.imageWidth = width;
+          x.imageHeight = height;
         } catch (error) {
           console.error("Error with blurpath!", x.Title, x.imagePath);
         }
       }
-      return x;
+      return cleanResource({ fields: x, ...x }, slugify(x.Slug, x.Title), []);
     })
   );
 
   return {
-    props: {
-      slug: params.slug,
-      resources: blurPathedData,
-      corpus: filteredCorpus,
-      seoTitle:
-        typeof categoryData !== "undefined"
-          ? categoryData.fields["SEO Title"] || ""
-          : "",
-      seoDescription:
-        typeof categoryData !== "undefined"
-          ? categoryData.fields["SEO Description"] || ""
-          : "",
-      description:
-        typeof categoryData !== "undefined"
-          ? categoryData.fields.Notes || ""
-          : "",
-    },
+    slug: params.slug,
+    resources: blurPathedData,
+    corpus: filteredCorpus,
+    seoTitle:
+      typeof categoryData !== "undefined"
+        ? categoryData.fields["SEO Title"] || ""
+        : "",
+    seoDescription:
+      typeof categoryData !== "undefined"
+        ? categoryData.fields["SEO Description"] || ""
+        : "",
+    description:
+      typeof categoryData !== "undefined"
+        ? categoryData.fields.Notes || ""
+        : "",
   };
 };
 

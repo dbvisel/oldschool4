@@ -1,0 +1,54 @@
+.resourcePage {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: flex-start;
+	min-height: 100vh;
+	--font-size: 20px;
+}
+
+.resourcePage h2 span {
+	color: var(--black);
+	text-transform: uppercase;
+}
+
+.resourceData  {
+	display: flex;
+	max-width: 1024px;
+}
+
+.imageWrapper {
+	position: relative;
+}
+
+.dataBox {
+	margin-left: var(--outside-padding);
+	display: grid;
+	grid-template-columns: 200px calc(100% - 200px);
+	grid-gap: var(--inside-padding);
+	grid-auto-rows: min-content;
+	font-size: var(--font-size);
+}
+
+.dataBox dt {
+	font-weight: bold;
+	grid-column: 0,1;
+	text-transform: uppercase;
+	padding-bottom: var(--inside-padding);
+}
+
+.dataBox dt:after {
+	content: ':';
+}
+
+.databox dd {
+	grid-column: 1,2;
+	padding-bottom: var(--inside-padding);
+}
+
+.subresources {
+	margin-top: var(--outside-padding);
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+}
