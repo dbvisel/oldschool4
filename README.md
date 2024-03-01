@@ -14,6 +14,8 @@ This is still coming up even after adding in a `trim()`!
 
 ## TODO:
 
+Need to figure out how to cache blurPaths!
+
  - [ ] get search working
    - [ ] move old search in
    - [ ] update to use current model for react-instantsearch

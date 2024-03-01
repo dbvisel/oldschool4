@@ -1,14 +1,8 @@
 .cardHolder {
-	--imageWidth: 240px;
-	display: grid;
-	width: 100%;
-	grid-template-columns: repeat(auto-fill, minmax(calc(var(--imageWidth) + calc(var(--inside-padding) * 2)), 1fr));
-	grid-gap: var(--outside-padding);
-	/* grid-auto-rows: 48px;
-	grid-auto-flow: dense; */
-	display: flex;
-	flex-wrap: wrap;
-	box-sizing: border-box;
-	
+	margin-top: var(--outside-padding);
+}
 
+.cardHolder > div > div {
+align-items: center;
+width: initial !important;
 }

@@ -140,7 +140,7 @@ const getResourcesOfType = async (type) => {
   const records = await getResources();
   const typedResources = records
     .map((x) => {
-      return { imagePath: x.imagePath, ...x.fields };
+      return { imagePath: x.imagePath, ...x.fields, id: x.id };
     })
     .filter((x) => x.Types && x.Types.length && x.Types.indexOf(type) > -1)
     .filter((x) => x.Status === "publish")
@@ -162,7 +162,7 @@ const getTopResources = async () => {
   const records = await getResources();
   const slicedRecords = records
     .map((x) => {
-      return { imagePath: x.imagePath, ...x.fields };
+      return { imagePath: x.imagePath, id: x.id, ...x.fields };
     })
     .filter((x) => x.Status === "publish")
     .filter((x) => x["Hide?"] !== "yes")
@@ -184,7 +184,7 @@ const getNewResources = async () => {
   const records = await getResources();
   const slicedRecords = records
     .map((x) => {
-      return { imagePath: x.imagePath, ...x.fields };
+      return { imagePath: x.imagePath, id: x.id, ...x.fields };
     })
     .filter((x) => x.Status === "publish")
     .filter((x) => x["Hide?"] !== "yes")

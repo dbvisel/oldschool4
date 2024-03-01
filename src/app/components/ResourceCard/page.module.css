@@ -10,14 +10,18 @@
 	max-width: calc(var(--imageWidth) + var(--inside-padding) * 2);
 	box-sizing: border-box;
 	height: max-content;
+	width: min-content;
+	min-width: 100%;
 }
 
 .card a {
 	color: var(--white);
+	line-height: 0;
 }
 
 .card h2 {
 	font-size: var(--font-size) !important;
 	margin: var(--inside-padding) 0 0 0;
 	text-align: center;
+	text-transform: uppercase;
 }

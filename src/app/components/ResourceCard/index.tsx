@@ -16,15 +16,17 @@ const ResourceCard = ({
     : `/resource/${resource.slug}` || "";
   return (
     <div className={styles.card}>
-      {resource.imagePath && resource.imageWidth && resource.imageHeight ? (
+      {resource?.image?.path &&
+      resource.image.width &&
+      resource.image.height ? (
         <Link href={thisLink || ""}>
           <Image
-            src={resource.imagePath}
-            alt={resource.imageAlt || ""}
+            src={resource.image.path}
+            alt={resource.image.alt || ""}
             placeholder="blur"
-            blurDataURL={resource.blurPath}
+            blurDataURL={resource.image.blurPath}
             width={240}
-            height={(240 / resource.imageWidth) * resource.imageHeight}
+            height={(240 / resource.image.width) * resource.image.height}
           />
         </Link>
       ) : (

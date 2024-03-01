@@ -7,19 +7,22 @@ import styles from "./page.module.css";
 import { ResourceItem } from "@/types/index";
 
 const ContactInformation = ({ resource }: { resource: ResourceItem }) => {
-  if (!resource.contactInfoEmail) return null;
-  return (
-    <>
-      <dt>Contact</dt>
-      {resource.contactInfoEmail && (
-        <dd>
-          <a href={`mailto:${resource.contactInfoEmail}`}>
-            {resource.contactInfoEmail}
-          </a>
-        </dd>
-      )}
-    </>
-  );
+  if (resource.contactInfo) {
+    return (
+      <>
+        <dt>Contact</dt>
+        {resource.contactInfo.email && (
+          <dd>
+            <a href={`mailto:${resource.contactInfo.email}`}>
+              {resource.contactInfo.email}
+            </a>
+          </dd>
+        )}
+      </>
+    );
+  } else {
+    return null;
+  }
 };
 
 const ResourcePage = async ({
@@ -29,27 +32,34 @@ const ResourcePage = async ({
 }) => {
   // console.log("slug:", slug);
   const resource = await getResourceData(slug);
+  const isLandscape = resource?.image?.width > resource?.image?.height;
   return resource.title ? (
     <article className={styles.resourcePage}>
       <h2>
         <span>Resource:</span>{" "}
         <Link href={resource.link || ""}>{resource.title}</Link>
       </h2>
-      <div className={styles.resourceData}>
-        {resource.imagePath && resource.blurPath && (
+      <div
+        className={`${styles.resourceData} ${isLandscape ? "horizontal" : "vertical"}`}
+      >
+        {resource?.image?.path && resource.image.blurPath && (
           <div className={styles.imageWrapper}>
             <Image
-              src={resource.imagePath}
+              src={resource.image.path}
               alt={
-                resource.imageAlt ||
+                resource.image.alt ||
                 resource.description ||
                 resource.shortDescription ||
                 ""
               }
               placeholder="blur"
-              blurDataURL={resource.blurPath}
-              width={resource.imageWidth}
-              height={resource.imageHeight}
+              blurDataURL={resource.image.blurPath}
+              width={isLandscape ? resource.image.width : 400}
+              height={
+                isLandscape
+                  ? resource.image.height
+                  : (400 / resource.image.width) * resource.image.height
+              }
             />
           </div>
         )}
@@ -66,7 +76,7 @@ const ResourcePage = async ({
               __html: resource.description || resource.shortDescription || "",
             }}
           />
-          {<ContactInformation resource={resource} />}
+          <ContactInformation resource={resource} />
           <dt>Share This Resource</dt>
           <dd></dd>
         </dl>

@@ -1,8 +1,11 @@
+import CardHolder from "@/app/components/CardHolder";
+import getNewestData from "@/lib/getNewestData";
 import styles from "./page.module.css";
 
 export const dynamic = "force-dynamic";
 
-export default function HomePage() {
+const HomePage = async () => {
+  const { resources } = await getNewestData();
   return (
     <article className={styles.frontpage}>
       <section>
@@ -10,8 +13,8 @@ export default function HomePage() {
         <p>(above the fold content goes here)</p>
       </section>
       <section>
-        <h2>Top resources</h2>
-        <p>(Twelve newest resources go here)</p>
+        <h2>Newest resources</h2>
+        <CardHolder resources={resources} />
       </section>
       <section>
         <h2>About section?</h2>
@@ -19,4 +22,6 @@ export default function HomePage() {
       </section>
     </article>
   );
-}
+};
+
+export default HomePage;

@@ -15,20 +15,37 @@
 .resourceData  {
 	display: flex;
 	max-width: 1024px;
+	flex-direction: row;
+}
+
+.resourceData:global(.horizontal) {
+	flex-direction: column;
 }
 
 .imageWrapper {
 	position: relative;
 }
 
+.resourceData:global(.horizontal) .imageWrapper {
+	margin-bottom: var(--outside-padding);
+	align-self: center;
+}
+
 .dataBox {
+	--headerWidth: 200px;
 	margin-left: var(--outside-padding);
 	display: grid;
-	grid-template-columns: 200px calc(100% - 200px);
+	grid-template-columns: var(--headerWidth) calc(100% - var(--headerWidth));
 	grid-gap: var(--inside-padding);
 	grid-auto-rows: min-content;
 	font-size: var(--font-size);
 }
+
+.resourceData:global(.horizontal) .dataBox {
+	margin-left: 0;
+	--headerWidth: 300px;
+}
+
 
 .dataBox dt {
 	font-weight: bold;

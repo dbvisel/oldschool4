@@ -2,7 +2,7 @@ import fs from "fs/promises";
 import { getPlaiceholder } from "plaiceholder";
 import { getCategoryById, getResourcesOfType } from "./../utils/airtable";
 import { allTypes } from "./../utils/categories";
-import { cleanResource } from "./getResourceData";
+import { cleanResource } from "./resource";
 import { slugify } from "./../utils/misc";
 
 const getCategoryData = async ({ params }: { params: any }): Promise<any> => {
@@ -55,7 +55,11 @@ const getCategoryData = async ({ params }: { params: any }): Promise<any> => {
           x.imageWidth = width;
           x.imageHeight = height;
         } catch (error) {
-          console.error("Error with blurpath!", x.Title, x.imagePath);
+          console.error(
+            "Error with blurpath (getCategoryData)!",
+            x.Title,
+            x.imagePath
+          );
         }
       }
       return cleanResource({ fields: x, ...x }, slugify(x.Slug, x.Title), []);

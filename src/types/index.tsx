@@ -1,16 +1,24 @@
+interface Image {
+  path: string;
+  blurPath: string;
+  alt: string;
+  width: number;
+  height: number;
+}
+
+interface ContactInfo {
+  email: string;
+}
+
 export interface ResourceItem {
   id: string;
   slug: string;
-  imagePath?: string;
-  blurPath?: string;
-  imageAlt?: string;
-  imageWidth?: number;
-  imageHeight?: number;
+  image: Image;
   title?: string;
   description?: string;
   shortDescription?: string;
   types?: [string];
   subresources?: [ResourceItem];
-  contactInfoEmail?: string;
+  contactInfo?: ContactInfo;
   link?: URL;
 }

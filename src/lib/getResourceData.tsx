@@ -3,34 +3,7 @@ import { getPlaiceholder } from "plaiceholder";
 import { possibleSlugs, getResourceById } from "@/utils/airtable";
 import { ResourceItem } from "@/types/index";
 import { slugify } from "@/utils/misc";
-import { randomUUID } from "crypto";
-
-export const cleanResource = (
-  resource: any,
-  slug: string,
-  subresources: any
-): ResourceItem => {
-  // console.log("original:", resource);
-  const newResource = {
-    id: resource.id || randomUUID(),
-    title: resource.fields.Title,
-    tags: resource.fields.Tags,
-    link: resource.fields["Resource URL"],
-    imagePath: resource.imagePath,
-    imageHeight: resource.imageHeight,
-    imageWidth: resource.imageWidth,
-    imageAlt: resource.fields["Image text"] || resource.fields.Title,
-    blurPath: resource.blurPath,
-    description: resource.fields.Description,
-    shortDescription: resource.fields["Short Description"],
-    subresources: subresources.length ? subresources : [],
-    types: resource.fields.Types,
-    slug: slug,
-    contactInfoEmail: resource.fields["Contact info email"],
-  };
-  // console.log("cleaned:", newResource);
-  return newResource;
-};
+import { cleanResource } from "./resource";
 
 const getSubresource = async (id: string): Promise<ResourceItem> => {
   const subresource: any = await getResourceById(id);
@@ -43,25 +16,29 @@ const getSubresource = async (id: string): Promise<ResourceItem> => {
 };
 
 const getImage = async (resource: ResourceItem): Promise<ResourceItem> => {
-  if (resource.imagePath) {
+  if (resource.image.path) {
     // console.log("Looking for subresource image: ", resource.imagePath);
-    resource.blurPath = resource.imagePath;
+    resource.image.blurPath = resource.image.path;
     try {
       // why is this failing?
-      const theFile = await fs.readFile(`./public${resource.imagePath}`);
+      const theFile = await fs.readFile(`./public${resource.image.path}`);
       const {
         base64,
         metadata: { height, width },
       } = await getPlaiceholder(theFile);
-      resource.blurPath = base64;
-      resource.imageHeight = height;
-      resource.imageWidth = width;
+      resource.image.blurPath = base64;
+      resource.image.height = height;
+      resource.image.width = width;
     } catch (error) {
-      console.error("Error with blurpath!", resource.title, resource.imagePath);
+      console.error(
+        "Error with blurpath (getResourceData)!",
+        resource.title,
+        resource.image
+      );
     }
   } else {
     console.error("No imagePath found for image: ", resource.title);
-    resource.blurPath = "";
+    resource.image.blurPath = "";
   }
   return resource;
 };
@@ -75,8 +52,7 @@ const getResourceData = async (slug: string): Promise<ResourceItem> => {
     return {
       slug: "",
       title: "",
-      imagePath: "",
-      blurPath: "",
+      image: { path: "", blurPath: "", width: 0, height: 0, alt: "" },
       id: "",
     };
   }
@@ -89,7 +65,7 @@ const getResourceData = async (slug: string): Promise<ResourceItem> => {
   if (data.fields.Subresource && data.fields.Subresource.length > 0) {
     for (let i = 0; i < data.fields.Subresource.length; i++) {
       subresources[i] = await getSubresource(data.fields.Subresource[i]);
-      if (subresources[i].imagePath) {
+      if (subresources[i].image.path) {
         subresources[i] = await getImage(subresources[i]);
       }
     }
