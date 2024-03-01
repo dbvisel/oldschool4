@@ -6,19 +6,21 @@ This is using Next 13 and App Router. Will that make things more complicated? Ma
 
 ## ISSUES
 
+### Slug issues
+
 build error: 
 ```
 2:40:35 PM: Invalid slug: ageism-does-it-exist-among-children%20
 ```
 This is still coming up even after adding in a `trim()`! 
 
+(does this still happen?)
+
 ## TODO:
 
-Need to figure out how to cache blurPaths!
+Maybe: figure out how to cache blurPaths? How much time are we spending on that?
 
  - [ ] get search working
-   - [ ] move old search in
-   - [ ] update to use current model for react-instantsearch
    - [ ] get resource component into the results
    - [ ] get events into search
  - [ ] import pages
@@ -29,7 +31,7 @@ Need to figure out how to cache blurPaths!
  - [ ] import components
    - [ ] rework PDF viewer
    - [ ] rework YouTube player
-   - [ ] make standard resource component
+   - [ ] resource component
      - [ ] make subresources that are PDFs open in their own page with local PDF.
  - [ ] responsiveness
  - [ ] accessibility testing

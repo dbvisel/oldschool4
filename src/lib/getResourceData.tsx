@@ -5,8 +5,20 @@ import { ResourceItem } from "@/types/index";
 import { slugify } from "@/utils/misc";
 import { cleanResource } from "./resource";
 
-const getSubresource = async (id: string): Promise<ResourceItem> => {
+const getSubresource = async (id: string): Promise<ResourceItem | null> => {
   const subresource: any = await getResourceById(id);
+  // console.log(subresource);
+  if (
+    !subresource.fields["Status"] ||
+    (subresource.fields["Status"] &&
+      subresource.fields["Status"] !== "publish") ||
+    (subresource.fields["Hide?"] && subresource.fields["Hide?"] !== "yes") ||
+    (subresource.fields["Status"] &&
+      subresource.fields["Status"] === "taken down")
+  ) {
+    // console.log("Subresource is not published or is hidden.");
+    return null;
+  }
   const cleanSubresource = cleanResource(
     subresource,
     slugify(subresource.fields.Slug, subresource.fields.Title),
@@ -64,37 +76,21 @@ const getResourceData = async (slug: string): Promise<ResourceItem> => {
   const subresources: Array<ResourceItem> = [];
   if (data.fields.Subresource && data.fields.Subresource.length > 0) {
     for (let i = 0; i < data.fields.Subresource.length; i++) {
-      subresources[i] = await getSubresource(data.fields.Subresource[i]);
-      if (subresources[i].image.path) {
-        subresources[i] = await getImage(subresources[i]);
+      let possibleSubresource = await getSubresource(
+        data.fields.Subresource[i]
+      );
+      if (possibleSubresource !== null) {
+        // It's possible that a subresource ID is something that should be hidden.
+        if (possibleSubresource.image.path) {
+          possibleSubresource = await getImage(possibleSubresource);
+        }
+        subresources[subresources.length] = possibleSubresource;
       }
     }
   }
 
-  // console.log("Subresources: ", subresources);
   let resource = cleanResource(data, slug, subresources);
-  // resource.subresources = subresources;
-  // console.log("Subresources: ", resource.subresources);
   resource = await getImage(resource);
-  // if (resource.imagePath) {
-  //   resource.blurPath = resource.imagePath;
-  //   try {
-  //     // why is this failing?
-  //     const theFile = await fs.readFile(`./public${resource.imagePath}`);
-  //     const {
-  //       base64,
-  //       metadata: { height, width },
-  //     } = await getPlaiceholder(theFile);
-  //     resource.blurPath = base64;
-  //     resource.imageHeight = height;
-  //     resource.imageWidth = width;
-  //   } catch (error) {
-  //     console.error("Error with blurpath!", resource.title, resource.imagePath);
-  //   }
-  // } else {
-  //   console.error("No imagePath found for image: ", resource.title);
-  //   resource.blurPath = "";
-  // }
   // console.log("\n\n output: ", resource, `\n\n`);
   return resource;
 };

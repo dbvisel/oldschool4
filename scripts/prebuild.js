@@ -186,7 +186,8 @@ const prebuild = async () => {
 
   let pdfCache;
   try {
-    pdfCache = await content("./public/pdfs/cache.json");
+    const pdfCacheFile = await content("./public/pdfs/cache.json");
+    pdfCache = JSON.parse(pdfCacheFile); //now it is an object
   } catch (e) {
     console.log("\n\nPDF cache not found.");
     pdfCache = "";
@@ -271,8 +272,8 @@ const prebuild = async () => {
     }
   }
   const completeList = JSON.stringify(pdfCache.concat(pdfsCurrent));
-  fs.writeFile("./public/pdfs/cache.json", completeList);
-  fs.writeFile("./src/caches/pdfs/cache.json", completeList);
+  fs.writeFile("./public/pdfs/cache.json", completeList, "utf8");
+  fs.writeFile("./src/caches/pdfs/cache.json", completeList, "utf8");
 
   console.log(
     "\n\nPDF download failures:",

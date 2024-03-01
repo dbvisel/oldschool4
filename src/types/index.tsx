@@ -7,7 +7,9 @@ interface Image {
 }
 
 interface ContactInfo {
-  email: string;
+  email?: string;
+  link?: string;
+  location?: string;
 }
 
 export interface ResourceItem {

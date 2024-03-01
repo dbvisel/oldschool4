@@ -31,6 +31,8 @@ export const cleanResource = (
     slug: slug,
     contactInfo: {
       email: resource.fields["Contact info email"],
+      link: resource.fields["Contact info link"],
+      location: resource.fields["Location"],
     },
   };
   // console.log("cleaned:", newResource);
