@@ -10,7 +10,7 @@ export interface ResourceItem {
   description?: string;
   shortDescription?: string;
   types?: [string];
-  subresources?: [ResourceItem?];
+  subresources?: [ResourceItem];
   contactInfoEmail?: string;
   link?: URL;
 }
