@@ -256,7 +256,7 @@ const possibleSlugs = async () => {
       // console.log(slugify(x), x.fields.Status);
       return {
         id: x.id,
-        slug: slugify(x),
+        slug: slugify(x).trim(),
       };
     });
   return preSlugs;

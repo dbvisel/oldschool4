@@ -4,17 +4,8 @@ This is a redesign of the Old School site, working off of this: https://github.c
 
 This is using Next 13 and App Router. Will that make things more complicated? Maybe!
 
-## ISSUES
+## KNOWN ISSUES
 
-### Slug issues
-
-build error: 
-```
-2:40:35 PM: Invalid slug: ageism-does-it-exist-among-children%20
-```
-This is still coming up even after adding in a `trim()`! 
-
-(does this still happen?)
 
 ## TODO:
 
