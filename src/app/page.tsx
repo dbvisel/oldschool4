@@ -1,5 +1,6 @@
-import TopResources from "./components/TopResources";
-import { ErrorBoundary } from "react-error-boundary";
+import { Suspense } from "react";
+import TopResources, { LoadingTopResources } from "./components/TopResources";
+// import { ErrorBoundary } from "react-error-boundary";
 import styles from "./page.module.css";
 
 export const dynamic = "force-dynamic";
@@ -11,9 +12,9 @@ const HomePage = () => {
         <h2>Home</h2>
         <p>(above the fold content goes here)</p>
       </section>
-      <ErrorBoundary fallback={<p>Something went wrong</p>}>
+      <Suspense fallback={<LoadingTopResources />}>
         <TopResources />
-      </ErrorBoundary>
+      </Suspense>
       <section>
         <h2>About section?</h2>
         <p>Short about section goes here, links to about page</p>
