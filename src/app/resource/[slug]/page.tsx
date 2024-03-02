@@ -4,9 +4,15 @@ import getResourceData from "@/lib/getResourceData";
 import { possibleSlugs } from "@/utils/airtable";
 import { ResourceItem } from "@/types/index";
 import CardHolder from "@/app/components/CardHolder";
+import PDFEmbed from "@/app/components/PDFEmbed";
 import ShareSection from "./ShareSection";
 import VideoEmbed, { isEmbeddable } from "./VideoEmbed";
 import styles from "./page.module.css";
+import PDFList from "@/caches/pdfs/cache.json";
+import { pdfjs } from "react-pdf";
+
+pdfjs.GlobalWorkerOptions.workerSrc =
+  "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
 
 const ContactInformation = ({ resource }: { resource: ResourceItem }) => {
   if (
@@ -72,6 +78,7 @@ const ResourcePage = async ({
   // console.log(resource);
   const isLandscape = resource?.image?.width > resource?.image?.height;
   const isVideoPage = isEmbeddable(String(resource.link));
+  const thisIsAPDF = PDFList.indexOf(resource.id) > -1 || false;
   return resource.title ? (
     <article className={styles.resourcePage}>
       <h2>
@@ -144,6 +151,7 @@ const ResourcePage = async ({
           </dl>
         </div>
       </div>
+      {thisIsAPDF && <PDFEmbed id={resource.id} title={resource.title} />}
       {resource.subresources && resource.subresources.length ? (
         <div className={styles.subresources}>
           <h3>See also:</h3>

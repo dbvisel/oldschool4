@@ -1,0 +1,31 @@
+.pdfEmbed {
+	width: 100%;
+  margin-top: var(--insidePadding);
+  display: flex;
+  justify-content: center;
+}
+
+.pdfEmbed div > p {
+	text-align: right;
+	user-select: none;
+}
+
+.pdfEmbed div > p a {
+	color: var(--green);
+	font-weight: bold;
+}
+
+.pdfEmbed div > p span {
+	color: var(--green);
+	font-weight: bold;
+	cursor: pointer;
+}
+
+
+.pdfEmbed div > p span:global(.left) {
+	margin-right: 1em;
+}
+
+.pdfEmbed div > p span:global(.right) {
+	margin-left: 1em;
+}

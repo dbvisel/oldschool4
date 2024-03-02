@@ -24,7 +24,6 @@ Maybe: figure out how to cache blurPaths? How much time are we spending on that?
    - [ ] hire us: content TK
    - [ ] learn page maybe doesn't exist?
  - [ ] import components
-   - [ ] rework PDF viewer
    - [ ] resource component
      - [ ] make subresources that are PDFs open in their own page with local PDF.
  - [ ] responsiveness
