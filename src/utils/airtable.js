@@ -8,6 +8,9 @@ Airtable.configure({
 // Initialize a base
 const base = Airtable.base(process.env.AIRTABLE_BASE_ID);
 
+const throttle = true; // If this is true, we only load 50 records
+const throttleLimit = 50;
+
 // Reference a table
 const resourcesBase = base("oldschool");
 const quotesBase = base("quotes");
@@ -79,7 +82,7 @@ const getResources = async () => {
       }
       return x;
     });
-  return imagedRecords;
+  return throttle ? imagedRecords.slice(0, throttleLimit) : imagedRecords;
 };
 
 const getEvents = async () => {

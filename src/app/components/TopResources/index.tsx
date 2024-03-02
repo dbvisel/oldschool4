@@ -11,15 +11,13 @@ export const LoadingTopResources = () => (
 const TopResources = async () => {
   const { resources } = await getNewestData();
 
-  return (
+  return resources.length ? (
     <section>
       <h2>Newest resources</h2>
-      {resources.length ? (
-        <CardHolder resources={resources} />
-      ) : (
-        <p>Loading...</p>
-      )}
+      <CardHolder resources={resources} />
     </section>
+  ) : (
+    <LoadingTopResources />
   );
 };
 
