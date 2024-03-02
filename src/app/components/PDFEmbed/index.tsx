@@ -37,11 +37,7 @@ const PDFEmbed = ({ id, title }: { id: string; title: string }) => {
             {title}.pdf
           </a>
         </p>
-        <Document
-          file={pdfURL}
-          onLoadSuccess={onDocumentLoadSuccess}
-          width={width}
-        >
+        <Document file={pdfURL} onLoadSuccess={onDocumentLoadSuccess}>
           <Page pageNumber={pageNumber} width={width} scale={1} />
         </Document>
         <p>
