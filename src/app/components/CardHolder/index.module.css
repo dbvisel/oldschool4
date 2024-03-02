@@ -1,5 +1,5 @@
 .cardHolder {
-	margin-top: var(--outside-padding);
+	margin-top: var(--paddingOutside);
 }
 
 .cardHolder > div > div {

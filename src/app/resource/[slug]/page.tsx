@@ -1,24 +1,61 @@
 import Image from "next/image";
 import Link from "next/link";
-import CardHolder from "@/app/components/CardHolder";
 import getResourceData from "@/lib/getResourceData";
 import { possibleSlugs } from "@/utils/airtable";
-import styles from "./page.module.css";
 import { ResourceItem } from "@/types/index";
+import CardHolder from "@/app/components/CardHolder";
+import ShareSection from "./ShareSection";
+import VideoEmbed, { isEmbeddable } from "./VideoEmbed";
+import styles from "./page.module.css";
 
 const ContactInformation = ({ resource }: { resource: ResourceItem }) => {
-  if (resource.contactInfo) {
+  if (
+    resource.contactInfo &&
+    (resource.contactInfo.email ||
+      resource.contactInfo.phone ||
+      resource.contactInfo.location ||
+      resource.contactInfo.link)
+  ) {
     return (
-      <>
+      <dl className={styles.dataBox}>
         <dt>Contact</dt>
         {resource.contactInfo.email && (
           <dd>
-            <a href={`mailto:${resource.contactInfo.email}`}>
+            <strong>Email: </strong>
+            <a
+              href={`mailto:${resource.contactInfo.email}`}
+              target="_blank"
+              aria-label={`Email ${resource.contactInfo.email}`}
+            >
               {resource.contactInfo.email}
             </a>
           </dd>
         )}
-      </>
+        {resource.contactInfo.phone && (
+          <dd>
+            <strong>Phone: </strong>
+            {resource.contactInfo.phone}
+          </dd>
+        )}
+        {resource.contactInfo.location && (
+          <dd>
+            <strong>Location: </strong>
+            {resource.contactInfo.location}
+          </dd>
+        )}
+        {resource.contactInfo.link && (
+          <dd>
+            <strong>Link: </strong>
+            <a
+              href={resource.contactInfo.link}
+              target="_blank"
+              aria-label={`Link to ${resource.contactInfo.link}`}
+            >
+              {resource.contactInfo.link}
+            </a>
+          </dd>
+        )}
+      </dl>
     );
   } else {
     return null;
@@ -32,58 +69,84 @@ const ResourcePage = async ({
 }) => {
   // console.log("slug:", slug);
   const resource = await getResourceData(slug);
+  // console.log(resource);
   const isLandscape = resource?.image?.width > resource?.image?.height;
+  const isVideoPage = isEmbeddable(String(resource.link));
   return resource.title ? (
     <article className={styles.resourcePage}>
       <h2>
         <span>Resource:</span>{" "}
-        <Link href={resource.link || ""}>{resource.title}</Link>
+        <Link
+          href={resource.link || ""}
+          target="_blank"
+          aria-label={`Link to ${resource.link}`}
+        >
+          {resource.title}
+        </Link>
       </h2>
       <div
         className={`${styles.resourceData} ${isLandscape ? "horizontal" : "vertical"}`}
       >
-        {resource?.image?.path && resource.image.blurPath && (
+        {isVideoPage ? (
+          <VideoEmbed url={String(resource.link)} title={resource.title} />
+        ) : resource?.image?.path && resource.image.blurPath ? (
           <div className={styles.imageWrapper}>
-            <Image
-              src={resource.image.path}
-              alt={
-                resource.image.alt ||
-                resource.description ||
-                resource.shortDescription ||
-                ""
-              }
-              placeholder="blur"
-              blurDataURL={resource.image.blurPath}
-              width={isLandscape ? resource.image.width : 400}
-              height={
-                isLandscape
-                  ? resource.image.height
-                  : (400 / resource.image.width) * resource.image.height
-              }
-            />
+            <Link
+              href={resource.link || ""}
+              target="_blank"
+              aria-label={`Link to ${resource.link}`}
+            >
+              <Image
+                src={resource.image.path}
+                alt={
+                  resource.image.alt ||
+                  resource.description ||
+                  resource.shortDescription ||
+                  ""
+                }
+                placeholder="blur"
+                blurDataURL={resource.image.blurPath}
+                width={isLandscape ? resource.image.width : 400}
+                height={
+                  isLandscape
+                    ? resource.image.height
+                    : (400 / resource.image.width) * resource.image.height
+                }
+              />
+            </Link>
           </div>
-        )}
-        <dl className={styles.dataBox}>
-          {resource.types && resource.types.length ? (
-            <>
-              <dt>Resource Type</dt>
-              <dd>{resource.types.map((x: String) => x).join(", ")}</dd>
-              <dt>About This Resource</dt>
-            </>
-          ) : null}
-          <dd
-            dangerouslySetInnerHTML={{
-              __html: resource.description || resource.shortDescription || "",
-            }}
-          />
+        ) : null}
+        <div className={styles.dataBoxWrapper}>
+          <dl className={styles.dataBox}>
+            {resource.types && resource.types.length ? (
+              <>
+                <dt>Resource Type</dt>
+                <dd>{resource.types.map((x: String) => x).join(", ")}</dd>
+              </>
+            ) : null}
+          </dl>
+          <dl className={styles.dataBox}>
+            <dt>About This Resource</dt>
+            <dd
+              dangerouslySetInnerHTML={{
+                __html: resource.description || resource.shortDescription || "",
+              }}
+            />
+          </dl>
           <ContactInformation resource={resource} />
-          <dt>Share This Resource</dt>
-          <dd></dd>
-        </dl>
+          <dl className={styles.dataBox}>
+            <ShareSection
+              url={resource.link}
+              title={resource.title}
+              description={resource.description || ""}
+              shortDescription={resource.shortDescription || ""}
+            />
+          </dl>
+        </div>
       </div>
       {resource.subresources && resource.subresources.length ? (
         <div className={styles.subresources}>
-          <h2>See also:</h2>
+          <h3>See also:</h3>
           <CardHolder
             resources={resource.subresources || []}
             areSubResources={true}

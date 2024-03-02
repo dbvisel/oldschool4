@@ -10,6 +10,7 @@ interface ContactInfo {
   email?: string;
   link?: string;
   location?: string;
+  phone?: string;
 }
 
 export interface ResourceItem {

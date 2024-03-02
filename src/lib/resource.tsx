@@ -5,6 +5,7 @@ export const cleanResource = (
   slug: string,
   subresources: any
 ): ResourceItem => {
+  // This function takesa what's coming back from Airtable and cleans it up to be a ResourceItem.
   // console.log("original:", resource);
   if (!resource.id) {
     console.error(
@@ -33,6 +34,7 @@ export const cleanResource = (
       email: resource.fields["Contact info email"],
       link: resource.fields["Contact info link"],
       location: resource.fields["Location"],
+      phone: resource.fields["Contact info phone"],
     },
   };
   // console.log("cleaned:", newResource);

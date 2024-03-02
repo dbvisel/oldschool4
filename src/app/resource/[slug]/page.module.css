@@ -1,10 +1,22 @@
-.resourcePage {
+/* TODO: 768px–1024px needs some attention! */
+
+article.resourcePage {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: flex-start;
 	min-height: 100vh;
+	padding-top: var(--paddingDouble);
 	--font-size: 20px;
+}
+
+.resourcePage h2 {
+	text-align: left !important;
+	align-self: start;
+	@media (max-width: 767px) {
+		text-align: center !important;
+		align-self: center;
+	}
 }
 
 .resourcePage h2 span {
@@ -12,33 +24,71 @@
 	text-transform: uppercase;
 }
 
+.resourcePage h2 a:hover {
+	text-decoration: underline;
+}
+
 .resourceData  {
 	display: flex;
 	max-width: 1024px;
 	flex-direction: row;
+	padding-bottom: var(--paddingDouble);
+	margin-top: var(--paddingOutside);
+	@media (max-width: 767px) {
+		flex-direction: column;
+	}
 }
 
 .resourceData:global(.horizontal) {
 	flex-direction: column;
 }
 
+
+/* dealing with images */
+
 .imageWrapper {
 	position: relative;
+	transition: 0.5s;
+	@media (max-width: 767px) {
+		align-self: center;
+		margin-bottom: var(--paddingOutside);
+	}
+}
+
+.imageWrapper:hover {
+	box-shadow: 0 0 20px var(--orange);
 }
 
 .resourceData:global(.horizontal) .imageWrapper {
-	margin-bottom: var(--outside-padding);
+	margin-bottom: var(--paddingOutside);
 	align-self: center;
+}
+
+.dataBoxWrapper {
+	margin-left: var(--paddingDouble);
+}
+
+.resourceData:global(.horizontal) .dataBoxWrapper {
+	margin-left: 0;
+	margin-top: var(--paddingOutside);
 }
 
 .dataBox {
 	--headerWidth: 200px;
-	margin-left: var(--outside-padding);
 	display: grid;
 	grid-template-columns: var(--headerWidth) calc(100% - var(--headerWidth));
-	grid-gap: var(--inside-padding);
+	grid-gap: 0 var(--paddingInside);
 	grid-auto-rows: min-content;
 	font-size: var(--font-size);
+	@media (max-width: 767px) {
+		grid-template-columns: 1fr;
+	}
+}
+
+.dataBox + .dataBox {
+	border-top: 1px solid var(--orange-half);
+	padding-top: var(--paddingOutside);
+	margin-top: var(--paddingOutside)
 }
 
 .resourceData:global(.horizontal) .dataBox {
@@ -49,23 +99,87 @@
 
 .dataBox dt {
 	font-weight: bold;
-	grid-column: 0,1;
+	grid-column: 1;
 	text-transform: uppercase;
-	padding-bottom: var(--inside-padding);
+	padding-bottom: var(--paddingInside);
+	align-self: center;
+	color: var(--orange);
+	letter-spacing: 0.5px;
+	@media (max-width: 767px) {
+		text-align: center;
+		/* padding-bottom: 0; */
+	}
 }
 
 .dataBox dt:after {
 	content: ':';
 }
 
-.databox dd {
-	grid-column: 1,2;
-	padding-bottom: var(--inside-padding);
+.dataBox dd {
+	grid-column: 2;
+	padding-bottom: 0;
+	@media (max-width: 767px) {
+		grid-column: 1;
+		text-align: center;
+		padding-bottom: var(--paddingInside);
+	}
 }
 
 .subresources {
-	margin-top: var(--outside-padding);
+	margin-top: var(--paddingOutside);
 	display: flex;
 	flex-direction: column;
+	align-items: center;
 	width: 100%;
+	padding-bottom: var(--paddingDouble);
+}
+
+.subresources h3 {
+	color: var(--orange);
+	font-size: calc(var(--font-size) * 1.5);
+	text-transform: uppercase;
+
+}
+
+/* share buttons */
+
+.shareButtonHolder {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	gap: var(--paddingInside);
+	align-items: baseline;
+	@media (max-width: 767px) {
+		justify-content: center;
+	}
+}
+
+.shareButtonHolder button {
+	background-color: var(--orange) !important;
+	padding: 1px var(--paddingInside) 2px !important;
+	border-radius: 8px;
+	color: var(--white) !important;
+	box-shadow: 0 0 4px var(--orange);
+}
+
+.shareButtonHolder button:hover {
+	box-shadow: 0 0 4px var(--black);
+}
+
+/* youtube embed */
+
+.videoResponsive {
+	margin-bottom: var(--paddingOutside);
+  overflow: hidden;
+  padding-bottom: 56.25%;
+  position: relative;
+  height: 0;
+}
+
+.videoResponsive > iframe {
+	left: 0;
+	top: 0;
+	height: 100%;
+	width: 100%;
+	position: absolute;
 }

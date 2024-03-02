@@ -3,7 +3,7 @@
 	justify-content: space-between;
 	width: 100%;
 	height: var(--header-height);
-	padding: var(--outside-padding);
+	padding: var(--paddingOutside);
 	color: var(--white);
 	align-items: flex-end;
 }
@@ -50,7 +50,7 @@
 	align-items: flex-start;
 	position: fixed;
 	top: var(--header-height);
-	padding: var(--inside-padding);
+	padding: var(--paddingInside);
 	min-width: 300px;
 }
 

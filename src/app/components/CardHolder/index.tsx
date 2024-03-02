@@ -30,7 +30,7 @@ const CardHolder = ({
       }}
       className={styles.cardHolder}
     >
-      <Masonry gutter={"var(--outside-padding)"}>
+      <Masonry gutter={"var(--paddingOutside)"}>
         {resources.map((resource: ResourceItem) => (
           <ResourceCard
             key={resource.id}

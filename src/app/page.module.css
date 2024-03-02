@@ -9,7 +9,7 @@ article.frontpage {
 .frontpage section {
   justify-content: space-between;
   align-items: center;
-	padding: var(--outside-padding);
+	padding: var(--paddingOutside);
 	min-height: 100vh;
 	box-sizing: border-box;
 	border-top: 1px solid var(--black);

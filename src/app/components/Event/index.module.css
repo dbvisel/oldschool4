@@ -2,14 +2,14 @@
 	border: 4px solid var(--orange);
 	background-color: var(--white);
 	color: var(--black);
-	margin-bottom: var(--outside-padding);
+	margin-bottom: var(--paddingOutside);
 	max-width: 800px;
 }
 
 .event header {
 	display: flex;
 	background-color: var(--orange);
-	padding: var(--outside-padding);
+	padding: var(--paddingOutside);
 	justify-content: space-betweeen;
 	width: 100%;
 	align-items: center;
@@ -19,11 +19,11 @@
 	background-color: var(--white);
 	margin-left: auto;
 	border-radius: 12px;
-	padding: var(--inside-padding) var(--outside-padding);
+	padding: var(--paddingInside) var(--paddingOutside);
 }
 
 .eventbody {
-	padding: var(--outside-padding);
+	padding: var(--paddingOutside);
 }
 
 .description {

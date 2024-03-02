@@ -1,4 +1,4 @@
 .clickhere {
 	text-align: center;
-	margin: var(--outside-padding);
+	margin: var(--paddingOutside);
 }
