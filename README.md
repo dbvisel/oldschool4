@@ -6,7 +6,8 @@ This is using Next 13 and App Router. Will that make things more complicated? Ma
 
 ## KNOWN ISSUES
 
- - there's a weird error logged on Netlify in build. Maybe slowing things down?
+ - there's a weird error logged on Netlify in build ("Static worker exited with code: null and signal: SIGKILL"). Maybe slowing things down?
+ - also getting this: https://nextjs.org/docs/messages/static-page-generation-timeout
  - why does building take so long?
 
 ## TODO:
