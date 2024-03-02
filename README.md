@@ -6,6 +6,8 @@ This is using Next 13 and App Router. Will that make things more complicated? Ma
 
 ## KNOWN ISSUES
 
+ - there's a weird error logged on Netlify in build. Maybe slowing things down?
+ - why does building take so long?
 
 ## TODO:
 
@@ -13,7 +15,7 @@ Maybe: figure out how to cache blurPaths? How much time are we spending on that?
 
  - [ ] get search working
    - [ ] get resource component into the results
-   - [ ] get events into search
+   - [ ] get events into search (second index?)
  - [ ] import pages
    - [ ] front page: 12 newest resources on front page below the fold, some kind of splash above, some kind of about below
    - [ ] about page: this gets the carousel

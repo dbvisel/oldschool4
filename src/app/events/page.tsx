@@ -1,10 +1,20 @@
+import Event from "@/app/components/Event";
 import styles from "./page.module.css";
+import getCleanEvents from "@/lib/getEvents";
 
-export default function EventsPage() {
+// TODO: maybe we should be filtering by the time at the moment the viewer sees it? If so, we'd need to have startdate and enddate in the data.
+
+const EventsPage = async () => {
+  const events = await getCleanEvents();
   return (
     <article>
       <h2>Events page</h2>
-      <p>(bring in event list component)</p>
+      <h3>POWERED BY STEVEN FRAMPTON</h3>
+      {events.length ? (
+        events.map((event) => <Event event={event} key={event.id} />)
+      ) : (
+        <p>Loading...</p>
+      )}
       <p className={styles.clickhere}>
         Click{" "}
         <a
@@ -22,4 +32,6 @@ export default function EventsPage() {
       </p>
     </article>
   );
-}
+};
+
+export default EventsPage;

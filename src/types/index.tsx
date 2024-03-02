@@ -24,3 +24,13 @@ export interface ResourceItem {
   contactInfo?: ContactInfo;
   link?: URL;
 }
+
+export interface EventRecord {
+  id: string;
+  title: string;
+  time: string;
+  location: string;
+  description: string;
+  link: URL;
+  googleCalendarLink: URL;
+}

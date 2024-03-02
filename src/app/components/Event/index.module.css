@@ -1,0 +1,36 @@
+.event {
+	border: 4px solid var(--orange);
+	background-color: var(--white);
+	color: var(--black);
+	margin-bottom: var(--outside-padding);
+	max-width: 800px;
+}
+
+.event header {
+	display: flex;
+	background-color: var(--orange);
+	padding: var(--outside-padding);
+	justify-content: space-betweeen;
+	width: 100%;
+	align-items: center;
+}
+
+.event header a {
+	background-color: var(--white);
+	margin-left: auto;
+	border-radius: 12px;
+	padding: var(--inside-padding) var(--outside-padding);
+}
+
+.eventbody {
+	padding: var(--outside-padding);
+}
+
+.description {
+	margin-bottom: 1em;
+}
+
+.link {
+	overflow-x: hidden;
+	white-space: nowrap;
+}
