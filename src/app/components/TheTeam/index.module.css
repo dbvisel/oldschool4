@@ -1,0 +1,105 @@
+.teamWrapper {
+	width: 100%;
+  background-color: var(--white);
+  background-repeat: repeat;
+  transition: 0.5s;
+	max-width: 1024px;
+	color: var(--black);
+}
+
+
+.teamWrapper h2 {
+	color: var(--black);
+	margin-top: var(--paddingDouble);
+	font-size: calc(var(--fontSize) * 2);
+	text-align: center;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	margin-bottom: var(--paddingDouble);
+}
+
+.person {
+  --fontSize: 20px;
+  --lineHeight: 28px;
+	--personWidth: 500px;
+  display: flex;
+  margin-bottom: var(--paddingDouble);
+	@media (max-width: 767px) {
+    --fontSize: 16px;
+    --lineHeight: 24px;
+    --paddingInside: 20px;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.person:nth-of-type(1), .person:nth-of-type(3), .person:nth-of-type(5), .person:nth-of-type(7) {
+	flex-direction: row-reverse;
+	margin-top: 0;
+}
+
+.person .fallback {
+	min-width: 200px;
+	min-height: 200px;
+	background-color: var(--orange);
+	margin-right: var(--paddingInside);
+	@media (max-width: 767px) {
+		margin-right: 0;
+		margin-bottom: var(--paddingInside);
+	}
+}
+
+.person > img {
+	min-width: 200px !important;
+	max-width: 200px !important;
+	height: 200px !important;
+	margin-right: var(--paddingOutside) !important;
+	margin-left: 0 !important;
+	object-fit: cover;
+	@media (max-width: 767px) {
+		margin-right: 0 !important;
+		margin-left: 0 !important;
+	}
+}
+
+.person:nth-of-type(1) > img, .person:nth-of-type(3) > img, .person:nth-of-type(5) > img, .person:nth-of-type(7) > img {
+	margin-right: 0 !important;
+	margin-left: var(--paddingOutside) !important;
+}
+
+.person > img + div {
+	display: flex;
+	flex-direction: column;
+	max-width: var(--personWidth);
+	@media (max-width: 767px) {
+		margin: var(--paddingInside) 0;
+		padding: 0 var(--paddingInside);
+	}
+}
+
+.person > img + div  h3 {
+	color: var(--orange);
+	text-align: left;
+	margin: 0 0 var(--paddingInside) 0;
+	font-size: 30px;
+	@media (max-width: 767px) {
+		text-align: center;
+	}
+}
+
+.person > img + div  h4 {
+	color: var(--black);
+	text-align: left;
+	margin: 0 0 var(--paddingInside) 0;
+	font-size: 24px;
+	font-weight: normal;
+	font-style: italic;
+	@media (max-width: 767px) {
+		text-align: center;
+	}
+}
+
+.person > img + div  p {
+	font-size: var(--fontSize);
+	line-height: var(--lineHeight);
+}

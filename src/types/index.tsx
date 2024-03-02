@@ -35,3 +35,12 @@ export interface EventRecord {
   link: URL;
   googleCalendarLink: URL;
 }
+
+export interface PersonRecord {
+  id: string;
+  name: string;
+  type: "team" | "collaborator";
+  image: Image;
+  title: string;
+  bio: string;
+}

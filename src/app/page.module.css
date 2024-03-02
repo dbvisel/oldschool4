@@ -20,7 +20,7 @@ article.frontpage {
 
 .frontpage section:first-of-type {
 	background-color: var(--orange);
-	min-height: calc(100vh - var(--header-height));
+	min-height: calc(100vh - var(--headerHeight));
 	border-top-color: var(--white);
 
 }

@@ -7,7 +7,7 @@ article.resourcePage {
 	justify-content: flex-start;
 	min-height: 100vh;
 	padding-top: var(--paddingDouble);
-	--font-size: 20px;
+	--fontSize: 20px;
 }
 
 .resourcePage h2 {
@@ -79,7 +79,7 @@ article.resourcePage {
 	grid-template-columns: var(--headerWidth) calc(100% - var(--headerWidth));
 	grid-gap: 0 var(--paddingInside);
 	grid-auto-rows: min-content;
-	font-size: var(--font-size);
+	font-size: var(--fontSize);
 	@media (max-width: 767px) {
 		grid-template-columns: 1fr;
 	}
@@ -136,7 +136,7 @@ article.resourcePage {
 
 .subresources h3 {
 	color: var(--orange);
-	font-size: calc(var(--font-size) * 1.5);
+	font-size: calc(var(--fontSize) * 1.5);
 	text-transform: uppercase;
 
 }

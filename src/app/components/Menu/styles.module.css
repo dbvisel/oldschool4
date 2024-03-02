@@ -2,7 +2,7 @@
 	display: flex;
 	justify-content: space-between;
 	width: 100%;
-	height: var(--header-height);
+	height: var(--headerHeight);
 	padding: var(--paddingOutside);
 	color: var(--white);
 	align-items: flex-end;
@@ -49,7 +49,7 @@
 	flex-direction: column;
 	align-items: flex-start;
 	position: fixed;
-	top: var(--header-height);
+	top: var(--headerHeight);
 	padding: var(--paddingInside);
 	min-width: 300px;
 }

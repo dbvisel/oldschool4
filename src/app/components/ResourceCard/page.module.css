@@ -24,7 +24,7 @@
 }
 
 .card h2 {
-	font-size: var(--font-size) !important;
+	font-size: var(--fontSize) !important;
 	margin: var(--paddingInside) 0 0 0;
 	text-align: center;
 	text-transform: uppercase;
