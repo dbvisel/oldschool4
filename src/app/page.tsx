@@ -1,9 +1,9 @@
 import { Suspense } from "react";
 import TopResources, { LoadingTopResources } from "./components/TopResources";
-// import { ErrorBoundary } from "react-error-boundary";
 import styles from "./page.module.css";
 
-export const dynamic = "force-dynamic";
+// (this was added to make search work)
+// export const dynamic = "force-dynamic";
 
 const HomePage = () => {
   return (
