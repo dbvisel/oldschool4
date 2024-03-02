@@ -1,21 +1,25 @@
 .card {
-	background-color: var(--orange);
-	border: 1px solid var(--black);
-	color: var(--white);
+	--borderRadius: 8px;
+	--borderWidth: 5px;
+	background-color: var(--white);
+	border: var(--borderWidth) solid var(--orange);
+	color: var(--orange);
 	padding: var(--inside-padding);
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	border-radius: 4px;
+	border-radius: var(--borderRadius);
 	max-width: calc(var(--imageWidth) + var(--inside-padding) * 2);
 	box-sizing: border-box;
 	height: max-content;
 	width: min-content;
 	min-width: 100%;
+	box-shadow: 0 0 4px var(--orange);
+	width: calc(240px + calc(var(--inside-padding) * 2) + calc(var(--borderWidth) * 2));
 }
 
 .card a {
-	color: var(--white);
+	color: var(--orange);
 	line-height: 0;
 }
 
@@ -24,4 +28,8 @@
 	margin: var(--inside-padding) 0 0 0;
 	text-align: center;
 	text-transform: uppercase;
+}
+
+.card img {
+	border-radius: var(--borderRadius);
 }
