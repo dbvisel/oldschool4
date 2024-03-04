@@ -23,7 +23,7 @@
   --lineHeight: 28px;
 	--personWidth: 500px;
   display: flex;
-  margin-bottom: var(--paddingDouble);
+  margin-bottom: calc(var(--paddingDouble) * 2);
 	@media (max-width: 767px) {
     --fontSize: 16px;
     --lineHeight: 24px;

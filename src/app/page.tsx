@@ -1,6 +1,8 @@
 import { Suspense } from "react";
+import Link from "next/link";
 import TopResources, { LoadingTopResources } from "./components/TopResources";
 import styles from "./page.module.css";
+import aboutStyles from "@/app/about/page.module.css";
 
 // (this was added to make search work)
 // export const dynamic = "force-dynamic";
@@ -15,9 +17,37 @@ const HomePage = () => {
       <Suspense fallback={<LoadingTopResources />}>
         <TopResources />
       </Suspense>
-      <section>
-        <h2>About section?</h2>
-        <p>Short about section goes here, links to about page</p>
+      <section className={aboutStyles.aboutBlock}>
+        <div
+          style={{
+            maxWidth: 1024,
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            margin: "auto 0",
+          }}
+        >
+          <div>
+            <h2>What Is Old School?</h2>
+            <p>
+              Old School curates, creates, commissions and disseminates free
+              resources to educate people about ageism and how to end it; hosts
+              and facilitates spaces where age advocates around the world can
+              connect; collaborates with other pro-aging organizations; and
+              shows up for other social-justice movements.
+            </p>
+            <p>
+              Old School is working towards a world where everyone has the
+              opportunity to live long and to live well. We are advancing the
+              movement to dismantle ageism, and we are leveraging the fact that
+              everyone ages (and experiences age bias) in order to address the
+              intersectional nature of all oppression—and of all activism.{" "}
+              <strong>
+                <Link href={"/about"}>Learn more.</Link>
+              </strong>
+            </p>
+          </div>
+        </div>
       </section>
     </article>
   );
