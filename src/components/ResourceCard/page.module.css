@@ -1,0 +1,35 @@
+.card {
+	--borderRadius: 8px;
+	--borderWidth: 5px;
+	background-color: var(--white);
+	border: var(--borderWidth) solid var(--orange);
+	color: var(--orange);
+	padding: var(--paddingInside);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	border-radius: var(--borderRadius);
+	max-width: calc(var(--imageWidth) + var(--paddingInside) * 2);
+	box-sizing: border-box;
+	height: max-content;
+	width: min-content;
+	min-width: 100%;
+	box-shadow: 0 0 4px var(--orange);
+	width: calc(240px + calc(var(--paddingInside) * 2) + calc(var(--borderWidth) * 2));
+}
+
+.card a {
+	color: var(--orange);
+	line-height: 0;
+}
+
+.card h2 {
+	font-size: var(--fontSize) !important;
+	margin: var(--paddingInside) 0 0 0;
+	text-align: center;
+	text-transform: uppercase;
+}
+
+.card img {
+	border-radius: var(--borderRadius);
+}

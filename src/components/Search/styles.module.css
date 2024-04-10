@@ -1,0 +1,40 @@
+.search {
+	display: flex;
+	justify-content: center;
+	box-sizing: border-box;
+	position: relative;
+}
+
+.searchresults {
+	position: absolute;
+	left: 0;
+	top: 40px;
+	width: 400px;
+	display: none;
+	border: 1px solid var(--orange);
+	padding: var(--paddingInside);
+	box-sizing: border-box;
+	background-color: var(--white);
+}
+
+.searchresults:global(.on) {
+	display: block;
+}
+
+.searchresults :global(.ais-Hits-list) {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+.searchresults :global(.ais-Pagination-list)  {
+	list-style-type: none;
+	display:flex;
+	justify-content: center;
+}
+
+.pagination {
+	display: flex;
+	justify-content: center;
+	margin-top: 20px;
+}

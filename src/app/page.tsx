@@ -1,11 +1,13 @@
 import { Suspense } from "react";
 import Link from "next/link";
-import TopResources, { LoadingTopResources } from "./components/TopResources";
+import TopResources, { LoadingTopResources } from "../components/TopResources";
 import styles from "./page.module.css";
 import aboutStyles from "@/app/about/page.module.css";
 
 // (this was added to make search work)
 // export const dynamic = "force-dynamic";
+
+/* TODO: make snap scrolling happen */
 
 const HomePage = () => {
   return (

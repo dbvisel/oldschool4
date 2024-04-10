@@ -1,4 +1,4 @@
-import Event from "@/app/components/Event";
+import Event from "@/components/Event";
 import styles from "./page.module.css";
 import getCleanEvents from "@/lib/getEvents";
 

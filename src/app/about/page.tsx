@@ -1,5 +1,5 @@
 import Link from "next/link";
-import TheTeam from "@/app/components/TheTeam";
+import TheTeam from "@/components/TheTeam";
 import styles from "./page.module.css";
 
 export default function AboutPage() {

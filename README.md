@@ -2,7 +2,9 @@
 
 This is a redesign of the Old School site, working off of this: https://github.com/dbvisel/oldschool3
 
-This is using Next 13 and App Router. Will that make things more complicated? Maybe!
+This is using Next 14 and App Router. Will that make things more complicated? Maybe!
+
+Next 14: https://focusreactive.com/breaking-down-next-js-14/
 
 ## KNOWN ISSUES
 

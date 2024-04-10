@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import Menu from "./components/Menu";
-import Footer from "./components/Footer";
+import Menu from "../components/Menu";
+import Footer from "../components/Footer";
 import { Figtree } from "next/font/google";
 import "./globals.css";
 
