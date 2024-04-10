@@ -5,6 +5,12 @@ article.frontpage {
 	width: 100%;
 	padding: 0;
 	scroll-snap-type: y mandatory; /* is this not working? */
+	/* height: calc(100vh - var(--headerHeight));
+	position: fixed;
+	top: var(--headerHeight);
+	left: 0;
+	right: 0;
+	overflow-y: auto; */
 }
 
 .frontpage section {

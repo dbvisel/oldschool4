@@ -10,7 +10,7 @@ const ResourceCard = ({
   resource: ResourceItem;
   isSubResource: Boolean;
 }) => {
-  // console.log(resource);
+  console.log(resource);
   const thisLink = isSubResource
     ? resource.link
     : `/resource/${resource.slug}` || "";
@@ -32,9 +32,14 @@ const ResourceCard = ({
       ) : (
         <p>No image!</p>
       )}
-      <h2>
-        <Link href={thisLink || ""}>{resource.title}</Link>
-      </h2>
+      <div className={styles.bottomblock}>
+        <Link href={thisLink || ""}>
+          <h2>
+            <Link href={thisLink || ""}>{resource.title}</Link>
+          </h2>
+          <p className={styles.description}>{resource.shortDescription}</p>
+        </Link>
+      </div>
     </div>
   );
 };

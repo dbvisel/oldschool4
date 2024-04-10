@@ -20,7 +20,29 @@
 
 .card a {
 	color: var(--orange);
+	transition: 0.5s;
 	line-height: 0;
+}
+
+.card a:hover {
+	transform: scale(1.03);
+}
+
+.bottomblock {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.bottomblock > a {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	line-height: initial;
+}
+
+.bottomblock > a:hover {
+	font-weight: initial;
 }
 
 .card h2 {
@@ -32,4 +54,11 @@
 
 .card img {
 	border-radius: var(--borderRadius);
+}
+
+p.description {
+	font-size: 90% !important;
+	color: var(--black);
+	margin-top: var(--paddingInside);
+	text-align: center;
 }
