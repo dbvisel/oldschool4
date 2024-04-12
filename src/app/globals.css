@@ -47,6 +47,7 @@ body {
   color: var(--text-color);
   background: var(--background-color);
 	width: 100vw;
+	overflow: hidden;
 }
 
 a {
@@ -58,26 +59,35 @@ a:hover {
 		font-weight: bold;
 }
 
-.main {
+#mainWrapper {
   display: flex;
-  flex-direction: column;
-  /* /* justify-content: space-between; */
-  align-items: center; 
+	position: fixed;
+	top: var(--headerHeight);
+	left: 0;
+	right: 0;
+	height: calc(100% - var(--headerHeight));
   min-height: calc(100vh - var(--headerHeight));
-	/* padding: var(--paddingOutside); */
-	background-color: var(--white);
+	width: 100%;
 	max-width: 100%;
+  flex-direction: column;
+  align-items: center; 
+	background-color: var(--white);
+	overflow-y: scroll;
+	scroll-snap-type: y mandatory; /* is this not working? */
 }
 
-.main article {
+#mainWrapper article {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	max-width: 100%;
+	scroll-snap-align: start;
 	padding: var(--paddingOutside);
 }
 
-.main article > h2 {
+
+
+#mainWrapper article > h2 {
 	font-size: calc(var(--fontSize) * 2);
 	line-height: var(--lineHeight);
 	text-align: center;
@@ -86,7 +96,7 @@ a:hover {
 	line-height: 1.25;
 }
 
-.main article p {
+#mainWrapper article p {
 	font-size: var(--fontSize);
 	line-height: var(--lineHeight);
 }

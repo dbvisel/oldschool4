@@ -1,35 +1,29 @@
-article.frontpage {
+article.frontpage { /* is this actually being used? */
   display: flex;
   flex-direction: column;
 	box-sizing: border-box;
 	width: 100%;
-	padding: 0;
-	scroll-snap-type: y mandatory; /* is this not working? */
-	/* height: calc(100vh - var(--headerHeight));
-	position: fixed;
-	top: var(--headerHeight);
-	left: 0;
-	right: 0;
-	overflow-y: auto; */
+	padding: 0 !important;
 }
 
 .frontpage section {
   justify-content: space-between;
   align-items: center;
 	padding: var(--paddingOutside);
-	min-height: 100vh;
+	min-height: calc(100vh - var(--headerHeight));
 	box-sizing: border-box;
-	border-top: 1px solid var(--black);
+	/* border-top: 1px solid var(--black); */
 	width: 100%;
 	display: flex;
 	flex-direction: column;
 	scroll-snap-align: start;
+	padding: var(--paddingOutside);
 }
 
 .frontpage section:first-of-type {
 	background-color: var(--orange);
 	min-height: calc(100vh - var(--headerHeight));
-	border-top-color: var(--white);
+	/* border-top-color: var(--white); */
 
 }
 

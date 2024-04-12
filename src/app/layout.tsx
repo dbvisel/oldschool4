@@ -30,8 +30,10 @@ export default function RootLayout({
     <html lang="en">
       <body className={figtree.className}>
         <Menu />
-        <main className="main">{children}</main>
-        <Footer />
+        <main id="mainWrapper">
+          {children}
+          <Footer />
+        </main>
       </body>
     </html>
   );
