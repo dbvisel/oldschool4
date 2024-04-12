@@ -53,6 +53,7 @@ export default function SearchPage({ serverState }: SearchPageProps) {
             <Configure hitsPerPage={10} />
 
             <SearchBox
+              className="searchbox"
               placeholder="Search Old School resources and events"
               // queryHook={(query, search) => setQuery(query)}
             />

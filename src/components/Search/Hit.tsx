@@ -1,4 +1,6 @@
 import Link from "next/link";
+import ResourceCard from "../ResourceCard";
+import styles from "./styles.module.css";
 
 interface ResourceRecord {
   title: string;
@@ -6,12 +8,19 @@ interface ResourceRecord {
 }
 
 const Hit = ({ hit }: { hit: any }) => {
+  // Need to get this into the right shape.
+  const cleanedHit = {
+    title: hit.title,
+    id: hit.id,
+    slug: hit.slug,
+    image: hit.image,
+    shortDescription: hit["Short_Description"],
+    link: hit["Resource_URL"],
+  };
   // console.log(hit);
   return (
-    <div>
-      <p>
-        <Link href={`/resource/${hit.slug}`}>{hit.title}</Link>
-      </p>
+    <div className={styles.hit}>
+      <ResourceCard resource={cleanedHit} isSubResource={false} />
     </div>
   );
 };
