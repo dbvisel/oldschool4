@@ -1,5 +1,6 @@
 import Image from "next/image";
-import Link from "next/link";
+// import Link from "next/link";
+import { Link } from "next-view-transitions";
 import getResourceData from "@/lib/getResourceData";
 import { possibleSlugs } from "@/utils/airtable";
 import { ResourceItem } from "@/types/index";

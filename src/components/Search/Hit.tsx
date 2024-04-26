@@ -1,4 +1,7 @@
-import Link from "next/link";
+"use client";
+
+// import Link from "next/link";
+import { Link } from "next-view-transitions";
 import ResourceCard from "../ResourceCard";
 import styles from "./styles.module.css";
 

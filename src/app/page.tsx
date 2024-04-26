@@ -1,5 +1,6 @@
 import { Suspense } from "react";
-import Link from "next/link";
+// import Link from "next/link";
+import { Link } from "next-view-transitions";
 import TopResources, { LoadingTopResources } from "../components/TopResources";
 import styles from "./page.module.css";
 import aboutStyles from "@/app/about/page.module.css";

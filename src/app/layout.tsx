@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { ViewTransitions } from "next-view-transitions";
 import Menu from "../components/Menu";
 import Footer from "../components/Footer";
 import { Figtree } from "next/font/google";
@@ -27,14 +28,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={figtree.className}>
-        <Menu />
-        <main id="mainWrapper">
-          {children}
-          <Footer />
-        </main>
-      </body>
-    </html>
+    <ViewTransitions>
+      <html lang="en">
+        <body className={figtree.className}>
+          <Menu />
+          <main id="mainWrapper">
+            {children}
+            <Footer />
+          </main>
+        </body>
+      </html>
+    </ViewTransitions>
   );
 }

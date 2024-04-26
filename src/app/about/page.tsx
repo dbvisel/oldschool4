@@ -1,4 +1,5 @@
-import Link from "next/link";
+// import Link from "next/link";
+import { Link } from "next-view-transitions";
 import TheTeam from "@/components/TheTeam";
 import styles from "./page.module.css";
 
