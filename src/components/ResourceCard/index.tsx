@@ -11,7 +11,7 @@ const ResourceCard = ({
   resource: ResourceItem;
   isSubResource: Boolean;
 }) => {
-  console.log(resource);
+  // console.log(resource);
   const thisLink = isSubResource
     ? resource.link
     : `/resource/${resource.slug}` || "";

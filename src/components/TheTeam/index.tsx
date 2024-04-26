@@ -21,8 +21,9 @@ const TheTeam = async () => {
               priority
             />
             <div>
-              <h3>{person.name}</h3>
-              <h4>{person.title}</h4>
+              <h3>
+                {person.name} <span>{person.title}</span>
+              </h3>
               <p
                 dangerouslySetInnerHTML={{
                   __html: person.bio,
@@ -43,8 +44,9 @@ const TheTeam = async () => {
               height={person.image.height}
             />
             <div>
-              <h3>{person.name}</h3>
-              <h4>{person.title}</h4>
+              <h3>
+                {person.name} <span>{person.title}</span>
+              </h3>
               <p
                 dangerouslySetInnerHTML={{
                   __html: person.bio,

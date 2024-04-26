@@ -80,20 +80,26 @@
 .person > img + div  h3 {
 	color: var(--orange);
 	text-align: left;
-	margin: 0 0 var(--paddingInside) 0;
+	margin: 0 0 var(--paddingOutside) 0;
 	font-size: 30px;
+	line-height: 1.2;
+	display: inline-flex;
+	white-space: nowrap;
+	justify-content: space-between;
+	align-items: baseline;
 	@media (max-width: 767px) {
 		text-align: center;
 	}
 }
 
-.person > img + div  h4 {
+.person > img + div  h3 span {
 	color: var(--black);
 	text-align: left;
-	margin: 0 0 var(--paddingInside) 0;
-	font-size: 24px;
+	margin-left: 1em;
 	font-weight: normal;
 	font-style: italic;
+	font-size: 20px;
+	white-space: normal;
 	@media (max-width: 767px) {
 		text-align: center;
 	}

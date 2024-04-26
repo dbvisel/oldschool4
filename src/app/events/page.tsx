@@ -7,7 +7,7 @@ import getCleanEvents from "@/lib/getEvents";
 const EventsPage = async () => {
   const events = await getCleanEvents();
   return (
-    <article>
+    <article className="noscroll">
       <h2>Events page</h2>
       <h3>POWERED BY STEVEN FRAMPTON</h3>
       {events.length ? (

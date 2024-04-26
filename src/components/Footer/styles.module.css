@@ -6,3 +6,7 @@
 	padding: var(--paddingOutside);
 	scroll-snap-align: end;
 }
+
+.footer:global(.noscroll) {
+	scroll-snap-align: none;
+}

@@ -4,6 +4,7 @@ const Config = {
   useEventsSection: true,
   submitFormURL: `https://airtable.com/embed/shrfiHCYq00KUJoOY?backgroundColor=green`,
   turnOffSearch: false,
+  pathsWithoutSnapScrolling: ["/events", "/about"],
   siteURL:
     process.env.NODE_ENV === "production"
       ? "https://oldschool.info"

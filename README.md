@@ -36,12 +36,11 @@ Maybe: figure out how to cache blurPaths? How much time are we spending on that?
 
 ## Their feedback (25 April 2024)
 
-- For heading use logo where strapline aligns with the top of the S (the Expressive logo); would prefer that one be the default (rather than the one Paul has as Main Logo). If “Old School” aligns with top edge of logo rather than bottom, there’s more space for the strapline (and nav bar could be narrower)
+- DONE For heading use logo where strapline aligns with the top of the S (the Expressive logo); would prefer that one be the default (rather than the one Paul has as Main Logo). If “Old School” aligns with top edge of logo rather than bottom, there’s more space for the strapline (and nav bar could be narrower)
 - Orange is a bit drab but we like it
 - What to put on front? Above the fold - What are your ideas, Dan?
-	Picture of the team? Won’t get until this summer
-	“What People Are Saying” — foreground blurbs that speak to 		specific offerings/hubbitude (workshops, meet-ups, resources), 		include carousel if technically possible and works design-wise. 		Include pictures of people who give testimonials
-- New order of menu: Learn, Events, School Supplies, About, Hire Us, Subscribe, Donate
+	 - Picture of the team? Won’t get until this summer
+	 - “What People Are Saying” — foreground blurbs that speak to 		specific offerings/hubbitude (workshops, meet-ups, resources), 		include carousel if technically possible and works design-wise. 		Include pictures of people who give testimonials
 - (Reminder for reminder) We want a visual of where to go to see old old school and/or that we are still Old School
 - Do we need to rethink the way the resource cards work?
 - possible to have “see more” when one hovers over resource card if there’s a resource page with more info or contact or sub resources. If nothing is new, go directly to resource (in new tab)

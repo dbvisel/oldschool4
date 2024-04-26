@@ -5,8 +5,11 @@ import styles from "./page.module.css";
 
 export default function AboutPage() {
   return (
-    <article className={styles.about}>
-      <section className={styles.aboutBlock}>
+    <article className={styles.about} style={{ scrollSnapAlign: "none" }}>
+      <section
+        className={styles.aboutBlock}
+        style={{ scrollSnapAlign: "none" }}
+      >
         <div>
           <h2>What Is Old School?</h2>
           <p>
@@ -25,12 +28,12 @@ export default function AboutPage() {
           </p>
         </div>
       </section>
-      <section className={styles.theTeam}>
+      <section className={styles.theTeam} style={{ scrollSnapAlign: "none" }}>
         <div>
           <TheTeam />
         </div>
       </section>
-      <section>
+      <section style={{ scrollSnapAlign: "none" }}>
         <div>
           <h2>
             <Link href={"/origins"}>The Story Of Old School</Link>

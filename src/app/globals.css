@@ -85,6 +85,11 @@ a:hover {
 	padding: var(--paddingOutside);
 }
 
+#mainWrapper article.noscroll {
+	scroll-snap-align: none;
+}
+
+
 
 
 #mainWrapper article > h2 {

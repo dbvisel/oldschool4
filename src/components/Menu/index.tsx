@@ -48,19 +48,25 @@ const Menu = () => {
             <Link href="/events">Events</Link>
           </li>
           <li>
-            <Link href="/hire-us">Hire us</Link>
-          </li>
-          <li>
             <Link href="/school-supplies">School supplies</Link>
           </li>
           <li>
             <Link href="/about">About</Link>
           </li>
           <li>
+            <Link href="/hire-us">Hire us</Link>
+          </li>
+          <li>
             <Link href="/subscribe">Subscribe</Link>
           </li>
           <li>
-            <Link href="/donate">Donate</Link>
+            <Link
+              href="https://old-school-clearinghouse.raisely.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Donate
+            </Link>
           </li>
         </ul>
       </div>
