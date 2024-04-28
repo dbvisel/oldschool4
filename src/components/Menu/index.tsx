@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 // import Link from "next/link";
 import { Link } from "next-view-transitions";
@@ -11,8 +11,30 @@ import { definedTypes } from "../../utils/categories";
 
 // TODO: figure out what's actually in the menu!
 
+type RefObject = {
+  current: HTMLUListElement | null;
+};
+
 const Menu = () => {
   const [submenuShown, setSubmenuShown] = useState(false);
+  const wrapperRef = useRef(null);
+
+  const useOutsideAlerter = (ref: RefObject) => {
+    useEffect(() => {
+      const handleClickOutside = (event: MouseEvent) => {
+        if (ref.current && !ref.current.contains(event.target as HTMLElement)) {
+          setSubmenuShown(false);
+        }
+      };
+      document.addEventListener("mousedown", handleClickOutside);
+      return () => {
+        document.removeEventListener("mousedown", handleClickOutside);
+      };
+    }, [ref]);
+  };
+
+  useOutsideAlerter(wrapperRef);
+
   return (
     <header className={styles.header}>
       <Link href="/">
@@ -35,7 +57,7 @@ const Menu = () => {
               Learn
             </Link>
             {submenuShown && (
-              <ul onClick={() => setSubmenuShown(false)}>
+              <ul ref={wrapperRef} onClick={() => setSubmenuShown(false)}>
                 {definedTypes.map((type, index) => (
                   <li key={`menu-${index}`} onClick={(e) => e.preventDefault()}>
                     <Link href={`/category/${type.id}`}>{type.name}</Link>
