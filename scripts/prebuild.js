@@ -116,7 +116,7 @@ const prebuild = async () => {
       "Team cache not found or out of date. Downloading team images."
     );
     for (let i = 0; i < team.length; i++) {
-      if (team[i].fields["Attachments"].length) {
+      if (team[i].fields["Name"] && team[i].fields["Attachments"].length) {
         const thisAttachment = team[i].fields["Attachments"][0];
         const theUrl = thisAttachment.thumbnails.large.url; // because this is 200 x 200
         const theFilename = team[i].id;

@@ -15,7 +15,9 @@ View transitions courtesy of this: https://github.com/shuding/next-view-transiti
  - also getting this: https://nextjs.org/docs/messages/static-page-generation-timeout
  - why does building take so long?
    - how much of that is because of Plaiceholder? Try building without running that.
+   - Should we save Plaiceholder base64s?
  - search form: work through this: https://frontendmasters.com/blog/the-html-css-and-svg-for-a-classic-search-form/
+ - Do we need a loading for category pages?
 
 ## TODO:
 
