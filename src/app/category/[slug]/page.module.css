@@ -16,3 +16,19 @@
 	overflow-x: wrap;
 	box-sizing: border-box;
 }
+
+.categoryHeader {
+	text-transform: uppercase;
+	line-height: 1.5;
+}
+
+.categoryHeader span {
+	color: var(--orange);
+	font-weight: normal;
+}
+
+.tagline {
+	text-align: center;
+	color: rgba(0,0,0,0.5);
+	/* font-style: italic; */
+}

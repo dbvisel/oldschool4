@@ -7,11 +7,12 @@ import styles from "./page.module.css";
 const ResourceCard = ({
   resource,
   isSubResource,
+  // isSearchResult = false,
 }: {
   resource: ResourceItem;
   isSubResource: Boolean;
+  // isSearchResult: Boolean;
 }) => {
-  // console.log(resource);
   const thisLink = isSubResource
     ? resource.link
     : `/resource/${resource.slug}` || "";

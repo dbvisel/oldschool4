@@ -4,7 +4,7 @@ require("dotenv").config({
   path: `.env.${process.env.NODE_ENV || "development"}`,
 });
 
-const testMode = true; // If this is true, we don't actually send the records to Algolia. If false, we do.
+const testMode = false; // If this is true, we don't actually send the records to Algolia. If false, we do.
 const addSubresources = true; // If this is true, subresources will be added to the index. If false, they will not be added.
 
 (async function () {
@@ -66,7 +66,7 @@ const addSubresources = true; // If this is true, subresources will be added to 
       .filter((x) =>
         x.fields["Types"] ? x.fields["Types"].indexOf("Secret") < 0 : true
       ); // this is to hide the old school record itself
-    const mappedRecords = basicRecords.map((x) => {
+    const mappedRecords = basicRecords.map((x, index) => {
       const parentSlug =
         x.fields.Slug ||
         encodeURIComponent(
@@ -91,10 +91,11 @@ const addSubresources = true; // If this is true, subresources will be added to 
             const thisRecord = records.find((x) => x.id === y);
             if (
               thisRecord.fields["Is this a subresource?"] &&
-              !Boolean(thisRecord.fields["Doesn't appear in search"])
+              !Boolean(thisRecord.fields["Doesn't appear in search"]) &&
+              thisRecord.fields.Status === "publish"
             ) {
               // Only add subresources that are hidden
-
+              console.log(thisRecord.fields.Title);
               subResoucesIdMemo.push(y);
               const thisPage = {
                 objectID: thisRecord.id,
@@ -114,6 +115,16 @@ const addSubresources = true; // If this is true, subresources will be added to 
                 Title: thisRecord.fields.Title,
                 Types: thisRecord.fields.Types,
                 Subresource: [],
+                image: thisRecord.fields.Image
+                  ? {
+                      width: thisRecord.fields.Image[0].width,
+                      height: thisRecord.fields.Image[0].height,
+                      id: thisRecord.id,
+                      extension: thisRecord.fields.Image[0].filename
+                        .split(".")
+                        .pop(),
+                    }
+                  : {},
               };
               // add these to subResourcePages
               subResourcePages.push(thisPage);
@@ -137,6 +148,14 @@ const addSubresources = true; // If this is true, subresources will be added to 
         Contact_info_link: x.fields["Contact info link"] || "",
         Contact_info_phone: x.fields["Contact info phone"] || "",
         Description: x.fields.Description,
+        image: x.fields.Image
+          ? {
+              width: x.fields.Image[0].width,
+              height: x.fields.Image[0].height,
+              id: x.id,
+              extension: x.fields.Image[0].filename.split(".").pop(),
+            }
+          : {},
         Location: x.fields.Location || "",
         Resource_URL: x.fields["Resource URL"],
         Short_Description: x.fields["Short Description"],

@@ -9,7 +9,7 @@ const EventsPage = async () => {
   return (
     <article className="noscroll">
       <h2>Events page</h2>
-      <h3>POWERED BY STEVEN FRAMPTON</h3>
+      <h3 className={styles.tagline}>POWERED BY STEVEN FRAMPTON</h3>
       {events.length ? (
         events.map((event) => <Event event={event} key={event.id} />)
       ) : (

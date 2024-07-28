@@ -23,8 +23,8 @@ View transitions courtesy of this: https://github.com/shuding/next-view-transiti
 
 Maybe: figure out how to cache blurPaths? How much time are we spending on that?
 
- - [ ] get search working
-   - [ ] get resource component into the results
+ - [x] get search working
+   - [x] get resource component into the results
    - [ ] get events into search (second index?)
  - [ ] import pages
    - [ ] front page: 12 newest resources on front page below the fold, some kind of splash above, some kind of about below

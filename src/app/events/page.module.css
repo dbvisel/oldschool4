@@ -2,3 +2,9 @@
 	text-align: center;
 	margin: var(--paddingOutside);
 }
+
+.tagline {
+	margin-top: calc(0px - var(--paddingInside));
+	margin-bottom: var(--paddingOutside);
+	font-weight: normal;
+}

@@ -1,7 +1,5 @@
 "use client";
 
-// import Link from "next/link";
-import { Link } from "next-view-transitions";
 import ResourceCard from "../ResourceCard";
 import styles from "./styles.module.css";
 
@@ -11,19 +9,28 @@ interface ResourceRecord {
 }
 
 const Hit = ({ hit }: { hit: any }) => {
-  // Need to get this into the right shape.
   const cleanedHit = {
-    title: hit.title,
+    title: hit["Title"],
     id: hit.id,
     slug: hit.slug,
-    image: hit.image,
+    image: {
+      path: `/images/resources/${hit.image?.id}.${hit.image?.extension}`,
+      blurPath: `/Images/resources/${hit.image?.id}.${hit.image?.extension}`,
+      width: hit.image?.width,
+      height: hit.image?.height,
+      alt: hit["Short_Description"] || hit.title || "",
+    },
     shortDescription: hit["Short_Description"],
     link: hit["Resource_URL"],
   };
-  // console.log(hit);
+
   return (
     <div className={styles.hit}>
-      <ResourceCard resource={cleanedHit} isSubResource={false} />
+      <ResourceCard
+        resource={cleanedHit}
+        isSubResource={false}
+        // isSearchResult={true}
+      />
     </div>
   );
 };

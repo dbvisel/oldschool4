@@ -2,8 +2,19 @@
 	border: 4px solid var(--orange);
 	background-color: var(--white);
 	color: var(--black);
-	margin-bottom: var(--paddingOutside);
-	max-width: 800px;
+	margin: calc(var(--paddingOutside) * 2) 0;
+	max-width: min(100%, 800px);
+	transform: rotate(1deg);
+	transition: 0.5s;
+	box-shadow: 5px 5px 10px rgb(211, 113, 28, 0.5);
+}
+
+.event:nth-child(odd) {
+	transform: rotate(-1deg);
+}
+
+.event:hover {
+	transform: rotate(0deg);
 }
 
 .event header {
@@ -15,11 +26,27 @@
 	align-items: center;
 }
 
+.event header h3 {
+	flex: 2;
+	color: var(--white);
+}
+
 .event header a {
 	background-color: var(--white);
 	margin-left: auto;
 	border-radius: 12px;
 	padding: var(--paddingInside) var(--paddingOutside);
+	max-width: 100%;
+	text-transform: uppercase;
+	font-size: 16px;
+	@media screen and (max-width: 1279px) {
+		padding: var(--paddingInside);
+	}
+	@media screen and (max-width: 1023px) {
+		flex:1;
+		font-size: 14px;
+		text-align: center;
+	}
 }
 
 .eventbody {

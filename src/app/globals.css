@@ -15,14 +15,20 @@
 	--headerHeight: 150px;
 	--fontSize: 20px;
 	--lineHeight: 1.5;
+	--mainBlockWidth: 1280px;
+
 
 	/* this is old below: */
 
-	--max-width: 1100px;
   --border-radius: 12px;
-  --font-mono: ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono",
-    "Roboto Mono", "Oxygen Mono", "Ubuntu Monospace", "Source Code Pro",
-    "Fira Mono", "Droid Sans Mono", "Courier New", monospace;
+	@media screen and (max-width: 1279px) {
+		--mainBlockWidth: 100%;
+	}
+	@media screen and (max-width: 1023px) {
+		--paddingOutside: 10px;
+		--paddingInside: 5px;
+		--fontSize: 16px;
+	}
 }
 
 /* @media (prefers-color-scheme: dark) {

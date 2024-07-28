@@ -6,13 +6,14 @@ import {
   InstantSearchSSRProvider,
   getServerState,
   SearchBox,
-  Hits,
-  Pagination,
   Configure,
 } from "react-instantsearch";
+import { Highlight, useInfiniteHits, Snippet } from "react-instantsearch";
+
 import type { InstantSearchProps } from "react-instantsearch";
 import algoliasearch from "algoliasearch/lite";
 import { InstantSearchNext } from "react-instantsearch-nextjs";
+import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
 
 import Hit from "./Hit";
 
@@ -25,6 +26,37 @@ const searchClient = algoliasearch(
 
 type SearchPageProps = {
   serverState?: InstantSearchServerState;
+};
+
+const InfiniteHits2 = (props: any) => {
+  const { hits } = useInfiniteHits(props);
+
+  return (
+    <div className={styles.hitwrapper}>
+      <ResponsiveMasonry
+        columnsCountBreakPoints={{
+          262: 1,
+          544: 2,
+          826: 3,
+          1108: 4,
+          1390: 4,
+          1672: 5,
+          1954: 6,
+          2236: 7,
+        }}
+        className={styles.cardHolder}
+      >
+        <Masonry gutter={"var(--paddingOutside)"}>
+          {hits.length ? (
+            hits.map((hit) => <Hit key={hit.id} hit={hit} />)
+          ) : (
+            <p className={styles.notFound}>Nothing found, sorry!</p>
+          )}
+        </Masonry>
+      </ResponsiveMasonry>
+      <div style={{ height: "var(--paddingOutside)" }} />
+    </div>
+  );
 };
 
 export default function SearchPage({ serverState }: SearchPageProps) {
@@ -60,8 +92,8 @@ export default function SearchPage({ serverState }: SearchPageProps) {
             <div
               className={`${styles.searchresults} ${currentQuery.length ? "on" : ""}`}
             >
-              <Hits hitComponent={Hit} />
-              <Pagination />
+              <h2>Search Results</h2>
+              <InfiniteHits2 hitComponent={Hit} />
             </div>
           </InstantSearchNext>
         </InstantSearchSSRProvider>

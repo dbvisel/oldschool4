@@ -15,8 +15,10 @@ const CategoryPage = async ({
   return (
     <article className={styles.category}>
       <header>
-        <h2>Category: {thisCategory.name}</h2>
-        <p>{thisCategory.tag}</p>
+        <h2 className={styles.categoryHeader}>
+          <span>Category:</span> {thisCategory.name}
+        </h2>
+        <p className={styles.tagline}>{thisCategory.tag}</p>
       </header>
       <CardHolder resources={resources} areSubResources={false} />
     </article>

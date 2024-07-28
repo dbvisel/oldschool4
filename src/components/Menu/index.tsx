@@ -15,6 +15,8 @@ type RefObject = {
   current: HTMLUListElement | null;
 };
 
+const noSupplies = definedTypes.filter((x) => x.id !== "supplies");
+
 const Menu = () => {
   const [submenuShown, setSubmenuShown] = useState(false);
   const wrapperRef = useRef(null);
@@ -37,60 +39,68 @@ const Menu = () => {
 
   return (
     <header className={styles.header}>
-      <Link href="/">
-        <Image src={logo} alt="old school" height={100} priority />
-      </Link>
-      <div className={styles.rightSide}>
-        <Search />
-        <ul className={styles.menu}>
-          <li>
-            <Link
-              href="/#"
-              // onMouseEnter={()=>setSubmenuShown(true)}
-              // onMouseLeave={()=>setSubmenuShown(false)}
-              onClick={(e) => {
-                e.preventDefault();
-                setSubmenuShown(!submenuShown);
-              }}
-              className={submenuShown ? styles.active : ""}
-            >
-              Learn
-            </Link>
-            {submenuShown && (
-              <ul ref={wrapperRef} onClick={() => setSubmenuShown(false)}>
-                {definedTypes.map((type, index) => (
-                  <li key={`menu-${index}`} onClick={(e) => e.preventDefault()}>
-                    <Link href={`/category/${type.id}`}>{type.name}</Link>
-                  </li>
-                ))}
-              </ul>
-            )}
-          </li>
-          <li>
-            <Link href="/events">Events</Link>
-          </li>
-          <li>
-            <Link href="/school-supplies">School supplies</Link>
-          </li>
-          <li>
-            <Link href="/about">About</Link>
-          </li>
-          <li>
-            <Link href="/hire-us">Hire us</Link>
-          </li>
-          <li>
-            <Link href="/subscribe">Subscribe</Link>
-          </li>
-          <li>
-            <Link
-              href="https://old-school-clearinghouse.raisely.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Donate
-            </Link>
-          </li>
-        </ul>
+      <div className={styles.innerHeader}>
+        <Link href="/" className={styles.logo}>
+          <Image src={logo} alt="old school" height={100} priority />
+        </Link>
+        <div className={styles.rightSide}>
+          <Search />
+          <ul className={styles.menu}>
+            <li>
+              <Link
+                href="/#"
+                // onMouseEnter={()=>setSubmenuShown(true)}
+                // onMouseLeave={()=>setSubmenuShown(false)}
+                onClick={(e) => {
+                  e.preventDefault();
+                  setSubmenuShown(!submenuShown);
+                }}
+                className={submenuShown ? styles.active : ""}
+              >
+                Learn
+              </Link>
+              {submenuShown && (
+                <ul ref={wrapperRef} onClick={() => setSubmenuShown(false)}>
+                  {noSupplies.map((type, index) => (
+                    <li
+                      key={`menu-${index}`}
+                      onClick={(e) => e.preventDefault()}
+                    >
+                      <Link href={`/category/${type.id}`}>{type.name}</Link>
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </li>
+            <li>
+              <Link href="/events">Events</Link>
+            </li>
+            <li>
+              <Link href="/school-supplies">School supplies</Link>
+            </li>
+            <li>
+              <Link href="/testimonials">Testimonials</Link>
+            </li>
+            <li>
+              <Link href="/about">About</Link>
+            </li>
+            <li>
+              <Link href="/hire-us">Hire us</Link>
+            </li>
+            <li>
+              <Link href="/subscribe">Subscribe</Link>
+            </li>
+            <li>
+              <Link
+                href="https://old-school-clearinghouse.raisely.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Donate
+              </Link>
+            </li>
+          </ul>
+        </div>
       </div>
     </header>
   );

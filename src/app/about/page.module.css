@@ -24,7 +24,7 @@
 }
 
 .about section > div {
-	max-width: 1024px;
+	max-width: calc(var(--mainBlockWidth) + var(--paddingOutside) * 2);
 }
 
 .aboutBlock {
