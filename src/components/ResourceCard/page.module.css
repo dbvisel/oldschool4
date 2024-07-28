@@ -14,8 +14,14 @@
 	height: max-content;
 	width: min-content;
 	min-width: 100%;
-	box-shadow: 0 0 4px var(--orange);
+	box-shadow: 0 0 4px rgba(211, 113, 28, 0.75);
 	width: calc(240px + calc(var(--paddingInside) * 2) + calc(var(--borderWidth) * 2));
+	border: none;
+	border-radius: 0;
+}
+
+.card:hover {
+	box-shadow: 0 0 8px rgba(211, 113, 28, 0.75);
 }
 
 .card a {
