@@ -61,6 +61,7 @@ a {
   text-decoration: none;
 }
 
+/* should this really be a global style? */
 a:hover {
 		font-weight: bold;
 }
@@ -112,7 +113,16 @@ a:hover {
 	line-height: var(--lineHeight);
 }
 
+.pageheader {
+	text-transform: uppercase;
+	color: var(--orange);
+	line-height: 1.5;
+}
 
+.pageheader span {
+	color: var(--black);
+	font-weight: normal;
+}
 
 /* @media (prefers-color-scheme: dark) {
   html {

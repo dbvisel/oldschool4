@@ -92,7 +92,9 @@ export default function SearchPage({ serverState }: SearchPageProps) {
             <div
               className={`${styles.searchresults} ${currentQuery.length ? "on" : ""}`}
             >
-              <h2>Search Results</h2>
+              <h2 className="pageheader">
+                <span>Search Results</span>
+              </h2>
               <InfiniteHits2 hitComponent={Hit} />
             </div>
           </InstantSearchNext>

@@ -13,7 +13,7 @@ const TopResources = async () => {
 
   return resources.length ? (
     <section>
-      <h2>Newest resources</h2>
+      <h2 className="pageheader">Newest resources</h2>
       <CardHolder resources={resources} />
     </section>
   ) : (

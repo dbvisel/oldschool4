@@ -14,7 +14,9 @@ const HomePage = () => {
   return (
     <article className={styles.frontpage}>
       <section>
-        <h2>Home</h2>
+        <h2 className="pageheader">
+          <span>Home</span>
+        </h2>
         <p>(above the fold content goes here)</p>
       </section>
       <Suspense fallback={<LoadingTopResources />}>

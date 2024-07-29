@@ -21,7 +21,7 @@ const ResourceCard = ({
       {resource?.image?.path &&
       resource.image.width &&
       resource.image.height ? (
-        <Link href={thisLink || ""}>
+        <Link href={thisLink || ""} className="imagelink">
           <Image
             src={resource.image.path}
             alt={resource.image.alt || ""}
@@ -36,9 +36,7 @@ const ResourceCard = ({
       )}
       <div className={styles.bottomblock}>
         <Link href={thisLink || ""}>
-          <h2>
-            <Link href={thisLink || ""}>{resource.title}</Link>
-          </h2>
+          <h2>{resource.title}</h2>
           <p className={styles.description}>{resource.shortDescription}</p>
         </Link>
       </div>

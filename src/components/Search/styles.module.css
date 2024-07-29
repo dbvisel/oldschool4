@@ -125,6 +125,7 @@
 	max-height: 100%;
 	overflow-y: scroll;
 	padding-bottom: var(--paddingOutside);
+	padding-top: 2px;
 }
 
 .searchresults :global(.ais-InfiniteHits-list) {
