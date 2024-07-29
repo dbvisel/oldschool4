@@ -30,6 +30,12 @@
 	margin-bottom: var(--paddingInside);
 }
 
+.subscribediv p strong {
+	text-transform: uppercase;
+	font-weight: normal;
+	letter-spacing: 1px;
+}
+
 .subscribediv form {
 	display: flex;
 	flex-direction: column;
@@ -70,6 +76,7 @@
 	padding: 0 12px;
 	color: var(--orange);
 	background-color: var(--white);
+	text-transform: uppercase;
 
 }
 
@@ -122,4 +129,55 @@
 
 .socialList li {
 	margin: 0 10px;
+}
+
+.linkFooter {
+	display: flex;
+  justify-content: center;
+  padding: var(--paddingInside) var(--paddingOutside);
+  background-color: var(--white);
+  color: var(--orange);
+	width: 100vw;
+	margin-top: var(--paddingOutside);
+	margin-left: calc(0px - var(--paddingOutside));
+	margin-right: calc(0px - var(--paddingOutside));
+	margin-bottom: calc(0px - var(--paddingOutside));
+}
+
+.linkFooter ul {
+	margin: 0;
+	padding: 0;
+	display: inline-block;
+	@media (max-width: 767px) {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+}
+
+.linkFooter ul li {
+	margin: 0;
+	display: inline-block;
+	text-transform: uppercase;
+	@media (max-width: 767px) {
+		margin: 0 16px;
+	}
+}
+
+.linkFooter ul li a {
+	text-decoration: none;
+	transition: 0.5s;
+	user-select: none;
+}
+
+.linkFooter ul li a:hover {
+		letter-spacing: 0.5px;
+}
+
+
+.linkFooter ul li + li {
+	margin-left: 1em;
+	@media (max-width: 767px) {
+		margin-left: 0;
+	}
 }

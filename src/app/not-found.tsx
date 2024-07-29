@@ -1,5 +1,9 @@
 const NotFoundPage = () => {
-	return <h1>Page not found!!!!</h1>
-}
+  return (
+    <article>
+      <h2 className="pageheader">Page not found!</h2>
+    </article>
+  );
+};
 
-export default NotFoundPage
+export default NotFoundPage;

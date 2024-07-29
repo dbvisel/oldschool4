@@ -6,6 +6,7 @@ import MailchimpSubscribe from "react-mailchimp-subscribe";
 import Config from "@/config";
 import EmailListForm from "./EmailListForm";
 import SocialMediaLink from "./SocialMediaLink";
+import LinkFooter from "./LinkFooter";
 import FacebookIcon from "./images/icon_facebook.svg";
 import TwitterIcon from "./images/icon_twitter.svg";
 import LinkedInIcon from "./images/icon_linkedin.svg";
@@ -70,6 +71,7 @@ const Footer = () => {
           />
         </li>
       </ul>
+      <LinkFooter />
     </footer>
   );
 };

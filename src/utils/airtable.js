@@ -9,7 +9,7 @@ Airtable.configure({
 const base = Airtable.base(process.env.AIRTABLE_BASE_ID);
 
 const throttle = true; // If this is true, we only load 50 records
-const throttleLimit = 150; // Note that this number is actually higher than what's returned – some things are hidden
+const throttleLimit = 300; // Note that this number is actually higher than what's returned – some things are hidden
 
 // Reference a table
 const resourcesBase = base("oldschool");
