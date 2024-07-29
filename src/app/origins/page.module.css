@@ -7,12 +7,21 @@
 	text-align: center;
 }
 
+.aboutPage li {
+	font-size: var(--fontSize);
+	line-height: var(--lineHeight);
+}
+
 .aboutPage p + p {
 	text-indent: 1em;
 }
 
 .aboutPage img {
 	margin: var(--paddingOutside) 0;
+	@media (max-width: 800px) {
+		width: 100%;
+		height: auto;
+	}
 }
 
 .aboutPage img + img {
