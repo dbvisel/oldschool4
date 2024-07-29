@@ -5,7 +5,7 @@ import styles from "./page.module.css";
 export default function HireUsPage() {
   return (
     <article>
-      <h2>Hire us page</h2>
+      <h2 className="pageheader">Hire us</h2>
       <p>(content TK)</p>
       <p>
         <a href="/">Home</a>

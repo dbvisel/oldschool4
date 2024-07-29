@@ -26,11 +26,3 @@
 	color: var(--orange);
 	font-weight: normal;
 }
-
-.tagline {
-	text-align: center;
-	color: rgba(0,0,0,0.5);
-	text-transform: uppercase;
-	letter-spacing: 1px;
-	font-size: 95% !important;
-}

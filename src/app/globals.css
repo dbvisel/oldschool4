@@ -116,11 +116,21 @@ a:hover {
 .pageheader {
 	text-transform: uppercase;
 	color: var(--orange);
-	line-height: 1.5;
+	line-height: 1.5 !important;
+	font-size: calc(var(--fontSize) * 1.2) !important;
 }
 
 .pageheader span {
 	color: var(--black);
+	font-weight: normal;
+}
+
+.tagline {
+	text-align: center;
+	color: rgba(0,0,0,0.5);
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-size: 95% !important;
 	font-weight: normal;
 }
 
