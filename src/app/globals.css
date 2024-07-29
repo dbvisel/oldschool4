@@ -81,6 +81,7 @@ a:hover {
 	background-color: var(--white);
 	overflow-y: scroll;
 	scroll-snap-type: y mandatory; /* is this not working? */
+	min-height: calc(100vh - var(--headerHeight));
 }
 
 #mainWrapper article {
@@ -90,6 +91,8 @@ a:hover {
 	max-width: 100%;
 	scroll-snap-align: start;
 	padding: var(--paddingOutside);
+	height:fit-content;
+	margin-bottom: auto;
 }
 
 #mainWrapper article.noscroll {

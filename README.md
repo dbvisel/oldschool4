@@ -21,6 +21,8 @@ View transitions courtesy of this: https://github.com/shuding/next-view-transiti
 
 ## TODO:
 
+ - test whether subscribe actually works!
+
 Maybe: figure out how to cache blurPaths? How much time are we spending on that?
 
  - [x] get search working
