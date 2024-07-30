@@ -2,6 +2,7 @@ import { Suspense } from "react";
 // import Link from "next/link";
 import { Link } from "next-view-transitions";
 import TopResources, { LoadingTopResources } from "../components/TopResources";
+import FrontCarousel from "@/components/FrontCarousel";
 import styles from "./page.module.css";
 import aboutStyles from "@/app/about/page.module.css";
 
@@ -14,10 +15,32 @@ const HomePage = () => {
   return (
     <article className={styles.frontpage}>
       <section>
-        <h2 className="pageheader">
-          <span>Home</span>
-        </h2>
-        <p>(above the fold content goes here)</p>
+        <FrontCarousel>
+          <div
+            className={styles.emblaSlide}
+            style={{ backgroundColor: "var(--white" }}
+          >
+            Slide 1
+          </div>
+          <div
+            className={styles.emblaSlide}
+            style={{ backgroundColor: "var(--orange)" }}
+          >
+            Slide 2
+          </div>
+          <div
+            className={styles.emblaSlide}
+            style={{ backgroundColor: "var(--white)" }}
+          >
+            Slide 3
+          </div>
+          <div
+            className={styles.emblaSlide}
+            style={{ backgroundColor: "var(--orange)" }}
+          >
+            Slide 4
+          </div>
+        </FrontCarousel>
       </section>
       <Suspense fallback={<LoadingTopResources />}>
         <TopResources />
