@@ -36,6 +36,7 @@ const CardHolder = ({
             key={resource.id}
             resource={resource}
             isSubResource={areSubResources}
+            isEvent={false}
           />
         ))}
       </Masonry>

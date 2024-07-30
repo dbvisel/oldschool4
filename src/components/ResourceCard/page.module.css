@@ -69,3 +69,11 @@ p.description {
 	margin-top: var(--paddingInside);
 	text-align: center;
 }
+
+.eventHead {
+	color: var(--black);
+	font-weight: normal;
+	font-size: 90%;
+	letter-spacing: 2px;
+	margin-top: var(--paddingInside);
+}

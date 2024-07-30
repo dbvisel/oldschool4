@@ -31,6 +31,7 @@ const addSubresources = true; // If this is true, subresources will be added to 
 
   // Reference a table
   const resourcesBase = base("oldschool");
+  const eventsBase = base("EVENTS");
 
   // maps over the records, calling minifyRecord, giving us required data
   const getMinifiedRecords = async (records) => {
@@ -54,11 +55,61 @@ const addSubresources = true; // If this is true, subresources will be added to 
     return minifiedRecords;
   };
 
+  const getEvents = async () => {
+    const records = await eventsBase.select({}).all();
+    const minifiedRecords = await getMinifiedRecords(records);
+
+    const now = new Date();
+
+    const currentRecords = minifiedRecords
+      .filter((x) => x.fields.Title)
+      .filter((x) => x.fields.Description)
+      .filter((x) => x.fields.Status === "confirmed")
+      .filter((x) => {
+        if (x.fields.End) {
+          const end = new Date(x.fields.End);
+          return end > now;
+        }
+        // if there's no end, try using start
+        if (x.fields.Start) {
+          const start = new Date(x.fields.Start);
+          return start > now;
+        }
+        return true;
+      });
+
+    return currentRecords;
+  };
+
   const getRecordsForAlgolia = async () => {
-    const records = await getResources();
+    const resourceRecords = await getResources();
+    const eventRecords = await getEvents();
     const subResourcePages = [];
     const subResoucesIdMemo = [];
-    const basicRecords = records
+
+    const titleMemo = [];
+    const basicEventRecords = eventRecords
+      .map((x) => {
+        if (titleMemo.indexOf(x.fields.Title) > -1) {
+          console.error("Duplicate event title found: ", x.fields.Title);
+          return null;
+        }
+        titleMemo.push(x.fields.Title);
+        return {
+          id: x.id,
+          objectID: x.id,
+          resultType: "event",
+          title: x.fields.Title,
+          start: x.fields.Start,
+          end: x.fields.End,
+          description: x.fields.Description,
+          location: x.fields.Location,
+          link: x.fields["Event Link"],
+        };
+      })
+      .filter((x) => x !== null);
+
+    const basicResourceRecords = resourceRecords
       .filter((x) => x.fields.Title)
       .filter((x) => x.fields.Status === "publish")
       .filter((x) => x.fields["Hide?"] !== "yes")
@@ -66,12 +117,11 @@ const addSubresources = true; // If this is true, subresources will be added to 
       .filter((x) =>
         x.fields["Types"] ? x.fields["Types"].indexOf("Secret") < 0 : true
       ); // this is to hide the old school record itself
-    const mappedRecords = basicRecords.map((x, index) => {
+    const mappedResourceRecords = basicResourceRecords.map((x) => {
       const parentSlug =
         x.fields.Slug ||
         encodeURIComponent(
           x.fields.Title.toLowerCase()
-            .trim()
             .normalize("NFD")
             .replace(/[\u0300-\u036f]/g, "")
             .replace(/[?|.,/#!$%^&*;¿:{}'"“”‘’––=\-_`~()æœ]/g, "")
@@ -88,14 +138,14 @@ const addSubresources = true; // If this is true, subresources will be added to 
         // );
         subResourcesIdList.forEach((y) => {
           if (subResoucesIdMemo.indexOf(y) === -1) {
-            const thisRecord = records.find((x) => x.id === y);
+            const thisRecord = resourceRecords.find((x) => x.id === y);
             if (
               thisRecord.fields["Is this a subresource?"] &&
               !Boolean(thisRecord.fields["Doesn't appear in search"]) &&
               thisRecord.fields.Status === "publish"
             ) {
               // Only add subresources that are hidden
-              console.log(thisRecord.fields.Title);
+
               subResoucesIdMemo.push(y);
               const thisPage = {
                 objectID: thisRecord.id,
@@ -108,13 +158,6 @@ const addSubresources = true; // If this is true, subresources will be added to 
                 Contact_info_phone:
                   thisRecord.fields["Contact info phone"] || "",
                 Description: thisRecord.fields.Description,
-                Location: thisRecord.fields.Location || "",
-                Resource_URL: thisRecord.fields["Resource URL"],
-                Short_Description: thisRecord.fields["Short Description"],
-                Tags: thisRecord.fields.Tags,
-                Title: thisRecord.fields.Title,
-                Types: thisRecord.fields.Types,
-                Subresource: [],
                 image: thisRecord.fields.Image
                   ? {
                       width: thisRecord.fields.Image[0].width,
@@ -125,6 +168,13 @@ const addSubresources = true; // If this is true, subresources will be added to 
                         .pop(),
                     }
                   : {},
+                Location: thisRecord.fields.Location || "",
+                Resource_URL: thisRecord.fields["Resource URL"],
+                Short_Description: thisRecord.fields["Short Description"],
+                Tags: thisRecord.fields.Tags,
+                Title: thisRecord.fields.Title,
+                Types: thisRecord.fields.Types,
+                Subresource: [],
               };
               // add these to subResourcePages
               subResourcePages.push(thisPage);
@@ -162,12 +212,13 @@ const addSubresources = true; // If this is true, subresources will be added to 
         Tags: x.fields.Tags,
         Title: x.fields.Title,
         Types: x.fields.Types,
+        resultType: "resource",
         Subresource:
           typeof x.fields.Subresource === "undefined"
             ? []
             : x.fields.Subresource.map((y) => {
                 const thisID = y;
-                const thisRecord = records.find((x) => x.id === thisID);
+                const thisRecord = resourceRecords.find((x) => x.id === thisID);
                 return {
                   id: y,
                   data: {
@@ -181,11 +232,15 @@ const addSubresources = true; // If this is true, subresources will be added to 
       };
     });
     // console.log(mappedRecords.map((x) => x.title).join("\n"));
+    console.log("Event records to send: ", basicEventRecords.length);
     if (addSubresources) {
       console.log("Subresources to send: ", subResourcePages.length);
-      return mappedRecords.concat(subResourcePages);
+      return [
+        ...mappedResourceRecords.concat(subResourcePages),
+        ...basicEventRecords,
+      ];
     }
-    return mappedRecords;
+    return [...mappedResourceRecords, ...basicEventRecords];
   };
 
   try {
@@ -200,7 +255,7 @@ const addSubresources = true; // If this is true, subresources will be added to 
 
     // initialize the index with your index name
     if (testMode) {
-      console.log("Done. Records to send: ", transformed.length);
+      console.log("Done. Total records to send: ", transformed.length);
     } else {
       const index = client.initIndex("nextindex");
       // add the data to the index

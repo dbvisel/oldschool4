@@ -9,6 +9,28 @@ interface ResourceRecord {
 }
 
 const Hit = ({ hit }: { hit: any }) => {
+  if (hit.resultType === "event") {
+    const cleanedHit = {
+      title: hit.title,
+      id: hit.id,
+      shortDescription: hit.description,
+      slug: `/events/`,
+      image: {
+        id: hit.id,
+        extension: "",
+        width: 0,
+        height: 0,
+        alt: hit.title,
+        path: "",
+        blurPath: "",
+      },
+    };
+    return (
+      <div className={styles.hit}>
+        <ResourceCard resource={cleanedHit} isSubResource={false} isEvent />
+      </div>
+    );
+  }
   const cleanedHit = {
     title: hit["Title"],
     id: hit.id,
@@ -29,6 +51,7 @@ const Hit = ({ hit }: { hit: any }) => {
       <ResourceCard
         resource={cleanedHit}
         isSubResource={false}
+        isEvent={false}
         // isSearchResult={true}
       />
     </div>

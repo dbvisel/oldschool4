@@ -14,7 +14,6 @@
   },
   "dependencies": {
     "@plaiceholder/next": "^3.0.0",
-    "@styled-icons/fa-solid": "^10.47.0",
     "@types/node": "^20.14.12",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
