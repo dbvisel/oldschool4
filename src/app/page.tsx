@@ -15,32 +15,7 @@ const HomePage = () => {
   return (
     <article className={styles.frontpage}>
       <section>
-        <FrontCarousel>
-          <div
-            className={styles.emblaSlide}
-            style={{ backgroundColor: "var(--white" }}
-          >
-            Slide 1
-          </div>
-          <div
-            className={styles.emblaSlide}
-            style={{ backgroundColor: "var(--orange)" }}
-          >
-            Slide 2
-          </div>
-          <div
-            className={styles.emblaSlide}
-            style={{ backgroundColor: "var(--white)" }}
-          >
-            Slide 3
-          </div>
-          <div
-            className={styles.emblaSlide}
-            style={{ backgroundColor: "var(--orange)" }}
-          >
-            Slide 4
-          </div>
-        </FrontCarousel>
+        <FrontCarousel />
       </section>
       <Suspense fallback={<LoadingTopResources />}>
         <TopResources />

@@ -26,13 +26,3 @@ article.frontpage { /* is this actually being used? */
 	/* border-top-color: var(--white); */
 
 }
-
-.emblaSlide {
-  flex: 0 0 100%;
-  min-width: 0;
-	height: 100%;
-	padding: var(--paddingOutside);
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}

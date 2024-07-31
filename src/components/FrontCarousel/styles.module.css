@@ -1,72 +1,63 @@
-.wrapper {
-	height: calc(100% + calc(2 * var(--paddingOutside)));
-	width: 100vw;
-	margin-top: calc(0px - var(--paddingOutside));
-	margin-bottom: calc(0px - var(--paddingOutside));
-	position: relative;
-	--text-high-contrast-rgb-value: 49, 49, 49;
-	--detail-medium-contrast:rgb(234, 234, 234);
-	--detail-high-contrast:  rgb(192, 192, 192);
-	--text-body:  rgb(54, 49, 61);
-}
-
-.embla {
-  overflow: hidden;
+.emblaSlide {
+  flex: 0 0 100%;
+  min-width: 0;
 	height: 100%;
+	padding: var(--paddingOutside);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-size: cover;
+	background-position: center;	
+	flex-direction: column;
 }
 
-.emblaContainer {
-  display: flex;
-	height: 100%;
+.emblaSlide h2 {
+	font-size: 300%;
+	color: var(--white);
+	text-shadow: 0 0 10px var(--black);
+	transition: 0.5s;
+	/* mix-blend-mode: difference; */
 }
 
-
-.controls {
-	position: absolute;
-	bottom: var(--paddingOutside);
-	right: var(--paddingOutside);
-	display: grid;
-  grid-template-columns: auto 1fr;
-  justify-content: space-between;
-  gap: 1.2rem;
-  margin-top: 1.8rem;
+.emblaSlide p {
+	color: var(--white);
 }
 
-.controlButtons {
-	display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 0.6rem;
-  align-items: center;
+.emblaSlide h2 a {
+	color: var(--white) !important;
 }
 
-.controlButton {
-  -webkit-tap-highlight-color: rgba(var(--text-high-contrast-rgb-value), 0.5);
-  -webkit-appearance: none;
-  appearance: none;
-  background-color: transparent;
-  touch-action: manipulation;
-  display: inline-flex;
-  text-decoration: none;
-  cursor: pointer;
-  border: 0;
-  padding: 0;
-  margin: 0;
-  box-shadow: inset 0 0 0 0.2rem var(--detail-medium-contrast);
-  width: 3.6rem;
-  height: 3.6rem;
-  z-index: 1;
-  border-radius: 50%;
-  color: var(--text-body);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.emblaSlide h2 a:hover {
+	color: var(--black) !important;
+	text-shadow: 0 0 10px var(--white);
+
+	text-decoration: underline;
+}	
+
+.whatIsSlide {
+	max-width: 1024px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: auto 0;
+	--fontSize: 32px;
+	--lineHeight: 1.25;
 }
 
-.controlButton:disabled {
-  color: var(--detail-high-contrast);
+.whatIsSlide h2 {
+	font-size: 72px;
+  margin-bottom: 18px;
+	text-shadow: none;
+	color: var(--black);
+
 }
 
-.controlButtonSvg {
-		width: 35%;
-		height: 35%;
-	}
+.whatIsSlide p {
+	font-size: var(--fontSize);
+	line-height: var(--lineHeight);
+	color: var(--black);
+}
+
+.whatIsSlide p + p {
+	text-indent: 1em;
+}

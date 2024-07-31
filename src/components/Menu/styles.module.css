@@ -34,6 +34,7 @@
 
 .logo img {
 	user-select: none;
+	margin-bottom: -6px;
 	@media screen and (max-width: 1023px) {
 		height: 50px;
 	}
@@ -84,7 +85,7 @@
 }
 
 .menu > li + li {
-	margin-left: max(var(--paddingInside), 15px);
+	margin-left: max(var(--paddingInside), 20px);
 }
 
 .menu ul {

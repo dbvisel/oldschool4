@@ -6,7 +6,7 @@ import Image from "next/image";
 import { Link } from "next-view-transitions";
 import styles from "./styles.module.css";
 import Search from "../Search";
-import logo from "./horizontallogo.svg";
+import logo from "./horizontallogo-twoline.svg";
 import { definedTypes } from "../../utils/categories";
 
 // TODO: figure out what's actually in the menu!

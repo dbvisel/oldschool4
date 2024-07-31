@@ -1,19 +1,26 @@
 import { useEffect, useState } from "react";
 import { getQuotes } from "@/utils/airtable";
-import FrontCarousel from "@/components/FrontCarousel";
+import Carousel from "@/components/Carousel";
 import styles from "./page.module.css";
+
+// const getQuoteType = (quote: any) => {
+//   if (quote.fields.Offering && quote.fields.Offering.length) {
+//     return quote.fields.Offering[0];
+//   }
+// };
 
 export const LoadingTestimonials = () => (
   <section>
-    <h2>Loading testimonials...</h2>
+    <h2>Loading&nbsp;testimonials...</h2>
   </section>
 );
 
 export const TestimonialCarousel = async () => {
   const quotes = await getQuotes();
+  // console.log(quotes.map((x: any) => getQuoteType(x)));
 
   return quotes.length ? (
-    <FrontCarousel>
+    <Carousel>
       {quotes.map((quote: any) => (
         <div
           className={styles.emblaSlide}
@@ -29,7 +36,7 @@ export const TestimonialCarousel = async () => {
           )}
         </div>
       ))}
-    </FrontCarousel>
+    </Carousel>
   ) : (
     <LoadingTestimonials />
   );
