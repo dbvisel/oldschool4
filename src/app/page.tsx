@@ -1,6 +1,7 @@
 import { Suspense } from "react";
 // import Link from "next/link";
 import { Link } from "next-view-transitions";
+import { getQuotes } from "@/utils/airtable";
 import TopResources, { LoadingTopResources } from "../components/TopResources";
 import FrontCarousel from "@/components/FrontCarousel";
 import styles from "./page.module.css";
@@ -11,11 +12,14 @@ import aboutStyles from "@/app/about/page.module.css";
 
 /* TODO: make snap scrolling happen */
 
-const HomePage = () => {
+// Maybe: we need to have all loading happen here and "use client" on the things that consume them?
+
+const HomePage = async () => {
+  const quotes = await getQuotes();
   return (
     <article className={styles.frontpage}>
       <section>
-        <FrontCarousel />
+        <FrontCarousel quotes={quotes} />
       </section>
       <Suspense fallback={<LoadingTopResources />}>
         <TopResources />

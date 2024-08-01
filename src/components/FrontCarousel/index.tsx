@@ -1,11 +1,15 @@
+"use client";
+
 import Link from "next/link";
 import Carousel from "@/components/Carousel";
 import styles from "./styles.module.css";
+import { JustOneTestimonial } from "@/app/testimonials/JustOneTestimonial";
+
 // import image1 from "images/carousel/crescendo-1200px_web.jpg.webp";
 // import image2 from "images/carousel/happy-holi-color-splash-generative-ai-free-png.webp";
 // import image3 from "images/carousel/photo-1518837695005-2083093ee35b.jpeg";
 
-const FrontCarousel = () => {
+const FrontCarousel = (quotes: any) => {
   return (
     <Carousel>
       <div
@@ -66,6 +70,9 @@ const FrontCarousel = () => {
           <Link href="/origins">The Surprising History of Old School</Link>
         </h2>
       </div>
+      <JustOneTestimonial
+        quotes={quotes?.quotes?.length ? quotes.quotes : []}
+      />
       <div
         className={styles.emblaSlide}
         style={{ backgroundColor: "var(--white)" }}

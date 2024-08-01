@@ -1,13 +1,18 @@
 "use client";
 
-import { useCallback, ReactNode } from "react";
+import { useCallback, ReactNode, PropsWithChildren } from "react";
 import { EmblaCarouselType } from "embla-carousel";
 import Autoplay from "embla-carousel-autoplay";
 import useEmblaCarousel from "embla-carousel-react";
 import { PrevButton, NextButton, usePrevNextButtons } from "./CarouselButtons";
 import styles from "./styles.module.css";
 
-const Carousel = ({ children }: { children: ReactNode }) => {
+interface CarouselProps extends PropsWithChildren<any> {
+  noControls?: boolean;
+  children: ReactNode;
+}
+
+const Carousel = ({ children, noControls = false }: CarouselProps) => {
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, duration: 50 }, [
     Autoplay(),
   ]);
@@ -37,12 +42,20 @@ const Carousel = ({ children }: { children: ReactNode }) => {
         <div className={styles.emblaContainer}>{children}</div>
       </div>
 
-      <div className={styles.controls}>
-        <div className={styles.controlButtons}>
-          <PrevButton onClick={onPrevButtonClick} disabled={prevBtnDisabled} />
-          <NextButton onClick={onNextButtonClick} disabled={nextBtnDisabled} />
+      {!noControls && (
+        <div className={styles.controls}>
+          <div className={styles.controlButtons}>
+            <PrevButton
+              onClick={onPrevButtonClick}
+              disabled={prevBtnDisabled}
+            />
+            <NextButton
+              onClick={onNextButtonClick}
+              disabled={nextBtnDisabled}
+            />
+          </div>
         </div>
-      </div>
+      )}
     </div>
   );
 };

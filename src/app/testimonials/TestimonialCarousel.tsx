@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import { getQuotes } from "@/utils/airtable";
 import Carousel from "@/components/Carousel";
 import styles from "./page.module.css";
