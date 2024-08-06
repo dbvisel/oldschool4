@@ -76,10 +76,7 @@ const Menu = () => {
               <Link href="/events">Events</Link>
             </li>
             <li>
-              <Link href="/school-supplies">School supplies</Link>
-            </li>
-            <li>
-              <Link href="/testimonials">Testimonials</Link>
+              <Link href="/category/supplies">School supplies</Link>
             </li>
             <li>
               <Link href="/about">About</Link>
@@ -98,6 +95,9 @@ const Menu = () => {
               >
                 Donate
               </Link>
+            </li>
+            <li>
+              <Link href="/contact">Contact</Link>
             </li>
           </ul>
         </div>

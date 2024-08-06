@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { Link } from "next-view-transitions";
 import styles from "./styles.module.css";
 import { definedTypes } from "@/utils/categories";
 
@@ -7,7 +7,7 @@ const LinkFooter = () => (
     <ul>
       {definedTypes.map((section, index) => (
         <li key={index}>
-          <Link href={`/${section.id}/`}>{section.name}</Link>
+          <Link href={`/category/${section.id}/`}>{section.name}</Link>
         </li>
       ))}
       <li>

@@ -1,9 +1,10 @@
 "use client";
 
-import Link from "next/link";
+import { Link } from "next-view-transitions";
 import Carousel from "@/components/Carousel";
 import styles from "./styles.module.css";
-import { JustOneTestimonial } from "@/app/testimonials/JustOneTestimonial";
+import { JustOneTestimonial } from "@/app/about/JustOneTestimonial";
+import { CategorySlide } from "@/components/CategorySlide";
 
 // import image1 from "images/carousel/crescendo-1200px_web.jpg.webp";
 // import image2 from "images/carousel/happy-holi-color-splash-generative-ai-free-png.webp";
@@ -70,6 +71,7 @@ const FrontCarousel = (quotes: any) => {
           <Link href="/origins">The Surprising History of Old School</Link>
         </h2>
       </div>
+      <CategorySlide />
       <JustOneTestimonial
         quotes={quotes?.quotes?.length ? quotes.quotes : []}
       />

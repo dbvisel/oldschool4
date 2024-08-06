@@ -1,6 +1,11 @@
 // import Link from "next/link";
+import { Suspense } from "react";
 import { Link } from "next-view-transitions";
 import TheTeam from "@/components/TheTeam";
+import {
+  LoadingTestimonials,
+  TestimonialCarousel,
+} from "./TestimonialCarousel";
 import styles from "./page.module.css";
 
 export default function AboutPage() {
@@ -39,6 +44,12 @@ export default function AboutPage() {
             <Link href={"/origins"}>The Story Of Old School</Link>
           </h2>
         </div>
+      </section>
+      <section style={{ scrollSnapAlign: "none" }}>
+        {/*<h2>Here’s what people are saying about Old School:</h2>*/}
+        <Suspense fallback={<LoadingTestimonials />}>
+          <TestimonialCarousel />
+        </Suspense>
       </section>
     </article>
   );

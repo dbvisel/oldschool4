@@ -1,0 +1,62 @@
+.emblaSlide {
+  flex: 0 0 100%;
+  min-width: 0;
+	height: 100%;
+	padding: var(--paddingOutside);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	position: relative;
+	background-size: cover;
+	background-position: center;	
+	user-select: none;
+}
+
+.categoryheader {
+	font-size: calc(var(--fontSize) * 4) !important;
+	max-width: min(800px, calc(100vw - calc(2 * var(--paddingOutside))));
+	margin-bottom: calc(var(--fontSize) * 3);
+	color: var(--white);
+	text-align: left;
+	width: 100%;
+	text-shadow: 0 0 10px rgba(0,0,0,0.5);
+	position: absolute;
+	left: calc(2 * var(--paddingOutside));
+	top: var(--paddingOutside);
+	@media (max-width: 767px) {
+		font-size: calc(var(--fontSize) * 1.25);
+	}
+}
+
+.categoryheader a {
+	color: var(--white);
+}
+
+.categorydescription {
+	font-size: calc(var(--fontSize) * 2) !important;
+	max-width: min(800px, calc(100vw - calc(2 * var(--paddingOutside))));
+	line-height: 1.25 !important;
+	letter-spacing: 3px;
+	color: var(--white);
+	text-shadow: 0 0 10px rgba(0,0,0,0.5);
+	text-transform: uppercase;
+	@media (max-width: 767px) {
+		font-size: calc(var(--fontSize) * 1.5);
+	}
+}
+
+
+.cta {
+	margin-top: calc(var(--fontSize) * 2);
+	font-size: calc(var(--fontSize) * 1.5) !important;
+	max-width: min(800px, calc(100vw - calc(2 * var(--paddingOutside))));
+	text-align: right;
+	font-weight: bold;
+	width: 100%;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	text-shadow: 0 0 10px var(--black);
+	position: absolute;
+	bottom: calc(3 * var(--paddingOutside));
+}
