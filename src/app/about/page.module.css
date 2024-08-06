@@ -87,3 +87,21 @@
 	letter-spacing: 1px;
 	opacity: 0.5;
 }
+
+.theStoryBlock {
+		scroll-snap-align: none !important;
+		background-color: var(--orange);
+		background-image: url(/images/about/team.jpg);
+		background-position: center;
+		background-size: cover;
+}
+
+.theStoryBlock h2 {
+	color: var(--white);
+	font-size: calc(var(--fontSize) * 3);
+}	
+
+.theStoryBlock a {
+	color: var(--white);
+	text-shadow: 0 0 5px rgba(0,0,0,0.5);
+}

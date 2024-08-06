@@ -1,0 +1,16 @@
+.slide {
+	background-color: var(--white);
+}
+
+.slide h2 {
+	color: var(--orange);
+	text-shadow: none;
+}
+
+.slide > h2 {
+	letter-spacing: 1px;
+}
+
+.slide p {
+	color: var(--black);
+}

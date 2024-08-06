@@ -34,7 +34,7 @@
 }
 
 .categorydescription {
-	font-size: calc(var(--fontSize) * 2) !important;
+	font-size: calc(var(--fontSize) * 3) !important;
 	max-width: min(800px, calc(100vw - calc(2 * var(--paddingOutside))));
 	line-height: 1.25 !important;
 	letter-spacing: 3px;

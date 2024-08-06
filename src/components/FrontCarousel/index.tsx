@@ -5,15 +5,19 @@ import Carousel from "@/components/Carousel";
 import styles from "./styles.module.css";
 import { JustOneTestimonial } from "@/app/about/JustOneTestimonial";
 import { CategorySlide } from "@/components/CategorySlide";
+import { TopResourcesSlide } from "@/components/TopResources/TopResourcesSlide";
 
-// import image1 from "images/carousel/crescendo-1200px_web.jpg.webp";
-// import image2 from "images/carousel/happy-holi-color-splash-generative-ai-free-png.webp";
-// import image3 from "images/carousel/photo-1518837695005-2083093ee35b.jpeg";
-
-const FrontCarousel = (quotes: any) => {
+const FrontCarousel = ({
+  quotes,
+  newResources,
+}: {
+  quotes: any;
+  newResources: any;
+}) => {
+  // console.log("newResources", newResources);
   return (
     <Carousel>
-      <div
+      {/* <div
         className={styles.emblaSlide}
         style={{
           backgroundColor: "var(--orange)",
@@ -25,7 +29,7 @@ const FrontCarousel = (quotes: any) => {
             If you click on this link, it goes somewhere!
           </Link>
         </h2>
-      </div>
+      </div> */}
       <div
         className={styles.emblaSlide}
         style={{
@@ -37,6 +41,14 @@ const FrontCarousel = (quotes: any) => {
           <Link href={"/events"}>Office Hours: An Explosion of Colors</Link>
         </h2>
       </div>
+      {newResources.length && (
+        <div
+          className={styles.emblaSlide}
+          style={{ backgroundColor: "var(--white)" }}
+        >
+          <TopResourcesSlide resources={newResources} />
+        </div>
+      )}
       <div
         className={styles.emblaSlide}
         style={{
@@ -49,7 +61,7 @@ const FrontCarousel = (quotes: any) => {
         </h2>
         <p>(This image may be misleading.)</p>
       </div>
-      <div
+      {/* <div
         className={styles.emblaSlide}
         style={{
           backgroundColor: "var(--white)",
@@ -59,7 +71,7 @@ const FrontCarousel = (quotes: any) => {
         <h2>
           <Link href={"/testimonials"}>Testimonials like Mighty Waves</Link>
         </h2>
-      </div>
+      </div> */}
       <div
         className={styles.emblaSlide}
         style={{

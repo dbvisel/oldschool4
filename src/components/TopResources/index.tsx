@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+// import { useEffect, useState } from "react";
 import CardHolder from "@/components/CardHolder";
 import getNewestData from "@/lib/getNewestData";
 

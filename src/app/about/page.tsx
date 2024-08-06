@@ -38,7 +38,7 @@ export default function AboutPage() {
           <TheTeam />
         </div>
       </section>
-      <section style={{ scrollSnapAlign: "none" }}>
+      <section className={styles.theStoryBlock}>
         <div>
           <h2>
             <Link href={"/origins"}>The Story Of Old School</Link>

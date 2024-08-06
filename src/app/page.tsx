@@ -1,11 +1,11 @@
 import { Suspense } from "react";
-// import Link from "next/link";
 import { Link } from "next-view-transitions";
 import { getQuotes } from "@/utils/airtable";
-import TopResources, { LoadingTopResources } from "../components/TopResources";
+import TopResources, { LoadingTopResources } from "@/components/TopResources";
 import FrontCarousel from "@/components/FrontCarousel";
 import styles from "./page.module.css";
 import aboutStyles from "@/app/about/page.module.css";
+import getNewestData from "@/lib/getNewestData";
 
 // (this was added to make search work)
 // export const dynamic = "force-dynamic";
@@ -16,10 +16,13 @@ import aboutStyles from "@/app/about/page.module.css";
 
 const HomePage = async () => {
   const quotes = await getQuotes();
+  const { resources } = await getNewestData();
+
+  // console.log(resources);
   return (
     <article className={styles.frontpage}>
       <section>
-        <FrontCarousel quotes={quotes} />
+        <FrontCarousel quotes={quotes} newResources={resources} />
       </section>
       <Suspense fallback={<LoadingTopResources />}>
         <TopResources />
