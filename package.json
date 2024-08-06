@@ -55,6 +55,5 @@
   },
   "bugs": {
     "url": "https://github.com/dbvisel/oldschool4/issues"
-  },
-  "packageManager": "npm@10.8.2"
+  }
 }
