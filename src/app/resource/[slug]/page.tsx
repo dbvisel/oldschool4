@@ -6,7 +6,7 @@ import { possibleSlugs } from "@/utils/airtable";
 import { ResourceItem } from "@/types/index";
 import CardHolder from "@/components/CardHolder";
 import PDFEmbed from "@/components/PDFEmbed";
-import ShareSection from "./ShareSection";
+// import ShareSection from "./ShareSection";
 import VideoEmbed, { isEmbeddable } from "./VideoEmbed";
 import styles from "./page.module.css";
 import PDFList from "@/caches/pdfs/cache.json";
@@ -142,14 +142,14 @@ const ResourcePage = async ({
             />
           </dl>
           <ContactInformation resource={resource} />
-          <dl className={styles.dataBox}>
+          {/* <dl className={styles.dataBox}>
             <ShareSection
               url={resource.link}
               title={resource.title}
               description={resource.description || ""}
               shortDescription={resource.shortDescription || ""}
             />
-          </dl>
+          </dl> */}
         </div>
       </div>
       {thisIsAPDF && <PDFEmbed id={resource.id} title={resource.title} />}
