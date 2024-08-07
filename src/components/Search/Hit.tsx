@@ -35,6 +35,7 @@ const Hit = ({ hit }: { hit: any }) => {
     title: hit["Title"],
     id: hit.id,
     slug: hit.slug,
+    types: hit["Types"],
     image: {
       path: `/images/resources/${hit.image?.id}.${hit.image?.extension}`,
       blurPath: `/Images/resources/${hit.image?.id}.${hit.image?.extension}`,
@@ -51,7 +52,7 @@ const Hit = ({ hit }: { hit: any }) => {
       <ResourceCard
         resource={cleanedHit}
         isSubResource={false}
-        isEvent={false}
+        showType
         // isSearchResult={true}
       />
     </div>

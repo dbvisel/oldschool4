@@ -1,0 +1,201 @@
+.introArticle {
+	--headerFontSize: 48px;
+  max-width: 100%;
+  padding: 0;
+  & > h2 {
+    padding: var(--outsidePadding);
+    font-size: var(--headerFontSize);
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  /* & > div {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 800px;
+  } */
+  & > div {
+    padding: var(--outsidePadding);
+  }
+  & h2 {
+    text-transform: initial;
+    letter-spacing: 0;
+    line-height: 1.25;
+  }
+  & h3 {
+    text-transform: initial;
+    letter-spacing: 0;
+  }
+  @media (max-width: 767px) {
+    --headerFontSize: 36px;
+  }
+}
+
+.linkDiv {
+  display: flex;
+  & hr {
+    margin-bottom: var(--outsidePadding);
+    border-width: 0;
+  }
+  & h4 {
+    color: var(--green);
+    font-weight: bold;
+    font-size: var(--fontSize);
+    margin: calc(2 * var(--lineHeight)) 0 var(--lineHeight) 0 !important;
+    display: flex;
+    align-items: center;
+    padding-bottom: 20px;
+    border-bottom: var(--green) solid 4px;
+    &:first-of-type {
+      margin-top: 0 !important;
+    }
+    & > img {
+      min-width: 80px;
+      margin-right: var(--lineHeight) !important;
+      /* // filter: brightness(0) saturate(100%) invert(11%) sepia(7%) saturate(4910%)
+      //   hue-rotate(133deg) brightness(106%) contrast(87%); */
+      filter: brightness(0) saturate(100%) invert(56%) sepia(54%) saturate(296%)
+        hue-rotate(328deg) brightness(88%) contrast(89%);
+    }
+  }
+  & ul + h4 {
+    margin-top: calc(3 * var(--lineHeight)) !important;
+  }
+  & a {
+    font-weight: normal;
+  }
+  & ul {
+    margin: 0;
+    padding: 0;
+    margin-top: calc(var(--insidePadding) / 2);
+    & > ul {
+      margin-bottom: var(--insidePadding);
+      margin-left: var(--insidePadding);
+      & + li {
+        margin-top: calc(2 * var(--insidePadding));
+      }
+    }
+  }
+  & li {
+    color: var(--green);
+    font-style: italic;
+    font-weight: bold;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    margin-left: var(--lineHeight);
+    text-indent: calc(0px - var(--lineHeight));
+    & > a {
+      font-style: normal;
+      font-weight: normal;
+      color: var(--darkBrown);
+    }
+  }
+  & > div + div {
+    margin-left: var(--lineHeight);
+  }
+  & > p {
+    margin: 0;
+    text-align: center;
+    & + p {
+      margin: 0;
+    }
+  }
+  @media (max-width: 767px) {
+    flex-direction: column;
+    & > p + p {
+      margin-top: 1em;
+    }
+    & > div + div {
+      margin-left: 0;
+      margin-top: calc(3 * var(--lineHeight)) !important;
+    }
+	}
+}
+
+@keyframes arrowAnimation {
+	0% { transform: scale(1);opacity: 0; }
+	50% { transform: scale(1.5); opacity: 1; }
+	100% { transform: scale(1); opacity: 0;}
+}
+
+.topDiv {
+  background-color: var(--green);
+  color: var(--white);
+  display: flex;
+  justify-content: center;
+  padding: var(--outsidePadding);
+  & > div > h2,
+  & > div > h3 {
+    color: var(--white);
+    margin-top: 0;
+  }
+  & > div {
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  & a {
+    color: white;
+  }
+}
+
+.demoDiv {
+  background-color: var(--green);
+  display: flex;
+  justify-content: center;
+  padding:var(--outsidePadding) 0 !important;
+  & > div {
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  & h3 {
+    letter-spacing: 0;
+  }
+  & a {
+    border: none;
+    font-weight: normal;
+  }
+  & a:after {
+    opacity: 1 !important;
+    animation-name: arrowAnimation;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+  }
+  & a:hover {
+    border: none;
+  }
+  & p {
+    font-size: 16px;
+    line-height: 22px;
+  }
+
+  @media (min-width: 840px) {
+    & .fukidashiwrapper {
+      & > div > div + div {
+        --box-top: 78% !important; /* left fukidashi */
+        --box-right: calc(100% + 40px) !important;
+        &:before {
+          display: none;
+        }
+        &:after {
+          height: 40px;
+        }
+      }
+      & > div > div > .resourcedemo + div {
+        --box-top: 25% !important; /* right fukidashi */
+        --box-left: calc(100% + 40px) !important;
+        &:before {
+          display: none;
+        }
+        &:after {
+          height: 40px;
+        }
+      }
+    }
+  }
+}
+
+.demoDiv.vertical {
+	padding: 200px 0 !important;
+}

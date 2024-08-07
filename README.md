@@ -26,6 +26,7 @@ View transitions courtesy of this: https://github.com/shuding/next-view-transiti
  - gdpr wrapper
  - team needs to be responsive
  - BUG: snappityness on /origins
+ - clean up the loose types
 
 Maybe: figure out how to cache blurPaths? How much time are we spending on that?
 

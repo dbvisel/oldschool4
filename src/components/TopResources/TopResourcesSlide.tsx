@@ -11,7 +11,7 @@ export const TopResourcesSlide = ({ resources }: any) => {
       <h2 className="pageheader">
         <span>Just added to </span>Old School:
       </h2>
-      <CardHolder resources={resources} />
+      <CardHolder resources={resources} forceNew />
     </div>
   ) : null;
 };

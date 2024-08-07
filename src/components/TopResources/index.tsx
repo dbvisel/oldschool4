@@ -12,9 +12,9 @@ const TopResources = async () => {
   const { resources } = await getNewestData();
 
   return resources.length ? (
-    <section>
+    <section style={{ justifyContent: "center" }}>
       <h2 className="pageheader">Newest resources</h2>
-      <CardHolder resources={resources} />
+      <CardHolder resources={resources} forceNew />
     </section>
   ) : (
     <LoadingTopResources />

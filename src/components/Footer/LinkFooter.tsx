@@ -15,6 +15,15 @@ const LinkFooter = () => (
           Events
         </Link>
       </li>
+      <li>
+        <Link
+          href={`/submit/`}
+          aria-label="Submit"
+          style={{ color: "var(--black)" }}
+        >
+          Submit
+        </Link>
+      </li>
     </ul>
   </footer>
 );

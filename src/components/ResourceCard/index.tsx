@@ -9,11 +9,15 @@ const ResourceCard = ({
   resource,
   isSubResource,
   isEvent = false,
+  forceNew = false,
+  showType = false,
   // isSearchResult = false,
 }: {
   resource: ResourceItem;
   isSubResource: Boolean;
-  isEvent: Boolean;
+  isEvent?: Boolean;
+  forceNew?: Boolean;
+  showType?: Boolean;
   // isSearchResult: Boolean;
 }) => {
   const thisLink = isEvent
@@ -24,8 +28,24 @@ const ResourceCard = ({
   const description = isEvent
     ? resource.shortDescription
     : resource.shortDescription || resource.description || "";
+  // console.log("resource", resource);
+  const dateChanged: Date = resource.dateChanged
+    ? new Date(resource.dateChanged)
+    : new Date(0);
+  const dateAdded: Date = resource.dateAdded
+    ? new Date(resource.dateAdded)
+    : new Date(0);
+  const useDate: Date = dateAdded || dateChanged;
+  const now: Date = new Date();
+  const isNew =
+    forceNew || now.getTime() - useDate.getTime() < 2592000000 * 1.5; //2592000000 is 30 days – the number after it is how many months we want.
+  console.log(showType, resource.types);
   return (
     <div className={styles.card}>
+      {showType && resource.types ? (
+        <div className={styles.type}>{resource.types[0]}</div>
+      ) : null}
+      {isNew ? <div className={styles.new}>NEW!</div> : null}
       {isEvent ? (
         <Image
           src={calendarIcon}

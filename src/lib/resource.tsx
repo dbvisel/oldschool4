@@ -18,6 +18,8 @@ export const cleanResource = (
     title: resource.fields.Title,
     tags: resource.fields.Tags,
     link: resource.fields["Resource URL"],
+    dateAdded: resource.fields["Date added"],
+    dateChanged: resource.fields["Date changed"], // is this real?
     image: {
       path: resource.imagePath,
       height: resource.imageHeight,

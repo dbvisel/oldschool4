@@ -8,9 +8,11 @@ import styles from "./index.module.css";
 const CardHolder = ({
   resources,
   areSubResources = false,
+  forceNew = false,
 }: {
   resources: Array<ResourceItem>;
   areSubResources?: Boolean;
+  forceNew?: Boolean;
 }) => {
   // console.log(resources);
   // for (let i = 1; i < 8; i += 1) {
@@ -37,6 +39,7 @@ const CardHolder = ({
             resource={resource}
             isSubResource={areSubResources}
             isEvent={false}
+            forceNew={forceNew}
           />
         ))}
       </Masonry>

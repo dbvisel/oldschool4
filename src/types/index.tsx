@@ -23,6 +23,8 @@ export interface ResourceItem {
   types?: [string];
   subresources?: [ResourceItem];
   contactInfo?: ContactInfo;
+  dateAdded?: string;
+  dateChanged?: string;
   link?: URL;
 }
 
