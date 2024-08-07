@@ -25,17 +25,21 @@ export const CategorySlide = () => {
 
   return (
     <div
-      className={styles.emblaSlide}
-      style={{
-        backgroundColor: "var(--white)",
-        backgroundImage: `url(images/categories/${thisCategory.image}.png)`,
-      }}
+      className={`${styles.emblaSlide} ${thisCategory.id === "supplies" ? styles.orangeVersion : ""}`}
       ref={ref}
     >
+      <div
+        className={styles.backdrop}
+        style={{
+          backgroundImage: `url(images/categories/${thisCategory.image}.png)`,
+        }}
+      />
       <h2 className={styles.categoryheader}>
         <Link href={`/category/${thisCategory.id}`}>{thisCategory.name}</Link>
       </h2>
-      <p className={styles.categorydescription}>{thisCategory.tag}</p>
+      <p className={styles.categorydescription} key={thisCategory.id}>
+        {thisCategory.tag}
+      </p>
       <p className={styles.cta}>
         <Link href={`/category/${thisCategory.id}`}>Learn more . . .</Link>
       </p>

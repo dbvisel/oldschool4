@@ -8,10 +8,31 @@
 	align-items: center;
 	flex-direction: column;
 	position: relative;
-	background-size: cover;
-	background-position: center;	
 	user-select: none;
 }
+
+.backdrop {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	filter: grayscale(100%) blur(5px) brightness(0.5);
+	background-color: var(--white);
+	background-size: cover;
+	background-position: center;	
+	z-index: -1;
+}
+
+.orangeVersion .backdrop {
+	background-color: var(--orange);
+	filter: brightness(0.666);
+}
+
+.orangeVersion  a {
+	color: var(--white) !important;
+}
+
 
 .categoryheader {
 	font-size: calc(var(--fontSize) * 4) !important;
@@ -20,7 +41,7 @@
 	color: var(--white);
 	text-align: left;
 	width: 100%;
-	text-shadow: 0 0 10px rgba(0,0,0,0.5);
+	text-shadow: 0 0 5px rgba(255,255,255,0.5);
 	position: absolute;
 	left: calc(2 * var(--paddingOutside));
 	top: var(--paddingOutside);
@@ -41,8 +62,18 @@
 	color: var(--white);
 	text-shadow: 0 0 10px rgba(0,0,0,0.5);
 	text-transform: uppercase;
+	animation: embiggen 0.5s linear 0.1s;
 	@media (max-width: 767px) {
 		font-size: calc(var(--fontSize) * 1.5);
+	}
+}
+
+@keyframes embiggen {
+	from {
+		transform: scale(0.75);
+	}
+	to {
+		transform: scale(1.0);
 	}
 }
 
@@ -56,7 +87,7 @@
 	width: 100%;
 	text-transform: uppercase;
 	letter-spacing: 1px;
-	text-shadow: 0 0 10px var(--black);
+	text-shadow: 0 0 5px rgba(0,0,0,0.5);
 	position: absolute;
 	bottom: calc(3 * var(--paddingOutside));
 }
