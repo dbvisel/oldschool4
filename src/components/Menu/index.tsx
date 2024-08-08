@@ -87,13 +87,14 @@ const Menu = () => {
             <li>
               <Link
                 href={`#subscribe`}
-                onClick={(e) => {
-                  e.preventDefault();
-                  window.scrollTo({
-                    top: document.body.scrollHeight,
-                    behavior: "smooth",
-                  });
-                }}
+                target={"_bottom"}
+                // onClick={(e) => {
+                //   e.preventDefault();
+                //   // window.scrollTo({
+                //   //   top: document.body.scrollHeight,
+                //   //   behavior: "smooth",
+                //   // });
+                // }}
               >
                 Subscribe
               </Link>
