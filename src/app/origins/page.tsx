@@ -7,7 +7,7 @@ export default function OriginsPage() {
   return (
     <article>
       <section className={styles.aboutPage}>
-        <h2 className="pageheader">The Story of Old School</h2>
+        <h2 className="pageheader">Old School’s Origin Story</h2>
 
         <Image
           src="/images/origins/1.jpg"

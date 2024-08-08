@@ -41,7 +41,7 @@ export default function AboutPage() {
       <section className={styles.theStoryBlock}>
         <div>
           <h2>
-            <Link href={"/origins"}>The Story Of Old School</Link>
+            <Link href={"/origins"}>Old School’s Origin Story</Link>
           </h2>
         </div>
       </section>

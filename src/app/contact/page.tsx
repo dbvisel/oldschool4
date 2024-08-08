@@ -48,7 +48,7 @@ export default function AboutPage() {
             </a>
           </li>
           <li>
-            Twitter:{" "}
+            X:{" "}
             <a
               href="https://twitter.com/OldSchool_Info"
               target="_blank"
@@ -59,17 +59,30 @@ export default function AboutPage() {
           </li>
         </ul>
         <p>
-          Want to talk to us live? You can find us ‘in the office’ at{" "}
-          <strong>Office Hours</strong> every Wednesday from 1:30–2:30 ET. Ask
-          one or all three of the co-founders of Old School any ageism-related
-          question—in private, or include the group. Here’s the{" "}
+          <strong>Want to talk to us live?</strong> You can find us ‘in the
+          office’ at <strong>Office Hours</strong> every Wednesday from
+          1:30–2:30 ET. Ask one or all three of the co-founders of Old School
+          any ageism-related question—in private, or include the group. Here’s
+          the{" "}
           <a href="https://thischairrocks.us6.list-manage.com/track/click?u=b7e45e0548&id=da0374d50c&e=72512ca6b8">
             link
           </a>
           .
         </p>
       </section>
-      <SubmitComponent />
+      <section style={{ width: "100%", maxWidth: "800px" }}>
+        <h2
+          className="pageheader"
+          style={{ marginBottom: "var(--paddingOutside", textAlign: "center" }}
+        >
+          Submit a resource
+        </h2>
+        <p>
+          If you’ve created or discovered an ageism-related resource we don’t
+          know about, please send it our way! Here’s the submission form.
+        </p>
+        <SubmitComponent />
+      </section>
     </article>
   );
 }

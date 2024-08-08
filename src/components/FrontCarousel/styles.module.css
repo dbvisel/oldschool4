@@ -44,20 +44,37 @@
 	--lineHeight: 1.25;
 }
 
-.whatIsSlide h2 {
-	font-size: 72px;
-  margin-bottom: 18px;
-	text-shadow: none;
-	color: var(--black);
-
+.whatIsSlide p, .whatIsSlide h2 {
+	color: var(--black) !important;
 }
 
-.whatIsSlide p {
+.whatIsSlide h2 {
+	text-shadow: none !important;
+}
+
+.bigHeader {
+	font-size: 72px !important;
+  margin-bottom: 18px;
+}
+
+.description {
+	--fontSize: 32px;
+	--lineHeight: 1.25;
 	font-size: var(--fontSize);
 	line-height: var(--lineHeight);
-	color: var(--black);
 }
 
-.whatIsSlide p + p {
-	text-indent: 1em;
+
+.cta {
+	margin-top: calc(var(--fontSize) * 2);
+	font-size: calc(var(--fontSize) * 1.5) !important;
+	max-width: min(800px, calc(100vw - calc(2 * var(--paddingOutside))));
+	text-align: right;
+	font-weight: bold;
+	width: 100%;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	text-shadow: 0 0 5px rgba(0,0,0,0.5);
+	position: absolute;
+	bottom: calc(3 * var(--paddingOutside));
 }

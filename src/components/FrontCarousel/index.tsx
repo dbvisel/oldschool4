@@ -7,6 +7,10 @@ import { JustOneTestimonial } from "@/app/about/JustOneTestimonial";
 import { CategorySlide } from "@/components/CategorySlide";
 import { TopResourcesSlide } from "@/components/TopResources/TopResourcesSlide";
 
+// Ashton order 8 August 2024:
+// • temporary starter/welcome slide
+// • What is Old School? • New here? [intro page] • Testimonials • Office Hours • Category descriptions • Summer School
+
 const FrontCarousel = ({
   quotes,
   newResources,
@@ -14,22 +18,122 @@ const FrontCarousel = ({
   quotes: any;
   newResources: any;
 }) => {
-  // console.log("newResources", newResources);
   return (
     <Carousel>
-      {/* <div
+      <div
         className={styles.emblaSlide}
         style={{
           backgroundColor: "var(--orange)",
-          backgroundImage: `url(images/carousel/crescendo-1200px_web.jpg.webp)`,
+          backgroundImage: `url(images/carousel/backdrop.jpeg)`,
+          padding: "0 15vh",
         }}
       >
-        <h2>
-          <Link href="/about">
-            If you click on this link, it goes somewhere!
+        <h2 className={styles.bigHeader} style={{ alignSelf: "start" }}>
+          Welcome to the new Old School!
+        </h2>
+        <p
+          className={styles.description}
+          style={{
+            textShadow: " 0 0 10px var(--black)",
+            fontSize: "calc(var(--fontSize) * 1.5)",
+          }}
+        >
+          New name, new look, new logo — thank you, Paul Belford, Ltd! Same
+          great resource bank, more ways to come together to end ageism
+        </p>
+      </div>
+      <div
+        className={styles.emblaSlide}
+        style={{
+          backgroundColor: "var(--white)",
+          backgroundImage: `url(images/about/team.jpg)`,
+        }}
+      >
+        <div className={styles.whatIsSlide}>
+          <div>
+            <h2
+              className={styles.bigHeader}
+              style={{
+                color: "var(--white) !important",
+                textShadow: " 0 0 10px var(--black)",
+              }}
+            >
+              What Is Old School?
+            </h2>
+            <p
+              className={styles.description}
+              style={{
+                color: "var(--white) !important",
+                textShadow: " 0 0 10px var(--black)",
+              }}
+            >
+              Old School is a small but mighty non-profit organization created
+              to raise awareness of ageism and how to undo it. We bring age
+              advocates together, curate and create free resources, collaborate
+              with other pro-aging organizations, and support other
+              social-justice movements.{" "}
+              <strong>
+                <Link href={"/about"}>Learn more.</Link>
+              </strong>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div
+        className={styles.emblaSlide}
+        style={{ backgroundColor: "var(--white)" }}
+      >
+        <div className={styles.whatIsSlide}>
+          <div>
+            <h2 className={styles.bigHeader}>What Is Old School?</h2>
+            <p className={styles.description}>
+              Old School is a small but mighty non-profit organization created
+              to raise awareness of ageism and how to undo it. We bring age
+              advocates together, curate and create free resources, collaborate
+              with other pro-aging organizations, and support other
+              social-justice movements.{" "}
+              <strong>
+                <Link href={"/about"}>Learn more.</Link>
+              </strong>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div
+        className={styles.emblaSlide}
+        style={{
+          backgroundColor: "var(--white)",
+          backgroundImage: `url(images/carousel/backdrop.jpeg)`,
+        }}
+      >
+        <h2 style={{ margin: "0 15vh" }}>
+          <Link href="/intro">
+            <strong>
+              Wondering where to begin when it comes to confronting ageism?
+            </strong>{" "}
+            <span style={{ fontWeight: "normal" }}>
+              You’re in the right place. Find tips on navigating our resource
+              bank, entry points, and more.
+            </span>
           </Link>
         </h2>
-      </div> */}
+      </div>
+      {/* {newResources.length && (
+        <div
+          className={styles.emblaSlide}
+          style={{ backgroundColor: "var(--white)" }}
+        >
+          <TopResourcesSlide resources={newResources} />
+        </div>
+      )} */}
+      {quotes.length && (
+        <JustOneTestimonial
+          quotes={quotes?.length ? quotes : []}
+          key={quotes.length}
+        />
+      )}
+      <CategorySlide />
       <div
         className={styles.emblaSlide}
         style={{
@@ -37,18 +141,29 @@ const FrontCarousel = ({
           backgroundImage: `url(images/carousel/happy-holi-color-splash-generative-ai-free-png.webp)`,
         }}
       >
-        <h2>
-          <Link href={"/events"}>Office Hours: An Explosion of Colors</Link>
+        <h2 className={styles.bigHeader}>
+          <Link href={"/events"}>Office Hours</Link>
         </h2>
-      </div>
-      {newResources.length && (
-        <div
-          className={styles.emblaSlide}
-          style={{ backgroundColor: "var(--white)" }}
+        <p
+          className={styles.description}
+          style={{
+            textShadow: " 0 0 10px var(--black)",
+            fontSize: "calc(var(--fontSize) * 1.2)",
+            margin: "0 10vw",
+          }}
         >
-          <TopResourcesSlide resources={newResources} />
-        </div>
-      )}
+          Join Old School’s co-founders at <strong>Office Hours</strong>, an
+          informal open forum to talk about anything ageism-related. Everyone is
+          welcome, to participate or just to listen. It takes place every
+          Wednesday from 1:30–2:30PM EST.
+        </p>
+        <p
+          className={styles.cta}
+          style={{ textShadow: " 0 0 10px var(--white)" }}
+        >
+          <Link href="/events">Register here.</Link>
+        </p>
+      </div>
       <div
         className={styles.emblaSlide}
         style={{
@@ -56,23 +171,14 @@ const FrontCarousel = ({
           backgroundImage: `url(images/carousel/GettyImages-999271266-e1565731893458.jpg)`,
         }}
       >
-        <h2>
-          <Link href={"/school-supplies"}>School Supplies</Link>
+        <h2 className={styles.bigHeader}>
+          <Link href={"/events"}>Summer School</Link>
         </h2>
-        <p>(This image may be misleading.)</p>
+        <p className={styles.description}>
+          This just happened! It was great! Takeaways coming soon.
+        </p>
       </div>
       {/* <div
-        className={styles.emblaSlide}
-        style={{
-          backgroundColor: "var(--white)",
-          backgroundImage: `url(images/carousel/photo-1518837695005-2083093ee35b.jpeg)`,
-        }}
-      >
-        <h2>
-          <Link href={"/testimonials"}>Testimonials like Mighty Waves</Link>
-        </h2>
-      </div> */}
-      <div
         className={styles.emblaSlide}
         style={{
           backgroundColor: "var(--white)",
@@ -82,38 +188,7 @@ const FrontCarousel = ({
         <h2>
           <Link href="/origins">The Surprising History of Old School</Link>
         </h2>
-      </div>
-      <CategorySlide />
-      <JustOneTestimonial
-        quotes={quotes?.quotes?.length ? quotes.quotes : []}
-      />
-      <div
-        className={styles.emblaSlide}
-        style={{ backgroundColor: "var(--white)" }}
-      >
-        <div className={styles.whatIsSlide}>
-          <div>
-            <h2>What Is Old School?</h2>
-            <p>
-              Old School curates, creates, commissions and disseminates free
-              resources to educate people about ageism and how to end it; hosts
-              and facilitates spaces where age advocates around the world can
-              connect; collaborates with other pro-aging organizations; and
-              shows up for other social-justice movements.
-            </p>
-            <p>
-              Old School is working towards a world where everyone has the
-              opportunity to live long and to live well. We are advancing the
-              movement to dismantle ageism, and we are leveraging the fact that
-              everyone ages (and experiences age bias) in order to address the
-              intersectional nature of all oppression—and of all activism.{" "}
-              <strong>
-                <Link href={"/about"}>Learn more.</Link>
-              </strong>
-            </p>
-          </div>
-        </div>
-      </div>
+      </div> */}
     </Carousel>
   );
 };

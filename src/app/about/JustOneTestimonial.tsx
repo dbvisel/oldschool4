@@ -9,7 +9,6 @@ export const JustOneTestimonial = ({ quotes }: any) => {
     threshold: 0,
   });
   const [thisQuote, setThisQuote] = useState<any>({});
-
   useEffect(() => {
     if (quotes.length) {
       setThisQuote(quotes[Math.floor(Math.random() * quotes.length)]);
