@@ -34,6 +34,14 @@
 	text-decoration: underline;
 }	
 
+.hideText h2 {
+	visibility: hidden;
+}
+
+.hideText p {
+	visibility: hidden;
+}
+
 .whatIsSlide {
 	max-width: 1024px;
 	display: flex;

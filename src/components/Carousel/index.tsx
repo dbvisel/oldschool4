@@ -7,6 +7,8 @@ import useEmblaCarousel from "embla-carousel-react";
 import { PrevButton, NextButton, usePrevNextButtons } from "./CarouselButtons";
 import styles from "./styles.module.css";
 
+// TODO: make this accessible: https://www.smashingmagazine.com/2023/02/guide-building-accessible-carousels/
+
 interface CarouselProps extends PropsWithChildren<any> {
   noControls?: boolean;
   children: ReactNode;
