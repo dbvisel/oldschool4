@@ -1,0 +1,28 @@
+.wrapper {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	padding-top: 0 !important;
+}
+
+.contactUs {
+	--fontSize: 1.5rem;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	height: calc(100vh - var(--headerHeight));
+	width: 100%;
+	max-width: 800px;
+	@media (max-width: 800px) {
+		max-width: 100%;
+	}
+}
+
+.contactUs ul {
+	align-self: start;
+	font-size: var(--fontSize);
+	line-height: 1.5;
+	margin: var(--paddingOutside) 0 var(--paddingInside) 0;
+}

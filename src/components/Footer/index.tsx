@@ -21,7 +21,10 @@ const Footer = () => {
   const pathname = usePathname();
   const noSnapScroll = Config.pathsWithoutSnapScrolling.includes(pathname);
   return (
-    <footer className={`${styles.footer} ${noSnapScroll ? "noscroll" : ""}`}>
+    <footer
+      className={`${styles.footer} ${noSnapScroll ? "noscroll" : ""}`}
+      id="footer"
+    >
       <div className={styles.subscribediv} id="subscribe">
         <MailchimpSubscribe
           url={MAILCHIMP_URL}

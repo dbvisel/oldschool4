@@ -4,6 +4,7 @@ import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 // import Link from "next/link";
 import { Link } from "next-view-transitions";
+import { animateScroll } from "react-scroll";
 import styles from "./styles.module.css";
 import Search from "../Search";
 import logo from "./horizontallogo-twoline.svg";
@@ -85,7 +86,19 @@ const Menu = () => {
               <Link href="/hire-us">Hire us</Link>
             </li>
             <li>
-              <Link href="/subscribe">Subscribe</Link>
+              <a
+                href={`/#`}
+                onClick={(e) => {
+                  // console.log(e);
+                  animateScroll.scrollToBottom({
+                    // Your options here, for example:
+                    duration: 500,
+                    smooth: true,
+                  });
+                }}
+              >
+                Subscribe
+              </a>
             </li>
             <li>
               <Link
