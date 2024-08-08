@@ -67,11 +67,8 @@ const FrontCarousel = ({
                 textShadow: " 0 0 10px var(--black)",
               }}
             >
-              Old School is a small but mighty non-profit organization created
-              to raise awareness of ageism and how to undo it. We bring age
-              advocates together, curate and create free resources, collaborate
-              with other pro-aging organizations, and support other
-              social-justice movements.{" "}
+              Old School is a small but mighty grass roots organization created
+              to raise awareness of ageism and how to undo it.{" "}
               <strong>
                 <Link href={"/about"}>Learn more.</Link>
               </strong>
@@ -88,11 +85,8 @@ const FrontCarousel = ({
           <div>
             <h2 className={styles.bigHeader}>What Is Old School?</h2>
             <p className={styles.description}>
-              Old School is a small but mighty non-profit organization created
-              to raise awareness of ageism and how to undo it. We bring age
-              advocates together, curate and create free resources, collaborate
-              with other pro-aging organizations, and support other
-              social-justice movements.{" "}
+              Old School is a small but mighty grass roots organization created
+              to raise awareness of ageism and how to undo it.{" "}
               <strong>
                 <Link href={"/about"}>Learn more.</Link>
               </strong>
