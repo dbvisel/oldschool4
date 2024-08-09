@@ -28,6 +28,7 @@ export const JustOneTestimonial = ({ quotes }: any) => {
       style={{ backgroundColor: "var(--white" }}
       ref={ref}
     >
+      <h2 className={styles.quoteHeader}>What people are saying:</h2>
       <blockquote className={styles.quote}>{thisQuote.fields.Quote}</blockquote>
       <p className={styles.quoter}>
         &mdash;<strong>{thisQuote.fields.Quoter}</strong>

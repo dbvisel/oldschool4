@@ -41,7 +41,17 @@ export const CategorySlide = () => {
         {thisCategory.tag}
       </p>
       <p className={styles.cta}>
-        <Link href={`/category/${thisCategory.id}`}>Learn more . . .</Link>
+        <a
+          href={`/#`}
+          onClick={(e) => {
+            e.preventDefault();
+            setThisCategory(
+              categories[Math.floor(Math.random() * categories.length)]
+            );
+          }}
+        >
+          (What other categories are there?)
+        </a>
       </p>
     </div>
   );

@@ -5,7 +5,7 @@ import Carousel from "@/components/Carousel";
 import styles from "./styles.module.css";
 import { JustOneTestimonial } from "@/app/about/JustOneTestimonial";
 import { CategorySlide } from "@/components/CategorySlide";
-import { TopResourcesSlide } from "@/components/TopResources/TopResourcesSlide";
+// import { TopResourcesSlide } from "@/components/TopResources/TopResourcesSlide";
 
 // Ashton order 8 August 2024:
 // • temporary starter/welcome slide
@@ -13,10 +13,10 @@ import { TopResourcesSlide } from "@/components/TopResources/TopResourcesSlide";
 
 const FrontCarousel = ({
   quotes,
-  newResources,
+  // newResources,
 }: {
   quotes: any;
-  newResources: any;
+  // newResources: any;
 }) => {
   return (
     <Carousel>
@@ -38,11 +38,11 @@ const FrontCarousel = ({
             fontSize: "calc(var(--fontSize) * 1.5)",
           }}
         >
-          New name, new look, new logo — thank you, Paul Belford, Ltd! Same
-          great resource bank, more ways to come together to end ageism
+          New name, new look, new logo. Same great resource bank, more ways to
+          come together to end ageism
         </p>
       </div>
-      <div
+      {/* <div
         className={styles.emblaSlide}
         style={{
           backgroundColor: "var(--white)",
@@ -75,8 +75,7 @@ const FrontCarousel = ({
             </p>
           </div>
         </div>
-      </div>
-
+      </div> */}
       <div
         className={styles.emblaSlide}
         style={{ backgroundColor: "var(--white)" }}

@@ -26,6 +26,7 @@ export const TestimonialCarousel = async () => {
           style={{ backgroundColor: "var(--white" }}
           key={quote.id}
         >
+          <h2 className={styles.quoteHeader}>What people are saying:</h2>
           <blockquote className={styles.quote}>{quote.fields.Quote}</blockquote>
           <p className={styles.quoter}>
             &mdash;<strong>{quote.fields.Quoter}</strong>
