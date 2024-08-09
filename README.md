@@ -24,7 +24,6 @@ View transitions courtesy of this: https://github.com/shuding/next-view-transiti
  - google analytics
  - metadata
  - gdpr wrapper
- - intro page
  - team needs to be responsive
  - BUG: snappityness on /origins
  - BUG: #subscribe scrollTo doesn't work on Safari.

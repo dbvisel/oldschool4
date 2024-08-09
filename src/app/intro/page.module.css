@@ -2,24 +2,23 @@
 	--headerFontSize: 48px;
   max-width: 100%;
   padding: 0;
+	color: var(--black);
   & > h2 {
-    padding: var(--outsidePadding);
-    font-size: var(--headerFontSize);
+		padding-top: var(--paddingOutside);
+    padding-bottom: calc(2 * var(--paddingOutside));
+    font-size: calc(var(--fontSize) * 3);
+		line-height: 1 !important;
     max-width: 800px;
-    margin: 0 auto;
+		width: 100%;
   }
-  /* & > div {
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 800px;
-  } */
   & > div {
-    padding: var(--outsidePadding);
+    padding: var(--paddingOutside);
   }
   & h2 {
     text-transform: initial;
     letter-spacing: 0;
     line-height: 1.25;
+		color: var(--orange);
   }
   & h3 {
     text-transform: initial;
@@ -32,25 +31,28 @@
 
 .linkDiv {
   display: flex;
+	gap: var(--paddingInside);
+	margin-top: var(--paddingInside);
   & hr {
-    margin-bottom: var(--outsidePadding);
+    margin-bottom: var(--paddingOutside);
     border-width: 0;
   }
   & h4 {
-    color: var(--green);
+    color: var(--black);
     font-weight: bold;
     font-size: var(--fontSize);
-    margin: calc(2 * var(--lineHeight)) 0 var(--lineHeight) 0 !important;
+		line-height: var(--lineHeight);
+    margin: calc(2 * var(--paddingInside)) 0 var(--paddingInside) 0 !important;
     display: flex;
     align-items: center;
     padding-bottom: 20px;
-    border-bottom: var(--green) solid 4px;
+    border-bottom: var(--orange) solid 4px;
     &:first-of-type {
       margin-top: 0 !important;
     }
     & > img {
       min-width: 80px;
-      margin-right: var(--lineHeight) !important;
+      margin-right: var(--paddingInside) !important;
       /* // filter: brightness(0) saturate(100%) invert(11%) sepia(7%) saturate(4910%)
       //   hue-rotate(133deg) brightness(106%) contrast(87%); */
       filter: brightness(0) saturate(100%) invert(56%) sepia(54%) saturate(296%)
@@ -58,7 +60,7 @@
     }
   }
   & ul + h4 {
-    margin-top: calc(3 * var(--lineHeight)) !important;
+    margin-top: calc(2 * var(--paddingOutside)) !important;
   }
   & a {
     font-weight: normal;
@@ -66,32 +68,34 @@
   & ul {
     margin: 0;
     padding: 0;
-    margin-top: calc(var(--insidePadding) / 2);
+    margin-top: calc(var(--paddingInside) / 2);
     & > ul {
-      margin-bottom: var(--insidePadding);
-      margin-left: var(--insidePadding);
+      margin-bottom: var(--paddingInside);
+      margin-left: var(--paddingInside);
       & + li {
-        margin-top: calc(2 * var(--insidePadding));
+        margin-top: calc(2 * var(--paddingInside));
       }
     }
   }
   & li {
-    color: var(--green);
+		font-size: var(--fontSize);
+		line-height: var(--lineHeight);
+    color: var(--black);
     font-style: italic;
     font-weight: bold;
     list-style-type: none;
     margin: 0;
     padding: 0;
-    margin-left: var(--lineHeight);
-    text-indent: calc(0px - var(--lineHeight));
+    margin-left: var(--paddingOutside);
+    text-indent: calc(0px - var(--paddingOutside));
     & > a {
       font-style: normal;
       font-weight: normal;
-      color: var(--darkBrown);
+      color: var(--orange);
     }
   }
   & > div + div {
-    margin-left: var(--lineHeight);
+    margin-left: var(--paddingInside);
   }
   & > p {
     margin: 0;
@@ -107,7 +111,7 @@
     }
     & > div + div {
       margin-left: 0;
-      margin-top: calc(3 * var(--lineHeight)) !important;
+      margin-top: calc(3 * var(--paddingInside)) !important;
     }
 	}
 }
@@ -119,11 +123,11 @@
 }
 
 .topDiv {
-  background-color: var(--green);
+  background-color: var(--orange);
   color: var(--white);
   display: flex;
   justify-content: center;
-  padding: var(--outsidePadding);
+  padding: var(--paddingOutside);
   & > div > h2,
   & > div > h3 {
     color: var(--white);
@@ -140,10 +144,10 @@
 }
 
 .demoDiv {
-  background-color: var(--green);
+  background-color: var(--white);
   display: flex;
   justify-content: center;
-  padding:var(--outsidePadding) 0 !important;
+  padding:var(--paddingOutside) 0 !important;
   & > div {
     max-width: 800px;
     margin-left: auto;
@@ -173,7 +177,7 @@
   @media (min-width: 840px) {
     & .fukidashiwrapper {
       & > div > div + div {
-        --box-top: 78% !important; /* left fukidashi */
+        --box-top: 66% !important; /* left fukidashi */
         --box-right: calc(100% + 40px) !important;
         &:before {
           display: none;
@@ -183,7 +187,7 @@
         }
       }
       & > div > div > .resourcedemo + div {
-        --box-top: 25% !important; /* right fukidashi */
+        --box-top: 39% !important; /* right fukidashi */
         --box-left: calc(100% + 40px) !important;
         &:before {
           display: none;

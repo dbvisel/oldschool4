@@ -1,9 +1,10 @@
 import Image from "next/image";
-// import Link from "next/link";
 import { Link } from "next-view-transitions";
 import { ResourceItem } from "@/types/index";
 import styles from "./page.module.css";
 import calendarIcon from "./images/calendar.svg";
+
+// TODO: we haven't actually implemented differential links or the icon in the upper right!
 
 const ResourceCard = ({
   resource,
@@ -24,7 +25,9 @@ const ResourceCard = ({
     ? "/events/"
     : isSubResource
       ? resource.link
-      : `/resource/${resource.slug}` || "";
+      : resource.slug === "/"
+        ? `/intro` // This is for the case where we have a dummy resource.
+        : `/resource/${resource.slug}` || "";
   const description = isEvent
     ? resource.shortDescription
     : resource.shortDescription || resource.description || "";

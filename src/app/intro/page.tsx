@@ -1,29 +1,43 @@
 import * as React from "react";
 import { Link } from "next-view-transitions";
 import Image from "next/image";
-// import { Fukidashi } from "react-fukidashi";
-// import "react-fukidashi/style.css";
 import styles from "./page.module.css";
-import ResourceCard from "@/components/ResourceCard";
 import { getResourceById } from "@/utils/airtable";
-
-// import useWindowDimensions from "@/hooks/useWindowSize";
-// import { MagnifyingGlass as SearchIcon } from "@styled-icons/fa-solid";
+import { cleanResource } from "@/lib/resource";
+import DemoComponent from "./DemoComponent";
 import digdeeper from "./images/dig-deeper.png";
 import quicktakes from "./images/quick-takes.png";
 import advocate from "./images/advocate.png";
 import intersectionality from "./images/intersectionality.png";
 import communicate from "./images/communicate.png";
 import workplace from "./images/workplace.png";
-import { cleanResource } from "@/lib/resource";
+
+const SearchIcon = () => (
+  <svg
+    className="ais-SearchBox-submitIcon"
+    width="18"
+    height="18"
+    viewBox="0 0 40 40"
+    aria-hidden="true"
+    style={{ position: "relative", margin: "0 2px" }}
+  >
+    <path
+      fill="var(--white)"
+      d="M26.804 29.01c-2.832 2.34-6.465 3.746-10.426 3.746C7.333 32.756 0 25.424 0 16.378 0 7.333 7.333 0 16.378 0c9.046 0 16.378 7.333 16.378 16.378 0 3.96-1.406 7.594-3.746 10.426l10.534 10.534c.607.607.61 1.59-.004 2.202-.61.61-1.597.61-2.202.004L26.804 29.01zm-10.426.627c7.323 0 13.26-5.936 13.26-13.26 0-7.32-5.937-13.257-13.26-13.257C9.056 3.12 3.12 9.056 3.12 16.378c0 7.323 5.936 13.26 13.258 13.26z"
+    ></path>
+  </svg>
+);
+
+// TODO: color of those pngs
 
 const IntroPage = async () => {
   const oldSchool = await getResourceById("recxScXOQzvRSE3yK");
 
-  const myResource = cleanResource(oldSchool, "/", []); // || topResources[Math.floor(Math.random() * topResources.length)];
-  // const { width } = useWindowDimensions();
+  let myResource = cleanResource(oldSchool, "/", []); // || topResources[Math.floor(Math.random() * topResources.length)];
+  myResource.image.height = oldSchool.fields.Image[0].height;
+  myResource.image.width = oldSchool.fields.Image[0].width;
+  myResource.image.blurPath = myResource.image.path;
 
-  const width = 500;
   return (
     <article>
       <div className={styles.introArticle}>
@@ -44,43 +58,13 @@ const IntroPage = async () => {
               </p>
               <p>
                 Use <strong>Search</strong> (
-                {/* <SearchIcon
-                  style={{ position: "relative", width: "24px", top: "-2px" }}
-                /> */}
-                ) to pursue a topic or find a specific title or creator.
+                <SearchIcon />) to pursue a topic or find a specific title or
+                creator.
               </p>
             </div>
           </div>
         </div>
-        <div
-          className={`${styles.demoDiv} ${(width || 0) < 840 ? "vertical" : ""}`}
-          style={{ backgroundColor: "var(--darkBrown)" }}
-        >
-          <div className="fukidashiwrapper">
-            {/* <Fukidashi
-              placement={(width || 0) > 839 ? "left" : "bottom"}
-              width={250}
-              gap={20}
-              delay={0}
-              text="Each resource has its own page (often with the creator’s contact
-							info and related resources). To see it, click here."
-            >
-              <Fukidashi
-                placement={(width || 0) > 839 ? "right" : "top"}
-                width={250}
-                gap={20}
-                delay={0}
-                text="Most resources have a link to an external site. To go there,
-                click on the resource card's picture or on the
-                arrow-within-a-circle icon."
-              > */}
-            <div className="resourcedemo">
-              <ResourceCard resource={myResource} isSubResource={false} />
-            </div>
-            {/* </Fukidashi>
-            </Fukidashi> */}
-          </div>
-        </div>
+        <DemoComponent resource={myResource} />
         <div
           className={styles.topDiv}
           style={{ backgroundColor: "var(--backdrop)" }}
