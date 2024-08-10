@@ -22,7 +22,7 @@ const HomePage = async () => {
   return (
     <article className={styles.frontpage}>
       <section>
-        <FrontCarousel quotes={quotes} newResources={resources} />
+        <FrontCarousel quotes={quotes} /*newResources={resources}*/ />
       </section>
       <Suspense fallback={<LoadingTopResources />}>
         <TopResources />

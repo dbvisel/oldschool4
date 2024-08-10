@@ -6,6 +6,8 @@ import calendarIcon from "./images/calendar.svg";
 
 // TODO: we haven't actually implemented differential links or the icon in the upper right!
 
+const skipResourcePage = true;
+
 const ResourceCard = ({
   resource,
   isSubResource,
@@ -59,7 +61,11 @@ const ResourceCard = ({
       ) : resource?.image?.path &&
         resource.image.width &&
         resource.image.height ? (
-        <Link href={thisLink || ""} className="imagelink">
+        <Link
+          href={(skipResourcePage ? resource.link : thisLink) || ""}
+          className="imagelink"
+          target={skipResourcePage ? "_blank" : "_self"}
+        >
           <Image
             src={resource.image.path}
             alt={resource.image.alt || ""}
@@ -73,7 +79,10 @@ const ResourceCard = ({
         <p>No image!</p>
       )}
       <div className={styles.bottomblock}>
-        <Link href={thisLink || ""}>
+        <Link
+          href={(skipResourcePage ? resource.link : thisLink) || ""}
+          target={skipResourcePage ? "_blank" : "_self"}
+        >
           {isEvent ? <h3 className={styles.eventHead}>EVENT</h3> : null}
           <h2>{resource.title}</h2>
           {isEvent ? (
