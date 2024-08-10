@@ -4,8 +4,6 @@ import { ResourceItem } from "@/types/index";
 import styles from "./page.module.css";
 import calendarIcon from "./images/calendar.svg";
 
-// TODO: we haven't actually implemented differential links or the icon in the upper right!
-
 const skipResourcePage = true;
 
 const ResourceCard = ({
@@ -61,39 +59,64 @@ const ResourceCard = ({
       ) : resource?.image?.path &&
         resource.image.width &&
         resource.image.height ? (
-        <Link
-          href={(skipResourcePage ? resource.link : thisLink) || ""}
-          className="imagelink"
-          target={skipResourcePage ? "_blank" : "_self"}
-        >
-          <Image
-            src={resource.image.path}
-            alt={resource.image.alt || ""}
-            placeholder="blur"
-            blurDataURL={resource.image.blurPath}
-            width={240}
-            height={(240 / resource.image.width) * resource.image.height}
-          />
-        </Link>
+        skipResourcePage && !isEvent ? (
+          <a
+            href={String(resource.link || "")}
+            className="imagelink"
+            target={"_blank"}
+            rel={"noopener noreferrer"}
+          >
+            <Image
+              src={resource.image.path}
+              alt={resource.image.alt || ""}
+              placeholder="blur"
+              blurDataURL={resource.image.blurPath}
+              width={240}
+              height={(240 / resource.image.width) * resource.image.height}
+            />
+          </a>
+        ) : (
+          <Link href={thisLink || ""} className="imagelink">
+            <Image
+              src={resource.image.path}
+              alt={resource.image.alt || ""}
+              placeholder="blur"
+              blurDataURL={resource.image.blurPath}
+              width={240}
+              height={(240 / resource.image.width) * resource.image.height}
+            />
+          </Link>
+        )
       ) : (
         <p>No image!</p>
       )}
       <div className={styles.bottomblock}>
-        <Link
-          href={(skipResourcePage ? resource.link : thisLink) || ""}
-          target={skipResourcePage ? "_blank" : "_self"}
-        >
-          {isEvent ? <h3 className={styles.eventHead}>EVENT</h3> : null}
-          <h2>{resource.title}</h2>
-          {isEvent ? (
-            <p
-              className={styles.description}
-              dangerouslySetInnerHTML={{ __html: description || "" }}
-            />
-          ) : (
-            <p className={styles.description}>{description}</p>
-          )}
-        </Link>
+        {skipResourcePage && !isEvent ? (
+          <a href={String(resource.link) || ""} target={"_blank"}>
+            <h2>{resource.title}</h2>
+            {isEvent ? (
+              <p
+                className={styles.description}
+                dangerouslySetInnerHTML={{ __html: description || "" }}
+              />
+            ) : (
+              <p className={styles.description}>{description}</p>
+            )}
+          </a>
+        ) : (
+          <Link href={thisLink || ""}>
+            {isEvent ? <h3 className={styles.eventHead}>EVENT</h3> : null}
+            <h2>{resource.title}</h2>
+            {isEvent ? (
+              <p
+                className={styles.description}
+                dangerouslySetInnerHTML={{ __html: description || "" }}
+              />
+            ) : (
+              <p className={styles.description}>{description}</p>
+            )}
+          </Link>
+        )}
       </div>
     </div>
   );
