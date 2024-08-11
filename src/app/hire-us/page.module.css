@@ -1,25 +1,25 @@
 .hireUs {
+	--headerFontSize: 48px;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
+	& > section > h2 {
+		padding-top: var(--paddingOutside);
+    padding-bottom: calc(2 * var(--paddingOutside));
+    font-size: calc(var(--fontSize) * 3);
+		line-height: 1 !important;
+    max-width: 800px;
+		width: 100%;
+		color: vaR(--orange);
+  }
+  @media (max-width: 767px) {
+    --headerFontSize: 36px;
+  }
+
 }
 
-.hireUs h2 {
-	font-size: calc(var(--fontSize) * 4);
-	color: var(--orange);
-	margin-bottom: var(--paddingInside);
-}
 
-.hireUs h2 + h3 {
-	margin-bottom: calc(var(--paddingOutside) * 2) !important;
-
-}
-
-.hireUs h3 {
-	font-size: calc(var(--fontSize) * 1.5);
-	font-weight: normal;
-}
 
 .hireUs section {
 	max-width: 800px;
@@ -38,4 +38,31 @@
 .hireUs hr {
 	width: 50%;
 	margin: var(--paddingOutside) auto;
+}
+
+.topDiv {
+  background-color: var(--orange);
+  color: var(--white);
+  display: flex;
+  justify-content: center;
+  padding: var(--paddingOutside);
+	margin-left: auto;
+	margin-right: auto;
+
+  & > div > h2,
+  & > div > h3 {
+    color: var(--white);
+    margin-top: 0;
+  }
+  & > div {
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  & a {
+    color: white;
+  }
+	& p {
+		margin-bottom: 0 !important;
+	}
 }

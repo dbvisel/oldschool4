@@ -129,32 +129,28 @@ const FrontCarousel = ({
       )}
       <CategorySlide />
       <div
-        className={styles.emblaSlide}
+        className={`${styles.emblaSlide} ${styles.officeHoursSlide}`}
         style={{
-          backgroundColor: "var(--white)",
-          backgroundImage: `url(images/carousel/happy-holi-color-splash-generative-ai-free-png.webp)`,
+          backgroundImage: `url(images/carousel/officeHours.jpg)`,
         }}
       >
         <h2 className={styles.bigHeader}>
-          <Link href={"/events"}>Office Hours</Link>
+          <Link
+            href={"/events"}
+            style={{
+              color: "var(--orange) !important",
+            }}
+          >
+            Office Hours
+          </Link>
         </h2>
-        <p
-          className={styles.description}
-          style={{
-            textShadow: " 0 0 10px var(--black)",
-            fontSize: "calc(var(--fontSize) * 1.2)",
-            margin: "0 10vw",
-          }}
-        >
+        <p className={styles.description}>
           Join Old School’s co-founders at <strong>Office Hours</strong>, an
           informal open forum to talk about anything ageism-related. Everyone is
           welcome, to participate or just to listen. It takes place every
           Wednesday from 1:30–2:30PM EST.
         </p>
-        <p
-          className={styles.cta}
-          style={{ textShadow: " 0 0 10px var(--white)" }}
-        >
+        <p className={styles.cta}>
           <a
             href="https://us02web.zoom.us/meeting/register/tZAvcOivqzkpG9CtqpP6cnaL64TnxKaY_fAg"
             target="_blank"

@@ -3,8 +3,44 @@ import styles from "./../page.module.css";
 const LetsDismantleAgeismPage = () => {
   return (
     <article className={styles.hireUs}>
-      <h2 className="pageHeader">Let’s Dismantle Ageism</h2>
       <section>
+        <h2 className="pageHeader">Workshops</h2>
+        <p>
+          <strong>Let’s Dismantle Ageism</strong> Designed for people of all
+          ages and in all walks of life, this workshop raises awareness of what
+          ageism is, how it appears in our lives, and what each of us can do to
+          dismantle it. During our time together, you’ll see what it’s like to
+          take or teach a workshop, and come away with all the tools you need to
+          host your own. Also available as a DIY workshop kit.
+        </p>
+        <p>
+          <strong>
+            Still Kicking: Investigating the Intersection of Ageism and Ableism
+          </strong>{" "}
+          Worried about how your mind or body might change over time? That’s
+          actually ableism, not ageism. Why does it matter? Because we age well
+          not by denying those changes but by adapting to them. Still Kicking
+          delves into the nature of ageism and ableism, where they differ, how
+          they intersect and reinforce each other, and why it’s so important to
+          dismantle the dread and dual stigma. Also available as a DIY workshop
+          kit.
+        </p>
+        <p>
+          <strong>Age Pride: Ageism and the Queer Experience</strong> Ageism
+          (discrimination on the basis of age) is easy to overlook and difficult
+          to untangle. It is compounded by other forms of prejudice, and
+          LGBTQIA2S+ communities are especially susceptible to generational
+          silos. Thanks to their unique life courses, though, queer people
+          happen to be very well-suited to dismantle ageism and dispel any
+          notions of intergenerational conflict. In this workshop, we will be
+          exploring the intersection of ageism and queerphobia and how they
+          combine and cause more harm together. We will learn to combat them,
+          along with other forms of prejudice, to make the world a better place
+          for everyone.
+        </p>
+      </section>
+      <section>
+        <h2>Let’s Dismantle Ageism</h2>
         <h3>Workshop Description:</h3>
         <p>
           Designed for people of all ages and in all walks of life, this

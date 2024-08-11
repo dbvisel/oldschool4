@@ -86,3 +86,36 @@
 	position: absolute;
 	bottom: calc(3 * var(--paddingOutside));
 }
+
+.officeHoursSlide {
+	position: relative;
+	background-color: var(--white)
+}
+
+.officeHoursSlide:before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0,0,0,0.4);
+	z-index: 1;
+}
+
+.officeHoursSlide h2 {
+	z-index: 2;
+	text-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+.officeHoursSlide p {
+	z-index: 2;
+	text-shadow: 0 0 5px rgba(0,0,0,0.25);
+	font-size: calc(var(--fontSize) * 1.2);
+	margin: 0 10vw;
+}
+
+.officeHoursSlide .cta {
+	z-index: 2;
+text-shadow: 0 0 5px rgba(0,0,0,0.25);
+}
