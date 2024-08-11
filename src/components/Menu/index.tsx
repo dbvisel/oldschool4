@@ -84,7 +84,7 @@ const Menu = () => {
             <li>
               <Link href="/hire-us">Hire us</Link>
             </li>
-            <li>
+            {/*<li>
               <Link
                 href={`#subscribe`}
                 target={"_bottom"}
@@ -98,7 +98,7 @@ const Menu = () => {
               >
                 Subscribe
               </Link>
-            </li>
+            </li>*/}
             <li>
               <Link
                 href="https://old-school-clearinghouse.raisely.com/"

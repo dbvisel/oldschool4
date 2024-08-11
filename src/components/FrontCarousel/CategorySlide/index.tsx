@@ -6,19 +6,25 @@ import { useInView } from "react-intersection-observer";
 import styles from "./page.module.css";
 import { definedTypes as categories } from "@/utils/categories";
 
+const categoriesWithoutSupplies = categories.filter((x) => x.id !== "supplies");
+
 export const CategorySlide = () => {
   const { ref, inView } = useInView({
     threshold: 0,
   });
   const [thisCategory, setThisCategory] = useState<any>(
-    categories[Math.floor(Math.random() * categories.length)]
+    categoriesWithoutSupplies[
+      Math.floor(Math.random() * categoriesWithoutSupplies.length)
+    ]
   );
 
   useEffect(() => {
     // if this slide comes into view, change it.
     if (inView) {
       setThisCategory(
-        categories[Math.floor(Math.random() * categories.length)]
+        categoriesWithoutSupplies[
+          Math.floor(Math.random() * categoriesWithoutSupplies.length)
+        ]
       );
     }
   }, [inView]);
@@ -46,11 +52,13 @@ export const CategorySlide = () => {
           onClick={(e) => {
             e.preventDefault();
             setThisCategory(
-              categories[Math.floor(Math.random() * categories.length)]
+              categoriesWithoutSupplies[
+                Math.floor(Math.random() * categoriesWithoutSupplies.length)
+              ]
             );
           }}
         >
-          (What other categories are there?)
+          What other categories are there?
         </a>
       </p>
     </div>

@@ -45,7 +45,7 @@ export default function AboutPage() {
           </h2>
         </div>
       </section>
-      <section style={{ scrollSnapAlign: "none" }}>
+      <section style={{ scrollSnapAlign: "none" }} id={"testimonials"}>
         {/*<h2>Here’s what people are saying about Old School:</h2>*/}
         <Suspense fallback={<LoadingTestimonials />}>
           <TestimonialCarousel />

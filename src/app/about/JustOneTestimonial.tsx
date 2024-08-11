@@ -9,6 +9,7 @@ export const JustOneTestimonial = ({ quotes }: any) => {
     threshold: 0,
   });
   const [thisQuote, setThisQuote] = useState<any>({});
+  const [flipped, setFlipped] = useState(false);
   useEffect(() => {
     if (quotes.length) {
       setThisQuote(quotes[Math.floor(Math.random() * quotes.length)]);
@@ -29,13 +30,32 @@ export const JustOneTestimonial = ({ quotes }: any) => {
       ref={ref}
     >
       <h2 className={styles.quoteHeader}>What people are saying:</h2>
-      <blockquote className={styles.quote}>{thisQuote.fields.Quote}</blockquote>
+      <blockquote
+        className={`${styles.quote} ${flipped ? styles.quoteAnimation : ""}`}
+      >
+        {thisQuote.fields.Quote}
+      </blockquote>
       <p className={styles.quoter}>
         &mdash;<strong>{thisQuote.fields.Quoter}</strong>
       </p>
       {thisQuote.fields.Credential && (
         <p className={styles.credential}>{thisQuote.fields.Credential}</p>
       )}
+      <p className={styles.cta}>
+        <a
+          href={`/about/#testimonials`}
+          onClick={(e) => {
+            e.preventDefault();
+            setFlipped(false);
+            setTimeout(() => {
+              setThisQuote(quotes[Math.floor(Math.random() * quotes.length)]);
+              setFlipped(true);
+            }, 50);
+          }}
+        >
+          What else are people saying?
+        </a>
+      </p>
     </div>
   ) : null;
 };

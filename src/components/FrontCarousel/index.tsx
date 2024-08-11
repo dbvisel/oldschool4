@@ -4,7 +4,7 @@ import { Link } from "next-view-transitions";
 import Carousel from "@/components/Carousel";
 import styles from "./styles.module.css";
 import { JustOneTestimonial } from "@/app/about/JustOneTestimonial";
-import { CategorySlide } from "@/components/CategorySlide";
+import { CategorySlide } from "./CategorySlide/";
 // import { TopResourcesSlide } from "@/components/TopResources/TopResourcesSlide";
 
 // Ashton order 8 August 2024:
@@ -67,7 +67,7 @@ const FrontCarousel = ({
                 textShadow: " 0 0 10px var(--black)",
               }}
             >
-              Old School is a small but mighty grass roots organization created
+              Old School is a small but mighty grassroots organization created
               to raise awareness of ageism and how to undo it.{" "}
               <strong>
                 <Link href={"/about"}>Learn more.</Link>
@@ -84,7 +84,7 @@ const FrontCarousel = ({
           <div>
             <h2 className={styles.bigHeader}>What Is Old School?</h2>
             <p className={styles.description}>
-              Old School is a small but mighty grass roots organization created
+              Old School is a small but mighty grassroots organization created
               to raise awareness of ageism and how to undo it.{" "}
               <strong>
                 <Link href={"/about"}>Learn more.</Link>
@@ -106,8 +106,9 @@ const FrontCarousel = ({
               Wondering where to begin when it comes to confronting ageism?
             </strong>{" "}
             <span style={{ fontWeight: "normal" }}>
-              You’re in the right place. Find tips on navigating our resource
-              bank, entry points, and more.
+              You’re in the right place.
+              {/* Find tips on navigating our resource
+              bank, entry points, and more.--> */}
             </span>
           </Link>
         </h2>
@@ -154,7 +155,13 @@ const FrontCarousel = ({
           className={styles.cta}
           style={{ textShadow: " 0 0 10px var(--white)" }}
         >
-          <Link href="/events">Register here.</Link>
+          <a
+            href="https://us02web.zoom.us/meeting/register/tZAvcOivqzkpG9CtqpP6cnaL64TnxKaY_fAg"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Register here.
+          </a>
         </p>
       </div>
       <div
