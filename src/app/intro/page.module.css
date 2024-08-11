@@ -143,6 +143,23 @@
   }
 }
 
+.topDiv ul {
+	font-size: var(--fontSize);
+	line-height: var(--lineHeight);
+	margin-left: var(--paddingInside);
+	margin-bottom: vaR(--paddingOutside);
+}
+
+.topDiv li {
+	margin-bottom: var(--paddingInside);
+}
+
+.topDiv li a {
+	/* color: var(--black); */
+	font-weight: bold;
+	border-bottom: 2px solid var(--white);
+}
+
 .demoDiv {
   background-color: var(--white);
   display: flex;

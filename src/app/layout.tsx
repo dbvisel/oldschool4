@@ -5,7 +5,11 @@ import Footer from "../components/Footer";
 import { Figtree } from "next/font/google";
 import "./globals.css";
 
-const figtree = Figtree({ subsets: ["latin"] });
+const figtree = Figtree({
+  subsets: ["latin"],
+  style: ["normal", "italic"],
+  weight: ["400", "700"],
+});
 
 export const metadata: Metadata = {
   title: "Old School",

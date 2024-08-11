@@ -1,0 +1,41 @@
+.hireUs {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.hireUs h2 {
+	font-size: calc(var(--fontSize) * 4);
+	color: var(--orange);
+	margin-bottom: var(--paddingInside);
+}
+
+.hireUs h2 + h3 {
+	margin-bottom: calc(var(--paddingOutside) * 2) !important;
+
+}
+
+.hireUs h3 {
+	font-size: calc(var(--fontSize) * 1.5);
+	font-weight: normal;
+}
+
+.hireUs section {
+	max-width: 800px;
+	width: 100%;
+	margin: var(--paddingOutside) 0;
+}
+
+.hireUs section h3 {
+	margin-bottom: var(--paddingInside);
+}
+
+.hireUs section p {
+	margin-bottom: var(--fontSize);
+}
+
+.hireUs hr {
+	width: 50%;
+	margin: var(--paddingOutside) auto;
+}
