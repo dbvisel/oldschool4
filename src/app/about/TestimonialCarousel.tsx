@@ -15,7 +15,6 @@ export const LoadingTestimonials = () => (
 );
 
 export const TestimonialCarousel = async ({ justWorkshops = false }) => {
-  console.log(justWorkshops);
   const quotes = await getQuotes(justWorkshops ? "Workshop" : "Website ");
   return quotes.length ? (
     <Carousel>
