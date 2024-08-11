@@ -3,6 +3,8 @@
   max-width: 100%;
   padding: 0;
 	color: var(--black);
+	display: flex;
+	flex-direction: column;
   & > h2 {
 		padding-top: var(--paddingOutside);
     padding-bottom: calc(2 * var(--paddingOutside));
@@ -128,6 +130,9 @@
   display: flex;
   justify-content: center;
   padding: var(--paddingOutside);
+	margin-left: auto;
+	margin-right: auto;
+
   & > div > h2,
   & > div > h3 {
     color: var(--white);
@@ -219,4 +224,14 @@
 
 .demoDiv.vertical {
 	padding: 200px 0 !important;
+}
+
+.bottomPara {
+	max-width: 800px;
+	width: 100%;
+	margin: var(--paddingOutside) auto;
+	margin-bottom: calc(var(--paddingOutside) * 2);
+	font-size: calc(var(--fontSize) * 1.75) !important;
+	align-self: center;
+	text-align: center;
 }

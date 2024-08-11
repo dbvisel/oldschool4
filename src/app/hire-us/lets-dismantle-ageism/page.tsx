@@ -1,6 +1,8 @@
+import styles from "./../page.module.css";
+
 const LetsDismantleAgeismPage = () => {
   return (
-    <article>
+    <article className={styles.hireUs}>
       <h2 className="pageHeader">Let’s Dismantle Ageism</h2>
       <section>
         <h3>Workshop Description:</h3>
@@ -34,16 +36,24 @@ const LetsDismantleAgeismPage = () => {
         <p>
           What other questions can I answer? If you want to jump on a call,
           suggest a few times that work for you and I’ll do my best to
-          accommodate. Or you can always stop by during our weekly office hours
-          sessions every Wednesday from 1:30-2:30 ET on zoom and I can pop off
-          into a breakout room with you. This link will take you to a
-          registration form:
-          https://us02web.zoom.us/j/84271752314?pwd=cXRYZjZVdFdLbWsvSFFxMDlrb2ZDUT09
+          accommodate. Or you can always stop by during our weekly{" "}
+          <a href="https://us02web.zoom.us/meeting/register/tZAvcOivqzkpG9CtqpP6cnaL64TnxKaY_fAg?_x_zm_rtaid=YiPF4Z6zTlaqkFLyDVWmEg.1642791884212.a1f026948d09da14ace823c2dd46fdb8&_x_zm_rhtaid=774">
+            office hours sessions
+          </a>{" "}
+          every Wednesday from 1:30-2:30 ET on zoom and I can pop off into a
+          breakout room with you.{" "}
+          <a href="https://us02web.zoom.us/j/84271752314?pwd=cXRYZjZVdFdLbWsvSFFxMDlrb2ZDUT09">
+            This link
+          </a>{" "}
+          will take you to a registration form.
         </p>
         <p>
           To access a list of other people we recommend who speak about age
-          equity, you can find that here:
-          https://airtable.com/appfRSN7ubm4ALjoc/shrXjNJntfcMN4ysr/tblRZRxhVddepqs7T
+          equity, you can find that{" "}
+          <a href="https://airtable.com/appfRSN7ubm4ALjoc/shrXjNJntfcMN4ysr/tblRZRxhVddepqs7T">
+            here
+          </a>
+          .
         </p>
       </section>
     </article>

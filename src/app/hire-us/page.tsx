@@ -13,7 +13,7 @@ export default function HireUsPage() {
           People want to learn about ageism and age advocacy in very different
           ways, so we shape our offerings accordingly. We’ve worked with all
           kinds of audiences, from aging service providers and faith groups to
-          students of all ages. Describe your needs and goals in an email to
+          students of all ages. Describe your needs and goals in an email to{" "}
           <a href="mailto:hello@oldschool.info">hello@oldschool.info</a> and
           we’ll figure out how to accommodate them.
         </p>
@@ -32,21 +32,23 @@ export default function HireUsPage() {
           as a DIY workshop kit.
         </p>
         <p>
-          <strong>Still Kicking:</strong> Investigating the Intersection of
-          Ageism and Ableism Worried about how your mind or body might change
-          over time? That’s actually ableism, not ageism. Why does it matter?
-          Because we age well not by denying those changes but by adapting to
-          them. Still Kicking delves into the nature of ageism and ableism,
-          where they differ, how they intersect and reinforce each other, and
-          why it’s so important to dismantle the dread and dual stigma. Also
-          available as a DIY workshop kit.
+          <strong>
+            Still Kicking: Investigating the Intersection of Ageism and Ableism
+          </strong>{" "}
+          Worried about how your mind or body might change over time? That’s
+          actually ableism, not ageism. Why does it matter? Because we age well
+          not by denying those changes but by adapting to them. Still Kicking
+          delves into the nature of ageism and ableism, where they differ, how
+          they intersect and reinforce each other, and why it’s so important to
+          dismantle the dread and dual stigma. Also available as a DIY workshop
+          kit.
         </p>
 
         <p>
-          <strong>Age Pride: Ageism and the Queer Experience</strong>
-          Ageism (discrimination on the basis of age) is easy to overlook and
-          difficult to untangle. It is compounded by other forms of prejudice,
-          and LGBTQIA2S+ communities are especially susceptible to generational
+          <strong>Age Pride: Ageism and the Queer Experience</strong> Ageism
+          (discrimination on the basis of age) is easy to overlook and difficult
+          to untangle. It is compounded by other forms of prejudice, and
+          LGBTQIA2S+ communities are especially susceptible to generational
           silos. Thanks to their unique life courses, though, queer people
           happen to be very well-suited to dismantle ageism and dispel any
           notions of intergenerational conflict. In this workshop, we will be
@@ -65,7 +67,8 @@ export default function HireUsPage() {
         <p>
           <strong>Cost:</strong> Our clients have ranged from non-profits to
           Fortune 500 companies. We’ll modify our fees and offerings to fit your
-          budget. For more information, contact us at hello@oldschool.info. This
+          budget. For more information, contact us at{" "}
+          <a href="mailto:hello@oldschool.info">hello@oldschool.info</a>. This
           income enables Old School to create and disseminate free resources. We
           thank you in advance for your support!
         </p>

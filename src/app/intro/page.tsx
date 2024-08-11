@@ -96,13 +96,12 @@ const IntroPage = () => {
                 to Old School to help us keep going and growing,
               </li>
             </ul>
-            <p>
-              Remember, social change is incremental. You can’t start too small,
-              you can’t start too late, and the only way to fail is not to start
-              at all.
-            </p>
           </div>
         </div>
+        <p className={styles.bottomPara}>
+          Remember, social change is incremental. You can’t start too small, you
+          can’t start too late, and the only way to fail is not to start at all.
+        </p>
       </div>
     </article>
   );
