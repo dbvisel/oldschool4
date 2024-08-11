@@ -1,5 +1,9 @@
-"use client";
+import { Suspense } from "react";
 import { Link } from "next-view-transitions";
+import {
+  LoadingTestimonials,
+  TestimonialCarousel,
+} from "./../about/TestimonialCarousel";
 
 import styles from "./page.module.css";
 
@@ -48,12 +52,10 @@ export default function HireUsPage() {
           thank you in advance for your support!
         </p>
       </section>
-      <section>
-        <p>
-          {" "}
-          Testimonials: [we have about a dozen quotes categorized under Workshop
-          in Airtable. Possible to make carousel?]
-        </p>
+      <section className={styles.testimonialWrapper}>
+        <Suspense fallback={<LoadingTestimonials />}>
+          <TestimonialCarousel justWorkshops />
+        </Suspense>
       </section>
     </article>
   );

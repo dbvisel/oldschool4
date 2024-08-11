@@ -46,11 +46,12 @@ const minifyRecord = (record) => {
   };
 };
 
-const getQuotes = async () => {
+const getQuotes = async (quoteType = "Website ") => {
+  // default quoteType is "Website " Others are "Workshop" and "office hours"
   const records = await quotesBase.select({ view: "Grid view" }).all();
   const minifiedRecords = await getMinifiedRecords(records);
   const filteredRecords = minifiedRecords.filter(
-    (x) => x.fields.Offering && x.fields.Offering.indexOf("Website ") > -1 // note that it is "Website " and not "Website"
+    (x) => x.fields.Offering && x.fields.Offering.indexOf(quoteType) > -1 // note that it is "Website " and not "Website"
   );
 
   // console.log(minifiedRecords);

@@ -14,10 +14,9 @@ export const LoadingTestimonials = () => (
   </section>
 );
 
-export const TestimonialCarousel = async () => {
-  const quotes = await getQuotes();
-  // console.log(quotes.map((x: any) => getQuoteType(x)));
-
+export const TestimonialCarousel = async ({ justWorkshops = false }) => {
+  console.log(justWorkshops);
+  const quotes = await getQuotes(justWorkshops ? "Workshop" : "Website ");
   return quotes.length ? (
     <Carousel>
       {quotes.map((quote: any) => (
