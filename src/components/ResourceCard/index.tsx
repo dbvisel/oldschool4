@@ -42,11 +42,17 @@ const ResourceCard = ({
   const now: Date = new Date();
   const isNew =
     forceNew || now.getTime() - useDate.getTime() < 2592000000 * 1.5; //2592000000 is 30 days – the number after it is how many months we want.
-  // console.log(showType, resource.types);
+  if (!resource.types) {
+    console.log(resource);
+  }
   return (
     <div className={styles.card}>
-      {showType && resource.types ? (
-        <div className={styles.type}>{resource.types[0]}</div>
+      {showType ? (
+        resource.types ? (
+          <div className={styles.type}>{resource.types[0]}</div>
+        ) : isEvent ? (
+          <div className={styles.type}>Event</div>
+        ) : null
       ) : null}
       {isNew ? <div className={styles.new}>NEW!</div> : null}
       {isEvent ? (

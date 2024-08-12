@@ -36,7 +36,8 @@
 }
 
 .search :global(.ais-SearchBox-input::placeholder ){
-	color: var(--whiteHalf);
+	color: var(--secondaryCream);
+	opacity: 0.75;
 }
 
 

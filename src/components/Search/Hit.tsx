@@ -27,7 +27,12 @@ const Hit = ({ hit }: { hit: any }) => {
     };
     return (
       <div className={styles.hit}>
-        <ResourceCard resource={cleanedHit} isSubResource={false} isEvent />
+        <ResourceCard
+          resource={cleanedHit}
+          isSubResource={false}
+          isEvent
+          showType
+        />
       </div>
     );
   }

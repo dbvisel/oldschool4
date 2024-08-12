@@ -153,6 +153,9 @@
 	line-height: var(--lineHeight);
 	margin-left: var(--paddingInside);
 	margin-bottom: vaR(--paddingOutside);
+	@media (max-width: 767px) {
+		margin-left: vaR(--paddingOutside);
+	}
 }
 
 .topDiv li {
