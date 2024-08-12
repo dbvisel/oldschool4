@@ -2,13 +2,19 @@
   --orange: #d3711c;
 	--white: #ffffff;
 	--black: #000000;
-	--orange-half: rgba(211, 113, 28, 0.5);
-	--secondary-brown: #41261a;
-	--secondary-cream: #f0eee1;
-	--secondary-red: #b31218;
-	--secondary-green: #275e37;
-  --text-color: var(--black);
-	--background-color: var(--orange);
+	--whiteHalf: oklch(from var(--white) l c h / 50%);
+	--blackHalf: oklch(from var(--black) l c h / 50%);
+	--orangeHalf: oklch(from var(--orange) l c h / 50%);
+	--whiteShadow: oklch(from var(--white) l c h / 25%);
+	--blackShadow: oklch(from var(--black) l c h / 25%);
+	--orangeShadow: oklch(from var(--orange) l c h / 25%);
+	--secondaryBrown: #41261a;
+	--secondaryCream: #f0eee1;
+	--secondaryRed: #b31218;
+	--secondaryGreen: #275e37;
+
+  --textColor: var(--black);
+	--backgroundColor: var(--orange);
 	--paddingOutside: 25px;
 	--paddingInside: 12.5px;
 	--paddingDouble: 50px;
@@ -16,6 +22,7 @@
 	--fontSize: 20px;
 	--lineHeight: 1.5;
 	--mainBlockWidth: 1280px;
+	--narrowBlockWidth: 800px;
 
 
 	/* this is old below: */
@@ -24,17 +31,23 @@
 	@media screen and (max-width: 1279px) {
 		--mainBlockWidth: 100%;
 	}
+	@media screen and (max-width: 1279px) {
+		--mainBlockWidth: 100%;		
+	}
 	@media screen and (max-width: 1023px) {
 		--paddingOutside: 10px;
 		--paddingInside: 5px;
 		--fontSize: 16px;
 	}
+	@media screen and (max-width: 799px) {
+		--narrowBlockWidth: 100%;		
+	}
 }
 
 /* @media (prefers-color-scheme: dark) {
   :root {
-		--text-color: var(--orange);
-		--background-color: var(--black);
+		--textColor: var(--orange);
+		--backgroundCoolor: var(--black);
   }
 } */
 
@@ -51,8 +64,8 @@ body {
 }
 
 body {
-  color: var(--text-color);
-  background: var(--background-color);
+  color: var(--textClor);
+  background: var(--backgroundColor);
 	width: 100vw;
 	overflow: hidden;
 }
@@ -131,7 +144,7 @@ a:hover {
 
 .tagline {
 	text-align: center;
-	color: rgba(0,0,0,0.5);
+	color: var(--blackHalf);
 	text-transform: uppercase;
 	letter-spacing: 1px;
 	font-size: 95% !important;

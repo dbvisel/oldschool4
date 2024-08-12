@@ -14,7 +14,7 @@
 	height: max-content;
 	width: min-content;
 	min-width: 100%;
-	box-shadow: 0 0 4px rgba(211, 113, 28, 0.75);
+	box-shadow: 0 0 4px var(--orangeHalf);
 	width: calc(240px + calc(var(--paddingInside) * 2) + calc(var(--borderWidth) * 2));
 	border: none;
 	border-radius: 0;
@@ -22,7 +22,7 @@
 }
 
 .card:hover {
-	box-shadow: 0 0 8px rgba(211, 113, 28, 0.75);
+	box-shadow: 0 0 8px var(--orange);
 }
 
 .card a {
@@ -90,7 +90,7 @@ p.description {
 	letter-spacing: 1px;
 	font-weight: bold;
 	border-radius: 	var(--borderRadius);
-	box-shadow: 0 0 4px rgba(211, 113, 28, 0.75);
+	box-shadow: 0 0 4px var(--orangeShadow);
 	z-index: 2;
 	transition: 0.5s;
 }
@@ -105,14 +105,14 @@ p.description {
 	top: 5px;
 	font-size: 16px;
 	border: 1px solid var(--white);
-	background-color: rgba(0,0,0,0.75); /* var(--black); */
+	background-color: var(--blackHalf); 
 	color: var(--white);
 	padding: 2px 8px;
 	user-select: none;
 	letter-spacing: 1px;
 	font-weight: bold;
 	border-radius: 	var(--borderRadius);
-	box-shadow: 0 0 4px rgba(255,255, 255, 0.5);
+	box-shadow: 0 0 4px var(--whiteShdow);
 	z-index: 2;
 	transition: 0.5s;
 	text-transform: uppercase;

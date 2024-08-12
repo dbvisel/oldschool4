@@ -70,7 +70,7 @@ export default function AboutPage() {
           .
         </p>
       </section>
-      <section style={{ width: "100%", maxWidth: "800px" }}>
+      <section style={{ width: "100%", maxWidth: "var(--narrowBlockWidth)" }}>
         <h2
           className="pageheader"
           style={{ marginBottom: "var(--paddingOutside", textAlign: "center" }}

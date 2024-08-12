@@ -13,14 +13,14 @@
 	padding: var(--paddingOutside);
 	min-height: calc(100vh - var(--headerHeight));
 	box-sizing: border-box;
-	border-top: 1px solid var(--orange-half);
+	border-top: 1px solid var(--orangeHalf);
 	scroll-snap-align: start;
 }
 
 .about section:first-of-type {
 	background-color: var(--orange);
 	color: var(--white);
-	/* border-top: 1px solid rgba(255,255,255,0.5); */
+	/* border-top: 1px solid var(--whiteHalf); */
 }
 
 .about section > div {
@@ -55,7 +55,7 @@
 
 .quote {
 	font-size: calc(var(--fontSize) * 2);
-	max-width: min(800px, calc(100vw - calc(2 * var(--paddingOutside))));
+	max-width: min(var(--narrowBlockWidth), calc(100vw - calc(2 * var(--paddingOutside))));
 	line-height: 1.25;
 	color: var(--orange);
 	@media (max-width: 767px) {
@@ -80,7 +80,7 @@
 .quoter {
 	margin-top: calc(var(--fontSize) * 0.5);
 	font-size: calc(var(--fontSize) * 1.5) !important;
-	max-width: min(800px, calc(100vw - calc(2 * var(--paddingOutside))));
+	max-width: min(var(--narrowBlockWidth), calc(100vw - calc(2 * var(--paddingOutside))));
 	text-align: right;
 	width: 100%;
 	@media (max-width: 767px) {
@@ -90,7 +90,7 @@
 
 .credential {
 	font-size: calc(var(--fontSize) * 0.9);
-	max-width: min(800px, calc(100vw - calc(2 * var(--paddingOutside))));
+	max-width: min(var(--narrowBlockWidth), calc(100vw - calc(2 * var(--paddingOutside))));
 	text-align: right;
 	width: 100%;
 	text-transform: uppercase;
@@ -113,7 +113,7 @@
 
 .theStoryBlock a {
 	color: var(--white);
-	text-shadow: 0 0 5px rgba(0,0,0,0.5);
+	text-shadow: 0 0 5px var(--blackShadow);
 }
 
 .quoteHeader {
@@ -127,13 +127,13 @@
 .cta {
 	margin-top: calc(var(--fontSize) * 2);
 	font-size: calc(var(--fontSize) * 1.5) !important;
-	max-width: min(800px, calc(100vw - calc(2 * var(--paddingOutside))));
+	max-width: min(var(--narrowBlockWidth), calc(100vw - calc(2 * var(--paddingOutside))));
 	text-align: center;
 	font-weight: bold;
 	width: 100%;
 	text-transform: uppercase;
 	letter-spacing: 1px;
-	/* text-shadow: 0 0 5px rgba(0,0,0,0.5); */
+	/* text-shadow: 0 0 5px var(--blackShadow); */
 	position: absolute;
 	bottom: calc(2 * var(--paddingOutside)); /* this might bump? Maybe we should position differently? */
 }

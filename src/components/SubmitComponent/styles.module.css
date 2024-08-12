@@ -1,15 +1,18 @@
 .submitDiv {
 		display: flex;
 		box-sizing: border-box;
-		min-width: 800px;
+		min-width: var(--narrowBlockWidth);
 		max-width: 100%;
 		margin-top: var(--paddingOutside);
+		height: calc(100% - 220px);
+		overflow-y: hidden;
 }
 
 .submitDiv > iframe {
 		width: 100%;
-		max-width: 800px;
-		@media (max-width: 800px) {
+		max-width: var(--narrowBlockWidth);
+		/* trying to hide branding! */
+		@media (max-width: 799px) {
       padding: 0 25px;
       max-width: 100%;
     }

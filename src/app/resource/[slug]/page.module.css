@@ -86,7 +86,7 @@ article.resourcePage {
 }
 
 .dataBox + .dataBox {
-	border-top: 1px solid var(--orange-half);
+	border-top: 1px solid var(--orangeHalf);
 	padding-top: var(--paddingOutside);
 	margin-top: var(--paddingOutside)
 }

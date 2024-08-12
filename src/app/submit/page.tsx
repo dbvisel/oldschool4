@@ -5,7 +5,7 @@ import styles from "./page.module.css";
 
 export default function SubmitPage() {
   return (
-    <article style={{ maxWidth: "800px", width: "100%" }}>
+    <article style={{ maxWidth: "var(--narrowBlockWidth)", width: "100%" }}>
       <h2
         className="pageheader"
         style={{ marginBottom: "var(--paddingOutside", textAlign: "center" }}

@@ -68,6 +68,7 @@
 .description {
 	--fontSize: 32px;
 	--lineHeight: 1.25;
+	max-width: var(--narrowBlockWidth);
 	font-size: var(--fontSize);
 	line-height: var(--lineHeight);
 }
@@ -76,13 +77,13 @@
 .cta {
 	margin-top: calc(var(--fontSize) * 2);
 	font-size: calc(var(--fontSize) * 1.5) !important;
-	max-width: min(800px, calc(100vw - calc(2 * var(--paddingOutside))));
+	max-width: min(var(--narrowBlockWidth), calc(100vw - calc(2 * var(--paddingOutside))));
 	text-align: right;
 	font-weight: bold;
 	width: 100%;
 	text-transform: uppercase;
 	letter-spacing: 1px;
-	text-shadow: 0 0 5px rgba(0,0,0,0.5);
+	text-shadow: 0 0 5px var(--blackShadow);
 	position: absolute;
 	bottom: calc(3 * var(--paddingOutside));
 }
@@ -105,17 +106,17 @@
 
 .officeHoursSlide h2 {
 	z-index: 2;
-	text-shadow: 0 0 10px rgba(0,0,0,0.5);
+	text-shadow: 0 0 10px var(--blackShadow);
 }
 
 .officeHoursSlide p {
 	z-index: 2;
-	text-shadow: 0 0 5px rgba(0,0,0,0.25);
+	text-shadow: 0 0 5px var(--blackShadow);
 	font-size: calc(var(--fontSize) * 1.2);
 	margin: 0 10vw;
 }
 
 .officeHoursSlide .cta {
 	z-index: 2;
-text-shadow: 0 0 5px rgba(0,0,0,0.25);
+text-shadow: 0 0 5px var(--blackShadow);
 }

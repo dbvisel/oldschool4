@@ -28,7 +28,7 @@ const FrontCarousel = ({
           padding: "0 15vh",
         }}
       >
-        <h2 className={styles.bigHeader} style={{ alignSelf: "start" }}>
+        <h2 className={styles.bigHeader} style={{ alignSelf: "center" }}>
           Welcome to the new Old School!
         </h2>
         <p
@@ -38,8 +38,8 @@ const FrontCarousel = ({
             fontSize: "calc(var(--fontSize) * 1.5)",
           }}
         >
-          New name, new look, new logo. Same great resource bank, more ways to
-          come together to end ageism
+          New name, new look, new logo. Same great resource bank, more&nbsp;ways
+          to come together to&nbsp;end&nbsp;ageism
         </p>
       </div>
       {/* <div
@@ -100,7 +100,12 @@ const FrontCarousel = ({
           backgroundImage: `url(images/carousel/backdrop.jpeg)`,
         }}
       >
-        <h2 style={{ margin: "0 15vh" }}>
+        <h2
+          style={{
+            maxWidth: "var(--narrowBlockWidth)",
+            fontSize: "calc(var(--fontSize) * 3.5)",
+          }}
+        >
           <Link href="/intro">
             <strong>
               Wondering where to begin when it comes to confronting ageism?

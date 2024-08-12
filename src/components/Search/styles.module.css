@@ -22,7 +22,7 @@
 }
 
 .search :global(.ais-SearchBox-input) {
-	background-color: rgba(255,255,255,0);
+	background-color: transparent;
 	border: 1px solid var(--orange) !important;
 	color: var(--white);
 	border: none;
@@ -36,13 +36,13 @@
 }
 
 .search :global(.ais-SearchBox-input::placeholder ){
-	color: rgba(255,255,255,0.5);
+	color: var(--whiteHalf);
 }
 
 
 .search :global(.ais-SearchBox-input):focus {
 	color: var(--orange);
-	background-color: rgba(255,255,255,1);
+	background-color: var(--white);
 	opacity: 1;
 	border: none;
 	outline: none;
@@ -91,7 +91,7 @@
 	height: 0;
 	background-color:var(--orange); 
 	background-color: white;
-	box-shadow: 0 0 10px rgba(0,0,0,0.5);
+	box-shadow: 0 0 10px var(--blackShadow);
 	border-radius: 4px;
 	display: block;
 	transform: scale(1) translateX(100%);

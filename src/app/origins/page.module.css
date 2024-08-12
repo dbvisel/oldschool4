@@ -1,5 +1,5 @@
 .aboutPage {
-	max-width: min(800px, calc(100vw - 2 * var(--paddingOutside)));
+	max-width: min(var(--narrowBlockWidth), calc(100vw - 2 * var(--paddingOutside)));
 }
 
 .aboutPage h2 {
@@ -18,7 +18,7 @@
 
 .aboutPage img {
 	margin: var(--paddingOutside) 0;
-	@media (max-width: 800px) {
+	@media (max-width: 799px) {
 		width: 100%;
 		height: auto;
 	}

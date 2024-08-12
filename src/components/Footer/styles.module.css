@@ -64,7 +64,6 @@
 	margin-bottom: 24px;
 	background-color: transparent;
 	color: var(--white);
-	font-family: var(--fontFamily);
 	text-align: center;
 	border: 1px solid var(--white);
 	outline: none;
@@ -77,12 +76,19 @@
 	color: var(--orange);
 	background-color: var(--white);
 	text-transform: uppercase;
-
 }
 
-.subscribediv input:placeholder, .subscribediv input:placeholder-shown {
-	color: var(--orange);
+.subscribediv input::placeholder {
+	color: var(--secondaryCream) !important;
 	font-weight: normal;
+	opacity: 0.75;
+}
+
+.subscribediv input::placeholder-shown {
+	/* does this do anything? */
+	color: var(--secondaryCream) !important;
+	font-weight: normal;
+	opacity: 0.75;
 }
 
 .subscribediv input[type="submit"] {

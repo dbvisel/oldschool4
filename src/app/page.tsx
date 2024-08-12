@@ -5,7 +5,7 @@ import TopResources, { LoadingTopResources } from "@/components/TopResources";
 import FrontCarousel from "@/components/FrontCarousel";
 import styles from "./page.module.css";
 import aboutStyles from "@/app/about/page.module.css";
-import getNewestData from "@/lib/getNewestData";
+// import getNewestData from "@/lib/getNewestData";
 
 // (this was added to make search work)
 // export const dynamic = "force-dynamic";
@@ -16,7 +16,7 @@ import getNewestData from "@/lib/getNewestData";
 
 const HomePage = async () => {
   const quotes = await getQuotes();
-  const { resources } = await getNewestData();
+  // const { resources } = await getNewestData();
 
   // console.log(resources);
   return (

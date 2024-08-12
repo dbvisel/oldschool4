@@ -29,9 +29,6 @@ const EventsPage = async () => {
         to subscribe to our
         <br /> shared calendar of upcoming events.
       </p>
-      <p>
-        <a href="/">Home</a>
-      </p>
     </article>
   );
 };

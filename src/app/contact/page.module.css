@@ -14,8 +14,8 @@
 	justify-content: center;
 	height: calc(100vh - var(--headerHeight));
 	width: 100%;
-	max-width: 800px;
-	@media (max-width: 800px) {
+	max-width: calc(var(--mainBlockWidth) / 2);
+	@media (max-width: var(--narrowBlockWidth)) {
 		max-width: 100%;
 	}
 }
