@@ -18,6 +18,7 @@ const TheTeam = async () => {
               alt={person.name}
               width={person.image.width}
               height={person.image.height}
+              style={{ transform: `rotate(${index % 2 ? -3 : 3}deg)` }}
               priority
             />
             <div>
@@ -42,6 +43,7 @@ const TheTeam = async () => {
               alt={person.name}
               width={person.image.width}
               height={person.image.height}
+              style={{ transform: `rotate(${index % 2 ? -3 : 3}deg)` }}
             />
             <div>
               <h3>

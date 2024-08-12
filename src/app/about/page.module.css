@@ -109,6 +109,10 @@
 .theStoryBlock h2 {
 	color: var(--white);
 	font-size: calc(var(--fontSize) * 3);
+	@media (max-width: 767px) {
+			text-align: center;
+	}
+
 }	
 
 .theStoryBlock a {
