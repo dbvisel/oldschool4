@@ -40,7 +40,7 @@ const LetsDismantleAgeismPage = () => {
         </p>
       </section>
       <section>
-        <h2>Let’s Dismantle Ageism</h2>
+        {/* <!--<h2>Let’s Dismantle Ageism</h2>
         <h3>Workshop Description:</h3>
         <p>
           Designed for people of all ages and in all walks of life, this
@@ -66,7 +66,7 @@ const LetsDismantleAgeismPage = () => {
           perpetuity. However, we never want cost to be a barrier. If this fee
           is not accessible, tell us what your budget is and we’ll modify an
           offering to fit within it.
-        </p>
+        </p>--> */}
         <hr />
 
         <p>
@@ -76,7 +76,7 @@ const LetsDismantleAgeismPage = () => {
           <a href="https://us02web.zoom.us/meeting/register/tZAvcOivqzkpG9CtqpP6cnaL64TnxKaY_fAg?_x_zm_rtaid=YiPF4Z6zTlaqkFLyDVWmEg.1642791884212.a1f026948d09da14ace823c2dd46fdb8&_x_zm_rhtaid=774">
             office hours sessions
           </a>{" "}
-          every Wednesday from 1:30-2:30 ET on zoom and I can pop off into a
+          every Wednesday from 1:30–2:30 ET on zoom and I can pop off into a
           breakout room with you.{" "}
           <a href="https://us02web.zoom.us/j/84271752314?pwd=cXRYZjZVdFdLbWsvSFFxMDlrb2ZDUT09">
             This link
