@@ -75,17 +75,17 @@
 
 
 .cta {
-	margin-top: calc(var(--fontSize) * 2);
+	/* margin-top: calc(var(--fontSize) * 2); */
 	font-size: calc(var(--fontSize) * 1.5) !important;
 	max-width: min(var(--narrowBlockWidth), calc(100vw - calc(2 * var(--paddingOutside))));
-	text-align: right;
+	text-align: center;
 	font-weight: bold;
 	width: 100%;
 	text-transform: uppercase;
 	letter-spacing: 1px;
-	text-shadow: 0 0 5px var(--blackShadow);
+	text-shadow: 0 0 10px var(--blackShadow) !important;
 	position: absolute;
-	bottom: calc(3 * var(--paddingOutside));
+	bottom: calc(1 * var(--paddingOutside));
 }
 
 .officeHoursSlide {
@@ -119,4 +119,27 @@
 .officeHoursSlide .cta {
 	z-index: 2;
 text-shadow: 0 0 5px var(--blackShadow);
+}
+
+.bookSlide {
+	position: relative;
+}
+
+.bookSlide:before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(62, 42, 36, 0.45);
+	z-index: 1;
+}
+
+.bookSlide h2 {
+	z-index: 2;
+}
+
+.bookSlide p {
+	z-index: 2;
 }

@@ -21,7 +21,7 @@ const FrontCarousel = ({
   return (
     <Carousel>
       <div
-        className={styles.emblaSlide}
+        className={`${styles.emblaSlide} ${styles.bookSlide}`}
         style={{
           backgroundColor: "var(--orange)",
           backgroundImage: `url(images/carousel/backdrop.jpeg)`,
@@ -94,7 +94,7 @@ const FrontCarousel = ({
         </div>
       </div>
       <div
-        className={styles.emblaSlide}
+        className={`${styles.emblaSlide} ${styles.bookSlide}`}
         style={{
           backgroundColor: "var(--white)",
           backgroundImage: `url(images/carousel/backdrop.jpeg)`,
@@ -149,7 +149,10 @@ const FrontCarousel = ({
             Office Hours
           </Link>
         </h2>
-        <p className={styles.description}>
+        <p
+          className={styles.description}
+          style={{ paddingBottom: "calc(4 * var(--paddingOutside)" }}
+        >
           Join Old School’s co-founders at <strong>Office Hours</strong>, an
           informal open forum to talk about anything ageism-related. Everyone is
           welcome, to participate or just to listen. It takes place every

@@ -23,19 +23,16 @@
 
 .controls {
 	position: absolute;
-	bottom: var(--paddingOutside);
+	left: var(--paddingOutside);
 	right: var(--paddingOutside);
-	display: grid;
-  grid-template-columns: auto 1fr;
-  justify-content: space-between;
-  gap: 1.2rem;
-  margin-top: 1.8rem;
+	top: calc(50% - calc(58px / 2));
+	width: calc(100% - calc(2 * var(--paddingOutside)));
 }
 
 .controlButtons {
-	display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 0.6rem;
+	display: flex;
+	width: 100%;
+	justify-content: space-between;
   align-items: center;
 }
 

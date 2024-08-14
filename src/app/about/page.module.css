@@ -129,7 +129,8 @@
 }
 
 .cta {
-	margin-top: calc(var(--fontSize) * 2);
+
+	/* margin-top: calc(var(--fontSize) * 2); */
 	font-size: calc(var(--fontSize) * 1.5) !important;
 	max-width: min(var(--narrowBlockWidth), calc(100vw - calc(2 * var(--paddingOutside))));
 	text-align: center;
@@ -139,5 +140,5 @@
 	letter-spacing: 1px;
 	/* text-shadow: 0 0 5px var(--blackShadow); */
 	position: absolute;
-	bottom: calc(2 * var(--paddingOutside)); /* this might bump? Maybe we should position differently? */
+	bottom: calc(1 * var(--paddingOutside)); /* this might bump? Maybe we should position differently? */
 }

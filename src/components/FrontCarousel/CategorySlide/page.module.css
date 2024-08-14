@@ -79,7 +79,7 @@
 
 
 .cta {
-	margin-top: calc(var(--fontSize) * 2);
+	/* margin-top: calc(var(--fontSize) * 2); */
 	font-size: calc(var(--fontSize) * 1.5) !important;
 	max-width: min(var(--narrowBlockWidth), calc(100vw - calc(2 * var(--paddingOutside))));
 	text-align: right;
@@ -87,7 +87,7 @@
 	width: 100%;
 	text-transform: uppercase;
 	letter-spacing: 1px;
-	text-shadow: 0 0 5px var(--blackShadow);
+	text-shadow: 0 0 10px var(--blackShadow);
 	position: absolute;
-	bottom: calc(3 * var(--paddingOutside));
+	bottom: calc(1 * var(--paddingOutside));
 }

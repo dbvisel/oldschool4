@@ -10,13 +10,17 @@ import styles from "./page.module.css";
 
 export default function AboutPage() {
   return (
-    <article className={styles.about} style={{ scrollSnapAlign: "none" }}>
+    <article
+      className={styles.about}
+      style={{ scrollSnapAlign: "none" }}
+      id="top"
+    >
       <section
         className={styles.aboutBlock}
         style={{ scrollSnapAlign: "none" }}
       >
         <div>
-          <h2>What Is Old School?</h2>
+          <h2>About Old School</h2>
           <p>
             Old School curates, creates, commissions and disseminates free
             resources to educate people about ageism and how to end it; hosts
@@ -38,7 +42,10 @@ export default function AboutPage() {
           <TheTeam />
         </div>
       </section>
-      <section className={styles.theStoryBlock}>
+      <section
+        className={styles.theStoryBlock}
+        style={{ scrollSnapAlign: "none" }}
+      >
         <div>
           <h2>
             <Link href={"/origins"}>Old School’s Origin Story</Link>

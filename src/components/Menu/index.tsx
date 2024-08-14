@@ -79,7 +79,7 @@ const Menu = () => {
               <Link href="/category/supplies">School supplies</Link>
             </li>
             <li>
-              <Link href="/about">About</Link>
+              <Link href="/about#top">About</Link>
             </li>
             <li>
               <Link href="/hire-us">Hire us</Link>
