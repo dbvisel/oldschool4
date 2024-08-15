@@ -21,6 +21,10 @@ const ResourceCard = ({
   showType?: Boolean;
   // isSearchResult: Boolean;
 }) => {
+  if (resource.subresources?.length) {
+    // this isn't coming back with anything!
+    console.log(resource);
+  }
   const thisLink = isEvent
     ? "/events/"
     : isSubResource

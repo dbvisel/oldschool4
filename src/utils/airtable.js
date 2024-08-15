@@ -266,6 +266,24 @@ const possibleSlugs = async () => {
   return preSlugs;
 };
 
+const possibleSlugsWithSubresources = async () => {
+  // could probably improve this code by caching the results somewhere? This function is being run for every possible page.
+  // TODO: filter so that only resources with subresources are returned
+  const records = await getResources();
+  const preSlugs = records
+    .filter((x) => x.fields.Status === "publish") // is this not always working? Other ones pop up on build
+    .filter((x) => x.fields["Hide?"] !== "yes")
+    .filter((x) => x.fields["Is this a subresource?"] !== true)
+    .map((x) => {
+      // console.log(slugify(x), x.fields.Status);
+      return {
+        id: x.id,
+        slug: slugify(x).trim(),
+      };
+    });
+  return preSlugs;
+};
+
 const possibleCategories = async () => {
   // this is not actually being used!
   const records = await getCategories();
@@ -292,6 +310,7 @@ const getRecordsForAlgolia = async () => {
 export {
   getRecordsForAlgolia,
   possibleSlugs,
+  possibleSlugsWithSubresources,
   possibleCategories,
   getQuotes,
   getResourceById,

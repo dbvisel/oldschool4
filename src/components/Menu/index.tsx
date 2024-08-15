@@ -1,11 +1,13 @@
 "use client";
+import dynamic from "next/dynamic";
 
 import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 // import Link from "next/link";
 import { Link } from "next-view-transitions";
 import styles from "./styles.module.css";
-import Search from "../Search";
+// import Search from "../Search";
+const Search = dynamic(() => import("@/components/Search"), { ssr: false });
 import logo from "./horizontallogo-twoline.svg";
 import { definedTypes } from "../../utils/categories";
 
