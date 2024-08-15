@@ -60,10 +60,18 @@
 	margin-right: var(--paddingOutside) !important;
 	margin-left: 0 !important;
 	object-fit: cover;
+	box-shadow: 0 0 8px var(--orangeHalf);
+	transition: 0.5s;
 	@media (max-width: 767px) {
 		margin-right: 0 !important;
 		margin-left: 0 !important;
 	}
+}
+
+.person > img:hover {
+	box-shadow: 0 0 16px var(--orange);
+	transform: rotate(0deg) !important;
+
 }
 
 .person:nth-of-type(1) > img, .person:nth-of-type(3) > img, .person:nth-of-type(5) > img, .person:nth-of-type(7) > img {
