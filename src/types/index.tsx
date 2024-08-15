@@ -45,4 +45,5 @@ export interface PersonRecord {
   image: Image;
   title: string;
   bio: string;
+  website: string;
 }

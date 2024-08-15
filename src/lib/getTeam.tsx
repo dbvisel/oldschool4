@@ -8,6 +8,7 @@ const cleanPerson = (data: any): PersonRecord => {
     name: data.fields.Name || "",
     type: data.fields["team or collaborator"],
     title: data.fields.Title,
+    website: data.fields.website || "",
     image: {
       path: data.imagePath,
       blurPath: data.imagePath,

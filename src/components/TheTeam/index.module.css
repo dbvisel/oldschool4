@@ -99,6 +99,16 @@
 	}
 }
 
+.person > img + div h3 a {
+	border-bottom: 2px solid var(--orange);
+	transition: 0.5s;
+}
+
+.person > img + div h3 a:hover {
+	border-bottom-color: var(--white);
+}
+
+
 .person > img + div  h3 span {
 	color: var(--black);
 	text-align: left;
