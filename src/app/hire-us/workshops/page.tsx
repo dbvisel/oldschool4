@@ -67,7 +67,7 @@ const LetsDismantleAgeismPage = () => {
           is not accessible, tell us what your budget is and we’ll modify an
           offering to fit within it.
         </p>--> */}
-        <hr />
+        {/* <hr />
 
         <p>
           What other questions can I answer? If you want to jump on a call,
@@ -90,7 +90,7 @@ const LetsDismantleAgeismPage = () => {
             here
           </a>
           .
-        </p>
+        </p> */}
       </section>
     </article>
   );
