@@ -2,9 +2,14 @@ import { Suspense } from "react";
 import { Link } from "next-view-transitions";
 import { getQuotes } from "@/utils/airtable";
 import TopResources, { LoadingTopResources } from "@/components/TopResources";
-import FrontCarousel from "@/components/FrontCarousel";
+// import FrontCarousel from "@/components/FrontCarousel";
 import styles from "./page.module.css";
 import aboutStyles from "@/app/about/page.module.css";
+import dynamic from "next/dynamic";
+const FrontCarousel = dynamic(() => import("@/components/FrontCarousel"), {
+  ssr: false,
+});
+
 // import getNewestData from "@/lib/getNewestData";
 
 // (this was added to make search work)
