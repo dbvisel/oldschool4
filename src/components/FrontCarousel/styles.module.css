@@ -100,25 +100,32 @@
 	left: 0;
 	width: 100%;
 	height: 100%;
-	background-color: rgba(0,0,0,0.33);
+	background-color: var(--orange); /* rgba(0,0,0,0.33); */
+	mix-blend-mode: screen;;
 	z-index: 1;
 }
 
 .officeHoursSlide h2 {
 	z-index: 2;
-	text-shadow: 0 0 10px var(--blackShadow);
+	text-shadow: 0 0 10px var(--whiteShadow);
 }
 
 .officeHoursSlide p {
 	z-index: 2;
-	text-shadow: 0 0 5px var(--blackShadow);
+	text-shadow: 0 0 5px var(--whiteShadow);
 	font-size: calc(var(--fontSize) * 1.2);
 	margin: 0 10vw;
+	color: var(--black);
 }
 
 .officeHoursSlide .cta {
 	z-index: 2;
+	color: var(--black);
 text-shadow: 0 0 5px var(--blackShadow);
+}
+
+.officeHoursSlide .cta a {
+	color: var(--black);
 }
 
 .bookSlide {

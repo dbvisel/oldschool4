@@ -136,16 +136,11 @@ const FrontCarousel = ({
       <div
         className={`${styles.emblaSlide} ${styles.officeHoursSlide}`}
         style={{
-          backgroundImage: `url(images/carousel/officeHours.jpg)`,
+          backgroundImage: `url(images/carousel/officeHoursBW.jpg)`,
         }}
       >
         <h2 className={styles.bigHeader}>
-          <Link
-            href={"/events"}
-            style={{
-              color: "var(--orange) !important",
-            }}
-          >
+          <Link href={"/events"} style={{ color: "var(--black) !important" }}>
             Office Hours
           </Link>
         </h2>
