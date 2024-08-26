@@ -121,7 +121,7 @@
 .officeHoursSlide .cta {
 	z-index: 2;
 	color: var(--black);
-text-shadow: 0 0 5px var(--blackShadow);
+text-shadow: 0 0 5px var(--whiteShadow) !important;
 }
 
 .officeHoursSlide .cta a {
