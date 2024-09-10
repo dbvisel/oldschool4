@@ -40,6 +40,22 @@ export default function AboutPage() {
       <section className={styles.theTeam} style={{ scrollSnapAlign: "none" }}>
         <div>
           <TheTeam />
+          <p
+            style={{
+              textAlign: "center",
+              marginBottom: "var(--paddingOutside)",
+            }}
+          >
+            A thousand thanks to{" "}
+            <a
+              href="https://paulbelford.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Paul Belford Ltd.
+            </a>{" "}
+            for new logo & look.
+          </p>
         </div>
       </section>
       <section

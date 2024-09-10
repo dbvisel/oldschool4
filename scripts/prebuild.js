@@ -226,7 +226,7 @@ const prebuild = async () => {
           // console.log("Failed!");
         }
       } else {
-        const maybeAGooglePDF = thisUrl.includes("drive.google.com");
+        const maybeAGooglePDF = thisUrl && thisUrl.includes("drive.google.com");
         if (maybeAGooglePDF) {
           try {
             const googleDriveId = thisUrl
