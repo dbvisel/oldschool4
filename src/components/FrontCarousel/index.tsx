@@ -179,6 +179,13 @@ const FrontCarousel = ({
           This just happened! It was great! Takeaways coming soon.
         </p>
       </div>
+      <div
+        className={`${styles.emblaSlide} ${styles.hideText}`}
+        style={{
+          backgroundImage: `url(images/carousel/ageismAwarenessDay.png)`,
+          backgroundRepeat: "no-repeat",
+        }}
+      />
       {/* <div
         className={styles.emblaSlide}
         style={{

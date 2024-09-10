@@ -48,8 +48,8 @@ export default function HireUsPage() {
           Fortune 500 companies. We’ll modify our fees and offerings to fit your
           budget. For more information, contact us at{" "}
           <a href="mailto:hello@oldschool.info">hello@oldschool.info</a>. This
-          income enables Old School to create and disseminate free resources. We
-          thank you in advance for your support!
+          income helps keep Old School going. We thank you in advance for your
+          support!
         </p>
       </section>
       <section className={styles.testimonialWrapper}>
