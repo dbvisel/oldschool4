@@ -8,7 +8,7 @@ import { Link } from "next-view-transitions";
 import styles from "./styles.module.css";
 // import Search from "../Search";
 const Search = dynamic(() => import("@/components/Search"), { ssr: false });
-import logo from "./horizontallogo-twoline.svg";
+import logo from "./horizontallogo-threeline.svg";
 import { definedTypes } from "../../utils/categories";
 
 // TODO: figure out what's actually in the menu!
