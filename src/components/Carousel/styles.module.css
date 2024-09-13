@@ -27,6 +27,7 @@
 	right: var(--paddingOutside);
 	top: calc(50% - calc(58px / 2));
 	width: calc(100% - calc(2 * var(--paddingOutside)));
+	pointer-events: none;
 }
 
 .controlButtons {
@@ -57,6 +58,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+	pointer-events: all;
 }
 
 .controlButton:disabled {
