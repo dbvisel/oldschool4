@@ -105,7 +105,16 @@ export default function ProjectsPage() {
         <p>If so, we’re eager to hear about it.</p>
       </section>
       <section className={styles.projectSection}>
-        <h2 className="pageheader">Please use this form to tell us more:</h2>
+        {/* <h2 className="pageheader">Please use this form to tell us more:</h2> */}
+        <iframe
+          className="airtable-embed"
+          src="https://airtable.com/embed/appPRDpl6oe7xsRYg/paggkrte2K3lKcCiH/form"
+          frameBorder="0"
+          onmousewheel=""
+          width="100%"
+          height="1200"
+          style={{ background: "transparent", border: "none" }}
+        ></iframe>
         {/*
 				
 Does your project have a name? [box]
