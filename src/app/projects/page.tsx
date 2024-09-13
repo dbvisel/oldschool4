@@ -110,7 +110,6 @@ export default function ProjectsPage() {
           className="airtable-embed"
           src="https://airtable.com/embed/appPRDpl6oe7xsRYg/paggkrte2K3lKcCiH/form"
           frameBorder="0"
-          onmousewheel=""
           width="100%"
           height="1200"
           style={{ background: "transparent", border: "none" }}
