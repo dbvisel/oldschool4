@@ -6,6 +6,34 @@ import aeaImage from "./images/Age-Equity-Alliance_blue-navy-BG-e1588618146243.j
 import fufaImage from "./images/F.U.F.A-(1).png";
 import eaaImage from "./images/vcugerontology.jpg";
 
+const projectData = [
+  {
+    title: "“Expanding Age Advocacy”",
+    description:
+      "Old School and Virginia Commonwealth University are using focus groups to investigate how people working on other social justice issues perceive aging, age bias, and age advocacy.",
+    link: "https://www.linkedin.com/in/tracey-gendron/",
+    contact: "Tracey Gendron",
+    image: eaaImage,
+  },
+
+  {
+    title: "Age Equity Alliance",
+    description:
+      "This think-tank partners with organizations and businesses to build an innovative, age-positive workplace. It was incubated at Old School.",
+    link: "https://www.linkedin.com/company/ageequityalliance/",
+    contact: "Sheila Callaham",
+    image: aeaImage,
+  },
+  {
+    title: "FUFA - Francophones Unis Face a l’Ageisme",
+    description:
+      "This coalition of French-speaking anti-ageism advocates around the world began as a collaboration between Old School and the Pass It On Network.",
+    link: "https://www.linkedin.com/in/moiraallan/",
+    contact: "Moira Allen",
+    image: fufaImage,
+  },
+];
+
 export default function ProjectsPage() {
   return (
     <article className={aboutStyles.about}>
@@ -35,34 +63,9 @@ export default function ProjectsPage() {
       <section className={styles.projectSection}>
         <h2 className="pageheader">Some sample projects:</h2>
         <div className={styles.projectWrapper}>
-          <Project
-            title={"“Expanding Age Advocacy”"}
-            description={
-              "This qualitative research project is using focus groups to investigate how people working on other social justice issues perceive age bias and age advocacy. It’s a collaboration between Old School and Virginia Commonwealth University."
-            }
-            link={"https://www.linkedin.com/in/tracey-gendron/"}
-            contact={"Tracey Gendron"}
-            image={eaaImage}
-          />
-          <Project
-            title={"Age Equity Alliance"}
-            description={
-              "This think-tank partners with organizations and businesses to build an innovative, age-positive workplace. It was incubated at Old School."
-            }
-            link={"https://www.linkedin.com/company/ageequityalliance/"}
-            contact={"Sheila Callaham"}
-            image={aeaImage}
-            isLeft
-          />
-          <Project
-            title={"FUFA - Francophones Unis Face a l’Ageisme"}
-            description={
-              "This coalition of French-speaking anti-ageism advocates around the world began as a collaboration between Old School and the Pass It On Network."
-            }
-            link={"https://www.linkedin.com/in/moiraallan/"}
-            contact={"Moira Allen"}
-            image={fufaImage}
-          />
+          {projectData.map((project, index) => (
+            <Project key={index} {...project} isLeft={index % 2 === 0} />
+          ))}
         </div>
       </section>
       <section className={styles.projectSection}>
