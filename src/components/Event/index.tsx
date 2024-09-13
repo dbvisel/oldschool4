@@ -21,10 +21,12 @@ const Event = ({ event }: { event: EventRecord }) => {
         <p>
           <strong>Date:</strong> {event.time}
         </p>
-        <p className={styles.link}>
-          <strong>Location:</strong>{" "}
-          <Link href={event.location}>{event.location}</Link>
-        </p>
+        {event.location ? (
+          <p className={styles.link}>
+            <strong>Location:</strong>{" "}
+            <Link href={event.location}>{event.location}</Link>
+          </p>
+        ) : null}
       </div>
     </div>
   );
