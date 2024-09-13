@@ -35,6 +35,9 @@
 .aboutBlock h2 {
 	font-size: 72px;
 	margin-bottom: 18px;
+	@media (max-width: 767px) {
+		font-size: 48px;
+	}
 }
 
 .aboutBlock p + p {

@@ -57,7 +57,7 @@
 	flex-direction: column;
 	align-items: flex-end;
 	margin-top: auto;
-	margin-bottom: -3px;
+	margin-bottom: -2px; /* for iPad */
 	@media screen and (max-width: 1023px) {
 		align-items: center;
 	}
@@ -86,7 +86,13 @@
 
 .menu > li + li {
 	margin-left: max(var(--paddingInside), 20px);
+	@media screen and (max-width: 1279px) {
+		margin-left: 15px; /* this is for iPad */
+		
+	}
 }
+
+
 
 .menu ul {
 	background-color: var(--secondaryCream);

@@ -10,6 +10,7 @@ import communicate from "./images/communicate.png";
 import workplace from "./images/workplace.png";
 
 // TODO: color of those pngs
+// TODO: image for ageism and health
 
 const IntroPageLinks = async () => {
   return (
@@ -115,9 +116,13 @@ const IntroPageLinks = async () => {
                     </Link>
                   </li>
                   <li>
-                    <Link href={"/resource/ageist-racist-who-me/"}>
+                    <a
+                      href={
+                        "https://oldschool.info/resource/ageist-racist-who-me"
+                      }
+                    >
                       Ageist? Sexist? Who, Me?
-                    </Link>
+                    </a>
                   </li>
                   <li>
                     <Link
@@ -151,8 +156,6 @@ const IntroPageLinks = async () => {
                   </li>
                 </ul>
               </ul>
-            </div>
-            <div>
               <h4>
                 <Image
                   src={digdeeper}
@@ -164,18 +167,18 @@ const IntroPageLinks = async () => {
               </h4>
               <ul>
                 <li>
-                  <Link href={"/resource/who-global-report-on-ageism/"}>
+                  <a href={"https://www.aworld4allages.org/"}>
                     WHO - Global Report on Ageism
-                  </Link>
+                  </a>
                 </li>
                 <li>
-                  <Link
+                  <a
                     href={
-                      "/resource/this-chair-rocks-a-manifesto-against-ageism-by-ashton-applewhite/"
+                      "https://celadonbooks.com/book/this-chair-rocks-a-manifesto-against-ageism/"
                     }
                   >
                     This Chair Rocks: A Manifesto Against Ageism
-                  </Link>
+                  </a>
                 </li>
                 <li>
                   <Link
@@ -185,6 +188,8 @@ const IntroPageLinks = async () => {
                   </Link>
                 </li>
               </ul>
+            </div>
+            <div>
               <h4>
                 <Image
                   src={communicate}
@@ -246,7 +251,7 @@ const IntroPageLinks = async () => {
                 </li>
                 <li>
                   <Link href={"/resource/changing-the-narrative-colorado/"}>
-                    Changing the Narrative - Colorado
+                    Changing the Narrative
                   </Link>
                 </li>
               </ul>
@@ -285,6 +290,23 @@ const IntroPageLinks = async () => {
                     The Harmful Effects of Ageism
                   </Link>
                 </li>
+              </ul>
+              <h4>
+                <Image
+                  src={workplace}
+                  alt="Ageism in the workplace"
+                  width={80}
+                  height={80}
+                />
+                Ageism and Health
+              </h4>
+              <ul>
+                <li>
+                  <a href="https://www.harpercollins.com/products/breaking-the-age-code-becca-levy?variant=40615809613858">
+                    Breaking the Age Code: How Your Beliefs About Aging
+                    Determine How Long and Well You Live
+                  </a>
+                </li>
                 <li>
                   <Link href={"/resource/what-can-you-expect-at-your-age/"}>
                     Ageism and health: What Can You expect at your age?
@@ -293,11 +315,6 @@ const IntroPageLinks = async () => {
                 <li>
                   <Link href={"/resource/everyday-ageism-health/"}>
                     Everyday Ageism and Health
-                  </Link>
-                </li>
-                <li>
-                  <Link href={"/resource/yale-school-of-public-health/"}>
-                    Research of Becca Levy
                   </Link>
                 </li>
               </ul>

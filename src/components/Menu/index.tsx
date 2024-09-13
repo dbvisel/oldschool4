@@ -84,6 +84,9 @@ const Menu = () => {
               <Link href="/about#top">About</Link>
             </li>
             <li>
+              <Link href="/projects">Projects</Link>
+            </li>
+            <li>
               <Link href="/hire-us">Hire us</Link>
             </li>
             {/*<li>

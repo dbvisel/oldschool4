@@ -1,0 +1,91 @@
+.projectSection {
+	max-width: min(var(--narrowBlockWidth), calc(100vw - 2 * var(--paddingOutside)));
+	margin-bottom: var(--paddingOutside);
+}
+
+.projectIntroParagraph {
+	@media screen and (max-width: 1279px) {
+		--fontSize: 24px;	
+		--lineHeight: 1.4;	
+	}
+}
+
+.projectSection ul {
+	font-size: var(--fontSize);
+	line-height: var(--lineHeight);
+	margin: var(--paddingInside) 0;
+}
+
+.projectWrapper {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+.projectBox {
+	display: flex;
+	justify-content: space-between;
+	background-color: var(--white);
+	border: 8px solid var(--orange);
+	margin-top: var(--paddingOutside);
+	margin-bottom: calc(1 * var(--paddingOutside));
+	padding: var(--paddingOutside);
+	box-shadow: 0 0 10px var(--blackShadow);
+	@media screen and (max-width: 767px) {
+		flex-direction: column;		
+	}
+}
+
+.isLeft {
+	flex-direction: row-reverse;
+	@media screen and (max-width: 767px) {
+		flex-direction: column;		
+	}
+}
+
+.projectImage {
+	margin-left: var(--paddingOutside);
+	border: 8px solid var(--orange);
+	line-height: 0;
+	height: fit-content;
+	@media screen and (max-width: 767px) {
+		margin-top: var(--paddingOutside);
+		margin-left: 0;
+		width: fit-content;
+		align-self: center;
+	}
+}
+
+.isLeft .projectImage {
+	margin-left: 0;
+	margin-right: var(--paddingOutside);
+	@media screen and (max-width: 767px) {
+		margin-right: 0;	
+	}
+
+}
+
+.projectText {
+	flex-direction: column;
+}
+
+.projectBox h3 {
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-size: 175%;
+	margin-bottom: var(--paddingInside);
+	color: var(--orange);
+}
+
+.contactLine {
+	text-align: right;
+	font-style: italic;
+	margin-top: var(--paddingInside);
+}
+
+.contactLine a {
+	color: var(--orange);
+	font-style: normal;
+	font-weight: bold;
+	border-bottom: 4px solid var(--orangeShadow);
+}
