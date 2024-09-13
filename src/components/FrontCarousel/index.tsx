@@ -167,17 +167,24 @@ const FrontCarousel = ({
         className={`${styles.emblaSlide} ${styles.hideText}`}
         style={{
           backgroundColor: "var(--black)",
-          backgroundImage: `url(images/carousel/PostSummerSchool.png)`,
+          backgroundImage: `url(images/carousel/PostSummerSchool2.png)`,
           backgroundSize: "contain",
           backgroundRepeat: "no-repeat",
         }}
       >
-        <h2 className={styles.bigHeader}>
+        {" "}
+        <a
+          href="https://mailchi.mp/oldschool/what-is-new-on-old-school-february-10574864?e=a5356d4cea"
+          className={styles.fullLink}
+          target="_blank"
+          rel="noopener noreferrer"
+        ></a>
+        {/*<h2 className={styles.bigHeader}>
           <Link href={"/events"}>Summer School</Link>
         </h2>
         <p className={styles.description}>
           This just happened! It was great! Takeaways coming soon.
-        </p>
+        </p>*/}
       </div>
       <div
         className={`${styles.emblaSlide} ${styles.hideText}`}
@@ -185,7 +192,14 @@ const FrontCarousel = ({
           backgroundImage: `url(images/carousel/ageismAwarenessDay.png)`,
           backgroundRepeat: "no-repeat",
         }}
-      />
+      >
+        <a
+          href="https://www.asaging.org/ageism-awareness"
+          className={styles.fullLink}
+          target="_blank"
+          rel="noopener noreferrer"
+        ></a>
+      </div>
       {/* <div
         className={styles.emblaSlide}
         style={{
