@@ -25,13 +25,18 @@ const ResourceCard = ({
     // this isn't coming back with anything!
     console.log(resource);
   }
-  const thisLink = isEvent
-    ? "/events/"
-    : isSubResource
-      ? resource.link
-      : resource.slug === "/"
-        ? `/intro` // This is for the case where we have a dummy resource.
-        : `/resource/${resource.slug}` || "";
+  // This is true if the link contains "oldschool.info/resource/" – if that's the case, we're going to the resource page, not an outbound link
+  const isResourcePage =
+    String(resource.link).indexOf("oldschool.info/resource/") > -1;
+  const thisLink = isResourcePage
+    ? `/resource/${resource.slug}`
+    : isEvent
+      ? "/events/"
+      : isSubResource
+        ? resource.link
+        : resource.slug === "/"
+          ? `/intro` // This is for the case where we have a dummy resource.
+          : `/resource/${resource.slug}` || "";
   const description = isEvent
     ? resource.shortDescription
     : resource.shortDescription || resource.description || "";
@@ -69,7 +74,7 @@ const ResourceCard = ({
       ) : resource?.image?.path &&
         resource.image.width &&
         resource.image.height ? (
-        skipResourcePage && !isEvent ? (
+        skipResourcePage && !isEvent && !isResourcePage ? (
           <a
             href={String(resource.link || "")}
             className="imagelink"
@@ -101,7 +106,7 @@ const ResourceCard = ({
         <p>No image!</p>
       )}
       <div className={styles.bottomblock}>
-        {skipResourcePage && !isEvent ? (
+        {skipResourcePage && !isEvent && !isResourcePage ? (
           <a href={String(resource.link) || ""} target={"_blank"}>
             <h2>{resource.title}</h2>
             {isEvent ? (
