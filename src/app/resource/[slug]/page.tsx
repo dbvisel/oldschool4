@@ -78,19 +78,15 @@ const ResourcePage = async ({
   const resource = await getResourceData(slug);
   // console.log(resource);
   const isLandscape = resource?.image?.width > resource?.image?.height;
+  const isWide = resource?.image?.width > 1024;
   const isVideoPage = isEmbeddable(String(resource.link));
   const thisIsAPDF = PDFList.indexOf(resource.id) > -1 || false;
+  console.log(isLandscape, isWide, resource.image);
+
   return resource.title ? (
     <article className={styles.resourcePage}>
       <h2>
-        <span>Resource:</span>{" "}
-        <Link
-          href={resource.link || ""}
-          target="_blank"
-          aria-label={`Link to ${resource.link}`}
-        >
-          {resource.title}
-        </Link>
+        <span>Resource:</span> {resource.title}
       </h2>
       <div
         className={`${styles.resourceData} ${isLandscape ? "horizontal" : "vertical"}`}
@@ -99,29 +95,25 @@ const ResourcePage = async ({
           <VideoEmbed url={String(resource.link)} title={resource.title} />
         ) : resource?.image?.path && resource.image.blurPath ? (
           <div className={styles.imageWrapper}>
-            <Link
-              href={resource.link || ""}
-              target="_blank"
-              aria-label={`Link to ${resource.link}`}
-            >
-              <Image
-                src={resource.image.path}
-                alt={
-                  resource.image.alt ||
-                  resource.description ||
-                  resource.shortDescription ||
-                  ""
-                }
-                placeholder="blur"
-                blurDataURL={resource.image.blurPath}
-                width={isLandscape ? resource.image.width : 400}
-                height={
-                  isLandscape
-                    ? resource.image.height
-                    : (400 / resource.image.width) * resource.image.height
-                }
-              />
-            </Link>
+            <Image
+              src={resource.image.path}
+              alt={
+                resource.image.alt ||
+                resource.description ||
+                resource.shortDescription ||
+                ""
+              }
+              placeholder="blur"
+              blurDataURL={resource.image.blurPath}
+              width={isLandscape ? (isWide ? 1024 : resource.image.width) : 400}
+              height={
+                isLandscape
+                  ? isWide
+                    ? (resource.image.height * 1024) / resource.image.width
+                    : resource.image.height
+                  : (400 / resource.image.width) * resource.image.height
+              }
+            />
           </div>
         ) : null}
         <div className={styles.dataBoxWrapper}>

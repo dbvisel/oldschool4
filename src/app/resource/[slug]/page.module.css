@@ -49,10 +49,17 @@ article.resourcePage {
 .imageWrapper {
 	position: relative;
 	transition: 0.5s;
+	max-width: 100%;
 	@media (max-width: 767px) {
 		align-self: center;
 		margin-bottom: var(--paddingOutside);
 	}
+}
+
+.imageWrapper img {
+	width: 100%;
+	height: auto;
+	line-height: 0;
 }
 
 .imageWrapper:hover {
