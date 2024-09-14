@@ -81,7 +81,6 @@ const ResourcePage = async ({
   const isWide = resource?.image?.width > 1024;
   const isVideoPage = isEmbeddable(String(resource.link));
   const thisIsAPDF = PDFList.indexOf(resource.id) > -1 || false;
-  console.log(isLandscape, isWide, resource.image);
 
   return resource.title ? (
     <article className={styles.resourcePage}>
@@ -117,14 +116,14 @@ const ResourcePage = async ({
           </div>
         ) : null}
         <div className={styles.dataBoxWrapper}>
-          <dl className={styles.dataBox}>
+          {/* <dl className={styles.dataBox}>
             {resource.types && resource.types.length ? (
               <>
                 <dt>Resource Type</dt>
                 <dd>{resource.types.map((x: String) => x).join(", ")}</dd>
               </>
             ) : null}
-          </dl>
+          </dl> */}
           <dl className={styles.dataBox}>
             <dt>About This Resource</dt>
             <dd
@@ -147,7 +146,7 @@ const ResourcePage = async ({
       {thisIsAPDF && <PDFEmbed id={resource.id} title={resource.title} />}
       {resource.subresources && resource.subresources.length ? (
         <div className={styles.subresources}>
-          <h3>See also:</h3>
+          {/* <h3>See also:</h3> */}
           <CardHolder
             resources={resource.subresources || []}
             areSubResources={true}

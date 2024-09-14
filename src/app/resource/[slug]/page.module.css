@@ -50,6 +50,7 @@ article.resourcePage {
 	position: relative;
 	transition: 0.5s;
 	max-width: 100%;
+	line-height: 0;
 	@media (max-width: 767px) {
 		align-self: center;
 		margin-bottom: var(--paddingOutside);
