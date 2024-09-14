@@ -249,13 +249,36 @@ const getCategoryById = async (id) => {
   return record;
 };
 
-const possibleSlugs = async () => {
+const allPossibleSlugs = async () => {
   // could probably improve this code by caching the results somewhere? This function is being run for every possible page.
   const records = await getResources();
   const preSlugs = records
     .filter((x) => x.fields.Status === "publish") // is this not always working? Other ones pop up on build
     .filter((x) => x.fields["Hide?"] !== "yes")
     .filter((x) => x.fields["Is this a subresource?"] !== true)
+    .map((x) => {
+      // console.log(slugify(x), x.fields.Status);
+      return {
+        id: x.id,
+        slug: slugify(x).trim(),
+      };
+    });
+  return preSlugs;
+};
+
+const possibleSlugs = async () => {
+  // could probably improve this code by caching the results somewhere? This function is being run for every possible page.
+  // This is only returning resources that point to "oldschool.info"
+  const records = await getResources();
+  const preSlugs = records
+    .filter((x) => x.fields.Status === "publish") // is this not always working? Other ones pop up on build
+    .filter((x) => x.fields["Hide?"] !== "yes")
+    .filter((x) => x.fields["Is this a subresource?"] !== true)
+    .filter(
+      (x) =>
+        x.fields["Resource URL"] &&
+        x.fields["Resource URL"].indexOf("oldschool") > -1
+    )
     .map((x) => {
       // console.log(slugify(x), x.fields.Status);
       return {
@@ -309,6 +332,7 @@ const getRecordsForAlgolia = async () => {
 
 export {
   getRecordsForAlgolia,
+  allPossibleSlugs,
   possibleSlugs,
   possibleSlugsWithSubresources,
   possibleCategories,
