@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Link } from "next-view-transitions";
+// import { Link } from "next-view-transitions";
 import Image from "next/image";
 import styles from "./../page.module.css";
 import digdeeper from "./images/dig-deeper.png";
@@ -8,9 +8,9 @@ import advocate from "./images/advocate.png";
 import intersectionality from "./images/intersectionality.png";
 import communicate from "./images/communicate.png";
 import workplace from "./images/workplace.png";
+import health from "./images/health.png";
 
-// TODO: color of those pngs
-// TODO: image for ageism and health
+// TODO: Ageist? Racist? Who, Me? is a Google Drive PDF! so is Stop Tokenizing Youth
 
 const IntroPageLinks = async () => {
   return (
@@ -41,19 +41,35 @@ const IntroPageLinks = async () => {
               </h4>
               <ul>
                 <li>
-                  <Link href={"/resource/break-free-from-ageism/"}>
+                  <a
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href={"https://youtu.be/Prc9S0W24P4"}
+                  >
                     Break Free From Ageism
-                  </Link>
+                  </a>
                 </li>
                 <li>
-                  <Link href={"/resource/imagine-a-world-without-ageism/"}>
+                  <a
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href={
+                      "https://www.youtube.com/watch?v=Hs28FgRxqt0&feature=youtu.be"
+                    }
+                  >
                     Imagine a World Without Ageism
-                  </Link>
+                  </a>
                 </li>
                 <li>
-                  <Link href={"/resource/lets-end-ageism/"}>
+                  <a
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href={
+                      "https://www.ted.com/talks/ashton_applewhite_let_s_end_ageism?language=en"
+                    }
+                  >
                     Let’s End Ageism
-                  </Link>
+                  </a>
                 </li>
               </ul>
               <h4>
@@ -69,90 +85,138 @@ const IntroPageLinks = async () => {
                 <li>POC/BIPOC:</li>
                 <ul>
                   <li>
-                    <Link href={"/resource/diverse-elders-coalition/"}>
+                    <a
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      href={
+                        "https://www.diverseelders.org/?s=AGEISM&submit=Search"
+                      }
+                    >
                       Diverse Elders Coalition
-                    </Link>
+                    </a>
                   </li>
                   <li>
-                    <Link href={"/resource/intersectionality-matters/"}>
+                    <a
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      href={
+                        "https://podcasts.apple.com/us/podcast/10-age-against-the-machine-the-fatal-intersection/id1441348908?i=1000470442230"
+                      }
+                    >
                       Intersectionality Matters
-                    </Link>
+                    </a>
                   </li>
                   <li>
-                    <Link href={"/resource/no-ageism-/"}>No Ageism</Link>
+                    <a
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      href={"https://vimeo.com/467612010"}
+                    >
+                      No Ageism
+                    </a>
                   </li>
                 </ul>
                 <li>LGBTQ people:</li>
                 <ul>
                   <li>
-                    <Link
+                    <a
+                      target="_blank"
+                      rel="noopener noreferrer"
                       href={
-                        "/resource/age-pride-ageism-and-the-queer-experience/"
+                        "https://www.knowledgeableaging.com/webinar/health-wellness/age-pride-ageism-and-the-queer-experience/"
                       }
                     >
                       Age Pride: Ageism and the Queer Experience
-                    </Link>
+                    </a>
                   </li>
                   <li>
-                    <Link
-                      href={"/resource/national-resource-center-on-lgbt-aging/"}
+                    <a
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      href={
+                        "https://www.lgbtagingcenter.org/resources/resources.cfm?s=1"
+                      }
                     >
                       National Resource Center on LGBT Aging
-                    </Link>
+                    </a>
                   </li>
                   <li>
-                    <Link
-                      href={"/resource/ageism-in-the-black-lgbtq-community/"}
+                    <a
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      href={"https://youtu.be/G7YGiouLI98"}
                     >
                       Ageism in the Black LGBTQ Community
-                    </Link>
+                    </a>
                   </li>
                 </ul>
                 <li>Women:</li>
                 <ul>
                   <li>
-                    <Link href={"/resource/how-ageism-really-affects-women/"}>
+                    <a
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      href={
+                        "/resource/https://www.refinery29.com/en-us/how-ageism-really-affects-women/"
+                      }
+                    >
                       How Ageism Really Affects Women
-                    </Link>
+                    </a>
                   </li>
                   <li>
                     <a
+                      target="_blank"
+                      rel="noopener noreferrer"
                       href={
-                        "https://oldschool.info/resource/ageist-racist-who-me"
+                        "https://drive.google.com/file/d/18GM6d_pAqxq1M1HnAe70urlk-f7JfQdd/view?usp=sharing"
                       }
                     >
                       Ageist? Sexist? Who, Me?
                     </a>
                   </li>
                   <li>
-                    <Link
-                      href={"/resource/old-lesbians-organizing-for-change/"}
+                    <a
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      href={"http://oloc.org/"}
                     >
                       Old Lesbians Organizing for Change
-                    </Link>
+                    </a>
                   </li>
                 </ul>
                 <li>Youngers:</li>
                 <ul>
                   <li>
-                    <Link href={"/resource/legacy-project-ageism-guide/"}>
+                    <a
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      href={"http://www.legacyproject.org/guides/ageism.html"}
+                    >
                       Legacy Project, Addressing Ageism
-                    </Link>
+                    </a>
                   </li>
                   <li>
-                    <Link
+                    <a
+                      target="_blank"
+                      rel="noopener noreferrer"
                       href={
-                        "/resource/images-intervention-program-to-prevent-ageism-in-children-and-adolescents/"
+                        "https://www.researchgate.net/publication/274280026_iMAGES_intervention_program_to_prevent_ageism_in_children_and_adolescents"
                       }
                     >
                       iMAGES: intervention program to prevent ageism in children
                       and adolescents
-                    </Link>
+                    </a>
                   </li>
                   <li>
-                    <Link href={"/resource/stop-tokenizing-youth/"}>
+                    <a
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      href={
+                        "https://drive.google.com/file/d/1EuLNszSqaXJU9dqF96w4EVv4VoIiCL2F/view?usp=sharing"
+                      }
+                    >
                       Stop Tokenizing Youth
-                    </Link>
+                    </a>
                   </li>
                 </ul>
               </ul>
@@ -167,12 +231,18 @@ const IntroPageLinks = async () => {
               </h4>
               <ul>
                 <li>
-                  <a href={"https://www.aworld4allages.org/"}>
+                  <a
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href={"https://www.aworld4allages.org/"}
+                  >
                     WHO - Global Report on Ageism
                   </a>
                 </li>
                 <li>
                   <a
+                    target="_blank"
+                    rel="noopener noreferrer"
                     href={
                       "https://celadonbooks.com/book/this-chair-rocks-a-manifesto-against-ageism/"
                     }
@@ -181,11 +251,15 @@ const IntroPageLinks = async () => {
                   </a>
                 </li>
                 <li>
-                  <Link
-                    href={"/resource/ageism-unmasked-by-tracey-gendron-phd/"}
+                  <a
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href={
+                      "https://www.penguinrandomhouse.com/books/700435/ageism-unmasked-by-tracey-gendron/"
+                    }
                   >
                     Ageism Unmasked: Exploring Age Bias and How to End It
-                  </Link>
+                  </a>
                 </li>
               </ul>
             </div>
@@ -201,30 +275,38 @@ const IntroPageLinks = async () => {
               </h4>
               <ul>
                 <li>
-                  <Link
-                    href={"/resource/gaining-momentum-communications-toolkit/"}
+                  <a
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href={
+                      "https://www.frameworksinstitute.org/toolkit/gaining-momentum/"
+                    }
                   >
                     Gaining Momentum: A FrameWorks Communications Toolkit
-                  </Link>
+                  </a>
                 </li>
                 <li>
-                  <Link
+                  <a
+                    target="_blank"
+                    rel="noopener noreferrer"
                     href={
-                      "/resource/como-comunicar-sobre-las-personas-mayores/"
+                      "https://view.genial.ly/5fd0e1a9b311230dad31a7b5/horizontal-infographic-review-comunicacion-estereotipada-pmy"
                     }
                   >
                     ¿Cómo comunicar sobre las personas mayores?
-                  </Link>
+                  </a>
                 </li>
                 <li>
-                  <Link
+                  <a
+                    target="_blank"
+                    rel="noopener noreferrer"
                     href={
-                      "/resource/challenging-ageism-a-guide-to-talking-about-ageing-and-older-age/"
+                      "https://ageing-better.org.uk/publications/challenging-ageism-guide-talking-about-ageing-and-older-age"
                     }
                   >
                     Challenging Ageism: a Guide to talking about aging and Older
                     Age
-                  </Link>
+                  </a>
                 </li>
               </ul>
               <h4>
@@ -238,21 +320,31 @@ const IntroPageLinks = async () => {
               </h4>
               <ul>
                 <li>
-                  <Link
-                    href={"/resource/the-older-persons-self-advocacy-handbook/"}
+                  <a
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href={"http://publications.age-platform.eu/"}
                   >
                     The older person’s self-advocacy handbook
-                  </Link>
+                  </a>
                 </li>
                 <li>
-                  <Link href={"/resource/exposing-systemic-ageism/"}>
+                  <a
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href={"/https://youtu.be/ZwrZ3Da6q64"}
+                  >
                     Exposing Systemic Ageism
-                  </Link>
+                  </a>
                 </li>
                 <li>
-                  <Link href={"/resource/changing-the-narrative-colorado/"}>
+                  <a
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href={"https://changingthenarrativeco.org/"}
+                  >
                     Changing the Narrative
-                  </Link>
+                  </a>
                 </li>
               </ul>
               <h4>
@@ -266,35 +358,43 @@ const IntroPageLinks = async () => {
               </h4>
               <ul>
                 <li>
-                  <Link
-                    href={"/resource/combating-ageism-in-the-world-of-work/"}
+                  <a
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href={
+                      "https://www.unece.org/fileadmin/DAM/pau/age/Policy_briefs/ECE_WG1_30.pdf"
+                    }
                   >
                     Combating ageism in the world of work
-                  </Link>
+                  </a>
                 </li>
                 <li>
-                  <Link
+                  <a
+                    target="_blank"
+                    rel="noopener noreferrer"
                     href={
-                      "/resource/the-value-of-experience-age-discrimination-against-older-workers-persists/"
+                      "https://www.aarp.org/content/dam/aarp/research/surveys_statistics/econ/2018/value-of-experience-age-discrimination-highlights.doi.10.26419-2Fres.00177.002.pdf"
                     }
                   >
                     The Value of Experience
-                  </Link>
+                  </a>
                 </li>
                 <li>
-                  <Link
+                  <a
+                    target="_blank"
+                    rel="noopener noreferrer"
                     href={
-                      "/resource/a-victim-and-activists-on-the-harmful-effects-of-ageism/"
+                      "https://www.huffingtonpost.com/entry/a-victim-and-activists-on-the-harmful-effects-of-ageism_us_5aeef847e4b0834e0cdf15b6"
                     }
                   >
                     The Harmful Effects of Ageism
-                  </Link>
+                  </a>
                 </li>
               </ul>
               <h4>
                 <Image
-                  src={workplace}
-                  alt="Ageism in the workplace"
+                  src={health}
+                  alt="Ageism and health"
                   width={80}
                   height={80}
                 />
@@ -302,20 +402,36 @@ const IntroPageLinks = async () => {
               </h4>
               <ul>
                 <li>
-                  <a href="https://www.harpercollins.com/products/breaking-the-age-code-becca-levy?variant=40615809613858">
+                  <a
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href="https://www.harpercollins.com/products/breaking-the-age-code-becca-levy?variant=40615809613858"
+                  >
                     Breaking the Age Code: How Your Beliefs About Aging
                     Determine How Long and Well You Live
                   </a>
                 </li>
                 <li>
-                  <Link href={"/resource/what-can-you-expect-at-your-age/"}>
-                    Ageism and health: What Can You expect at your age?
-                  </Link>
+                  <a
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href={
+                      "https://drive.google.com/file/d/1911U7RPM95z9Y2Wbh9gOANtz_oFioO0p/view?usp=sharing"
+                    }
+                  >
+                    Ageism and Health: What Can You Expect at Your Age?
+                  </a>
                 </li>
                 <li>
-                  <Link href={"/resource/everyday-ageism-health/"}>
+                  <a
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href={
+                      "https://deepblue.lib.umich.edu/bitstream/handle/2027.42/156038/0192_NPHA-ageism-report_FINAL-07132020.pdf?sequence=3&isAllowed=y"
+                    }
+                  >
                     Everyday Ageism and Health
-                  </Link>
+                  </a>
                 </li>
               </ul>
               <hr />

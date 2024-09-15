@@ -57,7 +57,7 @@
       margin-right: var(--paddingInside) !important;
       /* // filter: brightness(0) saturate(100%) invert(11%) sepia(7%) saturate(4910%)
       //   hue-rotate(133deg) brightness(106%) contrast(87%); */
-      filter: brightness(0) saturate(100%) invert(56%) sepia(54%) saturate(296%)
+      filter: brightness(0) saturate(100%) invert(56%) sepia(100%) saturate(296%)
         hue-rotate(328deg) brightness(88%) contrast(89%);
     }
   }
