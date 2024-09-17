@@ -15,14 +15,25 @@
 	height: calc(100vh - var(--headerHeight));
 	width: 100%;
 	max-width: calc(var(--mainBlockWidth) / 2);
-	@media (max-width: var(--narrowBlockWidth)) {
+	@media (max-width: 767px) {
+		--fontSize: initial;
 		max-width: 100%;
+		height: 100%;
+		margin: var(--paddingOutside) 0;
+		padding-bottom: var(--paddingOutside);
 	}
+
+	/* @media (max-width: var(--narrowBlockWidth)) {
+		max-width: 100%;
+	} */
 }
+
 
 .contactUs ul {
 	align-self: start;
 	font-size: var(--fontSize);
 	line-height: 1.5;
 	margin: var(--paddingOutside) 0 var(--paddingInside) 0;
+	@media (max-width: 767px) {
+	}
 }

@@ -41,6 +41,7 @@ const Hit = ({ hit }: { hit: any }) => {
     id: hit.id,
     slug: hit.slug,
     types: hit["Types"],
+    isNew: Boolean(hit.ShowOnFrontPage),
     image: {
       path: `/images/resources/${hit.image?.id}.${hit.image?.extension}`,
       blurPath: `/Images/resources/${hit.image?.id}.${hit.image?.extension}`,
@@ -58,6 +59,7 @@ const Hit = ({ hit }: { hit: any }) => {
         resource={cleanedHit}
         isSubResource={false}
         showType
+
         // isSearchResult={true}
       />
     </div>

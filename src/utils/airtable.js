@@ -202,8 +202,8 @@ const getNewResources = async () => {
       if (x > y) return -1;
       if (y > x) return 1;
       return 0;
-    })
-    .slice(0, 12);
+    });
+  // .slice(0, 12);
   // as a fallback, if there's nothing in this, send back the top resources
   return slicedRecords.length ? slicedRecords : getTopResources();
 };

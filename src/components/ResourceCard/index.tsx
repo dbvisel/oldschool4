@@ -50,7 +50,9 @@ const ResourceCard = ({
   const useDate: Date = dateAdded || dateChanged;
   const now: Date = new Date();
   const isNew =
-    forceNew || now.getTime() - useDate.getTime() < 2592000000 * 1.5; //2592000000 is 30 days – the number after it is how many months we want.
+    forceNew ||
+    resource.isNew ||
+    now.getTime() - useDate.getTime() < 2592000000 * 1.5; //2592000000 is 30 days – the number after it is how many months we want.
   // if (!resource.types) {
   //   console.log(resource);
   // }

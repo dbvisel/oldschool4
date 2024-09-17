@@ -198,6 +198,7 @@ const addSubresources = true; // If this is true, subresources will be added to 
         Contact_info_link: x.fields["Contact info link"] || "",
         Contact_info_phone: x.fields["Contact info phone"] || "",
         Description: x.fields.Description,
+        ShowOnFrontPage: Boolean(x.fields["Show on Front Page"]),
         image: x.fields.Image
           ? {
               width: x.fields.Image[0].width,

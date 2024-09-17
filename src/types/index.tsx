@@ -18,6 +18,7 @@ export interface ResourceItem {
   slug: string;
   image: Image;
   title?: string;
+  isNew?: boolean;
   description?: string;
   shortDescription?: string;
   types?: [string];

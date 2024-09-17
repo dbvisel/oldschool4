@@ -8,7 +8,11 @@
 	align-items: center;
 	background-size: cover;
 	background-position: center;	
+	background-repeat: no-repeat;
 	flex-direction: column;
+	@media (max-width: 1023px) {
+		background-size: contain;
+	}
 }
 
 .emblaSlide h2 {
