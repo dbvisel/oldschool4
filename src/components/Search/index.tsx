@@ -1,5 +1,5 @@
 "use client";
-import { useState, Suspense } from "react";
+import { useState, Suspense, useRef, useEffect } from "react";
 import { renderToString } from "react-dom/server";
 import {
   InstantSearchServerState,
@@ -62,6 +62,31 @@ const InfiniteHits2 = (props: any) => {
 export default function SearchPage({ serverState }: SearchPageProps) {
   const [currentQuery, setCurrentQuery] = useState("");
 
+  function useOutsideAlerter(ref: any) {
+    useEffect(() => {
+      /**
+       * Alert if clicked on outside of element
+       */
+      function handleClickOutside(event: any) {
+        if (
+          ref.current &&
+          !ref.current.contains(event.target) &&
+          ref.current?.clientHeight
+        ) {
+          // TODO: figure out how to close this!
+          setCurrentQuery("");
+          // Does this actually work?
+        }
+      }
+      // Bind the event listener
+      document.addEventListener("mousedown", handleClickOutside);
+      return () => {
+        // Unbind the event listener on clean up
+        document.removeEventListener("mousedown", handleClickOutside);
+      };
+    }, [ref]);
+  }
+
   const onStateChange: InstantSearchProps["onStateChange"] = ({
     uiState,
     setUiState,
@@ -71,6 +96,9 @@ export default function SearchPage({ serverState }: SearchPageProps) {
     setCurrentQuery(query);
     setUiState(uiState);
   };
+
+  const wrapperRef = useRef(null);
+  useOutsideAlerter(wrapperRef);
 
   return (
     <Suspense fallback="Loading...">
@@ -91,6 +119,7 @@ export default function SearchPage({ serverState }: SearchPageProps) {
             />
             <div
               className={`${styles.searchresults} ${currentQuery.length ? "on" : ""}`}
+              ref={wrapperRef}
             >
               <h2 className="pageheader">
                 <span>Search Results</span>
