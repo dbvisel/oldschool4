@@ -61,9 +61,8 @@ export default function AboutPage() {
         <p>
           <strong>Want to talk to us live?</strong> You can find us ‘in the
           office’ at <strong>Office Hours</strong> every Wednesday from
-          1:30–2:30 ET. Ask one or all three of the co-founders of Old School
-          any ageism-related question—in private, or include the group. Here’s
-          the{" "}
+          1:30–2:30 ET. Ask Old School co-founders and regulars any
+          ageism-related question—or just hang out and listen. Here’s the{" "}
           <a href="https://thischairrocks.us6.list-manage.com/track/click?u=b7e45e0548&id=da0374d50c&e=72512ca6b8">
             link
           </a>
