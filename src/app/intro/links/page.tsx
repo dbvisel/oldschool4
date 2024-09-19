@@ -332,7 +332,7 @@ const IntroPageLinks = async () => {
                   <a
                     target="_blank"
                     rel="noopener noreferrer"
-                    href={"/https://youtu.be/ZwrZ3Da6q64"}
+                    href={"https://www.youtube.com/watch?v=ZwrZ3Da6q64"}
                   >
                     Exposing Systemic Ageism
                   </a>
@@ -398,7 +398,7 @@ const IntroPageLinks = async () => {
                   width={80}
                   height={80}
                 />
-                Ageism and Health
+                Ageism and health
               </h4>
               <ul>
                 <li>

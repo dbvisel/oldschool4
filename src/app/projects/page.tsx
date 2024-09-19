@@ -54,9 +54,10 @@ export default function ProjectsPage() {
             Would you like input? Collaborators? Co-conspirators? If so, we’d
             love to learn more. Scroll down for Guiding Questions and the Old
             School Hub submission form. Contact us if you’d like to learn more
-            about this new venture and/or are interested in joining our advisory
-            group. And please spread the word: the Hub will only reach its
-            potential with help from pro-age advocates around the world.
+            about this new venture and/or are interested in joining our
+            advisory/working group. And please spread the word: the Hub will
+            only reach its potential with help from pro-age advocates around the
+            world.
           </p>
         </div>
       </section>

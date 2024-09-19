@@ -25,6 +25,7 @@ const FrontCarousel = ({
         style={{
           backgroundColor: "var(--orange)",
           backgroundImage: `url(images/carousel/backdrop.jpeg)`,
+          backgroundSize: "cover",
           padding: "0 15vh",
         }}
       >
@@ -98,6 +99,7 @@ const FrontCarousel = ({
         style={{
           backgroundColor: "var(--white)",
           backgroundImage: `url(images/carousel/backdrop.jpeg)`,
+          backgroundSize: "cover",
         }}
       >
         <h2
