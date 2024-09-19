@@ -3,6 +3,7 @@ import { ViewTransitions } from "next-view-transitions";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import Menu from "../components/Menu";
 import Footer from "../components/Footer";
+import CookieAsker from "@/components/CookieAsker";
 import { Figtree } from "next/font/google";
 import "./globals.css";
 
@@ -35,13 +36,18 @@ export default function RootLayout({
   return (
     <ViewTransitions>
       <html lang="en">
+        <head></head>
         <body className={figtree.className}>
           <Menu />
           <main id="mainWrapper">
             {children}
             <Footer />
           </main>
-          <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS} />
+
+          <GoogleAnalytics
+            gaId={String(process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS)}
+          />
+          <CookieAsker />
         </body>
       </html>
     </ViewTransitions>

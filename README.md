@@ -20,8 +20,6 @@ View transitions courtesy of this: https://github.com/shuding/next-view-transiti
  - Do we need a loading for category pages?
 
 ## TODO:
- - test whether subscribe actually works!
- - google analytics
  - metadata
  - gdpr wrapper
  - BUG: snappityness on /origins
