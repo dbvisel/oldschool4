@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { ViewTransitions } from "next-view-transitions";
+import { GoogleAnalytics } from "@next/third-parties/google";
 import Menu from "../components/Menu";
 import Footer from "../components/Footer";
 import { Figtree } from "next/font/google";
@@ -40,6 +41,7 @@ export default function RootLayout({
             {children}
             <Footer />
           </main>
+          <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS} />
         </body>
       </html>
     </ViewTransitions>
