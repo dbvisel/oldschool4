@@ -19,6 +19,7 @@ export const cleanResource = (
     tags: resource.fields.Tags,
     link: resource.fields["Resource URL"],
     dateAdded: resource.fields["Date added"],
+    hideTitle: resource.fields["Hide title?"] || false,
     dateChanged: resource.fields["Date changed"], // is this real?
     image: {
       path: resource.imagePath,

@@ -19,6 +19,7 @@ export interface ResourceItem {
   image: Image;
   title?: string;
   isNew?: boolean;
+  hideTitle?: boolean;
   description?: string;
   shortDescription?: string;
   types?: [string];

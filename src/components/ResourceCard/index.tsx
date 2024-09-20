@@ -21,10 +21,11 @@ const ResourceCard = ({
   showType?: Boolean;
   // isSearchResult: Boolean;
 }) => {
-  if (resource.subresources?.length) {
-    // this isn't coming back with anything!
-    console.log(resource);
-  }
+  // if (resource.subresources?.length) {
+  //   // this isn't coming back with anything!
+  //   console.log(resource);
+  // }
+  // console.log(resource);
   // This is true if the link contains "oldschool.info/resource/" – if that's the case, we're going to the resource page, not an outbound link
   const isResourcePage =
     String(resource.link).indexOf("oldschool.info/resource/") > -1;
@@ -110,7 +111,7 @@ const ResourceCard = ({
       <div className={styles.bottomblock}>
         {skipResourcePage && !isEvent && !isResourcePage ? (
           <a href={String(resource.link) || ""} target={"_blank"}>
-            <h2>{resource.title}</h2>
+            {!resource.hideTitle && <h2>{resource.title}</h2>}
             {isEvent ? (
               <p
                 className={styles.description}
@@ -123,7 +124,7 @@ const ResourceCard = ({
         ) : (
           <Link href={thisLink || ""}>
             {isEvent ? <h3 className={styles.eventHead}>EVENT</h3> : null}
-            <h2>{resource.title}</h2>
+            {!resource.hideTitle && <h2>{resource.title}</h2>}
             {isEvent ? (
               <p
                 className={styles.description}

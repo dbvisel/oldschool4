@@ -152,6 +152,7 @@ const addSubresources = true; // If this is true, subresources will be added to 
                 title: thisRecord.fields.Title,
                 id: thisRecord.id,
                 slug: parentSlug,
+                hideTitle: Boolean(x.fields["Hide title?"]),
                 Contact_info_email:
                   thisRecord.fields["Contact info email"] || "",
                 Contact_info_link: thisRecord.fields["Contact info link"] || "",
@@ -188,12 +189,12 @@ const addSubresources = true; // If this is true, subresources will be added to 
       //   "Subresources: ",
       //   subResourcePages.map((x) => x.title)
       // );
-
       return {
         objectID: x.id,
         title: x.fields.Title,
         id: x.id,
         slug: parentSlug,
+        hideTitle: Boolean(x.fields["Hide title?"]),
         Contact_info_email: x.fields["Contact info email"] || "",
         Contact_info_link: x.fields["Contact info link"] || "",
         Contact_info_phone: x.fields["Contact info phone"] || "",

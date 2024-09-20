@@ -9,6 +9,7 @@ interface ResourceRecord {
 }
 
 const Hit = ({ hit }: { hit: any }) => {
+  // console.log("hit", hit);
   if (hit.resultType === "event") {
     const cleanedHit = {
       title: hit.title,
@@ -42,6 +43,7 @@ const Hit = ({ hit }: { hit: any }) => {
     slug: hit.slug,
     types: hit["Types"],
     isNew: Boolean(hit.ShowOnFrontPage),
+    hideTitle: Boolean(hit["hideTitle"]),
     image: {
       path: `/images/resources/${hit.image?.id}.${hit.image?.extension}`,
       blurPath: `/Images/resources/${hit.image?.id}.${hit.image?.extension}`,
