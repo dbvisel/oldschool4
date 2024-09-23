@@ -13,20 +13,57 @@ const figtree = Figtree({
   weight: ["400", "700"],
 });
 
-export const metadata: Metadata = {
-  title: "Old School",
-  description:
-    "Old School is a clearinghouse of free and carefully vetted resources to educate people about ageism and help dismantle it.",
-  manifest: "/manifest.webmanifest",
-  icons: {
-    icon: "/favicon.svg",
-    apple: "/favicon180x180.png",
-    other: {
-      rel: "apple-touch-icon-precomposed",
-      url: "/favicon180x180.png",
+export async function generateMetadata(): Promise<Metadata> {
+  return {
+    metadataBase: new URL("https://oldschool.info"),
+    title: "Old School: Anti-Ageism Clearinghouse",
+    description:
+      "Old School is a clearinghouse of free and carefully vetted resources to educate people about ageism and help dismantle it.",
+
+    authors: [
+      {
+        name: "Ashton Applewhite",
+        url: "https://thischairrocks.com",
+      },
+    ],
+    twitter: {
+      card: "summary_large_image",
+      creator: "@OldSchool.Info",
+      images: "some-image",
     },
-  },
-};
+    robots: "index, follow",
+    alternates: {
+      canonical: `https://oldschool.info`,
+      languages: {
+        "en-US": "/",
+      },
+    },
+    openGraph: {
+      type: "website",
+      url: "https://oldschool.info",
+      title: "Old School: Anti-Ageism Clearinghouse",
+      description:
+        "Old School is a clearinghouse of free and carefully vetted resources to educate people about ageism and help dismantle it.",
+      siteName: "Old School: Anti-Ageism Clearinghouse",
+      images: [
+        {
+          url: "some-image",
+        },
+      ],
+    },
+    assets: "some-image",
+    keywords: ["ageism"],
+    manifest: "/manifest.webmanifest",
+    icons: {
+      icon: "/favicon.svg",
+      apple: "/favicon180x180.png",
+      other: {
+        rel: "apple-touch-icon-precomposed",
+        url: "/favicon180x180.png",
+      },
+    },
+  };
+}
 
 export default function RootLayout({
   children,

@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import getCategoryData from "@/lib/getCategoryData";
 import styles from "./page.module.css";
 import CardHolder from "@/components/CardHolder";
@@ -31,3 +32,19 @@ export const generateStaticParams = async () => {
   const slugs = definedTypes.map((x) => x.id);
   return slugs.map((x) => ({ slug: x }));
 };
+
+export async function generateMetadata({
+  params: { slug },
+}: {
+  params: { slug: String };
+}): Promise<Metadata> {
+  const thisCategory = definedTypes.filter((x) => x.id === slug)[0];
+  const metaData = {
+    title: `Old School: ${thisCategory.name}`,
+    description: `${thisCategory.tag}`,
+  };
+
+  return {
+    ...metaData,
+  };
+}

@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 // import Link from "next/link";
 import { Link } from "next-view-transitions";
@@ -167,3 +168,25 @@ export const generateStaticParams = async () => {
   const slugs = await possibleSlugs();
   return slugs.map((x: any) => ({ slug: x.slug }));
 };
+
+export async function generateMetadata({
+  params: { slug },
+}: {
+  params: { slug: string };
+}): Promise<Metadata> {
+  const resource = await getResourceData(slug);
+  const metaData = {
+    title: `Old School: ${resource.title || ""}`,
+    description: `${resource.description || resource.shortDescription || ""}`,
+    twitter: {
+      title: `Old School: ${resource.title || ""}`,
+    },
+    openGraph: {
+      title: `Old School: ${resource.title || ""}`,
+    },
+  };
+
+  return {
+    ...metaData,
+  };
+}
