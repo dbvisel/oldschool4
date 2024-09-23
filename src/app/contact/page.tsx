@@ -1,3 +1,4 @@
+import { Metadata } from "next";
 import SubmitComponent from "@/components/SubmitComponent";
 import styles from "./page.module.css";
 
@@ -84,4 +85,14 @@ export default function AboutPage() {
       </section>
     </article>
   );
+}
+
+export async function generateMetadata(): Promise<Metadata> {
+  const metaData = {
+    title: `Old School: Contact Us`,
+  };
+
+  return {
+    ...metaData,
+  };
 }

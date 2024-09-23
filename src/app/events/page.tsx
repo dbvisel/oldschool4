@@ -1,3 +1,4 @@
+import { Metadata } from "next";
 import dynamic from "next/dynamic";
 const Event = dynamic(() => import("@/components/Event"), { ssr: false });
 // import Event from "@/components/Event";
@@ -36,3 +37,13 @@ const EventsPage = async () => {
 };
 
 export default EventsPage;
+
+export async function generateMetadata(): Promise<Metadata> {
+  const metaData = {
+    title: `Old School: Events`,
+  };
+
+  return {
+    ...metaData,
+  };
+}

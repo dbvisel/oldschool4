@@ -1,4 +1,4 @@
-import * as React from "react";
+import { Metadata } from "next";
 // import { Link } from "next-view-transitions";
 import Image from "next/image";
 import styles from "./../page.module.css";
@@ -444,3 +444,13 @@ const IntroPageLinks = async () => {
 };
 
 export default IntroPageLinks;
+
+export async function generateMetadata(): Promise<Metadata> {
+  const metaData = {
+    title: `Old School: Some Entry Points`,
+  };
+
+  return {
+    ...metaData,
+  };
+}

@@ -1,4 +1,5 @@
 "use client";
+import { Metadata } from "next";
 import aboutStyles from "./../about/page.module.css";
 import styles from "./page.module.css";
 import Project from "./Project";
@@ -132,3 +133,13 @@ If you have a file to share with us please include it here:
     </article>
   );
 }
+
+// export async function generateMetadata(): Promise<Metadata> {
+//   const metaData = {
+//     title: `Old School: Projects`,
+//   };
+
+//   return {
+//     ...metaData,
+//   };
+// }

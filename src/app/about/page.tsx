@@ -1,5 +1,6 @@
 // import Link from "next/link";
 import { Suspense } from "react";
+import { Metadata } from "next";
 import { Link } from "next-view-transitions";
 import TheTeam from "@/components/TheTeam";
 import {
@@ -76,4 +77,14 @@ export default function AboutPage() {
       </section>
     </article>
   );
+}
+
+export async function generateMetadata(): Promise<Metadata> {
+  const metaData = {
+    title: `Old School: About Old School`,
+  };
+
+  return {
+    ...metaData,
+  };
 }

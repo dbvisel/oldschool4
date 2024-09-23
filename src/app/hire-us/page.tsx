@@ -1,3 +1,4 @@
+import { Metadata } from "next";
 import { Suspense } from "react";
 import { Link } from "next-view-transitions";
 import {
@@ -59,4 +60,14 @@ export default function HireUsPage() {
       </section>
     </article>
   );
+}
+
+export async function generateMetadata(): Promise<Metadata> {
+  const metaData = {
+    title: `Old School: Hire Us`,
+  };
+
+  return {
+    ...metaData,
+  };
 }
