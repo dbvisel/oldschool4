@@ -49,6 +49,12 @@ const Menu = () => {
           <Search />
           <ul className={styles.menu}>
             <li>
+              <Link href="/about#top">About</Link>
+            </li>
+            <li>
+              <Link href="/projects">Projects</Link>
+            </li>
+            <li>
               <Link
                 href="/#"
                 // onMouseEnter={()=>setSubmenuShown(true)}
@@ -79,12 +85,6 @@ const Menu = () => {
             </li>
             <li>
               <Link href="/category/supplies">School supplies</Link>
-            </li>
-            <li>
-              <Link href="/about#top">About</Link>
-            </li>
-            <li>
-              <Link href="/projects">Projects</Link>
             </li>
             <li>
               <Link href="/hire-us">Hire us</Link>
