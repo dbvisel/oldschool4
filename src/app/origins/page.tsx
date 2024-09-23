@@ -1,6 +1,6 @@
-"use client";
+// "use client";
 
-import { Metadata } from "next";
+// import { Metadata } from "next";
 import styles from "./page.module.css";
 import Image from "next/image";
 
@@ -338,12 +338,6 @@ export default function OriginsPage() {
   );
 }
 
-// export async function generateMetadata(): Promise<Metadata> {
-//   const metaData = {
-//     title: `Old School: Old School’s Origin Story`,
-//   };
-
-//   return {
-//     ...metaData,
-//   };
-// }
+export const metadata = {
+  title: `Old School: Old School’s Origin Story`,
+};

@@ -1,8 +1,6 @@
-"use client";
-
-import { Metadata } from "next";
+// import { Metadata } from "next";
 import SubmitComponent from "@/components/SubmitComponent";
-import styles from "./page.module.css";
+// import styles from "./page.module.css";
 
 export default function SubmitPage() {
   return (
@@ -22,13 +20,6 @@ export default function SubmitPage() {
   );
 }
 
-// TODO: this doesn't work on a client-side route
-// export async function generateMetadata(): Promise<Metadata> {
-//   const metaData = {
-//     title: `Old School: Submit a resource`,
-//   };
-
-//   return {
-//     ...metaData,
-//   };
-// }
+export const metadata = {
+  title: `Old School: Submit a resource`,
+};
