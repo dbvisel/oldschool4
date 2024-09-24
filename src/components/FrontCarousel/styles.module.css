@@ -54,6 +54,10 @@
 	margin: auto 0;
 	--fontSize: 32px;
 	--lineHeight: 1.25;
+	@media (max-width: 1023px) {
+		padding: 0 var(--paddingOutside);
+	}
+
 }
 
 .whatIsSlide p, .whatIsSlide h2 {
@@ -161,6 +165,15 @@ text-shadow: 0 0 5px var(--whiteShadow) !important;
 	height: 100%;
 	background-color: rgba(62, 42, 36, 0.45);
 	z-index: 1;
+}
+
+.welcomeSlide {
+background-color: var(--orange);
+background-size: cover;
+padding: 0 15vh;
+	@media (max-width: 1023px) {
+		padding: 0 var(--paddingOutside);
+	}
 }
 
 .bookSlide h2 {

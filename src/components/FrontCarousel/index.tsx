@@ -21,13 +21,8 @@ const FrontCarousel = ({
   return (
     <Carousel>
       <div
-        className={`${styles.emblaSlide} ${styles.bookSlide}`}
-        style={{
-          backgroundColor: "var(--orange)",
-          backgroundImage: `url(images/carousel/backdrop.jpeg)`,
-          backgroundSize: "cover",
-          padding: "0 15vh",
-        }}
+        className={`${styles.emblaSlide} ${styles.bookSlide} ${styles.welcomeSlide}`}
+        style={{ backgroundImage: `url(/images/carousel/backdrop.jpeg)` }}
       >
         <h2 className={styles.bigHeader} style={{ alignSelf: "center" }}>
           Welcome to the new Old School!
