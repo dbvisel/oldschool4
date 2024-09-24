@@ -109,7 +109,7 @@
 
 .searchresults:global(.on) {
 	padding: var(--paddingOutside);
-	min-height: calc(100vh - var(--headerHeight));
+	min-height: calc(var(--unit-100vh) - var(--headerHeight));
 	transform: scale(1) translateX(0);
 	opacity: 1;
 }

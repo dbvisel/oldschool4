@@ -10,7 +10,7 @@ article.frontpage { /* is this actually being used? */
   justify-content: space-between;
   align-items: center;
 	padding: var(--paddingOutside);
-	min-height: calc(100vh - var(--headerHeight));
+	min-height: calc(var(--unit-100vh) - var(--headerHeight));
 	box-sizing: border-box;
 	/* border-top: 1px solid var(--black); */
 	width: 100%;
@@ -22,7 +22,7 @@ article.frontpage { /* is this actually being used? */
 
 .frontpage section:first-of-type {
 	background-color: var(--orange);
-	min-height: calc(100vh - var(--headerHeight));
+	min-height: calc(var(--unit-100vh) - var(--headerHeight));
 	/* border-top-color: var(--white); */
 
 }

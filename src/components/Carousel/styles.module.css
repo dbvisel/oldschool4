@@ -10,7 +10,7 @@
 	--text-body:  rgb(54, 49, 61);
 	@media screen and (orientation: portrait) {
 		/* Is this the best way to do this? At what height does this become problematic? */
-		height: calc(100vh - var(--headerHeight));
+		height: calc(var(--unit-100vh) - var(--headerHeight));
 	}
 }
 

@@ -23,6 +23,7 @@
 	--lineHeight: 1.5;
 	--mainBlockWidth: 1280px;
 	--narrowBlockWidth: 800px;
+  --unit-100vh: 100vh;
 
 
 	/* this is old below: */
@@ -43,6 +44,13 @@
 		--narrowBlockWidth: 100%;		
 	}
 }
+
+@supports (height: 100dvh) {
+	:root {
+			--unit-100vh: 100dvh;
+	}
+}
+
 
 /* @media (prefers-color-scheme: dark) {
   :root {
@@ -89,7 +97,7 @@ a:hover {
 	left: 0;
 	right: 0;
 	height: calc(100% - var(--headerHeight));
-  min-height: calc(100vh - var(--headerHeight));
+  min-height: calc(var(--unit-100vh) - var(--headerHeight));
 	width: 100%;
 	max-width: 100%;
   flex-direction: column;
@@ -97,7 +105,7 @@ a:hover {
 	background-color: var(--white);
 	overflow-y: scroll;
 	scroll-snap-type: y mandatory; /* is this not working? */
-	min-height: calc(100vh - var(--headerHeight));
+	min-height: calc(var(--unit-100vh) - var(--headerHeight));
 }
 
 #mainWrapper article {
