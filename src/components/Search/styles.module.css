@@ -24,6 +24,7 @@
 .search :global(.ais-SearchBox-input) {
 	background-color: transparent;
 	border: 1px solid var(--orange) !important;
+	box-shadow: 0 0 4px var(--blackShadow);
 	color: var(--white);
 	border: none;
 	outline: none;

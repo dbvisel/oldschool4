@@ -14,8 +14,11 @@ View transitions courtesy of this: https://github.com/shuding/next-view-transiti
  - [ ] images for seo
  - [ ] ashton's weird ipad issues
 
+
+
 ## KNOWN ISSUES
 
+ - [ ] Search box should be rewired – clicking search icon should open search box, closing search results should clear query
  - there's a weird error logged on Netlify in build ("Static worker exited with code: null and signal: SIGKILL"). Maybe slowing things down?
    - new Netlify build environment seems to have fixed this
  - also getting this: https://nextjs.org/docs/messages/static-page-generation-timeout
