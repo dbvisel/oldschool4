@@ -90,11 +90,9 @@ const FrontCarousel = ({
         </div>
       </div>
       <div
-        className={`${styles.emblaSlide} ${styles.bookSlide}`}
+        className={`${styles.emblaSlide} ${styles.bookSlide} ${styles.beginSlide}`}
         style={{
-          backgroundColor: "var(--white)",
           backgroundImage: `url(images/carousel/backdrop.jpeg)`,
-          backgroundSize: "cover",
         }}
       >
         <h2
