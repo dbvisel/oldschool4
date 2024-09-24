@@ -11,8 +11,7 @@ View transitions courtesy of this: https://github.com/shuding/next-view-transiti
 ## PRE-LAUNCH ISSUES
 
  - [ ] responsiveness (phone, front carousel)
- - [ ] seo for resources, other pages
-   - [ ] see here for individual pages: https://medium.com/@rajreetesh7/best-seo-practices-for-next-js-apps-6cad24c0fb0e
+ - [ ] images for seo
  - [ ] ashton's weird ipad issues
 
 ## KNOWN ISSUES

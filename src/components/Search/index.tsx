@@ -28,6 +28,9 @@ type SearchPageProps = {
   serverState?: InstantSearchServerState;
 };
 
+// TODO: We should replace the searchbox with one made with useSearchBox():
+// https://www.algolia.com/doc/api-reference/widgets/search-box/react/#hook
+
 const InfiniteHits2 = (props: any) => {
   const { hits } = useInfiniteHits(props);
 
@@ -115,7 +118,16 @@ export default function SearchPage({ serverState }: SearchPageProps) {
             <SearchBox
               className="searchbox"
               placeholder="Search Old School resources and events"
-              // queryHook={(query, search) => setQuery(query)}
+              autoFocus
+              // onSubmit={(e) => {
+              //   e.preventDefault();
+              //   if (!currentQuery.length) {
+              //     console.log("search box clicked, no query");
+              //   }
+              // }}
+              // queryHook={(query, search) => {
+              //   setCurrentQuery(query);
+              // }}
             />
             <div
               className={`${styles.searchresults} ${currentQuery.length ? "on" : ""}`}

@@ -129,6 +129,10 @@
 	padding-top: 2px;
 }
 
+.hitwrapper ul {
+	display: initial;
+}
+
 .searchresults :global(.ais-InfiniteHits-list) {
 	list-style-type: none;
 	margin: 0;
