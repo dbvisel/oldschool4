@@ -13,6 +13,7 @@
 	box-shadow: 0 0 10px var(--blackShadow);
 	z-index: 1;
 	--menuFontSize: 22px;
+	--transitionPoint: 1023px;
 	@media screen and (max-width: 1279px) {
 		--menuFontSize: 16px;
 	}

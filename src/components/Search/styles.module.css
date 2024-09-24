@@ -8,7 +8,11 @@
 	@media (max-width: 375px) {
 		--searchWidth: 320px;
 	}
+	@media (max-width: 1023px) {
+		margin-bottom: 15px;
+	}
 }
+
 
 
 .pagination {
@@ -37,6 +41,10 @@
 	padding: 4px;
 	width: var(--searchWidth);
 	text-align: right;
+	@media (max-width: 1023px) {
+		box-shadow: none;
+	}
+
 }
 
 .search :global(.ais-SearchBox-input::placeholder ){
