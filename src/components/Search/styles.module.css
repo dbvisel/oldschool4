@@ -5,6 +5,9 @@
 	position: relative;
 	margin-bottom: var(--paddingInside);
 	--searchWidth: 360px;
+	@media (max-width: 375px) {
+		--searchWidth: 320px;
+	}
 }
 
 
