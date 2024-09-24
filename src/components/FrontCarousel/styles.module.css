@@ -67,6 +67,11 @@
 .bigHeader {
 	font-size: 72px !important;
   margin-bottom: 18px;
+	@media (max-width: 1023px) {
+		font-size: 48px !important;
+		margin-bottom: 12px;
+	}
+
 }
 
 .description {
@@ -75,6 +80,9 @@
 	max-width: var(--narrowBlockWidth);
 	font-size: var(--fontSize);
 	line-height: var(--lineHeight);
+	@media (max-width: 1023px) {
+		--fontSize: 18px;
+	}
 }
 
 
@@ -90,11 +98,19 @@
 	text-shadow: 0 0 10px var(--blackShadow) !important;
 	position: absolute;
 	bottom: calc(1 * var(--paddingOutside));
+	@media (max-width: 1023px) {
+		--fontSize: 18px;
+	}
+
 }
 
 .officeHoursSlide {
 	position: relative;
-	background-color: var(--white)
+	background-color: var(--white);
+	@media (max-width: 1023px) {
+		background-size: cover;
+	}
+
 }
 
 .officeHoursSlide:before {

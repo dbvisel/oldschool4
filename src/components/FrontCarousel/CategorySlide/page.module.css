@@ -90,4 +90,9 @@
 	text-shadow: 0 0 10px var(--blackShadow);
 	position: absolute;
 	bottom: calc(1 * var(--paddingOutside));
+	@media (max-width: 1023px) {
+		--fontSize: 14px;
+		--lineHeight: 1.25;
+		text-align: center;
+	}
 }
