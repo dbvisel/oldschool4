@@ -105,13 +105,13 @@ const Menu = () => {
               </Link>
             </li>*/}
             <li>
-              <Link
+              <a
                 href="https://old-school-clearinghouse.raisely.com/"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 Donate
-              </Link>
+              </a>
             </li>
             <li>
               <Link href="/contact">Contact</Link>

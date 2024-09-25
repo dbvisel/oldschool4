@@ -1,21 +1,30 @@
 "use client";
 
-// import Link from "next/link";
-import { Link } from "next-view-transitions";
 import styles from "./index.module.css";
 import { EventRecord } from "@/types";
 
+const regex = /a href/gi;
+
 const Event = ({ event }: { event: EventRecord }) => {
-  // console.log(event);
+  const cleanedDescription: String = event.description.replace(
+    regex,
+    'a target="_blank" rel="noopener noreferrer" href'
+  );
   return (
     <div className={styles.event}>
       <header>
         <h3>{event.title}</h3>
-        <Link href={event.googleCalendarLink}>Add to Google Calendar</Link>
+        <a
+          href={String(event.googleCalendarLink)}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Add to Google Calendar
+        </a>
       </header>
       <div className={styles.eventbody}>
         <p
-          dangerouslySetInnerHTML={{ __html: event.description }}
+          dangerouslySetInnerHTML={{ __html: cleanedDescription }}
           className={styles.description}
         />
         <p>
@@ -24,7 +33,9 @@ const Event = ({ event }: { event: EventRecord }) => {
         {event.location ? (
           <p className={styles.link}>
             <strong>Location:</strong>{" "}
-            <Link href={event.location}>{event.location}</Link>
+            <a href={event.location} target="_blank" rel="noopener noreferrer">
+              {event.location}
+            </a>
           </p>
         ) : null}
       </div>

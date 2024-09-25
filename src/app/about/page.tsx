@@ -24,10 +24,10 @@ export default function AboutPage() {
           <h2>About Old School</h2>
           <p>
             Old School curates, creates, commissions and disseminates free
-            resources to educate people about ageism and how to end it; hosts
+            resources to educate people about ageism and how to end it. It hosts
             and facilitates spaces where age advocates around the world can
-            connect; collaborates with other pro-aging organizations; and shows
-            up for other social-justice movements.
+            connect. It also collaborates with other pro-aging organizations and
+            shows up for other social-justice movements.
           </p>
           <p>
             Old School is working towards a world where everyone has the

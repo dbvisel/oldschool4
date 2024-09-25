@@ -3,6 +3,7 @@ import { Link } from "next-view-transitions";
 import { ResourceItem } from "@/types/index";
 import styles from "./page.module.css";
 import calendarIcon from "./images/calendar.svg";
+import { getDefinedName } from "@/utils/categories";
 
 const skipResourcePage = true;
 
@@ -12,6 +13,7 @@ const ResourceCard = ({
   isEvent = false,
   forceNew = false,
   showType = false,
+  hideNew = false,
   // isSearchResult = false,
 }: {
   resource: ResourceItem;
@@ -19,6 +21,7 @@ const ResourceCard = ({
   isEvent?: Boolean;
   forceNew?: Boolean;
   showType?: Boolean;
+  hideNew?: Boolean;
   // isSearchResult: Boolean;
 }) => {
   // if (resource.subresources?.length) {
@@ -42,18 +45,16 @@ const ResourceCard = ({
     ? resource.shortDescription
     : resource.shortDescription || resource.description || "";
   // console.log("resource", resource);
-  const dateChanged: Date = resource.dateChanged
-    ? new Date(resource.dateChanged)
-    : new Date(0);
-  const dateAdded: Date = resource.dateAdded
-    ? new Date(resource.dateAdded)
-    : new Date(0);
-  const useDate: Date = dateAdded || dateChanged;
-  const now: Date = new Date();
-  const isNew =
-    forceNew ||
-    resource.isNew ||
-    now.getTime() - useDate.getTime() < 2592000000 * 1.5; //2592000000 is 30 days – the number after it is how many months we want.
+  // const dateChanged: Date = resource.dateChanged
+  //   ? new Date(resource.dateChanged)
+  //   : new Date(0);
+  // const dateAdded: Date = resource.dateAdded
+  //   ? new Date(resource.dateAdded)
+  //   : new Date(0);
+  // const useDate: Date = dateAdded || dateChanged;
+  // const now: Date = new Date();
+  const isNew = !hideNew && (forceNew || resource.isNew);
+  // || now.getTime() - useDate.getTime() < 2592000000 * 1.5; //2592000000 is 30 days – the number after it is how many months we want.
   // if (!resource.types) {
   //   console.log(resource);
   // }
@@ -61,7 +62,7 @@ const ResourceCard = ({
     <div className={styles.card}>
       {showType ? (
         resource.types ? (
-          <div className={styles.type}>{resource.types[0]}</div>
+          <div className={styles.type}>{getDefinedName(resource.types[0])}</div>
         ) : isEvent ? (
           <div className={styles.type}>Event</div>
         ) : null

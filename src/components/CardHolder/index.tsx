@@ -10,11 +10,13 @@ const CardHolder = ({
   areSubResources = false,
   forceNew = false,
   showType = false,
+  hideNew = false,
 }: {
   resources: Array<ResourceItem>;
   areSubResources?: Boolean;
   forceNew?: Boolean;
   showType?: Boolean;
+  hideNew?: Boolean;
 }) => {
   // console.log(resources);
   // for (let i = 1; i < 8; i += 1) {
@@ -43,6 +45,7 @@ const CardHolder = ({
             isEvent={false}
             forceNew={forceNew}
             showType={showType}
+            hideNew={hideNew}
           />
         ))}
       </Masonry>

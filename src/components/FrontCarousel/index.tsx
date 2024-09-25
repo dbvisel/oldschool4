@@ -35,7 +35,7 @@ const FrontCarousel = ({
           }}
         >
           New name, new look, new logo. Same great resource bank, more&nbsp;ways
-          to come together to&nbsp;end&nbsp;ageism
+          to come together to&nbsp;end&nbsp;ageism.
         </p>
       </div>
       {/* <div
@@ -80,7 +80,7 @@ const FrontCarousel = ({
           <div>
             <h2 className={styles.bigHeader}>What Is Old School?</h2>
             <p className={styles.description}>
-              Old School is a small but mighty grassroots organization created
+              Old School is a small-but-mighty grassroots organization created
               to raise awareness of ageism and how to undo it.{" "}
               <strong>
                 <Link href={"/about"}>Learn more.</Link>

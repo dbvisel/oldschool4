@@ -167,6 +167,11 @@ export const allTypes = [
   ...definedTypes,
 ];
 
+export const getDefinedName = (airtableName) => {
+  const result = definedTypes.filter((x) => x.airtableName === airtableName);
+  return result.length ? result[0].name : airtableName;
+};
+
 export const getAirTableName = (typeId) => {
   const result = definedTypes.filter((x) => x.id === typeId);
   return result.length ? result[0].airtableName : typeId;

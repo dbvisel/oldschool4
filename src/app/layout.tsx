@@ -16,9 +16,9 @@ const figtree = Figtree({
 export async function generateMetadata(): Promise<Metadata> {
   return {
     metadataBase: new URL("https://oldschool.info"),
-    title: "Old School: Anti-Ageism Clearinghouse",
+    title: "Old School Hub",
     description:
-      "Old School is a clearinghouse of free and carefully vetted resources to educate people about ageism and help dismantle it.",
+      "Old School educates people about ageism and connects people who are working to end it.",
 
     authors: [
       {
@@ -41,10 +41,10 @@ export async function generateMetadata(): Promise<Metadata> {
     openGraph: {
       type: "website",
       url: "https://oldschool.info",
-      title: "Old School: Anti-Ageism Clearinghouse",
+      title: "Old School Hub",
       description:
-        "Old School is a clearinghouse of free and carefully vetted resources to educate people about ageism and help dismantle it.",
-      siteName: "Old School: Anti-Ageism Clearinghouse",
+        "Old School educates people about ageism and connects people who are working to end it.",
+      siteName: "Old School Hub",
       images: [
         {
           url: "some-image",

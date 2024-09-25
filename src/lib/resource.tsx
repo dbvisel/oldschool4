@@ -13,11 +13,13 @@ export const cleanResource = (
       resource.fields.Title
     );
   }
+
   const newResource = {
     id: resource.id, // This should be the Airtable ID.
     title: resource.fields.Title,
     tags: resource.fields.Tags,
     link: resource.fields["Resource URL"],
+    isNew: resource.fields["Show on Front Page"] || false,
     dateAdded: resource.fields["Date added"],
     hideTitle: resource.fields["Hide title?"] || false,
     dateChanged: resource.fields["Date changed"], // is this real?

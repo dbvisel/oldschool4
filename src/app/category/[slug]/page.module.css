@@ -26,3 +26,7 @@
 	color: var(--orange);
 	font-weight: normal;
 }
+
+.categoryHead {
+	font-size: calc(var(--fontSize)* 1.5) !important;
+}

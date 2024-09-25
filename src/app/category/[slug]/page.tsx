@@ -16,8 +16,8 @@ const CategoryPage = async ({
   return (
     <article className={styles.category}>
       <header>
-        <h2 className="pageheader">
-          <span>Category:</span> {thisCategory.name}
+        <h2 className={`pageheader ${styles.categoryHead}`}>
+          {thisCategory.name}
         </h2>
         <p className="tagline">{thisCategory.tag}</p>
       </header>

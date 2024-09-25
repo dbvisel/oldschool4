@@ -16,7 +16,7 @@ const TopResources = async () => {
   return resources.length ? (
     <section style={{ justifyContent: "center" }}>
       <h2 className="pageheader">Newest resources</h2>
-      <CardHolder resources={resources} showType />
+      <CardHolder resources={resources} showType hideNew />
     </section>
   ) : (
     <LoadingTopResources />
