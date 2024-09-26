@@ -46,14 +46,9 @@ export default function AboutPage() {
             }}
           >
             Wondering where to begin?{" "}
-            <a
-              href="https://paulbelford.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{ color: "var(--black)" }}
-            >
+            <Link href="/intro" style={{ color: "var(--black)" }}>
               Here are some suggestions.
-            </a>
+            </Link>
           </p>
         </div>
       </section>
