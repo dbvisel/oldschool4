@@ -10,14 +10,11 @@ View transitions courtesy of this: https://github.com/shuding/next-view-transiti
 
 ## PRE-LAUNCH ISSUES
 
- - [ ] responsiveness (phone, front carousel)
  - [ ] images for seo
- - [ ] ashton's weird ipad issues
-
-
 
 ## KNOWN ISSUES
 
+ - [ ] font size needs to be rem-based. Test against browser font size settings.
  - [ ] Search box should be rewired – clicking search icon should open search box, closing search results should clear query
  - there's a weird error logged on Netlify in build ("Static worker exited with code: null and signal: SIGKILL"). Maybe slowing things down?
    - new Netlify build environment seems to have fixed this
