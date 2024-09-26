@@ -20,7 +20,9 @@ export default function AboutPage() {
         className={styles.aboutBlock}
         style={{ scrollSnapAlign: "none" }}
       >
-        <div>
+        <div
+          style={{ display: "flex", flexDirection: "column", height: "100%" }}
+        >
           <h2>About Old School</h2>
           <p>
             Old School curates, creates, commissions and disseminates free
@@ -35,6 +37,23 @@ export default function AboutPage() {
             movement to dismantle ageism, and we are leveraging the fact that
             everyone ages (and experiences age bias) in order to address the
             intersectional nature of all oppression—and of all activism.
+          </p>
+          <p
+            style={{
+              textAlign: "center",
+              marginTop: "auto",
+              fontSize: "125%",
+            }}
+          >
+            Wondering where to begin?{" "}
+            <a
+              href="https://paulbelford.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ color: "var(--black)" }}
+            >
+              Here are some suggestions.
+            </a>
           </p>
         </div>
       </section>

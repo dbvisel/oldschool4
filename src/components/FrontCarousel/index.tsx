@@ -81,9 +81,10 @@ const FrontCarousel = ({
             <h2 className={styles.bigHeader}>What Is Old School?</h2>
             <p className={styles.description}>
               Old School is a small-but-mighty grassroots organization created
-              to raise awareness of ageism and how to undo it.{" "}
+              to educate people about ageism and to connect people who are
+              working to end it.{" "}
               <strong>
-                <Link href={"/about"}>Learn more.</Link>
+                <Link href={"/about"}>Learn&nbsp;more.</Link>
               </strong>
             </p>
           </div>
