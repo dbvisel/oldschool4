@@ -91,7 +91,7 @@
 	position: absolute;
 	bottom: calc(1 * var(--paddingOutside));
 	@media (max-width: 1023px) {
-		--fontSize: 14px;
+		--fontSize: calc(1rem / 8 * 7);
 		--lineHeight: 1.25;
 		text-align: center;
 	}

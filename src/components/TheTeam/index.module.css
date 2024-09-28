@@ -19,14 +19,14 @@
 }
 
 .person {
-  --fontSize: 20px;
+	--fontSize: calc(1rem / 4 * 5);
   --lineHeight: 28px;
 	--personWidth: 500px;
 	--imageWidth: 200px;
   display: flex;
   margin-bottom: calc(var(--paddingDouble) * 2);
 	@media (max-width: 767px) {
-    --fontSize: 16px;
+		--fontSize: calc(1rem * 1.25);
     --lineHeight: 24px;
     --paddingInside: 20px;
     flex-direction: column;
@@ -93,7 +93,7 @@
 	color: var(--orange);
 	text-align: left;
 	margin: 0 0 var(--paddingOutside) 0;
-	font-size: 30px;
+	font-size: calc(1rem / 8 * 15);
 	line-height: 1.2;
 	display: inline-flex;
 	white-space: nowrap;
@@ -123,7 +123,7 @@
 	margin-left: 1em;
 	font-weight: normal;
 	font-style: italic;
-	font-size: 20px;
+	font-size: calc(1rem / 4 * 5);
 	white-space: normal;
 	@media (max-width: 767px) {
 		text-align: center;

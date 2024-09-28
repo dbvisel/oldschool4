@@ -20,13 +20,18 @@
   display: flex;
   flex-direction: column;
   z-index: 2;
+	--fontSize: 1.5rem;
+	@media (max-width: 1024px) {
+		--fontSize: 1.25rem;
+	}
+
 }
 
 .subscribediv p {
 	margin: 0;
 	text-align: center;
-	font-size: 1.5em;
 	color: var(--white);
+	font-size: var(--fontSize);
 	margin-bottom: var(--paddingInside);
 }
 
@@ -59,7 +64,7 @@
 
 .subscribediv input, .subscribediv button {
 	height: 48px;
-	font-size: 24px;
+	font-size: var(--fontSize);
 	border-radius: 2px;
 	margin-bottom: 24px;
 	background-color: transparent;
@@ -113,7 +118,7 @@
 
 
 .successp {
-	font-size: 24px;
+	font-size: var(--fontSize);
   font-style: italic;
   letter-spacing: 0;
   margin: 0 0 24px 0;
@@ -153,12 +158,14 @@
 .linkFooter ul {
 	margin: 0;
 	padding: 0;
-	display: inline-block;
-	@media (max-width: 767px) {
+	display: inline-flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	/* @media (max-width: 767px) {
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: center;
-	}
+	} */
 }
 
 .linkFooter ul li {

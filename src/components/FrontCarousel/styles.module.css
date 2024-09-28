@@ -52,7 +52,7 @@
 	justify-content: center;
 	align-items: center;
 	margin: auto 0;
-	--fontSize: 32px;
+	--fontSize: calc(1rem * 2);
 	--lineHeight: 1.25;
 	@media (max-width: 1023px) {
 		padding: 0 var(--paddingOutside);
@@ -66,7 +66,7 @@
 
 .beginSlide h2 {
 	@media (max-width: 1023px) {
-		--fontSize: 14px;
+		--fontSize: calc(1rem / 8 * 7);
 	}
 }
 
@@ -79,23 +79,23 @@
 }
 
 .bigHeader {
-	font-size: 72px !important;
+	font-size: calc(1rem * 4.5) !important;
   margin-bottom: 18px;
 	@media (max-width: 1023px) {
-		font-size: 48px !important;
+		font-size: calc(1rem * 3) !important;
 		margin-bottom: 12px;
 	}
 
 }
 
 .description {
-	--fontSize: 32px;
+	--fontSize: calc(1rem * 2);
 	--lineHeight: 1.25;
 	max-width: var(--narrowBlockWidth);
 	font-size: var(--fontSize);
 	line-height: var(--lineHeight);
 	@media (max-width: 1023px) {
-		--fontSize: 18px;
+		--fontSize: calc(1rem / 8 * 9);
 	}
 }
 
@@ -113,7 +113,7 @@
 	position: absolute;
 	bottom: calc(1 * var(--paddingOutside));
 	@media (max-width: 1023px) {
-		--fontSize: 18px;
+		--fontSize: calc(1rem / 8 * 9);
 	}
 
 }

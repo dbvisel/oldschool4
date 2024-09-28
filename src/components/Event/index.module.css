@@ -38,13 +38,13 @@
 	padding: var(--paddingInside) var(--paddingOutside);
 	max-width: 100%;
 	text-transform: uppercase;
-	font-size: 16px;
+	font-size: 1rem;
 	@media screen and (max-width: 1279px) {
 		padding: var(--paddingInside);
 	}
 	@media screen and (max-width: 1023px) {
 		flex:1;
-		font-size: 14px;
+		font-size: calc(1rem / 8 * 7);
 		text-align: center;
 	}
 }
