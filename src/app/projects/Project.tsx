@@ -22,11 +22,15 @@ const Project = ({
         <h3>{title}</h3>
         <p>{description}</p>
         <p className={styles.contactLine}>
-          (Contact: <a href={link}>{contact}</a>)
+          (Contact:{" "}
+          <a href={link} target="_blank" rel="noopener noreferrer">
+            {contact}
+          </a>
+          )
         </p>
       </div>
       <div className={styles.projectImage}>
-        <a href={link}>
+        <a href={link} target="_blank" rel="noopener noreferrer">
           <Image src={image} alt={title} width={200} />
         </a>
       </div>

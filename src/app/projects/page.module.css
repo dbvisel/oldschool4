@@ -26,7 +26,7 @@
 	display: flex;
 	justify-content: space-between;
 	background-color: var(--white);
-	border: 8px solid var(--orange);
+	border: 2px solid var(--orange);
 	margin-top: var(--paddingOutside);
 	margin-bottom: calc(1 * var(--paddingOutside));
 	padding: var(--paddingOutside);
@@ -45,7 +45,7 @@
 
 .projectImage {
 	margin-left: var(--paddingOutside);
-	border: 8px solid var(--orange);
+	border: 2px solid var(--orange);
 	line-height: 0;
 	height: fit-content;
 	@media screen and (max-width: 767px) {
