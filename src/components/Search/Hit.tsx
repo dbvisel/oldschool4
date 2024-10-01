@@ -54,6 +54,7 @@ const Hit = ({ hit }: { hit: any }) => {
     shortDescription: hit["Short_Description"],
     link: hit["Resource_URL"],
   };
+  // console.log("cleanedHit", cleanedHit, hit.hideTitle);
 
   return (
     <div className={styles.hit}>

@@ -152,7 +152,7 @@ const addSubresources = true; // If this is true, subresources will be added to 
                 title: thisRecord.fields.Title,
                 id: thisRecord.id,
                 slug: parentSlug,
-                hideTitle: Boolean(x.fields["Hide title?"]),
+                hideTitle: Boolean(thisRecord.fields["Hide title?"]),
                 Contact_info_email:
                   thisRecord.fields["Contact info email"] || "",
                 Contact_info_link: thisRecord.fields["Contact info link"] || "",
