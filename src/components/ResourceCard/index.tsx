@@ -78,7 +78,7 @@ const ResourceCard = ({
       ) : resource?.image?.path &&
         resource.image.width &&
         resource.image.height ? (
-        skipResourcePage && !isEvent && !isResourcePage ? (
+        skipResourcePage && !isEvent /*&& !isResourcePage */ ? (
           <a
             href={String(resource.link || "")}
             className="imagelink"
@@ -110,7 +110,7 @@ const ResourceCard = ({
         <p>No image!</p>
       )}
       <div className={styles.bottomblock}>
-        {skipResourcePage && !isEvent && !isResourcePage ? (
+        {skipResourcePage && !isEvent /*&& !isResourcePage */ ? (
           <a href={String(resource.link) || ""} target={"_blank"}>
             {!resource.hideTitle && <h2>{resource.title}</h2>}
             {isEvent ? (
