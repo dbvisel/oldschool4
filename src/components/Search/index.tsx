@@ -118,7 +118,7 @@ export default function SearchPage({ serverState }: SearchPageProps) {
             <SearchBox
               className="searchbox"
               placeholder="Search Old School resources and events"
-              autoFocus
+              autoFocus={false}
               // onSubmit={(e) => {
               //   e.preventDefault();
               //   if (!currentQuery.length) {

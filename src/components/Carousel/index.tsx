@@ -16,7 +16,7 @@ interface CarouselProps extends PropsWithChildren<any> {
 
 const Carousel = ({ children, noControls = false }: CarouselProps) => {
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, duration: 50 }, [
-    Autoplay(),
+    Autoplay({ delay: 6000 }),
   ]);
 
   const onNavButtonClick = useCallback((emblaApi: EmblaCarouselType) => {
