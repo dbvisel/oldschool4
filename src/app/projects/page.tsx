@@ -42,13 +42,12 @@ export default function ProjectsPage() {
         <div>
           <h2>Old School has transitioned from clearinghouse to hub.</h2>
           <p className={styles.projectIntroParagraph}>
-            The Old School Hub will be a place for people and organizations
-            doing anti-ageism work to list their projects so others will be able
-            to find, join, and share their efforts. The Old School team will be
-            involved in whatever ways make sense to the people behind each
-            project. Projects can range in scale from local to global, and be
-            underway or still in the ideation phase. They must focus explicitly
-            on ageism.
+            The Old School Hub is a place for people and organizations doing
+            anti-ageism work to list their projects so others are able to find,
+            join, and share their efforts. The Old School team will be involved
+            in whatever ways make sense to the people behind each project.
+            Projects can range in scale from local to global, and be underway or
+            still in the ideation phase. They must focus explicitly on ageism.
           </p>
           <p className={styles.projectIntroParagraph}>
             Are you working to raise awareness of ageism and how to undo it?

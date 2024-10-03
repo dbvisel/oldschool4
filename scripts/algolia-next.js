@@ -189,6 +189,14 @@ const addSubresources = true; // If this is true, subresources will be added to 
       //   "Subresources: ",
       //   subResourcePages.map((x) => x.title)
       // );
+      // console.log(
+      //   "Resource: ",
+      //   x.fields.Title,
+      //   "Slug: ",
+      //   parentSlug,
+      //   "hideTitle:",
+      //   Boolean(x.fields["Hide title?"])
+      // );
       return {
         objectID: x.id,
         title: x.fields.Title,
