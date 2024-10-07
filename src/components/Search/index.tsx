@@ -34,7 +34,7 @@ type SearchPageProps = {
 const InfiniteHits2 = (props: any) => {
   const { hits } = useInfiniteHits(props);
 
-  return (
+  return hits && hits.length ? (
     <div className={styles.hitwrapper}>
       <ResponsiveMasonry
         columnsCountBreakPoints={{
@@ -50,14 +50,20 @@ const InfiniteHits2 = (props: any) => {
         className={styles.cardHolder}
       >
         <Masonry gutter={"var(--paddingOutside)"}>
-          {hits.length ? (
-            hits.map((hit) => <Hit key={hit.id} hit={hit} />)
-          ) : (
-            <p className={styles.notFound}>Nothing found, sorry!</p>
-          )}
+          {hits &&
+            hits.length &&
+            hits.map((hit) => <Hit key={hit.id} hit={hit} />)}
         </Masonry>
       </ResponsiveMasonry>
       <div style={{ height: "var(--paddingOutside)" }} />
+    </div>
+  ) : (
+    <div className={styles.hitwrapper}>
+      <p className={styles.notFound}>
+        Can’t find what you are looking for? Create it! Want input or
+        collaborators? Submit a proposal to our{" "}
+        <a href="/projects">projects page</a>!
+      </p>
     </div>
   );
 };

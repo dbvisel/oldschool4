@@ -184,5 +184,9 @@ width: initial !important;
 }
 
 .notFound {
+	font-size: calc(var(--fontSize) * 1.25) !important;
+	line-height: 1.5;
+	padding: 0 20%;
+	text-align: center;
 	color: var(--black);
 }
