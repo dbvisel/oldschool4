@@ -4,6 +4,7 @@
 }
 
 .projectIntroParagraph {
+	margin-bottom: 0 !important;
 	@media screen and (max-width: 1279px) {
 		--fontSize: calc(1rem / 2 * 3);
 		--lineHeight: 1.4;	
