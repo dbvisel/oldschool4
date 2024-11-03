@@ -25,3 +25,7 @@ View transitions courtesy of this: https://github.com/shuding/next-view-transiti
  - Maybe: figure out how to cache blurPaths? How much time are we spending on that?
  - [ ] make subresources that are PDFs open in their own page with local PDF.
  - [ ] accessibility testing
+
+## Remember
+
+ - react-responsive-masonry is pegged to 2.3.0 because of this bug: https://github.com/cedricdelpoux/react-responsive-masonry/issues/131

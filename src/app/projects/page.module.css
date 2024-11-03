@@ -90,3 +90,42 @@
 	font-weight: bold;
 	border-bottom: 4px solid var(--orangeShadow);
 }
+
+.link {
+	color: var(--white);
+}
+
+.popoverScrim {
+	position: fixed;
+	width: 100vw;
+	height: 100vh;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	display: flex;
+	background-color: var(--orangeHalf);
+	padding: var(--paddingOutside);
+	transition: 0.5s;
+}
+
+.popover {
+	--fontSize: 200%;
+	max-width: 800px;
+	background-color: var(--white);
+	padding: var(--paddingOutside);
+	box-shadow: 0 0 10px var(--blackShadow);
+	color: var(--orange);
+	margin: auto;
+	font-size: var(--fontSize);
+	line-height: 1.25;
+	@media screen and (max-width: 767px) {
+		--fontSize: 150%;
+	}
+}
+
+
+
+.popover p + p {
+	text-indent: 1em;
+}
