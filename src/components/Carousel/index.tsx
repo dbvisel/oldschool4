@@ -12,7 +12,7 @@ import styles from "./styles.module.css";
 interface CarouselProps extends PropsWithChildren<any> {
   noControls?: boolean;
   children: ReactNode;
-  header: ReactNode;
+  header?: ReactNode;
 }
 
 const Carousel = ({ children, header, noControls = false }: CarouselProps) => {
