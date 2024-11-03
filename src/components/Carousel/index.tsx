@@ -12,9 +12,10 @@ import styles from "./styles.module.css";
 interface CarouselProps extends PropsWithChildren<any> {
   noControls?: boolean;
   children: ReactNode;
+  header: ReactNode;
 }
 
-const Carousel = ({ children, noControls = false }: CarouselProps) => {
+const Carousel = ({ children, header, noControls = false }: CarouselProps) => {
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, duration: 50 }, [
     Autoplay({ delay: 6000 }),
   ]);
@@ -40,6 +41,7 @@ const Carousel = ({ children, noControls = false }: CarouselProps) => {
 
   return (
     <div className={styles.wrapper}>
+      {header}
       <div className={styles.embla} ref={emblaRef}>
         <div className={styles.emblaContainer}>{children}</div>
       </div>

@@ -135,6 +135,11 @@
 	letter-spacing: 1.25px;
 	font-size: calc(var(--fontSize) * 1.75) !important;
 	opacity: 0.5;
+	position: absolute;
+	top: var(--paddingOutside);
+	text-align: center;
+	width: 100%;
+	z-index: 2;
 	@media (max-width: 420px) {
 		font-size: calc(var(--fontSize) * 1.5) !important;
 	}
