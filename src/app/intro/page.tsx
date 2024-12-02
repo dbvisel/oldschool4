@@ -87,7 +87,7 @@ const IntroPage = () => {
               <li>
                 Make a{" "}
                 <a
-                  href="https://old-school-clearinghouse.raisely.com/"
+                  href="https://old-school-hub.raisely.com/"
                   target="_blank"
                   rel="noopener noreferrer"
                 >

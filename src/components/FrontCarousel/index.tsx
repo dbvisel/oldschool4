@@ -21,6 +21,22 @@ const FrontCarousel = ({
   return (
     <Carousel>
       <div
+        className={`${styles.emblaSlide} ${styles.hideText}`}
+        style={{
+          backgroundColor: "var(--black)",
+          backgroundImage: `url(images/carousel/2.png)`,
+          backgroundSize: "contain",
+          backgroundRepeat: "no-repeat",
+        }}
+      >
+        <a
+          href="https://old-school-hub.raisely.com"
+          className={styles.fullLink}
+          target="_blank"
+          rel="noopener noreferrer"
+        />
+      </div>
+      <div
         className={`${styles.emblaSlide} ${styles.bookSlide} ${styles.welcomeSlide}`}
         style={{ backgroundImage: `url(/images/carousel/backdrop.jpeg)` }}
       >
@@ -159,7 +175,7 @@ const FrontCarousel = ({
           </a>
         </p>
       </div>
-      <div
+      {/*<div
         className={`${styles.emblaSlide} ${styles.hideText}`}
         style={{
           backgroundColor: "var(--black)",
@@ -175,13 +191,13 @@ const FrontCarousel = ({
           target="_blank"
           rel="noopener noreferrer"
         ></a>
-        {/*<h2 className={styles.bigHeader}>
+        <h2 className={styles.bigHeader}>
           <Link href={"/events"}>Summer School</Link>
         </h2>
         <p className={styles.description}>
           This just happened! It was great! Takeaways coming soon.
-        </p>*/}
-      </div>
+        </p>
+      </div>*/}
       {/*<div
         className={`${styles.emblaSlide} ${styles.hideText}`}
         style={{
