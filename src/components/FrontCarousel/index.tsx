@@ -23,8 +23,8 @@ const FrontCarousel = ({
       <div
         className={`${styles.emblaSlide} ${styles.hideText}`}
         style={{
-          backgroundColor: "var(--black)",
-          backgroundImage: `url(images/carousel/2.png)`,
+          backgroundColor: "var(--white)",
+          backgroundImage: `url(images/carousel/Newsletter.png)`,
           backgroundSize: "contain",
           backgroundRepeat: "no-repeat",
         }}
