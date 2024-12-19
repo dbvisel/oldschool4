@@ -55,17 +55,17 @@ export default function ProjectsPage() {
           Have something for the Hub?
         </h2>
         <p>
-          Does your plan or project focus explicitly on ageism? When you
-          describe it, can you answer “yes” to these{" "}
+          Does your project focus explicitly on ageism? When you describe it,
+          can you answer “yes” to most or all of these{" "}
           <strong>Ten Guiding Questions</strong>:
         </p>
         <ul>
-          <li>Is it necessary for some and good for all?</li>
-          <li>Does it tap the joy and power of coming together?</li>
-          <li>Do all ages have a voice?</li>
+          <li>Is your project necessary for some and good for all?</li>
+          <li>Does it tap into the joy and power of coming together?</li>
+          <li>Do all ages have a voice in it?</li>
           <li>Does it acknowledge and address internalized ageism?</li>
           <li>
-            Does it reflect the fact that words matter and that language is a
+            Does it reflect the fact that words matter, and that language is a
             moving target?
           </li>
           <li>
@@ -81,7 +81,19 @@ export default function ProjectsPage() {
             movement requires?
           </li>
         </ul>
-        <p>If so, we’re eager to hear about it.</p>
+        <p>
+          As you review and return to these questions, keep one more in mind:{" "}
+          <strong>Who is missing?</strong> The anti-ageism movement is
+          predominantly made up of white, non-disabled, middle-class olders. To
+          help change that, Old School will prioritize projects from communities
+          that are under-represented in age advocacy and/or address issues that
+          matter to them.
+        </p>
+        <p style={{ textIndent: "1em" }}>
+          If you answered “yes” to most or all of these questions, we’d love to
+          learn about your project!{" "}
+          <strong>Please use this form to tell us more:</strong>
+        </p>
       </section>
       <section className={styles.projectSection}>
         {/* <h2 className="pageheader">Please use this form to tell us more:</h2> */}
