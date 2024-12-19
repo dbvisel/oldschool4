@@ -81,7 +81,7 @@ const ProjectLead = () => {
           </p>
         </Popover>
         <p className={styles.projectIntroParagraph}>
-          If you’d like to submit a project or learn more, scroll down for our
+          If you’d like to submit a project or learn more, scroll down for our{" "}
           <strong>Ten Guiding Questions</strong> and the{" "}
           <strong>Old School Hub Submission Form</strong>.
         </p>
