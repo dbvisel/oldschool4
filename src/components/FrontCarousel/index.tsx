@@ -20,23 +20,7 @@ const FrontCarousel = ({
 }) => {
   return (
     <Carousel>
-      <div
-        className={`${styles.emblaSlide} ${styles.hideText}`}
-        style={{
-          backgroundColor: "var(--white)",
-          backgroundImage: `url(images/carousel/Newsletter.png)`,
-          backgroundSize: "contain",
-          backgroundRepeat: "no-repeat",
-        }}
-      >
-        <a
-          href="https://old-school-hub.raisely.com"
-          className={styles.fullLink}
-          target="_blank"
-          rel="noopener noreferrer"
-        />
-      </div>
-      <div
+      {/*<div
         className={`${styles.emblaSlide} ${styles.bookSlide} ${styles.welcomeSlide}`}
         style={{ backgroundImage: `url(/images/carousel/backdrop.jpeg)` }}
       >
@@ -53,7 +37,7 @@ const FrontCarousel = ({
           New name, new look, new logo. Same great resource bank, more&nbsp;ways
           to come together to&nbsp;end&nbsp;ageism.
         </p>
-      </div>
+      </div>*/}
       {/* <div
         className={styles.emblaSlide}
         style={{
@@ -223,6 +207,22 @@ const FrontCarousel = ({
           <Link href="/origins">The Surprising History of Old School</Link>
         </h2>
       </div> */}
+      <div
+        className={`${styles.emblaSlide} ${styles.hideText}`}
+        style={{
+          backgroundColor: "var(--white)",
+          backgroundImage: `url(images/carousel/Newsletter.png)`,
+          backgroundSize: "contain",
+          backgroundRepeat: "no-repeat",
+        }}
+      >
+        <a
+          href="https://old-school-hub.raisely.com"
+          className={styles.fullLink}
+          target="_blank"
+          rel="noopener noreferrer"
+        />
+      </div>
     </Carousel>
   );
 };
