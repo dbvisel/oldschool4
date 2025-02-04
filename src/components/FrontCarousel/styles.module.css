@@ -198,6 +198,7 @@ padding: 0 15vh;
 	width: calc(100% + 2 * var(--paddingOutside));
 	height: calc(100% + 2 * var(--paddingOutside));
 	margin-top: calc(0px - var(--paddingOutside));
+	margin-left: calc(0px - var(--paddingOutside));
 }
 
 .interior {

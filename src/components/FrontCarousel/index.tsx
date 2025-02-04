@@ -106,7 +106,7 @@ const FrontCarousel = ({
           rel="noopener noreferrer"
         />
       </div>
-      {/*<div
+      <div
         className={`${styles.emblaSlide} ${styles.hideText}`}
         style={{
           backgroundColor: "var(--white)",
@@ -122,13 +122,14 @@ const FrontCarousel = ({
           }}
         >
           <a
-            href="https://www.longevity-project.com/century-summit-2025-official-videos"
+            href="https://www.nextavenue.org/lets-come-together-for-yoda/"
             className={styles.fullLink}
             target="_blank"
             rel="noopener noreferrer"
+            style={{ display: "block" }}
           />
         </div>
-      </div>*/}
+      </div>
       <div
         className={`${styles.emblaSlide} ${styles.bookSlide} ${styles.beginSlide}`}
         style={{
