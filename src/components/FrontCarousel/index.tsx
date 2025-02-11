@@ -91,46 +91,6 @@ const FrontCarousel = ({
         </div>
       </div>
       <div
-        className={`${styles.emblaSlide} ${styles.hideText}`}
-        style={{
-          backgroundColor: "var(--white)",
-          backgroundImage: `url(images/carousel/centurysummitv.jpg)`,
-          backgroundSize: "contain",
-          backgroundRepeat: "no-repeat",
-        }}
-      >
-        <a
-          href="https://www.longevity-project.com/century-summit-2025-official-videos"
-          className={styles.fullLink}
-          target="_blank"
-          rel="noopener noreferrer"
-        />
-      </div>
-      <div
-        className={`${styles.emblaSlide} ${styles.hideText}`}
-        style={{
-          backgroundColor: "var(--white)",
-          backgroundImage: `url(images/carousel/YODA-BG.png)`,
-          backgroundSize: "cover",
-          backgroundRepeat: "no-repeat",
-        }}
-      >
-        <div
-          className={`${styles.hideText} ${styles.interior}`}
-          style={{
-            backgroundImage: `url(images/carousel/YODA.png)`,
-          }}
-        >
-          <a
-            href="https://www.nextavenue.org/lets-come-together-for-yoda/"
-            className={styles.fullLink}
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{ display: "block" }}
-          />
-        </div>
-      </div>
-      <div
         className={`${styles.emblaSlide} ${styles.bookSlide} ${styles.beginSlide}`}
         style={{
           backgroundImage: `url(images/carousel/backdrop.jpeg)`,
@@ -198,6 +158,46 @@ const FrontCarousel = ({
             Register here.
           </a>
         </p>
+      </div>
+      <div
+        className={`${styles.emblaSlide} ${styles.hideText}`}
+        style={{
+          backgroundColor: "var(--white)",
+          backgroundImage: `url(images/carousel/centurysummitv.jpg)`,
+          backgroundSize: "contain",
+          backgroundRepeat: "no-repeat",
+        }}
+      >
+        <a
+          href="https://www.longevity-project.com/century-summit-2025-official-videos"
+          className={styles.fullLink}
+          target="_blank"
+          rel="noopener noreferrer"
+        />
+      </div>
+      <div
+        className={`${styles.emblaSlide} ${styles.hideText}`}
+        style={{
+          backgroundColor: "var(--white)",
+          backgroundImage: `url(images/carousel/YODA-BG.png)`,
+          backgroundSize: "cover",
+          backgroundRepeat: "no-repeat",
+        }}
+      >
+        <div
+          className={`${styles.hideText} ${styles.interior}`}
+          style={{
+            backgroundImage: `url(images/carousel/YODA.png)`,
+          }}
+        >
+          <a
+            href="https://www.nextavenue.org/lets-come-together-for-yoda/"
+            className={styles.fullLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{ display: "block" }}
+          />
+        </div>
       </div>
       {/*<div
         className={`${styles.emblaSlide} ${styles.hideText}`}
