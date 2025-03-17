@@ -146,7 +146,7 @@ export const SlideList = {
       />
     </div>
   ),
-  justOneTestimonal: (quotes) =>
+  justOneTestimonal: (quotes: any) =>
     quotes.length && (
       <JustOneTestimonial
         quotes={quotes?.length ? quotes : []}
