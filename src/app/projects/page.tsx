@@ -5,9 +5,18 @@ import Project from "./Project";
 import aeaImage from "./images/Age-Equity-Alliance_blue-navy-BG-e1588618146243.jpg";
 import fufaImage from "./images/F.U.F.A-(1).png";
 import eaaImage from "./images/vcugerontology.jpg";
+import ailaImage from "./images/Aging+Is+Living+sign_card+hi-res+artwork (1).jpg";
 import ProjectLead from "./ProjectLead";
 
 const projectData = [
+  {
+    title: "Aging is Living Artwork",
+    description:
+      "Rainbow flags. Peace symbols. Ribbons on lapels. Every movement has its signs, and now the age equity movement has one too! Download it, print it, display it, wear it, hand it out, get it out there — and move us all closer to a world without ageism.",
+    link: "https://www.linkedin.com/in/margaretmcdonald/",
+    contact: "Margaret McDonald",
+    image: ailaImage,
+  },
   {
     title: "“Expanding Age Advocacy”",
     description:
@@ -25,14 +34,15 @@ const projectData = [
     contact: "Sheila Callaham",
     image: aeaImage,
   },
-  {
-    title: "FUFA - Francophones Unis Face a l’Ageisme",
-    description:
-      "This coalition of French-speaking anti-ageism advocates around the world began as a collaboration between Old School and the Pass It On Network.",
-    link: "https://www.linkedin.com/in/moiraallan/",
-    contact: "Moira Allen",
-    image: fufaImage,
-  },
+
+  // {
+  //   title: "FUFA - Francophones Unis Face a l’Ageisme",
+  //   description:
+  //     "This coalition of French-speaking anti-ageism advocates around the world began as a collaboration between Old School and the Pass It On Network.",
+  //   link: "https://www.linkedin.com/in/moiraallan/",
+  //   contact: "Moira Allen",
+  //   image: fufaImage,
+  // },
 ];
 
 export default function ProjectsPage() {
@@ -40,7 +50,7 @@ export default function ProjectsPage() {
     <article className={aboutStyles.about}>
       <ProjectLead />
       <section className={styles.projectSection}>
-        <h2 className="pageheader">Some sample projects:</h2>
+        <h2 className="pageheader">Some projects:</h2>
         <div className={styles.projectWrapper}>
           {projectData.map((project, index) => (
             <Project key={index} {...project} isLeft={index % 2 === 0} />
