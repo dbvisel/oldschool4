@@ -116,8 +116,8 @@ export default function JobsPage() {
             <li>A relevant writing sample</li>
           </ul>
           <p>
-            <strong>Application Deadline:</strong> May 15, 2025. For full job
-            description <a href="/">here</a>.
+            <strong>Application Deadline:</strong> May 15, 2025.{" "}
+            <a href="/">Click here to apply.</a>.
           </p>
           <p className={styles.small}>
             It is the policy of OS to prohibit discrimination against any person
