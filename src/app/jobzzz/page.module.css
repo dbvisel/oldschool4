@@ -29,7 +29,7 @@
 
 .jobBlock {
 	--fontSize: calc(1rem * 1.5);
-	--lineHeight: 1.25;
+	--lineHeight: 1.5;
   --mainBlockWidth: 800px;
 }
 
@@ -57,12 +57,12 @@
   margin-bottom: 1rem;
 }
 
-.jobBlock h3 + p {
+/* .jobBlock h3 + p {
   text-align: center;
   margin-bottom: 1rem;
   font-style: italic;
 }
-
+ */
 .jobBlock h4 {
   font-size: calc(1rem * 1.66666);
   margin-top: 1rem;
@@ -75,4 +75,9 @@
   line-height: var(--lineHeight);
   text-align: center;
   margin-top: 2rem;
+}
+
+.outdent {
+  margin-left: 6em;
+  text-indent: -6em;
 }
