@@ -114,7 +114,7 @@ export default function JobsPage() {
               advocates every two years (next in summer 2026).
             </li>
           </ul>
-          <h4>Aboout You:</h4>
+          <h4>About You:</h4>
           <ul>
             <li>
               <strong>Values Alignment:</strong> You prioritize
