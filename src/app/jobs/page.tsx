@@ -182,8 +182,8 @@ export default function JobsPage() {
           </p>
           <p>
             Send the following to{" "}
-            <a href="mailto:jobs@oldschoolhub.com">jobs@oldschoolhub.com</a>.{" "}
-            Please include Executive Director in the subject line:
+            <a href="mailto:jobs@oldschool.info">jobs@oldschool.info</a>. Please
+            include Executive Director in the subject line:
           </p>
           <ul>
             <li>
