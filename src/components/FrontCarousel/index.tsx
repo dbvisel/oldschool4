@@ -17,7 +17,8 @@ const FrontCarousel = ({
       {SlideList.justOneTestimonal(quotes)}
       {SlideList.categorySlide}
       {SlideList.officeHours}
-      {SlideList.centurySummit}
+      {SlideList.jobSlide}
+      {/* {SlideList.centurySummit} */}
       {SlideList.yoda}
       {SlideList.raisely}
     </Carousel>

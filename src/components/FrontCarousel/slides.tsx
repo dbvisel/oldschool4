@@ -146,6 +146,32 @@ export const SlideList = {
       />
     </div>
   ),
+  jobSlide: (
+    <div
+      className={`${styles.emblaSlide} ${styles.jobLink}`}
+      style={{
+        backgroundColor: "var(--orange)",
+      }}
+    >
+      <h2
+        style={{
+          maxWidth: "var(--narrowBlockWidth)",
+          fontSize: "calc(var(--fontSize) * 3.5)",
+        }}
+      >
+        <Link href="/jobs">
+          <strong>Old School is hiring!</strong>
+          <br />
+          <span style={{ fontWeight: "normal", fontSize: "75%" }}>
+            We’re looking for a visionary Executive Director to expand our reach
+            and impact. Click here for the full job description and how to
+            apply.
+          </span>
+        </Link>
+      </h2>
+    </div>
+  ),
+
   justOneTestimonal: (quotes: any /* TODO: FIX THIS!*/) =>
     quotes.length && (
       <JustOneTestimonial
