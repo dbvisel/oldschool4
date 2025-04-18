@@ -209,6 +209,19 @@ padding: 0 15vh;
 	background-position: center;
 }
 
+.jobLink {
+  background-size: cover;
+}
+
+.jobLink h2 {
+  font-size: calc(var(--fontSize) * 3.5);
+  line-height: 1.2;
+   max-width: var(--narrowBlockWidth);
+  @media screen and (max-width: 1023px) {
+    font-size: calc(var(--fontSize) * 2);
+  }
+}
+
 .jobLink a:hover {
   text-decoration: none;
 }

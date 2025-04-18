@@ -150,15 +150,10 @@ export const SlideList = {
     <div
       className={`${styles.emblaSlide} ${styles.jobLink}`}
       style={{
-        backgroundColor: "var(--orange)",
+        backgroundImage: `url(images/carousel/jobimage.png)`,
       }}
     >
-      <h2
-        style={{
-          maxWidth: "var(--narrowBlockWidth)",
-          fontSize: "calc(var(--fontSize) * 3.5)",
-        }}
-      >
+      <h2>
         <Link href="/jobs">
           <strong>Old School is hiring!</strong>
           <br />
