@@ -8,13 +8,15 @@ export const fixLink = (url: string): string => {
 };
 
 export const slugify = (slug: string, title: string): string =>
-  slug ||
-  encodeURIComponent(
-    title
-      .toLowerCase()
-      .trim()
-      .normalize("NFD")
-      .replace(/[\u0300-\u036f]/g, "")
-      .replace(/[?|.,/#!$%^&*;¿:{}'"“”‘’––=\-_`~()æœ]/g, "")
-      .replace(/\s+/g, "-")
-  );
+  String(
+    slug ||
+      encodeURIComponent(
+        title
+          .toLowerCase()
+          .trim()
+          .normalize("NFD")
+          .replace(/[\u0300-\u036f]/g, "")
+          .replace(/[?|.,/#!$%^&*;¿:{}'"“”‘’––=\-_`~()æœ]/g, "")
+          .replace(/\s+/g, "-")
+      )
+  ).toLowerCase();

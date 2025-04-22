@@ -19,16 +19,18 @@ const eventsBase = base("EVENTS");
 const categoriesBase = base("Categories");
 
 const slugify = (record) =>
-  record.fields.Slug ||
-  encodeURIComponent(
-    (record.fields.Title || "")
-      .toLowerCase()
-      .trim() // adding this just in case
-      .normalize("NFD")
-      .replace(/[\u0300-\u036f]/g, "")
-      .replace(/[?|.,/#!$%^&*;¿:{}'"“”‘’––=\-_`~()æœ]/g, "")
-      .replace(/\s+/g, "-")
-  );
+  String(
+    record.fields.Slug ||
+      encodeURIComponent(
+        (record.fields.Title || "")
+          .toLowerCase()
+          .trim() // adding this just in case
+          .normalize("NFD")
+          .replace(/[\u0300-\u036f]/g, "")
+          .replace(/[?|.,/#!$%^&*;¿:{}'"“”‘’––=\-_`~()æœ]/g, "")
+          .replace(/\s+/g, "-")
+      )
+  ).toLowerCase();
 
 // maps over the records, calling minifyRecord, giving us required data
 const getMinifiedRecords = async (records) => {
