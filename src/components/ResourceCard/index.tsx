@@ -109,34 +109,36 @@ const ResourceCard = ({
       ) : (
         <p>No image!</p>
       )}
-      <div className={styles.bottomblock}>
-        {skipResourcePage && !isEvent /*&& !isResourcePage */ ? (
-          <a href={String(resource.link) || ""} target={"_blank"}>
-            {!resource.hideTitle && <h2>{resource.title}</h2>}
-            {isEvent ? (
-              <p
-                className={styles.description}
-                dangerouslySetInnerHTML={{ __html: description || "" }}
-              />
-            ) : (
-              <p className={styles.description}>{description}</p>
-            )}
-          </a>
-        ) : (
-          <Link href={thisLink || ""}>
-            {isEvent ? <h3 className={styles.eventHead}>EVENT</h3> : null}
-            {!resource.hideTitle && <h2>{resource.title}</h2>}
-            {isEvent ? (
-              <p
-                className={styles.description}
-                dangerouslySetInnerHTML={{ __html: description || "" }}
-              />
-            ) : (
-              <p className={styles.description}>{description}</p>
-            )}
-          </Link>
-        )}
-      </div>
+      {description ? (
+        <div className={styles.bottomblock}>
+          {skipResourcePage && !isEvent /*&& !isResourcePage */ ? (
+            <a href={String(resource.link) || ""} target={"_blank"}>
+              {!resource.hideTitle && <h2>{resource.title}</h2>}
+              {isEvent ? (
+                <p
+                  className={styles.description}
+                  dangerouslySetInnerHTML={{ __html: description || "" }}
+                />
+              ) : (
+                <p className={styles.description}>{description}</p>
+              )}
+            </a>
+          ) : (
+            <Link href={thisLink || ""}>
+              {isEvent ? <h3 className={styles.eventHead}>EVENT</h3> : null}
+              {!resource.hideTitle && <h2>{resource.title}</h2>}
+              {isEvent ? (
+                <p
+                  className={styles.description}
+                  dangerouslySetInnerHTML={{ __html: description || "" }}
+                />
+              ) : (
+                <p className={styles.description}>{description}</p>
+              )}
+            </Link>
+          )}
+        </div>
+      ) : null}
     </div>
   );
 };

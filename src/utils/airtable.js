@@ -194,7 +194,7 @@ const getNewResources = async () => {
     })
     .filter((x) => x.Status === "publish")
     .filter((x) => x["Hide?"] !== "yes")
-    .filter((x) => x["Is this a subresource?"] !== true)
+    // .filter((x) => x["Is this a subresource?"] !== true)
     .filter((x) => x["Show on Front Page"] === true)
     .sort((a, b) => {
       const x1 = new Date(a["Date added"]);
