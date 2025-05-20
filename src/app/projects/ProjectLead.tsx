@@ -63,10 +63,11 @@ const ProjectLead = () => {
           <p className={styles.projectIntroParagraph}>
             The <strong>Old School Hub</strong> is a platform for people and
             organizations doing anti-ageism work to find and support each
-            other’s efforts. Our working group, the Hubsters, can be involved in
-            whatever ways make sense to the people behind each project, —whether
-            you’re just starting out or already making an impact. We welcome
-            projects of all types and sizes—as long as they focus{" "}
+            other’s efforts. Our volunterer working group, the Hubsters, can be
+            involved in whatever ways make sense to the people behind each
+            project, —whether you’re just starting out or already making an
+            impact. We welcome projects of all types and sizes—as long as they
+            focus{" "}
             <a
               href="/#"
               className={styles.link}
