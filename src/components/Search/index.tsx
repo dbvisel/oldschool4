@@ -33,7 +33,6 @@ type SearchPageProps = {
 
 const InfiniteHits2 = (props: any) => {
   const { hits } = useInfiniteHits(props);
-
   return hits && hits.length ? (
     <div className={styles.hitwrapper}>
       <ResponsiveMasonry
@@ -119,7 +118,7 @@ export default function SearchPage({ serverState }: SearchPageProps) {
             future={{ preserveSharedStateOnUnmount: true }}
             onStateChange={onStateChange}
           >
-            <Configure hitsPerPage={10} />
+            <Configure hitsPerPage={1000} />
 
             <SearchBox
               className="searchbox"
