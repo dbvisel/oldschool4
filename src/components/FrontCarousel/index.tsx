@@ -14,7 +14,7 @@ const FrontCarousel = ({
     <Carousel>
       {SlideList.whatIsOldSchool}
       {SlideList.whereToBegin}
-      {SlideList.jobSlide}
+      {/* {SlideList.jobSlide} */}
       {SlideList.justOneTestimonal(quotes)}
       {SlideList.categorySlide}
       {SlideList.officeHours}
