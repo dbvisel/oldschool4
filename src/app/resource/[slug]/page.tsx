@@ -157,7 +157,7 @@ export default ResourcePage;
 
 export const generateStaticParams = async () => {
   const slugs = await possibleSlugs();
-  console.log("Slugs for static params:", slugs);
+  // console.log("Slugs for static params:", slugs);
   return slugs.map((x: any) => ({ slug: x.slug }));
 };
 
