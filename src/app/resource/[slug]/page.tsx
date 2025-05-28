@@ -85,9 +85,7 @@ const ResourcePage = async ({
 
   return resource.title ? (
     <article className={styles.resourcePage}>
-      <h2>
-        <span>Resource:</span> {resource.title}
-      </h2>
+      <h2>{resource.title}</h2>
       <div
         className={`${styles.resourceData} ${isLandscape ? "horizontal" : "vertical"}`}
       >
@@ -105,14 +103,8 @@ const ResourcePage = async ({
               }
               placeholder="blur"
               blurDataURL={resource.image.blurPath}
-              width={isLandscape ? (isWide ? 1024 : resource.image.width) : 400}
-              height={
-                isLandscape
-                  ? isWide
-                    ? (resource.image.height * 1024) / resource.image.width
-                    : resource.image.height
-                  : (400 / resource.image.width) * resource.image.height
-              }
+              width={(resource.image.width / resource.image.height) * 250}
+              height={250}
             />
           </div>
         ) : null}
@@ -125,15 +117,14 @@ const ResourcePage = async ({
               </>
             ) : null}
           </dl> */}
-          <dl className={styles.dataBox}>
-            <dt>About This Resource</dt>
-            <dd
+          <div className={styles.dataBox}>
+            <div
               dangerouslySetInnerHTML={{
                 __html: resource.description || resource.shortDescription || "",
               }}
             />
-          </dl>
-          <ContactInformation resource={resource} />
+          </div>
+          {/*<ContactInformation resource={resource} />*/}
           {/* <dl className={styles.dataBox}>
             <ShareSection
               url={resource.link}
@@ -166,6 +157,7 @@ export default ResourcePage;
 
 export const generateStaticParams = async () => {
   const slugs = await possibleSlugs();
+  console.log("Slugs for static params:", slugs);
   return slugs.map((x: any) => ({ slug: x.slug }));
 };
 

@@ -11,8 +11,8 @@ article.resourcePage {
 }
 
 .resourcePage h2 {
-	text-align: left !important;
-	align-self: start;
+	text-align: center !important;
+	/* align-self: start; */
 	@media (max-width: 767px) {
 		text-align: center !important;
 		align-self: center;
@@ -30,17 +30,11 @@ article.resourcePage {
 
 .resourceData  {
 	display: flex;
-	max-width: 1024px;
-	flex-direction: row;
-	padding-bottom: var(--paddingDouble);
-	margin-top: var(--paddingOutside);
-	@media (max-width: 767px) {
-		flex-direction: column;
-	}
-}
-
-.resourceData:global(.horizontal) {
+	max-width: 800px;
+  width: 100%;
 	flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 
@@ -49,7 +43,7 @@ article.resourcePage {
 .imageWrapper {
 	position: relative;
 	transition: 0.5s;
-	max-width: 100%;
+	max-height: 250px;
 	line-height: 0;
 	@media (max-width: 767px) {
 		align-self: center;
@@ -58,7 +52,6 @@ article.resourcePage {
 }
 
 .imageWrapper img {
-	width: 100%;
 	height: auto;
 	line-height: 0;
 }
@@ -73,24 +66,18 @@ article.resourcePage {
 }
 
 .dataBoxWrapper {
-	margin-left: var(--paddingDouble);
+	margin-top: var(--paddingOutside);
 }
 
 .resourceData:global(.horizontal) .dataBoxWrapper {
 	margin-left: 0;
-	margin-top: var(--paddingOutside);
 }
 
 .dataBox {
-	--headerWidth: 200px;
-	display: grid;
-	grid-template-columns: var(--headerWidth) calc(100% - var(--headerWidth));
-	grid-gap: 0 var(--paddingInside);
-	grid-auto-rows: min-content;
-	font-size: var(--fontSize);
-	@media (max-width: 767px) {
-		grid-template-columns: 1fr;
-	}
+  margin-top: var(--paddingInside);
+	font-size: calc(var(--fontSize) * 1.1111);
+  line-height: 1.5;
+  text-align: center;
 }
 
 .dataBox + .dataBox {
