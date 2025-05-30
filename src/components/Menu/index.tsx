@@ -8,7 +8,7 @@ import { Link } from "next-view-transitions";
 import styles from "./styles.module.css";
 // import Search from "../Search";
 const Search = dynamic(() => import("@/components/Search"), { ssr: false });
-import logo from "./horizontallogo-threeline.svg";
+import logo from "./images/horizontallogo-threeline.svg";
 import { definedTypes } from "../../utils/categories";
 
 // TODO: figure out what's actually in the menu!
@@ -55,10 +55,10 @@ const Menu = () => {
               <Link href="/projects">Projects</Link>
             </li>
             <li>
-              <Link
-                href="/#"
-                // onMouseEnter={()=>setSubmenuShown(true)}
-                // onMouseLeave={()=>setSubmenuShown(false)}
+              <a
+                href="#"
+                // onMouseEnter={()=>setSubmenuShown(!submenuShown)}
+                // onMouseLeave={()=>setSubmenuShown(!submenuShown)}
                 onClick={(e) => {
                   e.preventDefault();
                   setSubmenuShown(!submenuShown);
@@ -66,7 +66,7 @@ const Menu = () => {
                 className={submenuShown ? styles.active : ""}
               >
                 Learn
-              </Link>
+              </a>
               {submenuShown && (
                 <ul ref={wrapperRef} onClick={() => setSubmenuShown(false)}>
                   {noSupplies.map((type, index) => (
