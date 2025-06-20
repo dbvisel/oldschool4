@@ -55,7 +55,7 @@ export default function AboutPage() {
       <section className={styles.theTeam} style={{ scrollSnapAlign: "none" }}>
         <div>
           <TheTeam />
-          <p
+          {/*<p
             style={{
               textAlign: "center",
               marginBottom: "var(--paddingOutside)",
@@ -70,7 +70,7 @@ export default function AboutPage() {
               Paul Belford Ltd.
             </a>{" "}
             for new logo & look.
-          </p>
+          </p>*/}
         </div>
       </section>
       <section
