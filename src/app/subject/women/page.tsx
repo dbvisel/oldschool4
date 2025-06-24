@@ -241,7 +241,7 @@ const subjectData = {
         phone: "(718) 564-4401",
       },
     },
-  ] as ResourceItem[],
+  ] as any[],
 };
 
 const SubjectPage = async ({
