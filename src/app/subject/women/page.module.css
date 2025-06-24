@@ -11,8 +11,18 @@ article.subjectPage {
 }
 
 article.subjectPage > div:first-child {
-  margin-top: var(--paddingOutside);
-  margin-right: var(--paddingOutside);
+  margin-top: calc(0px - var(--paddingOutside));
+  margin-left: calc(0px - var(--paddingOutside));
+  margin-right: calc(2 * var(--paddingOutside));
+  margin-bottom: calc(2 * var(--paddingOutside));
+  padding: var(--paddingOutside);
+  background: var(--orange);
+  min-height:calc(100% + calc(3 * var(--paddingOutside)));
+  color: var(--white);
+}
+
+article.subjectPage > div:first-child h2 {
+  color: var(--white);
 }
 
 .subjectPage h2 {
