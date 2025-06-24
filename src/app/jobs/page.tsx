@@ -19,8 +19,10 @@ export default function JobsPage() {
           style={{ display: "flex", flexDirection: "column", height: "100%" }}
         >
           <h2>Jobs</h2>
-          <h3>Executive Director</h3>
-          <p className={styles.outdent}>
+          <p>
+            There are no open positions at Old School at this point in time.
+          </p>
+          {/*<p className={styles.outdent}>
             <strong>Reports to:</strong> The Old School Team (Co-founders
             Ashton&nbsp;Applewhite and Ryan&nbsp;Backer, and Facilitator
             David&nbsp;Wilson)
@@ -205,7 +207,7 @@ export default function JobsPage() {
             national origin, sexual orientation, gender, transgender status,
             gender identity, gender expression, ancestry, marital status,
             veteran status, political service or affiliation, or disability.
-          </p>
+          </p>*/}
         </div>
       </section>
     </article>

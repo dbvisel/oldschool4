@@ -141,7 +141,8 @@ const ResourcePage = async ({
           {/* <h3>See also:</h3> */}
           <CardHolder
             resources={resource.subresources || []}
-            areSubResources={true} showType
+            areSubResources={true}
+            showType
           />
         </div>
       ) : null}
