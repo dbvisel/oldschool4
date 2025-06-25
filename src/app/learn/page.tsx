@@ -5,6 +5,8 @@ import TocCards from "./TocCards";
 import { definedTypes } from "../../utils/categories";
 import styles from "./page.module.css";
 
+const noSupplies = definedTypes.filter((x) => x.id !== "supplies");
+
 const subjectTypes = [
   { id: "women", name: "Women", tag: "Resources about women" },
 ];
@@ -20,7 +22,7 @@ export default function LearnPage() {
         <div>
           <h2>Categories</h2>
           <p>Categories are . . .</p>
-          <TocCards types={definedTypes} path="category" />
+          <TocCards types={noSupplies} path="category" />
         </div>
       </section>
       <section className={styles.learnBlock}>
