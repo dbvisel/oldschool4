@@ -17,6 +17,7 @@ const quotesBase = base("quotes");
 const teamBase = base("The Team/Collaborators");
 const eventsBase = base("EVENTS");
 const categoriesBase = base("Categories");
+const collectionsBase = base("Collections");
 
 const slugify = (record) =>
   String(
@@ -68,6 +69,18 @@ const getCategories = async () => {
   // console.log(minifiedRecords);
 
   return minifiedRecords;
+};
+
+const getCollections = async () => {
+  const records = await collectionsBase.select({ view: "Grid view" }).all();
+  const minifiedRecords = await getMinifiedRecords(records);
+  const filteredReocords = minifiedRecords.filter(
+    (x) => x.fields["Show on Learn page"] === true
+  );
+
+  // console.log(minifiedRecords);
+
+  return filteredReocords;
 };
 
 const getResources = async () => {
@@ -251,22 +264,31 @@ const getCategoryById = async (id) => {
   return record;
 };
 
-const allPossibleSlugs = async () => {
-  // could probably improve this code by caching the results somewhere? This function is being run for every possible page.
-  const records = await getResources();
-  const preSlugs = records
-    .filter((x) => x.fields.Status === "publish") // is this not always working? Other ones pop up on build
-    .filter((x) => x.fields["Hide?"] !== "yes")
-    .filter((x) => x.fields["Is this a subresource?"] !== true)
-    .map((x) => {
-      // console.log(slugify(x), x.fields.Status);
-      return {
-        id: x.id,
-        slug: slugify(x).trim(),
-      };
-    });
-  return preSlugs;
+const getCollectionById = async (slug) => {
+  const collections = await getCollections();
+  const thisCollection = collections.filter(
+    (x) => x.fields && x.fields.slug && x.fields.slug === slug
+  )[0];
+  const record = minifyRecord(thisCollection);
+  return record;
 };
+
+// const allPossibleSlugs = async () => {
+//   // could probably improve this code by caching the results somewhere? This function is being run for every possible page.
+//   const records = await getResources();
+//   const preSlugs = records
+//     .filter((x) => x.fields.Status === "publish") // is this not always working? Other ones pop up on build
+//     .filter((x) => x.fields["Hide?"] !== "yes")
+//     .filter((x) => x.fields["Is this a subresource?"] !== true)
+//     .map((x) => {
+//       // console.log(slugify(x), x.fields.Status);
+//       return {
+//         id: x.id,
+//         slug: slugify(x).trim(),
+//       };
+//     });
+//   return preSlugs;
+// };
 
 const possibleSlugs = async () => {
   // could probably improve this code by caching the results somewhere? This function is being run for every possible page.
@@ -309,14 +331,26 @@ const possibleSlugs = async () => {
 //   return preSlugs;
 // };
 
-const possibleCategories = async () => {
-  // this is not actually being used!
-  const records = await getCategories();
+// const possibleCategories = async () => {
+//   // this is not actually being used!
+//   const records = await getCategories();
+//   const preSlugs = records.map((x) => {
+//     // console.log(slugify(x), x.fields.Status);
+//     return {
+//       id: x.id,
+//       slug: slugify(x),
+//     };
+//   });
+//   return preSlugs;
+// };
+
+const possibleCollections = async () => {
+  const records = await getCollections();
   const preSlugs = records.map((x) => {
     // console.log(slugify(x), x.fields.Status);
     return {
       id: x.id,
-      slug: slugify(x),
+      slug: x.fields.slug,
     };
   });
   return preSlugs;
@@ -334,14 +368,17 @@ const getRecordsForAlgolia = async () => {
 
 export {
   getRecordsForAlgolia,
-  allPossibleSlugs,
+  // allPossibleSlugs,
   possibleSlugs,
   // possibleSlugsWithSubresources,
-  possibleCategories,
+  // possibleCategories,
+  possibleCollections,
+  getCollections,
   getQuotes,
   getResourceById,
+  getCollectionById,
   getCategoryById,
-  getTopResources,
+  // getTopResources,
   getNewResources,
   getResourcesOfType,
   getResources,

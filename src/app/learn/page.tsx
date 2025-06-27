@@ -4,6 +4,7 @@ import { Metadata } from "next";
 import TocCards from "./TocCards";
 import { definedTypes } from "../../utils/categories";
 import styles from "./page.module.css";
+import { getCollections } from "@/utils/airtable";
 
 const noSupplies = definedTypes
   .filter((x) => x.id !== "supplies")
@@ -13,11 +14,19 @@ const noSupplies = definedTypes
     return 0;
   });
 
-const subjectTypes = [
-  { id: "women", name: "Women", tag: "Resources about women" },
-];
-
-export default function LearnPage() {
+export default async function LearnPage() {
+  const rawSubjectTypes = await getCollections();
+  const subjectTypes = rawSubjectTypes
+    .map((x: any) => ({
+      name: x.fields.Collection,
+      id: x.fields.slug,
+      tag: x.fields.Description || "",
+    }))
+    .sort((a: any, b: any) => {
+      if (a.name < b.name) return -1;
+      if (a.name > b.name) return 1;
+      return 0;
+    });
   return (
     <article
       className={styles.about}
