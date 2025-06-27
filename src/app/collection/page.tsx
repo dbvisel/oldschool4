@@ -1,7 +1,7 @@
-export default function GenericSubjectPage() {
+export default function GenericCollectionPage() {
   return (
     <article>
-      <h2 className="pageheader">Generic subject</h2>
+      <h2 className="pageheader">Generic collection</h2>
       <p>(should this just get a 404?)</p>
       <p>
         <a href="/">Home</a>

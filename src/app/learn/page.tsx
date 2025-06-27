@@ -28,14 +28,14 @@ export default function LearnPage() {
         <h2>Learn</h2>
         <div className={styles.learnHolder}>
           <div>
-            <h3>Categories</h3>
-            <p>Categories are . . .</p>
+            <h3>Types</h3>
+            <p>Types are . . .</p>
             <TocCards types={noSupplies} path="category" />
           </div>
           <div>
-            <h3>Subjects</h3>
-            <p>Subjects are . . .</p>
-            <TocCards types={subjectTypes} path="subject" reverse />
+            <h3>Collections</h3>
+            <p>Collections are . . .</p>
+            <TocCards types={subjectTypes} path="collection" reverse />
           </div>
         </div>
       </section>

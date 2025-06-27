@@ -244,7 +244,7 @@ const subjectData = {
   ] as any[],
 };
 
-const SubjectPage = async ({
+const CollectionPage = async ({
   params: { slug },
 }: {
   params: { slug: string };
@@ -288,7 +288,7 @@ const SubjectPage = async ({
   );
 };
 
-export default SubjectPage;
+export default CollectionPage;
 
 // export const generateStaticParams = async () => {
 //   const slugs = await possibleSlugs();
