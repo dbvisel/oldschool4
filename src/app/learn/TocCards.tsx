@@ -20,7 +20,7 @@ export default function TocCards({
           <h3>
             <Link href={`/${path}/${type.id}`}>{type.name}</Link>
           </h3>
-          <p>{type.tag}</p>
+          {/*<p>{type.tag}</p>*/}
         </div>
       ))}
     </div>

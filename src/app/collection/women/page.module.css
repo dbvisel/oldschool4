@@ -97,6 +97,7 @@ article.subjectPage > div:first-child h2 {
 	font-size: calc(var(--fontSize) * 1.1111);
   line-height: 1.5;
   text-align: center;
+  color: var(--orange);
 }
 
 .dataBox + .dataBox {
