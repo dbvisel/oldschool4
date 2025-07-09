@@ -28,7 +28,7 @@ export interface ResourceItem {
   dateAdded?: string;
   dateChanged?: string;
   link?: URL;
-  photoOnResourceCardOnly: boolean;
+  photoOnResourceCardOnly?: boolean;
 }
 
 export interface EventRecord {
