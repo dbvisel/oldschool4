@@ -20,6 +20,8 @@ export const cleanResource = (
     tags: resource.fields.Tags,
     link: resource.fields["Resource URL"],
     isNew: resource.fields["Show on Front Page"] || false,
+    photoOnResourceCardOnly:
+      resource.fields["photo on resource card only"] || false,
     dateAdded: resource.fields["Date added"],
     hideTitle: resource.fields["Hide title?"] || false,
     dateChanged: resource.fields["Date changed"], // is this real?

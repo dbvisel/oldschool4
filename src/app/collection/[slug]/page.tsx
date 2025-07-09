@@ -12,7 +12,7 @@ const CollectionPage = async ({
 }: {
   params: { slug: string };
 }) => {
-  console.log("slug:", slug);
+  // console.log("slug:", slug);
   const { resources, title, description } = await getCollectionData({
     params: { slug },
   });

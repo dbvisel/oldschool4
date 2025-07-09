@@ -82,7 +82,6 @@ const ResourcePage = async ({
   const isWide = resource?.image?.width > 1024;
   const isVideoPage = isEmbeddable(String(resource.link));
   const thisIsAPDF = PDFList.indexOf(resource.id) > -1 || false;
-
   return resource.title ? (
     <article className={styles.resourcePage}>
       <h2>{resource.title}</h2>
@@ -91,7 +90,9 @@ const ResourcePage = async ({
       >
         {isVideoPage ? (
           <VideoEmbed url={String(resource.link)} title={resource.title} />
-        ) : resource?.image?.path && resource.image.blurPath ? (
+        ) : resource?.image?.path &&
+          resource.image.blurPath &&
+          !resource.photoOnResourceCardOnly ? (
           <div className={styles.imageWrapper}>
             <Image
               src={resource.image.path}
