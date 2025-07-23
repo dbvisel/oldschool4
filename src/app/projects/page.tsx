@@ -113,7 +113,7 @@ export default function ProjectsPage() {
           frameBorder="0"
           width="100%"
           height="1200"
-          onMouseWheel=""
+          // onMouseWheel=""
           style={{ background: "transparent", border: "none" }}
         ></iframe>
         {/*
