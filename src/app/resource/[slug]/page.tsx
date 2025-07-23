@@ -77,7 +77,7 @@ const ResourcePage = async ({
 }) => {
   // console.log("slug:", slug);
   const resource = await getResourceData(slug);
-  // console.log(resource);
+  console.log(resource);
   const isLandscape = resource?.image?.width > resource?.image?.height;
   const isWide = resource?.image?.width > 1024;
   const isVideoPage = isEmbeddable(String(resource.link));
