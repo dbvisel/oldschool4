@@ -36,9 +36,9 @@ const ProjectLead = () => {
     </div>
   );
 
-  useEffect(() => {
-    console.log(isPopoverOpen);
-  }, [isPopoverOpen]);
+  // useEffect(() => {
+  //   console.log(isPopoverOpen);
+  // }, [isPopoverOpen]);
 
   return (
     <section className={aboutStyles.aboutBlock}>

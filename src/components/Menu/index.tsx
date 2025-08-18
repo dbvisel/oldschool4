@@ -20,14 +20,15 @@ type RefObject = {
 const noSupplies = definedTypes.filter((x) => x.id !== "supplies");
 
 const Menu = () => {
-  const [submenuShown, setSubmenuShown] = useState(false);
+  const [learnSubmenuShown, setLearnSubmenuShown] = useState(false);
+  const [projectSubmenuShown, setProjectSubmenuShown] = useState(false);
   const wrapperRef = useRef(null);
 
   const useOutsideAlerter = (ref: RefObject) => {
     useEffect(() => {
       const handleClickOutside = (event: MouseEvent) => {
         if (ref.current && !ref.current.contains(event.target as HTMLElement)) {
-          setSubmenuShown(false);
+          setLearnSubmenuShown(false);
         }
       };
       document.addEventListener("mousedown", handleClickOutside);
@@ -52,23 +53,58 @@ const Menu = () => {
               <Link href="/about#top">About</Link>
             </li>
             <li>
-              <Link href="/projects">Projects</Link>
+              <a
+                href="#"
+                // onMouseEnter={()=>setProjectSubmenuShown(!submenuShown)}
+                // onMouseLeave={()=>setProjectSubmenuShown(!submenuShown)}
+                onClick={(e) => {
+                  e.preventDefault();
+                  setProjectSubmenuShown(!projectSubmenuShown);
+                  setLearnSubmenuShown(false);
+                }}
+                className={projectSubmenuShown ? styles.active : ""}
+              >
+                Programs
+              </a>
+              {projectSubmenuShown && (
+                <ul
+                  ref={wrapperRef}
+                  onClick={() => setProjectSubmenuShown(false)}
+                >
+                  <li>
+                    <Link href="/projects">Hubsters</Link>
+                  </li>
+                  <li>
+                    <a
+                      href="https://us02web.zoom.us/meeting/register/tZAvcOivqzkpG9CtqpP6cnaL64TnxKaY_fAg"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Office Hours
+                    </a>
+                  </li>
+                </ul>
+              )}
             </li>
             <li>
               <a
                 href="#"
-                // onMouseEnter={()=>setSubmenuShown(!submenuShown)}
-                // onMouseLeave={()=>setSubmenuShown(!submenuShown)}
+                // onMouseEnter={()=>setLearnSubmenuShown(!submenuShown)}
+                // onMouseLeave={()=>setLearnSubmenuShown(!submenuShown)}
                 onClick={(e) => {
                   e.preventDefault();
-                  setSubmenuShown(!submenuShown);
+                  setLearnSubmenuShown(!learnSubmenuShown);
+                  setProjectSubmenuShown(false);
                 }}
-                className={submenuShown ? styles.active : ""}
+                className={learnSubmenuShown ? styles.active : ""}
               >
                 Learn
               </a>
-              {submenuShown && (
-                <ul ref={wrapperRef} onClick={() => setSubmenuShown(false)}>
+              {learnSubmenuShown && (
+                <ul
+                  ref={wrapperRef}
+                  onClick={() => setLearnSubmenuShown(false)}
+                >
                   {noSupplies.map((type, index) => (
                     <li
                       key={`menu-${index}`}
