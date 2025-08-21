@@ -61,7 +61,7 @@ const InfiniteHits2 = (props: any) => {
       <p className={styles.notFound}>
         Can’t find what you are looking for? Create it! Want input or
         collaborators? Submit a proposal to our{" "}
-        <a href="/projects">projects page</a>!
+        <a href="/hubsters">projects page</a>!
       </p>
     </div>
   );

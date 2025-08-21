@@ -72,7 +72,7 @@ const Menu = () => {
                   onClick={() => setProjectSubmenuShown(false)}
                 >
                   <li>
-                    <Link href="/projects">Hubsters</Link>
+                    <Link href="/hubsters">Hubsters</Link>
                   </li>
                   <li>
                     <a
