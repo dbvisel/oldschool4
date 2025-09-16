@@ -233,7 +233,7 @@ padding: 0 15vh;
   align-items: center;
   justify-items: center;
   padding: 0 calc(var(--paddingOutside) * 4);
-  @media (max-width: 1023px) {
+  @media (orientation: portrait) {
     grid-template-columns: 1fr;
     padding: calc(var(--paddingOutside) * 2) 0;
   }
@@ -244,7 +244,7 @@ padding: 0 15vh;
   padding: var(--paddingOutside);
   text-align: center;
   font-size: calc(var(--fontSize) * 1.5) !important;
-  @media (max-width: 1023px) {
+  @media (orientation: portrait) {
     font-size: var(--fontSize);
   }
 }

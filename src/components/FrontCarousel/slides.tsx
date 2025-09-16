@@ -142,6 +142,9 @@ export const SlideList = {
         className={`${styles.hideText} ${styles.interior}`}
         style={{
           backgroundImage: `url(images/carousel/2025-Ageism-awareness-day-white-bkg-1.png)`,
+          aspectRatio: 1,
+          maxWidth: "100%",
+          maxHeight: "100%",
         }}
       >
         <a
