@@ -225,3 +225,30 @@ padding: 0 15vh;
 .jobLink a:hover {
   text-decoration: none;
 }
+
+.gridSlide {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  align-items: center;
+  justify-items: center;
+  padding: 0 calc(var(--paddingOutside) * 4);
+  @media (max-width: 1023px) {
+    grid-template-columns: 1fr;
+    padding: calc(var(--paddingOutside) * 2) 0;
+  }
+}
+
+.gridSlide p {
+  color: var(--orange) !important;
+  padding: var(--paddingOutside);
+  text-align: center;
+  font-size: calc(var(--fontSize) * 1.5) !important;
+  @media (max-width: 1023px) {
+    font-size: var(--fontSize);
+  }
+}
+
+.gridSlide p a {
+  font-weight: bold;
+}

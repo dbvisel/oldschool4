@@ -130,7 +130,7 @@ export const SlideList = {
   ),
   ageismAwarenessDay: (
     <div
-      className={`${styles.emblaSlide} ${styles.hideText}`}
+      className={`${styles.emblaSlide} ${styles.gridSlide}`}
       style={{
         backgroundColor: "var(--white)",
         // backgroundImage: `url(images/carousel/2025-Ageism-awareness-day-white-bkg-1.png)`,
@@ -151,6 +151,16 @@ export const SlideList = {
           rel="noopener noreferrer"
           style={{ display: "block" }}
         />
+      </div>
+      <div>
+        <p className="text">
+          Ageism Awareness Day is coming right up! Find out how to support it on
+          the{" "}
+          <a href="https://asaging.org/ageism-awareness/" target="_blank">
+            American Society on Aging’s 2025 campaign page
+          </a>
+          .
+        </p>
       </div>
     </div>
   ),
@@ -192,7 +202,6 @@ export const SlideList = {
       </h2>
     </div>
   ),
-
   justOneTestimonal: (quotes: any /* TODO: FIX THIS!*/) =>
     quotes.length && (
       <JustOneTestimonial
