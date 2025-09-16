@@ -128,6 +128,32 @@ export const SlideList = {
       </div>
     </div>
   ),
+  ageismAwarenessDay: (
+    <div
+      className={`${styles.emblaSlide} ${styles.hideText}`}
+      style={{
+        backgroundColor: "var(--white)",
+        // backgroundImage: `url(images/carousel/2025-Ageism-awareness-day-white-bkg-1.png)`,
+        backgroundSize: "cover",
+        backgroundRepeat: "no-repeat",
+      }}
+    >
+      <div
+        className={`${styles.hideText} ${styles.interior}`}
+        style={{
+          backgroundImage: `url(images/carousel/2025-Ageism-awareness-day-white-bkg-1.png)`,
+        }}
+      >
+        <a
+          href="https://asaging.org/ageism-awareness/"
+          className={styles.fullLink}
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{ display: "block" }}
+        />
+      </div>
+    </div>
+  ),
   raisely: (
     <div
       className={`${styles.emblaSlide} ${styles.hideText}`}

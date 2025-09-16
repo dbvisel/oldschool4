@@ -19,7 +19,7 @@ const FrontCarousel = ({
       {SlideList.categorySlide}
       {SlideList.officeHours}
       {/* {SlideList.centurySummit} */}
-      {SlideList.yoda}
+      {SlideList.ageismAwarenessDay}
       {SlideList.raisely}
     </Carousel>
   );
