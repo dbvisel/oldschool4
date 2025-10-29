@@ -13,7 +13,6 @@ const EventsPage = async () => {
     <article className="noscroll">
       <h2 className="pageheader">Events</h2>
       <h3 className={`tagline ${styles.taglineMarginTweak}`}>
-        POWERED BY STEVEN FRAMPTON
       </h3>
       {events.length ? (
         events.map((event) => <Event event={event} key={event.id} />)
