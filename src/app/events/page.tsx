@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import { Link } from "next-view-transitions";
 import dynamic from "next/dynamic";
 const Event = dynamic(() => import("@/components/Event"), { ssr: false });
 // import Event from "@/components/Event";
@@ -13,6 +14,7 @@ const EventsPage = async () => {
     <article className="noscroll">
       <h2 className="pageheader">Events</h2>
       <h3 className={`tagline ${styles.taglineMarginTweak}`}>
+        Submit events <Link href={`/events/submit`}>here</Link>!
       </h3>
       {events.length ? (
         events.map((event) => <Event event={event} key={event.id} />)

@@ -15,7 +15,7 @@ const throttleLimit = 300; // Note that this number is actually higher than what
 const resourcesBase = base("oldschool");
 const quotesBase = base("quotes");
 const teamBase = base("The Team/Collaborators");
-const eventsBase = base("EVENTS");
+const eventsBase = base("Events against ageism"); // base("EVENTS");
 const categoriesBase = base("Categories");
 const collectionsBase = base("Collections");
 

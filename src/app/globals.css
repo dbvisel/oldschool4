@@ -108,6 +108,11 @@ a:hover {
 	min-height: calc(var(--unit-100vh) - var(--headerHeight));
 }
 
+#mainWrapper:has(> article.noscroll) {
+    scroll-snap-type: none;
+  }
+
+
 #mainWrapper article {
 	display: flex;
 	flex-direction: column;

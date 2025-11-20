@@ -2,7 +2,7 @@ import striptags from "striptags";
 import { getEvents } from "@/utils/airtable";
 import { EventRecord } from "../types";
 
-const cleanDate = (start: string, end: string): string => {
+const cleanDate = (start: string, end: string, allDay: boolean): string => {
   const startDate = new Date(start).toLocaleDateString("en-US", {
     weekday: "long",
     year: "numeric",
@@ -30,6 +30,16 @@ const cleanDate = (start: string, end: string): string => {
     timeZoneName: "short",
   });
 
+  if (allDay) {
+    const startDate = new Date(start).toLocaleDateString("en-US", {
+      weekday: "long",
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+      timeZone: "America/New_York",
+    });
+    return startDate;
+  }
   if (end) {
     if (startDate === endDate) {
       return `${startDate} from ${startTime} to ${endTime}`;
@@ -56,7 +66,11 @@ const cleanEvent = (data: any): EventRecord => {
   return {
     id: data.id,
     title: data.fields.Title,
-    time: cleanDate(data.fields.Start, data.fields.End),
+    time: cleanDate(
+      data.fields.Start,
+      data.fields.End,
+      Boolean(data.fields["All Day"])
+    ),
     location: data.fields.Location,
     description: cleanDescriptionText(data.fields.Description || ""),
     link: data.fields["Event Link"],
