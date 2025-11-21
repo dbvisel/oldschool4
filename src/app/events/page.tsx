@@ -24,7 +24,7 @@ const EventsPage = async () => {
       <p className={styles.clickhere}>
         Click{" "}
         <a
-          href="https://calendar.google.com/calendar/u/0?cid=ODVhYjBkZTI5ZTdhYjg3YTllNzFmNjM1MWRjZWViNDRkMGVjYmJkMDA0ZWEyMjU5YWEzMWNkYzllMGYyMTU3ZEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t"
+          href="https://calendar.google.com/calendar/u/1?cid=ZTg0YTk2MjM2YjhjZTRjMmI1MGZmZjcxYTUyZDZlM2JmZjBlZDQ0ZDNhZDc1MDdlY2E3MzgzNDkwZjM0NTE4OUBncm91cC5jYWxlbmRhci5nb29nbGUuY29t"
           target="_blank"
           rel="noopener noreferrer"
         >
