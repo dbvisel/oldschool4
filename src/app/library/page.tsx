@@ -51,7 +51,7 @@ export default async function LearnPage() {
         </div>
         <div className={styles.contributeBlock}>
           <h3>Contribute to the Library</h3>
-          <SubmitComponent color={"white"}/>
+          <SubmitComponent />
         </div>
       </section>
     </article>
