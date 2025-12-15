@@ -1,10 +1,11 @@
-// import Link from "next/link";
+import { Link } from "next-view-transitions";
 // import { Suspense } from "react";
 import { Metadata } from "next";
 import TocCards from "./TocCards";
 import { definedTypes } from "../../utils/categories";
 import styles from "./page.module.css";
 import { getCollections } from "@/utils/airtable";
+import SubmitComponent from "@/components/SubmitComponent";
 
 const noSupplies = definedTypes
   .filter((x) => x.id !== "supplies")
@@ -34,10 +35,11 @@ export default async function LearnPage() {
       id="top"
     >
       <section className={styles.learnBlock}>
-        <h2>Learn</h2>
+        <h2>Library</h2>
+        <p><Link href={`/intro`}>New here? Here are some entry points.</Link></p>
         <div className={styles.learnHolder}>
           <div>
-            <h3>Types</h3>
+            <h3>Types of Contributions</h3>
             {/*<p>Types are . . .</p>*/}
             <TocCards types={noSupplies} path="category" />
           </div>
@@ -46,6 +48,10 @@ export default async function LearnPage() {
             {/*<p>Collections are . . .</p>*/}
             <TocCards types={subjectTypes} path="collection" reverse />
           </div>
+        </div>
+        <div className={styles.contributeBlock}>
+          <h3>Contribute to the Library</h3>
+          <SubmitComponent color={"white"}/>
         </div>
       </section>
     </article>

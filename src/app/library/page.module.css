@@ -43,7 +43,7 @@
   width: 100%;
 }
 
-.learnHolder h3 {
+.learnHolder h3, .contributeBlock h3 {
   font-size: calc(var(--fontSize) * 1.5);
   text-align: center;
   margin-bottom: var(--paddingInside);
@@ -117,4 +117,8 @@
   font-size: calc(var(--fontSize) * 0.75) !important;
   text-transform: uppercase;
   letter-spacing: 0.5px;
+}
+
+.contributeBlock {
+  margin-top: var(--paddingDouble);
 }
