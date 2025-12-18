@@ -1,53 +1,7 @@
 import striptags from "striptags";
 import { getEvents } from "@/utils/airtable";
 import { EventRecord } from "../types";
-
-const cleanDate = (start: string, end: string, allDay: boolean): string => {
-  const startDate = new Date(start).toLocaleDateString("en-US", {
-    weekday: "long",
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-    // timeZone: "America/New_York",
-  });
-  const startTime = new Date(start).toLocaleTimeString("en-US", {
-    hour: "numeric",
-    minute: "2-digit",
-    // timeZone: "America/New_York",
-    // timeZoneName: "long",
-  });
-  const endDate = new Date(end).toLocaleDateString("en-US", {
-    weekday: "long",
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-    // timeZone: "America/New_York",
-  });
-  const endTime = new Date(end).toLocaleTimeString("en-US", {
-    hour: "numeric",
-    minute: "2-digit",
-    // timeZone: "America/New_York",
-    // timeZoneName: "long",
-  });
-
-  if (allDay) {
-    const startDate = new Date(start).toLocaleDateString("en-US", {
-      weekday: "long",
-      year: "numeric",
-      month: "long",
-      day: "numeric",
-      // timeZone: "America/New_York",
-    });
-    return startDate;
-  }
-  if (end) {
-    if (startDate === endDate) {
-      return `${startDate} from ${startTime} to ${endTime}`;
-    }
-    return `${startDate} at ${startTime} to ${endDate} at ${endTime}`;
-  }
-  return `${startDate} at ${startTime}`;
-};
+import { cleanDate } from "./dates";
 
 const cleanDescriptionText = (text: string): string =>
   striptags(text.replace(/(?:\r\n|\r|\n)/g, "<br />"), [
@@ -71,6 +25,9 @@ const cleanEvent = (data: any): EventRecord => {
       data.fields.End,
       Boolean(data.fields["All Day"])
     ),
+    startTime: data.fields.Start,
+    endTime: data.fields.End,
+    isAllDay: Boolean(data.fields["All Day"]),
     location: data.fields.Location,
     description: cleanDescriptionText(data.fields.Description || ""),
     link: data.fields["Event Link"],
@@ -78,12 +35,10 @@ const cleanEvent = (data: any): EventRecord => {
   };
 };
 
-const getCleanEvents = async (): Promise<EventRecord[]> => {
+export const getCleanEvents = async (): Promise<EventRecord[]> => {
   const events = await getEvents();
   const cleanedEvents = await Promise.all(
     events.map((event: any) => cleanEvent(event))
   );
   return cleanedEvents;
 };
-
-export default getCleanEvents;

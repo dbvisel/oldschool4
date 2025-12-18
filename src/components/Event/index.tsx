@@ -1,7 +1,9 @@
 "use client";
 
+import { useState, useLayoutEffect } from "react";
 import styles from "./index.module.css";
 import { EventRecord } from "@/types";
+import { cleanDate } from "@/lib/dates";
 
 const regex = /a href/gi;
 
@@ -10,6 +12,11 @@ const Event = ({ event }: { event: EventRecord }) => {
     regex,
     'a target="_blank" rel="noopener noreferrer" href'
   );
+  const [cleanedDate, setCleanedDate] = useState("");
+  useLayoutEffect(() => {
+    const date = cleanDate(event.startTime, event.endTime, event.isAllDay);
+    setCleanedDate(date);
+  }, [event.startTime, event.endTime, event.isAllDay]);
   return (
     <div className={styles.event}>
       <header>
@@ -28,7 +35,7 @@ const Event = ({ event }: { event: EventRecord }) => {
           className={styles.description}
         />
         <p>
-          <strong>Date:</strong> {event.time}
+          <strong>Date:</strong> {cleanedDate}
         </p>
         {event.location ? (
           <p className={styles.link}>

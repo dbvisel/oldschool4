@@ -35,6 +35,9 @@ export interface EventRecord {
   id: string;
   title: string;
   time: string;
+  startTime: string;
+  endTime: string;
+  isAllDay: boolean;
   location: string;
   description: string;
   link: URL;

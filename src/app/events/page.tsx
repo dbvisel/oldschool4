@@ -3,7 +3,7 @@ import { Link } from "next-view-transitions";
 import dynamic from "next/dynamic";
 const Event = dynamic(() => import("@/components/Event"), { ssr: false });
 import styles from "./page.module.css";
-import getCleanEvents from "@/lib/getEvents";
+import { getCleanEvents } from "@/lib/getEvents";
 
 const EventsPage = async () => {
   const events = await getCleanEvents();
