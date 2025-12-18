@@ -2,11 +2,8 @@ import { Metadata } from "next";
 import { Link } from "next-view-transitions";
 import dynamic from "next/dynamic";
 const Event = dynamic(() => import("@/components/Event"), { ssr: false });
-// import Event from "@/components/Event";
 import styles from "./page.module.css";
 import getCleanEvents from "@/lib/getEvents";
-
-// TODO: maybe we should be filtering by the time at the moment the viewer sees it? If so, we'd need to have startdate and enddate in the data.
 
 const EventsPage = async () => {
   const events = await getCleanEvents();

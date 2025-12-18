@@ -4,8 +4,6 @@ import styles from "./page.module.css";
 import CardHolder from "@/components/CardHolder";
 import { definedTypes } from "@/utils/categories";
 
-// TODO: does this need to be one level higher?
-
 const CategoryPage = async ({
   params: { slug },
 }: {

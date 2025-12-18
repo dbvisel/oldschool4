@@ -15,8 +15,6 @@ const FrontCarousel = dynamic(() => import("@/components/FrontCarousel"), {
 // (this was added to make search work)
 // export const dynamic = "force-dynamic";
 
-/* TODO: make snap scrolling happen */
-
 // Maybe: we need to have all loading happen here and "use client" on the things that consume them?
 
 const HomePage = async () => {
