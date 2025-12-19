@@ -68,7 +68,7 @@ const Menu = () => {
                   onClick={() => setProjectSubmenuShown(false)}
                 >
                   <li>
-                    <Link href="/hubsters">Hubsters</Link>
+                    <Link href="/library">Library</Link>
                   </li>
                   <li>
                     <a
@@ -78,6 +78,9 @@ const Menu = () => {
                     >
                       Office Hours
                     </a>
+                  </li>
+                  <li>
+                    <Link href="/hubsters">Hubsters</Link>
                   </li>
                 </ul>
               )}

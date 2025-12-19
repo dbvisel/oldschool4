@@ -1,13 +1,30 @@
-/* TODO: 768px–1024px needs some attention! */
-
 article.subjectPage {
 	display: flex;
 	flex-direction: row !important;
 	align-items: flex-start !important;;
 	justify-content: center;
-	min-height: var(--unit-100vh);
+  width: 100%;
+  min-height: fit-content;
 	padding-top: var(--paddingDouble);
 	--fontSize: calc(1rem / 4 * 5);
+  background-color: var(--orange);
+  margin-bottom: calc(0px - var(--paddingOutside)) !important;
+  @media screen and (max-width: 1500px) {
+    flex-direction: column !important;
+    background-color: var(--white);
+    margin-bottom: 0 !important;
+    }
+  }
+
+article.subjectPage > div:last-child {
+  background-color: var(--white);
+  padding: var(--paddingDouble);
+  @media screen and (max-width: 1500px) {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    padding-top: 0;
+  }
 }
 
 article.subjectPage > div:first-child {
@@ -19,10 +36,20 @@ article.subjectPage > div:first-child {
   background: var(--orange);
   min-height:calc(100% + calc(3 * var(--paddingOutside)));
   color: var(--white);
+  @media screen and (max-width: 1500px) {
+    color: var(--orange);
+    background-color: var(--white);
+    width: 100%;
+    margin: 0;
+    min-height: fit-content;
+  }
 }
 
 article.subjectPage > div:first-child h2 {
   color: var(--white);
+  @media screen and (max-width: 1500px) {
+    color: var(--orange);
+  }
 }
 
 .subjectPage h2 {

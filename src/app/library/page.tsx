@@ -36,7 +36,9 @@ export default async function LearnPage() {
     >
       <section className={styles.learnBlock}>
         <h2>Library</h2>
-        <p><Link href={`/intro`}>New here? Here are some entry points.</Link></p>
+        <p>
+          <Link href={`/intro`}>New? Here are some entry points.</Link>
+        </p>
         <div className={styles.learnHolder}>
           <div>
             <h3>Types of Contributions</h3>
