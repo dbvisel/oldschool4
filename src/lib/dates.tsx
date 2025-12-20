@@ -14,7 +14,7 @@ export const cleanDate = (
     hour: "numeric",
     minute: "2-digit",
     // timeZone: "America/New_York",
-    // timeZoneName: "long",
+    timeZoneName: "short",
   });
   const endDate = new Date(end).toLocaleDateString("en-US", {
     weekday: "long",
@@ -27,7 +27,7 @@ export const cleanDate = (
     hour: "numeric",
     minute: "2-digit",
     // timeZone: "America/New_York",
-    // timeZoneName: "long",
+    timeZoneName: "short",
   });
 
   if (allDay) {
