@@ -85,7 +85,7 @@ const Menu = () => {
                 </ul>
               )}
             </li>
-            <li>
+            {/*<li>
               <a
                 href="#"
                 // onMouseEnter={()=>setLearnSubmenuShown(!submenuShown)}
@@ -114,7 +114,7 @@ const Menu = () => {
                   ))}
                 </ul>
               )}
-            </li>
+            </li>*/}
             <li>
               <Link href="/events">Events</Link>
             </li>

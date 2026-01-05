@@ -185,6 +185,25 @@ export const SlideList = {
       />
     </div>
   ),
+  impactReport2025: (
+    <div
+      className={`${styles.emblaSlide} ${styles.hideText}`}
+      style={{
+        backgroundColor: "var(--black)",
+        backgroundImage: `url(images/carousel/OSHImpactReport.png)`,
+        backgroundSize: "contain",
+        backgroundRepeat: "no-repeat",
+      }}
+    >
+      {" "}
+      <a
+        href="https://drive.google.com/file/d/1WU0iQQfmfzAUwBg7hWH_uzUAW3lnISsz/view"
+        className={styles.fullLink}
+        target="_blank"
+        rel="noopener noreferrer"
+      />
+    </div>
+  ),
   resourceSpotlight: (
     <div
       className={`${styles.emblaSlide} ${styles.hideText}`}

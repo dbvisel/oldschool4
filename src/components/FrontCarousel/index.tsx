@@ -18,7 +18,8 @@ const FrontCarousel = ({
       {SlideList.justOneTestimonal(quotes)}
       {SlideList.categorySlide}
       {SlideList.officeHours}
-      {SlideList.resourceSpotlight}
+      {/* {SlideList.resourceSpotlight} */}
+      {SlideList.impactReport2025}
       {/* {SlideList.centurySummit} */}
       {/* {SlideList.ageismAwarenessDay} */}
       {SlideList.raisely}
