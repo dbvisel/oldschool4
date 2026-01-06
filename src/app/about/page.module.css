@@ -28,11 +28,19 @@
 }
 
 .aboutBlock {
-	--fontSize: calc(1rem * 2);
+	--fontSize: calc(1rem * 1.5);
 	--lineHeight: 1.25;
   @media (max-width: 767px) {
-    --fontSize: calc(1rem * 1.25);
+    --fontSize: calc(1rem * 1.1);
   }
+}
+
+.aboutContent {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    max-width: 1024px !important;
+    margin: var(--paddingOutside);
 }
 
 .aboutBlock h2 {
@@ -53,10 +61,16 @@
 		font-size: calc(1rem * 1.5);
 	}
 }
-/* .aboutBlock p + p {
-	text-indent: 1em;
-	margin-bottom: var(--paddingInside);
-} */
+.aboutBlock p + p {
+  text-indent: 1em;
+}
+
+.aboutBegin {
+  margin-top: calc(var(--paddingOutside) * 2) !important;
+  text-align: center;
+  margin-top: var(--paddingOutside);
+  /* font-size: 125%; */
+}
 
 .emblaSlide {
   flex: 0 0 100%;

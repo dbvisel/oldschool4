@@ -20,9 +20,7 @@ export default function AboutPage() {
         className={styles.aboutBlock}
         style={{ scrollSnapAlign: "none" }}
       >
-        <div
-          style={{ display: "flex", flexDirection: "column", height: "100%" }}
-        >
+        <div className={styles.aboutContent}>
           <h2>About Old School</h2>
           <h3>Mission</h3>
           <p>
@@ -50,13 +48,7 @@ export default function AboutPage() {
             the intersectional nature of all oppression, and of all activism.
             This paves the way for genuine equity and collective liberation.
           </p>
-          <p
-            style={{
-              textAlign: "center",
-              marginTop: "var(--paddingOutside)",
-              fontSize: "125%",
-            }}
-          >
+          <p className={styles.aboutBegin}>
             Wondering where to begin?{" "}
             <Link href="/intro" style={{ color: "var(--black)" }}>
               Here are some suggestions.
