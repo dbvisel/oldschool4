@@ -30,6 +30,9 @@
 .aboutBlock {
 	--fontSize: calc(1rem * 2);
 	--lineHeight: 1.25;
+  @media (max-width: 767px) {
+    --fontSize: calc(1rem * 1.25);
+  }
 }
 
 .aboutBlock h2 {
@@ -40,10 +43,20 @@
 	}
 }
 
-.aboutBlock p + p {
-	text-indent: 1em;
-	margin-bottom: 18px;
+.aboutBlock h3 {
+	font-size: calc(1rem * 2.5);
+  font-style: italic;
+  font-weight: normal;
+	margin-top: var(--paddingOutside);
+  margin-bottom: var(--paddingInside);
+	@media (max-width: 767px) {
+		font-size: calc(1rem * 1.5);
+	}
 }
+/* .aboutBlock p + p {
+	text-indent: 1em;
+	margin-bottom: var(--paddingInside);
+} */
 
 .emblaSlide {
   flex: 0 0 100%;

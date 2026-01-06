@@ -24,24 +24,36 @@ export default function AboutPage() {
           style={{ display: "flex", flexDirection: "column", height: "100%" }}
         >
           <h2>About Old School</h2>
+          <h3>Mission</h3>
           <p>
-            Old School curates, creates, commissions and disseminates free
-            resources to educate people about ageism and how to end it. It hosts
-            and facilitates spaces where age advocates around the world can
-            connect. It also collaborates with other pro-aging organizations and
-            shows up for other social-justice movements.
+            Old School works to end ageism by convening people of all ages,
+            backgrounds, and identities who share this goal. We are particularly
+            committed to fostering an inclusive space for historically
+            marginalized groups, and supporting their paths to age advocacy. We
+            create, curate, and widely disseminate free educational material
+            about ageism and how to undo it. Through community dialogue and
+            innovative collaborations, we raise individual awareness of ageism
+            and inspire collective action to dismantle it in every sphere of
+            life.
           </p>
+          <h3>Vision</h3>
           <p>
-            Old School is working towards a world where everyone has the
-            opportunity to live long and to live well. We are advancing the
-            movement to dismantle ageism, and we are leveraging the fact that
-            everyone ages (and experiences age bias) in order to address the
-            intersectional nature of all oppression—and of all activism.
+            Old School is advancing a world where aging is no longer a
+            privilege, and everyone has the opportunity to move through life
+            with purpose and dignity. We believe in the power of the collective,
+            and show up for other social justice movements, ensuring our
+            advocacy centers the lived experience of Black, Indigenous, and
+            People of Color (BIPOC), immigrants, and other marginalized groups.
+            Our work is grounded in powerful truths that demand elevation:
+            everyone is aging, and everyone experiences being treated unfairly
+            because of their age. This makes ageism a gateway to understanding
+            the intersectional nature of all oppression, and of all activism.
+            This paves the way for genuine equity and collective liberation.
           </p>
           <p
             style={{
               textAlign: "center",
-              marginTop: "auto",
+              marginTop: "var(--paddingOutside)",
               fontSize: "125%",
             }}
           >
