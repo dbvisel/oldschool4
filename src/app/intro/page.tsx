@@ -36,8 +36,8 @@ const IntroPage = () => {
                 <Link href={`/events/`}>events</Link>.
               </li>
               <li>
-                <Link href={"/contact-us"}>Contact us</Link> to present, speak,
-                or consult.
+                <Link href={"/contact"}>Contact us</Link> to present, speak, or
+                consult.
               </li>
               <li>
                 flaunt some{" "}
