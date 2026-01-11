@@ -12,12 +12,11 @@ const CollectionPage = async ({
 }: {
   params: { slug: string };
 }) => {
-  // console.log("slug:", slug);
   const { resources, title, description } = await getCollectionData({
     params: { slug },
   });
   // console.log(resources);
-
+  // TODO: make sections based on TK language setting
   return title ? (
     <article className={styles.subjectPage}>
       <div>
@@ -25,7 +24,8 @@ const CollectionPage = async ({
         <div className={`${styles.resourceData}`}>
           <div className={styles.dataBoxWrapper}>
             <div className={styles.dataBox}>
-              <div
+              <p
+                className={styles.collectionDescription}
                 dangerouslySetInnerHTML={{
                   __html: description || "",
                 }}

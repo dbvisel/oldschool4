@@ -122,3 +122,8 @@
 .contributeBlock {
   margin-top: var(--paddingDouble);
 }
+
+.introParagraph {
+  max-width: 800px;
+  width: 100%;
+}

@@ -225,3 +225,10 @@ article.subjectPage > div:first-child h2 {
 	width: 100%;
 	position: absolute;
 }
+
+.collectionDescription {
+  font-size: calc(var(--fontSize) * 1);
+  line-height: 1.5;
+  text-align: center;
+  color: var(--white);
+}

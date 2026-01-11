@@ -36,23 +36,34 @@ export default async function LearnPage() {
     >
       <section className={styles.learnBlock}>
         <h2>Library</h2>
+        <p className={styles.introParagraph}>
+          <Link href={`/intro`}>We created Old School</Link> so people could
+          find all the best resources about ageism in one place. That
+          collection—over 300 free, carefully curated, regularly updated
+          items—remains central to our mission.
+        </p>
         <p>
-          <Link href={`/intro`}>New? Here are some entry points.</Link>
+          Have a contribution? <Link href="#contribute">Scroll down.</Link>
         </p>
         <div className={styles.learnHolder}>
           <div>
-            <h3>Types of Contributions</h3>
-            {/*<p>Types are . . .</p>*/}
+            <h3>Types of Resources</h3>
             <TocCards types={noSupplies} path="category" />
           </div>
           <div>
             <h3>Collections</h3>
-            {/*<p>Collections are . . .</p>*/}
             <TocCards types={subjectTypes} path="collection" reverse />
           </div>
         </div>
         <div className={styles.contributeBlock}>
-          <h3>Contribute to the Library</h3>
+          <h3 id="contribute">Contribute to the Library</h3>
+          <p className={styles.introParagraph}>
+            Submissions are ongoing, and we review and post them on a quarterly
+            basis in January, April, July, and October.
+          </p>
+          <p className={styles.introParagraph}>
+            Please use this form to describe the resource you’re submitting
+          </p>
           <SubmitComponent />
         </div>
       </section>

@@ -15,7 +15,7 @@
   "dependencies": {
     "@next/third-parties": "^14.2.35",
     "@plaiceholder/next": "^3.0.0",
-    "@types/node": "^20.19.27",
+    "@types/node": "^20.19.28",
     "@types/react": "^18.3.27",
     "@types/react-dom": "^18.3.7",
     "@types/react-mailchimp-subscribe": "^2.1.4",

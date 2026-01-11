@@ -8,11 +8,11 @@ import EmailListForm from "./EmailListForm";
 import SocialMediaLink from "./SocialMediaLink";
 import LinkFooter from "./LinkFooter";
 import FacebookIcon from "./images/icon_facebook.svg";
-import TwitterIcon from "./images/icon_twitter.svg";
+// import TwitterIcon from "./images/icon_twitter.svg";
 import LinkedInIcon from "./images/icon_linkedin.svg";
 import InstagramIcon from "./images/icon_instagram.svg";
 import FacebookIconOn from "./images/icon_facebook_on.svg";
-import TwitterIconOn from "./images/icon_twitter_on.svg";
+// import TwitterIconOn from "./images/icon_twitter_on.svg";
 import InstagramIconOn from "./images/icon_instagram_on.svg";
 import LinkedInIconOn from "./images/icon_linkedin_on.svg";
 
@@ -43,22 +43,6 @@ const Footer = () => {
       <ul className={styles.socialList}>
         <li>
           <SocialMediaLink
-            name="Facebook"
-            link="https://www.facebook.com/Old-School-a-clearinghouse-for-all-things-anti-ageism-271798766759230/"
-            icon={FacebookIcon}
-            iconOn={FacebookIconOn}
-          />
-        </li>
-        <li>
-          <SocialMediaLink
-            name="Twitter"
-            link="https://twitter.com/OldSchool_Info"
-            icon={TwitterIcon}
-            iconOn={TwitterIconOn}
-          />
-        </li>
-        <li>
-          <SocialMediaLink
             name="Instagram"
             link="https://www.instagram.com/OldSchool_Info/"
             icon={InstagramIcon}
@@ -73,6 +57,22 @@ const Footer = () => {
             iconOn={LinkedInIconOn}
           />
         </li>
+        <li>
+          <SocialMediaLink
+            name="Facebook"
+            link="https://www.facebook.com/Old-School-a-clearinghouse-for-all-things-anti-ageism-271798766759230/"
+            icon={FacebookIcon}
+            iconOn={FacebookIconOn}
+          />
+        </li>
+        {/*<li>
+          <SocialMediaLink
+            name="Twitter"
+            link="https://twitter.com/OldSchool_Info"
+            icon={TwitterIcon}
+            iconOn={TwitterIconOn}
+          />
+        </li>*/}
       </ul>
       <LinkFooter />
     </footer>
