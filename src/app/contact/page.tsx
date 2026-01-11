@@ -1,88 +1,67 @@
 import { Metadata } from "next";
-import SubmitComponent from "@/components/SubmitComponent";
+import { Suspense } from "react";
+import { Link } from "next-view-transitions";
+import {
+  LoadingTestimonials,
+  TestimonialCarousel,
+} from "./../about/TestimonialCarousel";
+
 import styles from "./page.module.css";
 
-export default function AboutPage() {
+export default function HireUsPage() {
   return (
-    <article className={styles.wrapper}>
-      <section className={styles.contactUs}>
-        <h2 className={"pageheader"}>Contact Us</h2>
-        <ul>
-          <li>
-            Email:{" "}
-            <a
-              href="mailto:hello@oldschool.info"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              hello@oldschool.info
-            </a>
-          </li>
-          <li>
-            Facebook:{" "}
-            <a
-              href="https://www.facebook.com/oldschool.info/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              https://&shy;www.facebook&shy;.com/&shy;oldschool.info/
-            </a>
-          </li>
-          <li>
-            LinkedIn:{" "}
-            <a
-              href="https://www.linkedin.com/company/43359894"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              https://&shy;www.linkedin.com/&shy;company/43359894
-            </a>
-          </li>
-          <li>
-            Instagram:{" "}
-            <a
-              href="https://www.instagram.com/OldSchool_Info/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              https://&shy;www.instagram.com/&shy;OldSchool_Info/
-            </a>
-          </li>
-          <li>
-            X:{" "}
-            <a
-              href="https://twitter.com/OldSchool_Info"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              https://&shy;twitter.com/&shy;OldSchool_Info
-            </a>
-          </li>
-        </ul>
+    <article className={styles.hireUs}>
+      <section>
+        <h2>Contact us</h2>
+        <div className={styles.topDiv}>
+          <div>
+            <p>
+              We’re always eager to connect with people who want to help us
+              dismantle ageism, learn more about our mission, or send ideas or
+              suggestions our way. We’ve worked with a broad range of people and
+              groups, from educators and public health officials to journalists
+              and aging service providers. We also appreciate hearing from the
+              general public. Let’s start a conversation.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section>
+        <iframe
+          src="https://airtable.com/embed/app9HY99VAiVzX4uB/pagfUBvZIirzz6mcU/form"
+          frameBorder="0"
+          // onmousewheel=""
+          width="100%"
+          height="1500"
+          style={{ background: "transparent", border: "none" }}
+        ></iframe>
+      </section>
+      {/*<section>
         <p>
-          <strong>Want to talk to us live?</strong> You can find us ‘in the
-          office’ at <strong>Office Hours</strong> every Wednesday from
-          1:30–2:30 ET. Ask Old School co-founders and regulars any
-          ageism-related question—or just hang out and listen. Here’s the{" "}
-          <a href="https://thischairrocks.us6.list-manage.com/track/click?u=b7e45e0548&id=da0374d50c&e=72512ca6b8">
-            link
-          </a>
-          .
+          <strong>
+            <Link href={`/contact-us/workshops/`}>Workshop descriptions.</Link>
+          </strong>
+        </p>
+
+        <p>
+          <strong>Duration:</strong> Sessions range from one-hour workshops to
+          multi-day immersive experiences. They can be abbreviated, extended,
+          and/or paired with other sessions.
+        </p>
+        <p>
+          <strong>Cost:</strong> Our clients have ranged from non-profits to
+          Fortune 500 companies. We’ll modify our fees and offerings to fit your
+          budget. For more information, contact us at{" "}
+          <a href="mailto:hello@oldschool.info">hello@oldschool.info</a>. This
+          income helps keep Old School going. We thank you in advance for your
+          support!
         </p>
       </section>
-      <section style={{ width: "100%", maxWidth: "var(--narrowBlockWidth)" }}>
-        <h2
-          className="pageheader"
-          style={{ marginBottom: "var(--paddingOutside", textAlign: "center" }}
-        >
-          Submit a resource
-        </h2>
-        <p>
-          If you’ve created or discovered an ageism-related resource we don’t
-          know about, please send it our way! Here’s the submission form.
-        </p>
-        <SubmitComponent />
-      </section>
+      <section className={styles.testimonialWrapper}>
+        <Suspense fallback={<LoadingTestimonials />}>
+          <TestimonialCarousel justWorkshops />
+        </Suspense>
+      </section>*/}
     </article>
   );
 }

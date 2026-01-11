@@ -121,9 +121,9 @@ const Menu = () => {
             <li>
               <Link href="/category/supplies">School supplies</Link>
             </li>
-            <li>
+            {/* <li>
               <Link href="/contact-us">Contact us</Link>
-            </li>
+            </li> */}
             {/*<li>
               <Link
                 href={`#subscribe`}

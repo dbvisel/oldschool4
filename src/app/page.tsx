@@ -30,7 +30,7 @@ const HomePage = async () => {
       <Suspense fallback={<LoadingTopResources />}>
         <TopResources />
       </Suspense>
-      <section className={aboutStyles.aboutBlock}>
+      {/* <section className={aboutStyles.aboutBlock}>
         <div
           style={{
             maxWidth: 1024,
@@ -61,7 +61,7 @@ const HomePage = async () => {
             </p>
           </div>
         </div>
-      </section>
+      </section> */}
     </article>
   );
 };
