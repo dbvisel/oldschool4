@@ -12,30 +12,34 @@ export default function HireUsPage() {
   return (
     <article className={styles.hireUs}>
       <section>
-        <h2>
-          Hire us{" "}
-          <span style={{ fontWeight: "normal" }}>
-            to consult, speak, or give a workshop.
-          </span>
-        </h2>
+        <h2>Contact us</h2>
         <div className={styles.topDiv}>
           <div>
             <p>
-              People want to learn about ageism and age advocacy in very
-              different ways, so we shape our offerings accordingly. We’ve
-              worked with all kinds of audiences, from aging service providers
-              and faith groups to students of all ages. Describe your needs and
-              goals in an email to{" "}
-              <a href="mailto:hello@oldschool.info">hello@oldschool.info</a> and
-              we’ll figure out how to accommodate them.
+              We’re always eager to connect with people who want to help us
+              dismantle ageism, learn more about our mission, or send ideas or
+              suggestions our way. We’ve worked with a broad range of people and
+              groups, from educators and public health officials to journalists
+              and aging service providers. We also appreciate hearing from the
+              general public. Let’s start a conversation.
             </p>
           </div>
         </div>
       </section>
       <section>
+        <iframe
+          src="https://airtable.com/app9HY99VAiVzX4uB/pagfUBvZIirzz6mcU/form"
+          frameBorder="0"
+          // onmousewheel=""
+          width="100%"
+          height="1500"
+          style={{ background: "transparent", border: "none" }}
+        ></iframe>
+      </section>
+      {/*<section>
         <p>
           <strong>
-            <Link href={`/hire-us/workshops/`}>Workshop descriptions.</Link>
+            <Link href={`/contact-us/workshops/`}>Workshop descriptions.</Link>
           </strong>
         </p>
 
@@ -57,14 +61,14 @@ export default function HireUsPage() {
         <Suspense fallback={<LoadingTestimonials />}>
           <TestimonialCarousel justWorkshops />
         </Suspense>
-      </section>
+      </section>*/}
     </article>
   );
 }
 
 export async function generateMetadata(): Promise<Metadata> {
   const metaData = {
-    title: `Old School: Hire Us`,
+    title: `Old School: Contact Us`,
   };
 
   return {
