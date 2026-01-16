@@ -14,7 +14,7 @@ export default function AboutPage() {
         style={{ scrollSnapAlign: "none" }}
       >
         <div className={styles.aboutContent}>
-          <h2>About Old School</h2>
+          <h2>Our Story</h2>
           <h3>Mission</h3>
           <p>
             Old School works to end ageism by convening people of all ages,
