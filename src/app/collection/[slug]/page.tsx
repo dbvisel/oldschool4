@@ -39,7 +39,8 @@ const CollectionPage = async ({
           {/* <h3>See also:</h3> */}
           <CardHolder
             resources={resources || []}
-            areSubResources={true}
+            areSubResources
+            isCollectionPage
             showType
           />
         </div>
