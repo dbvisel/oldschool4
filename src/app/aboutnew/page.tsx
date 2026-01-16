@@ -1,5 +1,10 @@
+import { Suspense } from "react";
 import { Metadata } from "next";
 import { Link } from "next-view-transitions";
+import {
+  LoadingTestimonials,
+  TestimonialCarousel,
+} from "./../about/TestimonialCarousel";
 import styles from "./../about/page.module.css";
 
 export default function AboutPage() {
@@ -53,7 +58,6 @@ export default function AboutPage() {
         className={styles.theStoryBlock}
         style={{
           scrollSnapAlign: "none",
-          marginBottom: "calc(0px - var(--paddingOutside))",
         }}
       >
         <div>
@@ -61,6 +65,12 @@ export default function AboutPage() {
             <Link href={"/origins"}>Old School’s Origin Story</Link>
           </h2>
         </div>
+      </section>
+      <section style={{ scrollSnapAlign: "none" }} id={"testimonials"}>
+        {/*<h2>Here’s what people are saying about Old School:</h2>*/}
+        <Suspense fallback={<LoadingTestimonials />}>
+          <TestimonialCarousel />
+        </Suspense>
       </section>
     </article>
   );
