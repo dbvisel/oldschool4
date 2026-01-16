@@ -1,10 +1,10 @@
 import { Metadata } from "next";
-import { Suspense } from "react";
-import { Link } from "next-view-transitions";
-import {
-  LoadingTestimonials,
-  TestimonialCarousel,
-} from "./../about/TestimonialCarousel";
+// import { Suspense } from "react";
+// import { Link } from "next-view-transitions";
+// import {
+//   LoadingTestimonials,
+//   TestimonialCarousel,
+// } from "./../about/TestimonialCarousel";
 
 import styles from "./page.module.css";
 
