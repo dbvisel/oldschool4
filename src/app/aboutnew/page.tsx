@@ -20,6 +20,27 @@ export default function AboutPage() {
       >
         <div className={styles.aboutContent}>
           <h2>Our Story</h2>
+          <p>
+            In 2018, Kyrié Carpenter, Ryan Backer, and Ashton Applewhite met for
+            the first time in a back yard in Berkeley. We’d searched the web for
+            ageism-related material, figured out how to share the best of it,
+            and came together to launch the Old School Clearinghouse. We thought
+            we were setting up a small side hustle: updating a website once or
+            twice a year. We weren’t sure anyone else would notice its debut. We
+            were so wrong. It was immediately obvious that we’d embarked on a
+            major undertaking, and that Old School was meeting an important need
+            for the emerging age-equity movement. Eight years later this remains
+            very much the case. But we couldn’t have envisioned how the need
+            would grow, nor how Old School’s role would evolve to meet it,
+            becoming the Old School Hub for Age Equity and Ageism Awareness. The
+            three of us did a lot with a little. Four of us are now doing more
+            with more, as you’ll see from this Impact Report. Crucially, last
+            year the organization hired its first Executive Director, Alessandro
+            “Ale” Negrete, who brings grassroots organizing experience,
+            fundraising skills, and a bold vision to the table. Stay tuned for
+            the strategic plan we just co-created in Mexico City. You’ll see why
+            we couldn’t be more excited about Old School’s future.
+          </p>
           <h3>Mission</h3>
           <p>
             Old School works to end ageism by convening people of all ages,
@@ -45,6 +66,24 @@ export default function AboutPage() {
             because of their age. This makes ageism a gateway to understanding
             the intersectional nature of all oppression, and of all activism.
             This paves the way for genuine equity and collective liberation.
+          </p>
+          <h3>Values</h3>
+          <p>
+            We believe kindness is essential. We prioritize care-centered
+            practice grounded not in compliance but in reflection and true
+            consent. We know dismantling ageism means confronting sexism (aging
+            is gendered), ableism (disability is stigmatized), and racism (which
+            denies multitudes the chance to age at all). We understand trust
+            takes time. We reject proprietary mindsets and think an open-source
+            mentality is essential to movement-building. We recognize lived
+            experience as a critical form of knowledge, and design programs that
+            elevate community leadership and collective decision-making. We
+            support initiatives that are necessary for some and good for all. We
+            think addressing the relation between age and power is essential. We
+            prioritize free or low-cost offerings so access is not gated by
+            institutions, price, or credentials. We reject hierarchy, and
+            operate by consensus. We are transparent: what we say is what you
+            get.
           </p>
           <p className={styles.aboutBegin}>
             Wondering where to begin?{" "}
