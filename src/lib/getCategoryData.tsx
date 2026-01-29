@@ -38,7 +38,7 @@ const getCategoryData = async ({ params }: { params: any }): Promise<any> => {
       x.Low_Relevancy_Search && x.Low_Relevancy_Search.length
         ? x.Low_Relevancy_Search.join(" ")
         : ""
-    }`.toLowerCase()
+    }`.toLowerCase(),
   );
 
   const blurPathedData = await Promise.all(
@@ -58,12 +58,12 @@ const getCategoryData = async ({ params }: { params: any }): Promise<any> => {
           console.error(
             "Error with blurpath (getCategoryData)!",
             x.Title,
-            x.imagePath
+            x.imagePath,
           );
         }
       }
       return cleanResource({ fields: x, ...x }, slugify(x.Slug, x.Title), []);
-    })
+    }),
   );
 
   return {

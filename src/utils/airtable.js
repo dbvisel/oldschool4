@@ -29,8 +29,8 @@ const slugify = (record) =>
           .normalize("NFD")
           .replace(/[\u0300-\u036f]/g, "")
           .replace(/[?|.,/#!$%^&*;¿:{}'"“”‘’––=\-_`~()æœ]/g, "")
-          .replace(/\s+/g, "-")
-      )
+          .replace(/\s+/g, "-"),
+      ),
   ).toLowerCase();
 
 // maps over the records, calling minifyRecord, giving us required data
@@ -54,7 +54,7 @@ const getQuotes = async (quoteType = "Website ") => {
   const records = await quotesBase.select({ view: "site view" }).all();
   const minifiedRecords = await getMinifiedRecords(records);
   const filteredRecords = minifiedRecords.filter(
-    (x) => x.fields.Offering && x.fields.Offering.indexOf(quoteType) > -1 // note that it is "Website " and not "Website"
+    (x) => x.fields.Offering && x.fields.Offering.indexOf(quoteType) > -1, // note that it is "Website " and not "Website"
   );
 
   // console.log(minifiedRecords);
@@ -75,7 +75,7 @@ const getCollections = async () => {
   const records = await collectionsBase.select({ view: "Grid view" }).all();
   const minifiedRecords = await getMinifiedRecords(records);
   const filteredReocords = minifiedRecords.filter(
-    (x) => x.fields["Show on Learn page"] === true
+    (x) => x.fields["Show on Learn page"] === true,
   );
 
   // console.log(minifiedRecords);
@@ -258,7 +258,7 @@ const getResourceById = async (id) => {
 const getCategoryById = async (id) => {
   const categories = await getCategories(id);
   const thisRecord = categories.filter(
-    (x) => x.fields && x.fields.ID && x.fields.ID === id
+    (x) => x.fields && x.fields.ID && x.fields.ID === id,
   )[0];
   const record = minifyRecord(thisRecord);
   return record;
@@ -267,7 +267,7 @@ const getCategoryById = async (id) => {
 const getCollectionById = async (slug) => {
   const collections = await getCollections();
   const thisCollection = collections.filter(
-    (x) => x.fields && x.fields.slug && x.fields.slug === slug
+    (x) => x.fields && x.fields.slug && x.fields.slug === slug,
   )[0];
   const record = minifyRecord(thisCollection);
   return record;
@@ -301,7 +301,7 @@ const possibleSlugs = async () => {
     .filter(
       (x) =>
         x.fields["Resource URL"] &&
-        x.fields["Resource URL"].indexOf("oldschool") > -1
+        x.fields["Resource URL"].indexOf("oldschool") > -1,
     )
     .map((x) => {
       // console.log(slugify(x), x.fields.Status);

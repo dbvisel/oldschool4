@@ -2,10 +2,12 @@ import { Link } from "next-view-transitions";
 import styles from "./styles.module.css";
 import { definedTypes } from "@/utils/categories";
 
+const cleanedTypes = definedTypes.filter((x) => x.id !== "ospublications");
+
 const LinkFooter = () => (
   <footer className={styles.linkFooter}>
     <ul>
-      {definedTypes.map((section, index) => (
+      {cleanedTypes.map((section, index) => (
         <li key={index}>
           <Link href={`/category/${section.id}/`}>{section.name}</Link>
         </li>

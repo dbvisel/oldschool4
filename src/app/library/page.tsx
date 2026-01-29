@@ -9,6 +9,7 @@ import SubmitComponent from "@/components/SubmitComponent";
 
 const noSupplies = definedTypes
   .filter((x) => x.id !== "supplies")
+  .filter((x) => x.id !== "ospublications")
   .sort((a, b) => {
     if (a.name < b.name) return -1;
     if (a.name > b.name) return 1;

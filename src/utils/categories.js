@@ -136,6 +136,14 @@ export const definedTypes = [
     width: 656,
     height: 800,
   },
+  {
+    id: "ospublications",
+    name: "OS Publications",
+    sentenceName: "OS publications",
+    tag: "Resources published by Old School",
+    airtableName: "OS publications",
+    banner: null,
+  },
 ];
 
 // THIS BECOMES:
