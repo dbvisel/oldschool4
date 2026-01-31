@@ -1,6 +1,8 @@
 import { Suspense } from "react";
 import { Metadata } from "next";
+import Image from "next/image";
 import { Link } from "next-view-transitions";
+import roadmap from "../about/images/OSHRoadmap.png";
 import {
   LoadingTestimonials,
   TestimonialCarousel,
@@ -20,7 +22,7 @@ export default function AboutPage() {
       >
         <div className={styles.aboutContent}>
           <h2>Our Story</h2>
-          <p>
+          {/* <p>
             In 2018, Kyrié Carpenter, Ryan Backer, and Ashton Applewhite met for
             the first time in a back yard in Berkeley. We’d searched the web for
             ageism-related material, figured out how to share the best of it,
@@ -40,7 +42,29 @@ export default function AboutPage() {
             fundraising skills, and a bold vision to the table. Stay tuned for
             the strategic plan we just co-created in Mexico City. You’ll see why
             we couldn’t be more excited about Old School’s future.
-          </p>
+          </p> */}
+          <div style={{ width: "100%" }}>
+            <Image src={roadmap} alt={"Roadmap"} layout="responsive" />
+          </div>
+        </div>
+      </section>
+      <section
+        className={styles.theStoryBlock}
+        style={{
+          scrollSnapAlign: "none",
+        }}
+      >
+        <div>
+          <h2>
+            <Link href={"/origins"}>Old School’s Origin Story</Link>
+          </h2>
+        </div>
+      </section>
+      <section
+        className={styles.aboutBlock}
+        style={{ scrollSnapAlign: "none" }}
+      >
+        <div className={styles.aboutContent}>
           <h3>Mission</h3>
           <p>
             Old School works to end ageism by convening people of all ages,
@@ -91,18 +115,6 @@ export default function AboutPage() {
               Here are some suggestions.
             </Link>
           </p>
-        </div>
-      </section>
-      <section
-        className={styles.theStoryBlock}
-        style={{
-          scrollSnapAlign: "none",
-        }}
-      >
-        <div>
-          <h2>
-            <Link href={"/origins"}>Old School’s Origin Story</Link>
-          </h2>
         </div>
       </section>
       <section style={{ scrollSnapAlign: "none" }} id={"testimonials"}>
