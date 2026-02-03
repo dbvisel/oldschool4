@@ -19,6 +19,7 @@ const FrontCarousel = ({
       {SlideList.categorySlide}
       {SlideList.officeHours}
       {/* {SlideList.resourceSpotlight} */}
+      {SlideList.fiveYearStategicPlan}
       {SlideList.impactReport2025}
       {/* {SlideList.centurySummit} */}
       {/* {SlideList.ageismAwarenessDay} */}

@@ -185,6 +185,25 @@ export const SlideList = {
       />
     </div>
   ),
+  fiveYearStategicPlan: (
+    <div
+      className={`${styles.emblaSlide} ${styles.hideText}`}
+      style={{
+        backgroundColor: "var(--black)",
+        backgroundImage: `url(images/carousel/FiveYearStategicPlan.jpg)`,
+        backgroundSize: "contain",
+        backgroundRepeat: "no-repeat",
+      }}
+    >
+      {" "}
+      <a
+        href="https://drive.google.com/file/d/14eJgnjMbtNrEypejZrBnlBwJB24mZwMs/view?usp=drive_link"
+        className={styles.fullLink}
+        target="_blank"
+        rel="noopener noreferrer"
+      />
+    </div>
+  ),
   impactReport2025: (
     <div
       className={`${styles.emblaSlide} ${styles.hideText}`}
