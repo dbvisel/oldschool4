@@ -109,7 +109,7 @@ const ResourceCard = ({
       ) : (
         <p>No image!</p>
       )}
-      {description ? (
+      {description || !resource.hideTitle ? (
         <div className={styles.bottomblock}>
           {skipResourcePage && !isEvent /*&& !isResourcePage */ ? (
             <a href={String(resource.link) || ""} target={"_blank"}>
