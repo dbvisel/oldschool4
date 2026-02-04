@@ -16,15 +16,17 @@ type RefObject = {
 const noSupplies = definedTypes.filter((x) => x.id !== "supplies");
 
 const Menu = () => {
-  const [learnSubmenuShown, setLearnSubmenuShown] = useState(false);
+  // const [learnSubmenuShown, setLearnSubmenuShown] = useState(false);
   const [projectSubmenuShown, setProjectSubmenuShown] = useState(false);
+  const [aboutSubmenuShown, setAboutSubmenuShown] = useState(false);
   const wrapperRef = useRef(null);
 
   const useOutsideAlerter = (ref: RefObject) => {
     useEffect(() => {
       const handleClickOutside = (event: MouseEvent) => {
         if (ref.current && !ref.current.contains(event.target as HTMLElement)) {
-          setLearnSubmenuShown(false);
+          setProjectSubmenuShown(false);
+          setAboutSubmenuShown(false);
         }
       };
       document.addEventListener("mousedown", handleClickOutside);
@@ -46,7 +48,36 @@ const Menu = () => {
           <Search />
           <ul className={styles.menu}>
             <li>
-              <Link href="/about#top">About</Link>
+              <a
+                href="#"
+                // onMouseEnter={()=>setProjectSubmenuShown(!submenuShown)}
+                // onMouseLeave={()=>setProjectSubmenuShown(!submenuShown)}
+                onClick={(e) => {
+                  e.preventDefault();
+                  setAboutSubmenuShown(!aboutSubmenuShown);
+                  // setLearnSubmenuShown(false);
+                  setProjectSubmenuShown;
+                }}
+                className={aboutSubmenuShown ? styles.active : ""}
+              >
+                About
+              </a>
+              {aboutSubmenuShown && (
+                <ul
+                  ref={wrapperRef}
+                  onClick={() => setAboutSubmenuShown(false)}
+                >
+                  <li>
+                    <Link href="/about">Our Story</Link>
+                  </li>
+                  <li>
+                    <Link href="/team">Team</Link>
+                  </li>
+                  <li>
+                    <Link href="/category/ospublications">Publications</Link>
+                  </li>
+                </ul>
+              )}
             </li>
             <li>
               <a
@@ -56,7 +87,8 @@ const Menu = () => {
                 onClick={(e) => {
                   e.preventDefault();
                   setProjectSubmenuShown(!projectSubmenuShown);
-                  setLearnSubmenuShown(false);
+                  // setLearnSubmenuShown(false);
+                  setAboutSubmenuShown;
                 }}
                 className={projectSubmenuShown ? styles.active : ""}
               >
