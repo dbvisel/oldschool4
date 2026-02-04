@@ -59,8 +59,8 @@ export default async function LearnPage() {
         <div className={styles.contributeBlock}>
           <h3 id="contribute">Contribute to the Library</h3>
           <p className={styles.introParagraph}>
-            Submissions are ongoing, and we review and post them on a quarterly
-            basis in January, April, July, and October.
+            {/*<!--Submissions are ongoing, and we review and post them on a quarterly
+            basis in January, April, July, and October.-->*/}
           </p>
           <p className={styles.introParagraph}>
             Please use this form to describe the resource you’re submitting
