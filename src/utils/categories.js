@@ -138,9 +138,9 @@ export const definedTypes = [
   },
   {
     id: "ospublications",
-    name: "OS Publications",
-    sentenceName: "OS publications",
-    tag: "Resources published by Old School",
+    name: "Organizational Reports",
+    sentenceName: "Organizational Reports",
+    tag: "",
     airtableName: "OS publications",
     banner: null,
   },

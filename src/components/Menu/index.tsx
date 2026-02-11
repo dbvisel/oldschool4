@@ -74,7 +74,9 @@ const Menu = () => {
                     <Link href="/team">Team</Link>
                   </li>
                   <li>
-                    <Link href="/category/ospublications">Publications</Link>
+                    <Link href="/category/ospublications">
+                      Organizational Reports
+                    </Link>
                   </li>
                 </ul>
               )}
