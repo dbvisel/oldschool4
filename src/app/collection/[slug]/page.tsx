@@ -17,7 +17,9 @@ const CollectionPage = async ({
     params: { slug },
   });
   let sortedLanguageCount: any = [];
+  let isLanguagePage = true;
   if (title === "Other Languages") {
+    isLanguagePage = true;
     const languageData = resources.map(
       (x: ResourceItem) => x.language,
     ) as string[];
@@ -39,7 +41,7 @@ const CollectionPage = async ({
   return title ? (
     <article className={styles.subjectPage}>
       <div>
-        <h2>{title}</h2>
+        <h2>{isLanguagePage ? "Non-English Languages" : title}</h2>
         <div className={`${styles.resourceData}`}>
           <div className={styles.dataBoxWrapper}>
             <div className={styles.dataBox}>
@@ -55,7 +57,7 @@ const CollectionPage = async ({
       </div>
       {resources && resources.length ? (
         <div className={styles.resources}>
-          {sortedLanguageCount.length ? (
+          {isLanguagePage ? (
             sortedLanguageCount.map((x: any) => (
               <div key={x.language} className={styles.languageSection}>
                 <h3 className={styles.languageTitle}>{x.language}</h3>
