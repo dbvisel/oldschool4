@@ -20,6 +20,7 @@ export interface ResourceItem {
   title?: string;
   isNew?: boolean;
   hideTitle?: boolean;
+  language?: string;
   description?: string;
   shortDescription?: string;
   types?: [string];

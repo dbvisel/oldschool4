@@ -3,14 +3,14 @@ import { ResourceItem } from "@/types/index";
 export const cleanResource = (
   resource: any,
   slug: string,
-  subresources: any
+  subresources: any,
 ): ResourceItem => {
   // This function takesa what's coming back from Airtable and cleans it up to be a ResourceItem.
   // console.log("original:", resource);
   if (!resource.id) {
     console.error(
       "No id found for resource, generating random UUID: ",
-      resource.fields.Title
+      resource.fields.Title,
     );
   }
 
@@ -20,6 +20,7 @@ export const cleanResource = (
     tags: resource.fields.Tags,
     link: resource.fields["Resource URL"],
     isNew: resource.fields["Show on Front Page"] || false,
+    language: resource.fields.Language || "English",
     photoOnResourceCardOnly:
       resource.fields["photo on resource card only"] || false,
     dateAdded: resource.fields["Date added"],

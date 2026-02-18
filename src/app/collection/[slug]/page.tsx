@@ -1,7 +1,8 @@
-import type { Metadata } from "next";
-import Image from "next/image";
-import { Link } from "next-view-transitions";
+// import type { Metadata } from "next";
+// import Image from "next/image";
+// import { Link } from "next-view-transitions";
 import { possibleCollections } from "@/utils/airtable";
+// import { ResourceItem } from "@/types/index";
 import { ResourceItem } from "@/types/index";
 import CardHolder from "@/components/CardHolder";
 import styles from "./page.module.css";
@@ -15,8 +16,27 @@ const CollectionPage = async ({
   const { resources, title, description } = await getCollectionData({
     params: { slug },
   });
-  // console.log(resources);
-  // TODO: make sections based on TK language setting
+  let sortedLanguageCount: any = [];
+  if (title === "Other Languages") {
+    const languageData = resources.map(
+      (x: ResourceItem) => x.language,
+    ) as string[];
+    const uniqueLanguages = new Set(languageData);
+    const languageCount = new Map(
+      [...uniqueLanguages].map((x) => [
+        x,
+        languageData.filter((y) => y === x).length,
+      ]),
+    );
+    sortedLanguageCount = [
+      ...new Map([...languageCount.entries()].sort((a, b) => b[1] - a[1])),
+    ].map(([language, count]) => ({
+      language,
+      count,
+      resources: resources.filter((x: ResourceItem) => x.language === language),
+    }));
+    console.log(sortedLanguageCount);
+  }
   return title ? (
     <article className={styles.subjectPage}>
       <div>
@@ -36,13 +56,26 @@ const CollectionPage = async ({
       </div>
       {resources && resources.length ? (
         <div className={styles.resources}>
-          {/* <h3>See also:</h3> */}
-          <CardHolder
-            resources={resources || []}
-            areSubResources
-            isCollectionPage
-            showType
-          />
+          {sortedLanguageCount.length ? (
+            sortedLanguageCount.map((x: any) => (
+              <div key={x.language} className={styles.languageSection}>
+                <h3 className={styles.languageTitle}>{x.language}</h3>
+                <CardHolder
+                  resources={x.resources}
+                  areSubResources
+                  isCollectionPage
+                  showType
+                />
+              </div>
+            ))
+          ) : (
+            <CardHolder
+              resources={resources || []}
+              areSubResources
+              isCollectionPage
+              showType
+            />
+          )}
         </div>
       ) : null}
     </article>

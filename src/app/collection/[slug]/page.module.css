@@ -232,3 +232,12 @@ article.subjectPage > div:first-child h2 {
   text-align: center;
   color: var(--white);
 }
+
+.languageTitle {
+  color: var(--orange);
+  text-align: center;
+  font-size: calc(var(--fontSize) * 1.5);
+  text-transform: uppercase;
+  margin-top: var(--paddingOutside);
+  margin-bottom: var(--paddingInside);
+}
