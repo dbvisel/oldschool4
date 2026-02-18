@@ -35,7 +35,6 @@ const CollectionPage = async ({
       count,
       resources: resources.filter((x: ResourceItem) => x.language === language),
     }));
-    console.log(sortedLanguageCount);
   }
   return title ? (
     <article className={styles.subjectPage}>
