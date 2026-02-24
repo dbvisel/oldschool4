@@ -58,12 +58,11 @@ export default function AboutPage() {
             Old School works to end ageism by convening people of all ages,
             backgrounds, and identities who share this goal. We are particularly
             committed to fostering an inclusive space for historically
-            marginalized groups, and supporting their paths to age advocacy. We
-            create, curate, and widely disseminate free educational material
-            about ageism and how to undo it. Through community dialogue and
-            innovative collaborations, we raise individual awareness of ageism
-            and inspire collective action to dismantle it in every sphere of
-            life.
+            marginalized groups, and supporting them. We create, curate, and
+            widely disseminate free educational material about ageism and how to
+            undo it. Through community dialogue and innovative collaborations,
+            we raise individual awareness of ageism and inspire collective
+            action to dismantle it in every sphere of life.
           </p>
           <h3>Vision</h3>
           <p>
