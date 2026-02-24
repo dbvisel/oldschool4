@@ -21,17 +21,16 @@ const addSubresources = true; // If this is true, subresources will be added to 
     process.exit(1);
   }
 
+  console.log("api key: ", process.env.AIRTABLE_API_KEY);
   // Authenticate
   Airtable.configure({
     apiKey: process.env.AIRTABLE_API_KEY,
   });
-
   // Initialize a base
   const base = Airtable.base(process.env.AIRTABLE_BASE_ID);
-
   // Reference a table
   const resourcesBase = base("oldschool");
-  const eventsBase = base("EVENTS");
+  const eventsBase = base("Events against ageism" || "EVENTS");
 
   // maps over the records, calling minifyRecord, giving us required data
   const getMinifiedRecords = async (records) => {
@@ -115,7 +114,7 @@ const addSubresources = true; // If this is true, subresources will be added to 
       .filter((x) => x.fields["Hide?"] !== "yes")
       .filter((x) => x.fields["Is this a subresource?"] !== true)
       .filter((x) =>
-        x.fields["Types"] ? x.fields["Types"].indexOf("Secret") < 0 : true
+        x.fields["Types"] ? x.fields["Types"].indexOf("Secret") < 0 : true,
       ); // this is to hide the old school record itself
     const mappedResourceRecords = basicResourceRecords.map((x) => {
       const parentSlug =
@@ -125,7 +124,7 @@ const addSubresources = true; // If this is true, subresources will be added to 
             .normalize("NFD")
             .replace(/[\u0300-\u036f]/g, "")
             .replace(/[?|.,/#!$%^&*;¿:{}'"“”‘’––=\-_`~()æœ]/g, "")
-            .replace(/\s+/g, "-")
+            .replace(/\s+/g, "-"),
         );
       if (addSubresources && typeof x.fields.Subresource !== "undefined") {
         // add records for subresources pointing to the resource that uses them.
@@ -256,11 +255,12 @@ const addSubresources = true; // If this is true, subresources will be added to 
   try {
     console.log("Getting records from Airtable...");
     const transformed = await getRecordsForAlgolia();
+    console.log("Got records and transformed them for Algolia.");
 
     // initialize the client with your environment variables
     const client = algoliasearch(
       process.env.NEXT_PUBLIC_ALGOLIA_APP_ID,
-      process.env.ALGOLIA_SEARCH_ADMIN_KEY
+      process.env.ALGOLIA_SEARCH_ADMIN_KEY,
     );
 
     // initialize the index with your index name
@@ -273,7 +273,7 @@ const addSubresources = true; // If this is true, subresources will be added to 
       // const algoliaResponse = await index.saveObjects(transformed);
       const algoliaResponse = await index.replaceAllObjects(transformed);
       console.log(
-        `Successfully added ${algoliaResponse.objectIDs.length} records to Algolia search!`
+        `Successfully added ${algoliaResponse.objectIDs.length} records to Algolia search!`,
       );
     }
     // console.log(`Object IDs:\n${algoliaResponse.objectIDs.join("\n")}`);
