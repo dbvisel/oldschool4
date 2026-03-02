@@ -11,10 +11,7 @@ export default function SubmitPage() {
       >
         Submit a resource
       </h2>
-      <p>
-        If you’ve created or discovered an ageism-related resource we don’t know
-        about, please send it our way! Here’s the submission form.
-      </p>{" "}
+      <p>Please use this form to describe the resource you’re submitting.</p>
       <SubmitComponent />
     </article>
   );
