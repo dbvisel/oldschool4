@@ -34,7 +34,7 @@ export default function OfficeHoursPage() {
           Tired of the same old stories about aging? Join the movement at Old
           School Office Hours. Every Wednesday, our co-founders and a global
           community of advocates gather for an informal, open-mic style
-          conversation about dismantling ageism. Whether you're a seasoned
+          conversation about dismantling ageism. Whether you’re a seasoned
           activist or just starting to unlearn your own biases, this is your
           entry point.
         </p>
