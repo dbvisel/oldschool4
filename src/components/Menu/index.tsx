@@ -105,13 +105,7 @@ const Menu = () => {
                     <Link href="/library">Library</Link>
                   </li>
                   <li>
-                    <a
-                      href="https://us02web.zoom.us/meeting/register/tZAvcOivqzkpG9CtqpP6cnaL64TnxKaY_fAg"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      Office Hours
-                    </a>
+                    <Link href="/officehours">Office Hours</Link>
                   </li>
                   <li>
                     <Link href="/hubsters">Hubsters</Link>
