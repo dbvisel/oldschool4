@@ -4,6 +4,7 @@ import Image, { StaticImageData } from "next/image";
 const Project = ({
   description,
   link,
+  contactLink,
   title,
   contact,
   image,
@@ -11,6 +12,7 @@ const Project = ({
 }: {
   description: string;
   link: string;
+  contactLink?: string;
   title: string;
   contact: string;
   image: StaticImageData;
@@ -19,11 +21,19 @@ const Project = ({
   return (
     <div className={`${styles.projectBox} ${isLeft ? styles.isLeft : ""}`}>
       <div className={styles.projectText}>
-        <h3>{title}</h3>
+        <h3>
+          <a href={link} target="_blank" rel="noopener noreferrer">
+            {title}
+          </a>
+        </h3>
         <p>{description}</p>
         <p className={styles.contactLine}>
           (Contact:{" "}
-          <a href={link} target="_blank" rel="noopener noreferrer">
+          <a
+            href={contactLink || link}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             {contact}
           </a>
           )

@@ -5,33 +5,45 @@ import Project from "./Project";
 import aeaImage from "./images/Age-Equity-Alliance_blue-navy-BG-e1588618146243.jpg";
 import fufaImage from "./images/F.U.F.A-(1).png";
 import eaaImage from "./images/vcugerontology.jpg";
+import ahImage from "./images/ageismhealthcare.jpg";
 import ailaImage from "./images/Aging+Is+Living+sign_card+hi-res+artwork (1).jpg";
 import ProjectLead from "./ProjectLead";
 
 const projectData = [
   {
+    title: "Ageism, Health Care, and Healing",
+    description:
+      "An attendee -led ‘unconference’ where participants arrived at a holistic understanding of the components of healing and what healing requires. They also produced actionable ways to address ageism across multiple care-related areas.",
+    contact: "Hilary Siebens MD",
+    contactLink: "https://www.linkedin.com/in/hilary-siebens-md-93927817/",
+    link: "https://drive.google.com/file/d/1sSLmWovhoDWyIJtemkLE-DfNGOpPaEu2/view?usp=sharing",
+    image: ahImage,
+  },
+  {
     title: "Aging is Living Artwork",
     description:
       "Rainbow flags. Peace symbols. Ribbons on lapels. Every movement has its signs, and now the age equity movement has one too! Download it, print it, display it, wear it, hand it out, get it out there — and move us all closer to a world without ageism.",
-    link: "https://www.linkedin.com/in/margaretmcdonald/",
+    contactLink: "https://www.linkedin.com/in/margaretmcdonald/",
     contact: "Margaret McDonald",
+    link: "https://www.growingandolder.com/contact",
     image: ailaImage,
   },
-  {
+  /*{
     title: "“Expanding Age Advocacy”",
     description:
       "Old School and Virginia Commonwealth University are using focus groups to investigate how people working on other social justice issues perceive aging, age bias, and age advocacy.",
     link: "https://www.linkedin.com/in/tracey-gendron/",
     contact: "Tracey Gendron",
     image: eaaImage,
-  },
+  },*/
 
   {
     title: "Age Equity Alliance",
     description:
       "This think-tank partners with organizations and businesses to build an innovative, age-positive workplace. It was incubated at Old School.",
-    link: "https://www.linkedin.com/company/ageequityalliance/",
+    contactLink: "https://www.linkedin.com/company/ageequityalliance/",
     contact: "Sheila Callaham",
+    link: "https://ageequityalliance.org/",
     image: aeaImage,
   },
 
