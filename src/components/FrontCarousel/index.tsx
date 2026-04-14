@@ -24,6 +24,7 @@ const FrontCarousel = ({
       {/* {SlideList.centurySummit} */}
       {/* {SlideList.ageismAwarenessDay} */}
       {SlideList.raisely}
+      {SlideList.winterSchoolSlide}
     </Carousel>
   );
 };

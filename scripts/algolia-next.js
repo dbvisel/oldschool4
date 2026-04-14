@@ -21,7 +21,7 @@ const addSubresources = true; // If this is true, subresources will be added to 
     process.exit(1);
   }
 
-  console.log("api key: ", process.env.AIRTABLE_API_KEY);
+  // console.log("api key: ", process.env.AIRTABLE_API_KEY);
   // Authenticate
   Airtable.configure({
     apiKey: process.env.AIRTABLE_API_KEY,

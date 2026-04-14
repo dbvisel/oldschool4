@@ -84,89 +84,6 @@ export const SlideList = {
       </p>
     </div>
   ),
-  centurySummit: (
-    <div
-      className={`${styles.emblaSlide} ${styles.hideText}`}
-      style={{
-        backgroundColor: "var(--white)",
-        backgroundImage: `url(images/carousel/centurysummitv.jpg)`,
-        backgroundSize: "contain",
-        backgroundRepeat: "no-repeat",
-      }}
-    >
-      <a
-        href="https://www.longevity-project.com/century-summit-2025-official-videos"
-        className={styles.fullLink}
-        target="_blank"
-        rel="noopener noreferrer"
-      />
-    </div>
-  ),
-  yoda: (
-    <div
-      className={`${styles.emblaSlide} ${styles.hideText}`}
-      style={{
-        backgroundColor: "var(--white)",
-        backgroundImage: `url(images/carousel/YODA-BG.png)`,
-        backgroundSize: "cover",
-        backgroundRepeat: "no-repeat",
-      }}
-    >
-      <div
-        className={`${styles.hideText} ${styles.interior}`}
-        style={{
-          backgroundImage: `url(images/carousel/YODA.png)`,
-        }}
-      >
-        <a
-          href="https://www.nextavenue.org/lets-come-together-for-yoda/"
-          className={styles.fullLink}
-          target="_blank"
-          rel="noopener noreferrer"
-          style={{ display: "block" }}
-        />
-      </div>
-    </div>
-  ),
-  ageismAwarenessDay: (
-    <div
-      className={`${styles.emblaSlide} ${styles.gridSlide}`}
-      style={{
-        backgroundColor: "var(--white)",
-        // backgroundImage: `url(images/carousel/2025-Ageism-awareness-day-white-bkg-1.png)`,
-        backgroundSize: "cover",
-        backgroundRepeat: "no-repeat",
-      }}
-    >
-      <div
-        className={`${styles.hideText} ${styles.interior}`}
-        style={{
-          backgroundImage: `url(images/carousel/2025-Ageism-awareness-day-white-bkg-1.png)`,
-          aspectRatio: 1,
-          maxWidth: "100%",
-          maxHeight: "100%",
-        }}
-      >
-        <a
-          href="https://asaging.org/ageism-awareness/"
-          className={styles.fullLink}
-          target="_blank"
-          rel="noopener noreferrer"
-          style={{ display: "block" }}
-        />
-      </div>
-      <div>
-        <p className="text">
-          Ageism Awareness Day is coming right up! Find out how to support it on
-          the{" "}
-          <a href="https://asaging.org/ageism-awareness/" target="_blank">
-            American Society on Aging’s 2025 campaign page
-          </a>
-          .
-        </p>
-      </div>
-    </div>
-  ),
   raisely: (
     <div
       className={`${styles.emblaSlide} ${styles.hideText}`}
@@ -223,6 +140,119 @@ export const SlideList = {
       />
     </div>
   ),
+  justOneTestimonal: (quotes: any /* TODO: FIX THIS!*/) =>
+    quotes.length && (
+      <JustOneTestimonial
+        quotes={quotes?.length ? quotes : []}
+        key={quotes.length}
+      />
+    ),
+  winterSchoolSlide: (
+    <div className={`${styles.emblaSlide} ${styles.winterSchoolSlide}`}>
+      <h2>
+        <Link href="/events/winter-school">
+          <strong>Save the date—January 15-17, 2027—for Winter School.</strong>
+          <br />
+          <span
+            style={{
+              fontWeight: "normal",
+              fontSize: "75%",
+            }}
+          >
+            It’s going to be hot. Not just because it’s in Guadalajara, Mexico.
+            <br />
+            <strong>Learn more.</strong>
+          </span>
+        </Link>
+      </h2>
+    </div>
+  ),
+};
+
+export const oldSlides = {
+  yoda: (
+    <div
+      className={`${styles.emblaSlide} ${styles.hideText}`}
+      style={{
+        backgroundColor: "var(--white)",
+        backgroundImage: `url(images/carousel/YODA-BG.png)`,
+        backgroundSize: "cover",
+        backgroundRepeat: "no-repeat",
+      }}
+    >
+      <div
+        className={`${styles.hideText} ${styles.interior}`}
+        style={{
+          backgroundImage: `url(images/carousel/YODA.png)`,
+        }}
+      >
+        <a
+          href="https://www.nextavenue.org/lets-come-together-for-yoda/"
+          className={styles.fullLink}
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{ display: "block" }}
+        />
+      </div>
+    </div>
+  ),
+  centurySummit: (
+    <div
+      className={`${styles.emblaSlide} ${styles.hideText}`}
+      style={{
+        backgroundColor: "var(--white)",
+        backgroundImage: `url(images/carousel/centurysummitv.jpg)`,
+        backgroundSize: "contain",
+        backgroundRepeat: "no-repeat",
+      }}
+    >
+      <a
+        href="https://www.longevity-project.com/century-summit-2025-official-videos"
+        className={styles.fullLink}
+        target="_blank"
+        rel="noopener noreferrer"
+      />
+    </div>
+  ),
+  ageismAwarenessDay: (
+    <div
+      className={`${styles.emblaSlide} ${styles.gridSlide}`}
+      style={{
+        backgroundColor: "var(--white)",
+        // backgroundImage: `url(images/carousel/2025-Ageism-awareness-day-white-bkg-1.png)`,
+        backgroundSize: "cover",
+        backgroundRepeat: "no-repeat",
+      }}
+    >
+      <div
+        className={`${styles.hideText} ${styles.interior}`}
+        style={{
+          backgroundImage: `url(images/carousel/2025-Ageism-awareness-day-white-bkg-1.png)`,
+          aspectRatio: 1,
+          maxWidth: "100%",
+          maxHeight: "100%",
+        }}
+      >
+        <a
+          href="https://asaging.org/ageism-awareness/"
+          className={styles.fullLink}
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{ display: "block" }}
+        />
+      </div>
+      <div>
+        <p className="text">
+          Ageism Awareness Day is coming right up! Find out how to support it on
+          the{" "}
+          <a href="https://asaging.org/ageism-awareness/" target="_blank">
+            American Society on Aging’s 2025 campaign page
+          </a>
+          .
+        </p>
+      </div>
+    </div>
+  ),
   resourceSpotlight: (
     <div
       className={`${styles.emblaSlide} ${styles.hideText}`}
@@ -241,36 +271,6 @@ export const SlideList = {
       />
     </div>
   ),
-  jobSlide: (
-    <div
-      className={`${styles.emblaSlide} ${styles.jobLink}`}
-      style={{
-        backgroundImage: `url(images/carousel/jobimage.png)`,
-      }}
-    >
-      <h2>
-        <Link href="/jobs">
-          <strong>Old School is hiring!</strong>
-          <br />
-          <span style={{ fontWeight: "normal", fontSize: "75%" }}>
-            We’re looking for a visionary Executive Director to expand our reach
-            and impact. Click here for the full job description and how to
-            apply.
-          </span>
-        </Link>
-      </h2>
-    </div>
-  ),
-  justOneTestimonal: (quotes: any /* TODO: FIX THIS!*/) =>
-    quotes.length && (
-      <JustOneTestimonial
-        quotes={quotes?.length ? quotes : []}
-        key={quotes.length}
-      />
-    ),
-};
-
-export const oldSlides = {
   postSummerSchool: (
     <div
       className={`${styles.emblaSlide} ${styles.hideText}`}
@@ -306,22 +306,6 @@ export const oldSlides = {
       <h2>
         <Link href="/origins">The Surprising History of Old School</Link>
       </h2>
-    </div>
-  ),
-  ageismAwarenessDay: (
-    <div
-      className={`${styles.emblaSlide} ${styles.hideText}`}
-      style={{
-        backgroundImage: `url(images/carousel/ageismAwarenessDay.png)`,
-        backgroundRepeat: "no-repeat",
-      }}
-    >
-      <a
-        href="https://www.asaging.org/ageism-awareness"
-        className={styles.fullLink}
-        target="_blank"
-        rel="noopener noreferrer"
-      ></a>
     </div>
   ),
   oldWelcome: (

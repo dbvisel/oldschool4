@@ -252,3 +252,13 @@ padding: 0 15vh;
 .gridSlide p a {
   font-weight: bold;
 }
+
+.winterSchoolSlide {
+  background-color: var(--orange);
+}
+
+.winterSchoolSlide h2 a:hover {
+  text-decoration: none !important;
+  color: var(--white) !important;
+  text-shadow: none;
+}
