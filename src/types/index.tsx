@@ -48,7 +48,7 @@ export interface EventRecord {
 export interface PersonRecord {
   id: string;
   name: string;
-  type: "team" | "collaborator";
+  type: "team" | "collaborator" | "Fellow";
   image: Image;
   title: string;
   bio: string;
