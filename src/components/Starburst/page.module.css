@@ -1,0 +1,50 @@
+.star {
+  font-style: italic;
+  background-color: var(--orange);
+  color: var(--white);
+  width: 4em;
+  height: 4em;
+  text-align: center;
+  color: #fff;
+  user-select: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0.5em;
+  transform: rotate(-20deg);
+  transition: 0.25s linear;
+  position: absolute;
+  right: 0;
+}
+
+.star:hover {
+  transform: rotate(0deg);
+}
+
+.star:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: inherit;
+  z-index: -1;
+  transform: rotate(30deg);
+}
+
+.star:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: inherit;
+  z-index: -1;
+  transform: rotate(-30deg);
+}
+
+.star a {
+  color: var(--white);
+}

@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import { Link } from "next-view-transitions";
+import Starburst from "@/components/Starburst";
 import dynamic from "next/dynamic";
 const Event = dynamic(() => import("@/components/Event"), { ssr: false });
 import styles from "./page.module.css";
@@ -9,10 +10,13 @@ const EventsPage = async () => {
   const events = await getCleanEvents();
   return (
     <article className="noscroll">
-      <h2 className="pageheader">Events</h2>
-      <h3 className={`tagline ${styles.taglineMarginTweak}`}>
-        Submit events <Link href={`/events/submit`}>here</Link>!
-      </h3>
+      <div className={styles.eventsHeader}>
+        <h2 className="pageheader">Events</h2>
+        <h3 className={`tagline ${styles.taglineMarginTweak}`}>
+          Submit events <Link href={`/events/submit`}>here</Link>!
+        </h3>
+        <Starburst link={"/events/winter-school"} text="Winter School!" />
+      </div>
       {events.length ? (
         events.map((event) => <Event event={event} key={event.id} />)
       ) : (

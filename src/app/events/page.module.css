@@ -1,9 +1,26 @@
 .clickhere {
-	text-align: center;
-	margin: var(--paddingOutside);
+  text-align: center;
+  margin: var(--paddingOutside);
 }
 
 .taglineMarginTweak {
-	margin-top: calc(0px - var(--paddingInside));
-	margin-bottom: var(--paddingOutside);
+  margin-top: calc(0px - var(--paddingInside));
+  margin-bottom: var(--paddingOutside);
+}
+
+.eventsHeader {
+  width: 100%;
+  max-width: 1000px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  position: sticky;
+  padding: var(--paddingInside) 0;
+  top: 0;
+  background-color: var(--white);
+  z-index: 999;
+}
+
+.eventsHeader h3 {
+  margin-top: 0;
 }
