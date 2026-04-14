@@ -15,7 +15,11 @@ const EventsPage = async () => {
         <h3 className={`tagline ${styles.taglineMarginTweak}`}>
           Submit events <Link href={`/events/submit`}>here</Link>!
         </h3>
-        <Starburst link={"/events/winter-school"} text="Winter School!" />
+        <Starburst
+          link={"/events/winter-school"}
+          text="Winter School!"
+          subtext="January 2027"
+        />
       </div>
       {events.length ? (
         events.map((event) => <Event event={event} key={event.id} />)
