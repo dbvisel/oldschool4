@@ -26,7 +26,7 @@ export default function WinterSchoolPage() {
             lineHeight: "1.55",
             marginBottom: "2em",
             textTransform: "uppercase",
-            letterSpacing: "0.05em",
+            letterSpacing: "0.1em",
             fontWeight: "normal",
           }}
         >
