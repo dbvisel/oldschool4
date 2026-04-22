@@ -131,7 +131,6 @@ export const SlideList = {
         backgroundRepeat: "no-repeat",
       }}
     >
-      {" "}
       <a
         href="https://drive.google.com/file/d/1WU0iQQfmfzAUwBg7hWH_uzUAW3lnISsz/view"
         className={styles.fullLink}
@@ -148,23 +147,16 @@ export const SlideList = {
       />
     ),
   winterSchoolSlide: (
-    <div className={`${styles.emblaSlide} ${styles.winterSchoolSlide}`}>
-      <h2>
-        <Link href="/events/winter-school">
-          <strong>Save the date—January 15-17, 2027—for Winter School.</strong>
-          <br />
-          <span
-            style={{
-              fontWeight: "normal",
-              fontSize: "75%",
-            }}
-          >
-            It’s going to be hot. Not just because it’s in Guadalajara, Mexico.
-            <br />
-            <strong>Learn more.</strong>
-          </span>
-        </Link>
-      </h2>
+    <div
+      className={`${styles.emblaSlide} ${styles.winterSchoolSlide}`}
+      style={{
+        backgroundColor: "var(--black)",
+        backgroundImage: `url(images/carousel/15th-17th.png)`,
+        backgroundSize: "contain",
+        backgroundRepeat: "no-repeat",
+      }}
+    >
+      <Link href="/events/winter-school" className={styles.fullLink} />
     </div>
   ),
 };
