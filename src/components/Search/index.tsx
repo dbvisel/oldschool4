@@ -1,5 +1,5 @@
 "use client";
-import { useState, Suspense, useRef, useEffect } from "react";
+import { useState, Suspense, useRef, useEffect, RefObject, ComponentType } from "react";
 import { renderToString } from "react-dom/server";
 import {
   InstantSearchServerState,
@@ -16,6 +16,7 @@ import { InstantSearchNext } from "react-instantsearch-nextjs";
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
 
 import Hit from "./Hit";
+import { AlgoliaHit } from "@/types/index";
 
 import styles from "./styles.module.css";
 
@@ -31,8 +32,10 @@ type SearchPageProps = {
 // TODO: We should replace the searchbox with one made with useSearchBox():
 // https://www.algolia.com/doc/api-reference/widgets/search-box/react/#hook
 
-const InfiniteHits2 = (props: any) => {
-  const { hits } = useInfiniteHits(props);
+const InfiniteHits2 = (_props: {
+  hitComponent?: ComponentType<{ hit: AlgoliaHit }>;
+}) => {
+  const { hits } = useInfiniteHits();
   return hits && hits.length ? (
     <div className={styles.hitwrapper}>
       <ResponsiveMasonry
@@ -70,15 +73,12 @@ const InfiniteHits2 = (props: any) => {
 export default function SearchPage({ serverState }: SearchPageProps) {
   const [currentQuery, setCurrentQuery] = useState("");
 
-  function useOutsideAlerter(ref: any) {
+  function useOutsideAlerter(ref: RefObject<HTMLDivElement>) {
     useEffect(() => {
-      /**
-       * Alert if clicked on outside of element
-       */
-      function handleClickOutside(event: any) {
+      function handleClickOutside(event: MouseEvent) {
         if (
           ref.current &&
-          !ref.current.contains(event.target) &&
+          !ref.current.contains(event.target as Node) &&
           ref.current?.clientHeight
         ) {
           // TODO: figure out how to close this!

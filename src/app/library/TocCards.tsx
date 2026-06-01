@@ -1,18 +1,19 @@
 import { Link } from "next-view-transitions";
 import styles from "./page.module.css";
+import { CategoryType } from "@/types/index";
 
 export default function TocCards({
   types,
   path,
   reverse = false,
 }: {
-  types: any;
+  types: CategoryType[];
   path: string;
   reverse?: boolean;
 }): React.JSX.Element {
   return (
     <div className={styles.tocCards}>
-      {types.map((type: any, index: number) => (
+      {types.map((type: CategoryType, index: number) => (
         <div
           key={index}
           className={`${styles.tocCard} ${reverse && styles.reverse}`}

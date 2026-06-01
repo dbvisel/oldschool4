@@ -3,6 +3,7 @@ import { Link } from "next-view-transitions";
 import { JustOneTestimonial } from "@/app/about/JustOneTestimonial";
 import { CategorySlide } from "./CategorySlide/";
 import { TopResourcesSlide } from "@/components/TopResources/TopResourcesSlide";
+import { QuoteRecord, ResourceItem } from "@/types/index";
 
 export const SlideList = {
   whatIsOldSchool: (
@@ -139,7 +140,7 @@ export const SlideList = {
       />
     </div>
   ),
-  justOneTestimonal: (quotes: any /* TODO: FIX THIS!*/) =>
+  justOneTestimonal: (quotes: QuoteRecord[]) =>
     quotes.length && (
       <JustOneTestimonial
         quotes={quotes?.length ? quotes : []}
@@ -356,7 +357,7 @@ export const oldSlides = {
       </div>
     </div>
   ),
-  newResources: (newResources: any) =>
+  newResources: (newResources: ResourceItem[]) =>
     newResources.length && (
       <div
         className={styles.emblaSlide}

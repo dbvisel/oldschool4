@@ -4,13 +4,21 @@ import { getCollectionById, getResourceById } from "./../utils/airtable";
 import { possibleCollections } from "@/utils/airtable";
 import { cleanResource } from "./resource";
 import { slugify } from "./../utils/misc";
+import { AirtableRecord, CollectionPageData } from "../types";
 
-const getCollectionData = async ({ params }: { params: any }): Promise<any> => {
+const getCollectionData = async ({
+  params,
+}: {
+  params: { slug: string };
+}): Promise<CollectionPageData> => {
   const { slug } = params;
   // console.log("getCollectionData params:", params);
-  const collectionTypes = await possibleCollections();
+  const collectionTypes = (await possibleCollections()) as Array<{
+    id: string;
+    slug: string;
+  }>;
   // console.log("collectionTypes:", collectionTypes);
-  const thisType = collectionTypes.filter((x: any) => x.slug === slug)[0];
+  const thisType = collectionTypes.filter((x) => x.slug === slug)[0];
   // console.log("thisType:", thisType);
   const collectionData = await getCollectionById(params.slug);
   // console.log("collectionData: ", collectionData);
@@ -25,32 +33,33 @@ const getCollectionData = async ({ params }: { params: any }): Promise<any> => {
   );
   // console.log("resources after clean:", resources);
 
-  const filteredData = resources.sort((x: any, y: any) => {
-    const a = String(x.Alphabetize || x.Title).toUpperCase();
-    const b = String(y.Alphabetize || y.Title).toUpperCase();
+  const filteredData = resources.sort((x: AirtableRecord, y: AirtableRecord) => {
+    const a = String(x.fields["Alphabetize"] || x.fields["Title"]).toUpperCase();
+    const b = String(y.fields["Alphabetize"] || y.fields["Title"]).toUpperCase();
     if (a > b) return 1;
     if (b > a) return -1;
     return 0;
   });
 
-  const filteredCorpus = filteredData.map((x: any) =>
-    `${x.Title} ${x.Short_Description ? x.Short_Description : ""} ${
-      x.Priority_Relevancy_Search && x.Priority_Relevancy_Search.length
-        ? x.Priority_Relevancy_Search.join(" ")
+  const filteredCorpus = filteredData.map((x: AirtableRecord) => {
+    const f = x.fields;
+    return `${f["Title"]} ${f["Short Description"] ? f["Short Description"] : ""} ${
+      f["Priority_Relevancy_Search"] && f["Priority_Relevancy_Search"].length
+        ? f["Priority_Relevancy_Search"].join(" ")
         : ""
     } ${
-      x.Medium_Relevancy_Search && x.Medium_Relevancy_Search.length
-        ? x.Medium_Relevancy_Search.join(" ")
+      f["Medium_Relevancy_Search"] && f["Medium_Relevancy_Search"].length
+        ? f["Medium_Relevancy_Search"].join(" ")
         : ""
     } ${
-      x.Low_Relevancy_Search && x.Low_Relevancy_Search.length
-        ? x.Low_Relevancy_Search.join(" ")
+      f["Low_Relevancy_Search"] && f["Low_Relevancy_Search"].length
+        ? f["Low_Relevancy_Search"].join(" ")
         : ""
-    }`.toLowerCase()
-  );
+    }`.toLowerCase();
+  });
 
   const blurPathedData = await Promise.all(
-    filteredData.map(async (x: any) => {
+    filteredData.map(async (x: AirtableRecord) => {
       if (x.imagePath) {
         x.blurPath = x.imagePath;
         try {
@@ -65,14 +74,14 @@ const getCollectionData = async ({ params }: { params: any }): Promise<any> => {
         } catch (error) {
           console.error(
             "Error with blurpath (getCategoryData)!",
-            x.Title,
+            x.fields["Title"],
             x.imagePath
           );
         }
       }
       return cleanResource(
-        { fields: x, ...x },
-        slugify(x.fields.Slug, x.fields.Title),
+        x,
+        slugify(x.fields["Slug"] || "", x.fields["Title"] || ""),
         []
       );
     })

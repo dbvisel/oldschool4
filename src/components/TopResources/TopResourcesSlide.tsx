@@ -2,9 +2,13 @@
 
 import CardHolder from "@/components/CardHolder";
 import styles from "./styles.module.css";
-// import { LoadingTopResources } from "@/components/TopResources";
+import { ResourceItem } from "@/types/index";
 
-export const TopResourcesSlide = ({ resources }: any) => {
+export const TopResourcesSlide = ({
+  resources,
+}: {
+  resources: ResourceItem[];
+}) => {
   // console.log(resources.length, resources);
   return resources.length ? (
     <div className={styles.slide}>

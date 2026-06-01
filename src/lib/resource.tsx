@@ -1,9 +1,9 @@
-import { ResourceItem } from "@/types/index";
+import { AirtableRecord, ResourceItem } from "@/types/index";
 
 export const cleanResource = (
-  resource: any,
+  resource: AirtableRecord,
   slug: string,
-  subresources: any,
+  subresources: ResourceItem[],
 ): ResourceItem => {
   // This function takesa what's coming back from Airtable and cleans it up to be a ResourceItem.
   // console.log("original:", resource);
@@ -27,11 +27,11 @@ export const cleanResource = (
     hideTitle: resource.fields["Hide title?"] || false,
     dateChanged: resource.fields["Date changed"], // is this real?
     image: {
-      path: resource.imagePath,
-      height: resource.imageHeight,
-      width: resource.imageWidth,
-      alt: resource.fields["Image text"] || resource.fields.Title,
-      blurPath: resource.blurPath,
+      path: resource.imagePath || "",
+      height: resource.imageHeight || 0,
+      width: resource.imageWidth || 0,
+      alt: resource.fields["Image text"] || resource.fields.Title || "",
+      blurPath: resource.blurPath || "",
     },
     description: resource.fields.Description,
     shortDescription: resource.fields["Short Description"],

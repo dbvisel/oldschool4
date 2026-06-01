@@ -7,7 +7,7 @@ import { definedTypes } from "@/utils/categories";
 const CategoryPage = async ({
   params: { slug },
 }: {
-  params: { slug: String };
+  params: { slug: string };
 }) => {
   const { resources } = await getCategoryData({ params: { slug } });
   const thisCategory = definedTypes.filter((x) => x.id === slug)[0];
@@ -34,7 +34,7 @@ export const generateStaticParams = async () => {
 export async function generateMetadata({
   params: { slug },
 }: {
-  params: { slug: String };
+  params: { slug: string };
 }): Promise<Metadata> {
   const thisCategory = definedTypes.filter((x) => x.id === slug)[0];
   const metaData = {

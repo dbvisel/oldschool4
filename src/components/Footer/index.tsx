@@ -2,7 +2,7 @@
 
 import styles from "./styles.module.css";
 import { usePathname } from "next/navigation";
-import MailchimpSubscribe from "react-mailchimp-subscribe";
+import MailchimpSubscribe, { FormHooks, DefaultFormFields } from "react-mailchimp-subscribe";
 import Config from "@/config";
 import EmailListForm from "./EmailListForm";
 import SocialMediaLink from "./SocialMediaLink";
@@ -28,13 +28,13 @@ const Footer = () => {
       <div className={styles.subscribediv} id="subscribe">
         <MailchimpSubscribe
           url={MAILCHIMP_URL}
-          render={(props: any) => {
+          render={(props: FormHooks<DefaultFormFields>) => {
             const { subscribe, status, message } = props || {};
             return (
               <EmailListForm
-                status={status}
-                message={message}
-                onValidated={(formData: any) => subscribe(formData)}
+                status={status ?? ""}
+                message={message instanceof Error ? message.message : (message ?? "")}
+                onValidated={(formData: DefaultFormFields) => subscribe(formData)}
               />
             );
           }}

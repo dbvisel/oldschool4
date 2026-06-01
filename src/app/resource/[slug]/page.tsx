@@ -158,9 +158,9 @@ const ResourcePage = async ({
 export default ResourcePage;
 
 export const generateStaticParams = async () => {
-  const slugs = await possibleSlugs();
+  const slugs = (await possibleSlugs()) as Array<{ id: string; slug: string }>;
   // console.log("Slugs for static params:", slugs);
-  return slugs.map((x: any) => ({ slug: x.slug }));
+  return slugs.map((x) => ({ slug: x.slug }));
 };
 
 export async function generateMetadata({

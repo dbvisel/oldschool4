@@ -2,8 +2,7 @@
 // import Image from "next/image";
 // import { Link } from "next-view-transitions";
 import { possibleCollections } from "@/utils/airtable";
-// import { ResourceItem } from "@/types/index";
-import { ResourceItem } from "@/types/index";
+import { LanguageGroup, ResourceItem } from "@/types/index";
 import CardHolder from "@/components/CardHolder";
 import styles from "./page.module.css";
 import getCollectionData from "@/lib/getCollectionData";
@@ -16,7 +15,7 @@ const CollectionPage = async ({
   const { resources, title, description } = await getCollectionData({
     params: { slug },
   });
-  let sortedLanguageCount: any = [];
+  let sortedLanguageCount: LanguageGroup[] = [];
   let isLanguagePage = true;
   if (title === "Other Languages") {
     isLanguagePage = true;
@@ -58,7 +57,7 @@ const CollectionPage = async ({
       {resources && resources.length ? (
         <div className={styles.resources}>
           {isLanguagePage ? (
-            sortedLanguageCount.map((x: any) => (
+            sortedLanguageCount.map((x: LanguageGroup) => (
               <div key={x.language} className={styles.languageSection}>
                 <h3 className={styles.languageTitle}>{x.language}</h3>
                 <CardHolder
@@ -90,9 +89,12 @@ const CollectionPage = async ({
 export default CollectionPage;
 
 export const generateStaticParams = async () => {
-  const slugs = await possibleCollections();
+  const slugs = (await possibleCollections()) as Array<{
+    id: string;
+    slug: string;
+  }>;
   // console.log("Slugs for static params:", slugs);
-  return slugs.map((x: any) => ({ slug: x.slug }));
+  return slugs.map((x) => ({ slug: x.slug }));
 };
 
 // export async function generateMetadata({

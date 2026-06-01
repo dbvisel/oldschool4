@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import { useState } from "react";
 
 const SocialMediaLink = ({
@@ -9,8 +9,8 @@ const SocialMediaLink = ({
 }: {
   name: string;
   link: string;
-  icon: any;
-  iconOn: any;
+  icon: StaticImageData;
+  iconOn: StaticImageData;
 }) => {
   const [hover, setHover] = useState(false);
   return (

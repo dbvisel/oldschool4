@@ -1,8 +1,8 @@
 // import striptags from "striptags";
 import { getTeam } from "@/utils/airtable";
-import { PersonRecord } from "../types";
+import { AirtableRecord, PersonRecord } from "../types";
 
-const cleanPerson = (data: any): PersonRecord => {
+const cleanPerson = (data: AirtableRecord): PersonRecord => {
   return {
     id: data.id,
     name: data.fields.Name || "",
@@ -10,8 +10,8 @@ const cleanPerson = (data: any): PersonRecord => {
     title: data.fields.Title,
     website: data.fields.website || "",
     image: {
-      path: data.imagePath,
-      blurPath: data.imagePath,
+      path: data.imagePath || "",
+      blurPath: data.imagePath || "",
       alt: data.fields.Name,
       width: data.fields.Attachments[0].width || 200,
       height: data.fields.Attachments[0].height || 200,
@@ -23,7 +23,7 @@ const cleanPerson = (data: any): PersonRecord => {
 const getCleanTeam = async (): Promise<PersonRecord[]> => {
   const team = await getTeam();
   const cleanedTeam = await Promise.all(
-    team.map((person: any) => cleanPerson(person))
+    team.map((person: AirtableRecord) => cleanPerson(person))
   );
   return cleanedTeam;
 };

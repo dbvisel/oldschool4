@@ -1,6 +1,6 @@
 import striptags from "striptags";
 import { getEvents } from "@/utils/airtable";
-import { EventRecord } from "../types";
+import { AirtableRecord, EventRecord } from "../types";
 import { cleanDate } from "./dates";
 
 const cleanDescriptionText = (text: string): string =>
@@ -16,7 +16,7 @@ const cleanDescriptionText = (text: string): string =>
     .replace("Program:", "<strong>Program:</strong>")
     .replace("Event By:", "<strong>Event By:</strong>");
 
-const cleanEvent = (data: any): EventRecord => {
+const cleanEvent = (data: AirtableRecord): EventRecord => {
   return {
     id: data.id,
     title: data.fields.Title,
@@ -38,7 +38,7 @@ const cleanEvent = (data: any): EventRecord => {
 export const getCleanEvents = async (): Promise<EventRecord[]> => {
   const events = await getEvents();
   const cleanedEvents = await Promise.all(
-    events.map((event: any) => cleanEvent(event))
+    events.map((event: AirtableRecord) => cleanEvent(event))
   );
   return cleanedEvents;
 };

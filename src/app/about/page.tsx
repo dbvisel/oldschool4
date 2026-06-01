@@ -44,7 +44,7 @@ export default function AboutPage() {
             we couldn’t be more excited about Old School’s future.
           </p> */}
           <div style={{ width: "100%" }}>
-            <Image src={roadmap} alt={"Roadmap"} layout="responsive" />
+            <Image src={roadmap} alt={"Roadmap"} style={{ width: "100%", height: "auto" }} />
           </div>
         </div>
       </section>

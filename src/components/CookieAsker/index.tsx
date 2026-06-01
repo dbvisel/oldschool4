@@ -4,9 +4,8 @@ import CookieConsent from "react-cookie-consent";
 
 const CookieAsker = () => {
   function checkConsented() {
-    let decodedCookie: any = decodeURIComponent(document.cookie);
-    decodedCookie = decodedCookie.split(";");
-    decodedCookie = decodedCookie.find((cookie: any) => {
+    const cookieParts = decodeURIComponent(document.cookie).split(";");
+    const decodedCookie = cookieParts.find((cookie: string) => {
       return cookie.substring(0, 13) === "CookieConsent";
     });
     if (!decodedCookie) {

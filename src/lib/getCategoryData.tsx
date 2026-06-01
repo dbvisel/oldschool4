@@ -4,8 +4,13 @@ import { getCategoryById, getResourcesOfType } from "./../utils/airtable";
 import { allTypes } from "./../utils/categories";
 import { cleanResource } from "./resource";
 import { slugify } from "./../utils/misc";
+import { CategoryPageData, FlatAirtableResource } from "../types";
 
-const getCategoryData = async ({ params }: { params: any }): Promise<any> => {
+const getCategoryData = async ({
+  params,
+}: {
+  params: { slug: string };
+}): Promise<CategoryPageData> => {
   const thisType = allTypes.filter((x) => x.id === params.slug)[0];
   const categoryData = await getCategoryById(params.slug);
   const data = await getResourcesOfType(thisType.airtableName);
@@ -17,7 +22,7 @@ const getCategoryData = async ({ params }: { params: any }): Promise<any> => {
   //     data.fields.Subresource[i] = subresource.fields;
   //   }
   // }
-  const filteredData = data.sort((x: any, y: any) => {
+  const filteredData = data.sort((x: FlatAirtableResource, y: FlatAirtableResource) => {
     const a = String(x.Alphabetize || x.Title).toUpperCase();
     const b = String(y.Alphabetize || y.Title).toUpperCase();
     if (a > b) return 1;
@@ -25,7 +30,7 @@ const getCategoryData = async ({ params }: { params: any }): Promise<any> => {
     return 0;
   });
 
-  const filteredCorpus = filteredData.map((x: any) =>
+  const filteredCorpus = filteredData.map((x: FlatAirtableResource) =>
     `${x.Title} ${x.Short_Description ? x.Short_Description : ""} ${
       x.Priority_Relevancy_Search && x.Priority_Relevancy_Search.length
         ? x.Priority_Relevancy_Search.join(" ")
@@ -42,7 +47,7 @@ const getCategoryData = async ({ params }: { params: any }): Promise<any> => {
   );
 
   const blurPathedData = await Promise.all(
-    filteredData.map(async (x: any) => {
+    filteredData.map(async (x: FlatAirtableResource) => {
       if (x.imagePath) {
         x.blurPath = x.imagePath;
         try {
@@ -62,7 +67,7 @@ const getCategoryData = async ({ params }: { params: any }): Promise<any> => {
           );
         }
       }
-      return cleanResource({ fields: x, ...x }, slugify(x.Slug, x.Title), []);
+      return cleanResource({ fields: x, ...x }, slugify(x.Slug || "", x.Title || ""), []);
     }),
   );
 

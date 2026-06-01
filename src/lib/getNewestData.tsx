@@ -3,8 +3,12 @@ import { getPlaiceholder } from "plaiceholder";
 import { getNewResources } from "./../utils/airtable";
 import { cleanResource } from "./resource";
 import { slugify } from "./../utils/misc";
+import { FlatAirtableResource, ResourceItem } from "../types";
 
-const getNewestData = async (): Promise<any> => {
+const getNewestData = async (): Promise<{
+  resources: ResourceItem[];
+  corpus: string[];
+}> => {
   const data = await getNewResources();
 
   // const data = await getResourceById(id);
@@ -14,7 +18,7 @@ const getNewestData = async (): Promise<any> => {
   //     data.fields.Subresource[i] = subresource.fields;
   //   }
   // }
-  const filteredData = data.sort((x: any, y: any) => {
+  const filteredData = data.sort((x: FlatAirtableResource, y: FlatAirtableResource) => {
     const a = String(x.Alphabetize || x.Title).toUpperCase();
     const b = String(y.Alphabetize || y.Title).toUpperCase();
     if (a > b) return 1;
@@ -22,7 +26,7 @@ const getNewestData = async (): Promise<any> => {
     return 0;
   });
 
-  const filteredCorpus = filteredData.map((x: any) =>
+  const filteredCorpus = filteredData.map((x: FlatAirtableResource) =>
     `${x.Title} ${x.Short_Description ? x.Short_Description : ""} ${
       x.Priority_Relevancy_Search && x.Priority_Relevancy_Search.length
         ? x.Priority_Relevancy_Search.join(" ")
@@ -39,7 +43,7 @@ const getNewestData = async (): Promise<any> => {
   );
 
   const blurPathedData = await Promise.all(
-    filteredData.map(async (x: any) => {
+    filteredData.map(async (x: FlatAirtableResource) => {
       if (x.imagePath) {
         x.blurPath = x.imagePath;
         try {
@@ -59,7 +63,7 @@ const getNewestData = async (): Promise<any> => {
           );
         }
       }
-      return cleanResource({ fields: x, ...x }, slugify(x.Slug, x.Title), []);
+      return cleanResource({ fields: x, ...x }, slugify(x.Slug || "", x.Title || ""), []);
     })
   );
 

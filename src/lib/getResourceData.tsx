@@ -1,12 +1,12 @@
 import fs from "fs/promises";
 import { getPlaiceholder } from "plaiceholder";
 import { possibleSlugs, getResourceById } from "@/utils/airtable";
-import { ResourceItem } from "@/types/index";
+import { AirtableRecord, ResourceItem } from "@/types/index";
 import { slugify } from "@/utils/misc";
 import { cleanResource } from "./resource";
 
 const getSubresource = async (id: string): Promise<ResourceItem | null> => {
-  const subresource: any = await getResourceById(id);
+  const subresource: AirtableRecord = await getResourceById(id);
   // console.log(subresource);
   if (
     !subresource.fields["Status"] ||
@@ -56,8 +56,8 @@ const getImage = async (resource: ResourceItem): Promise<ResourceItem> => {
 };
 
 const getResourceData = async (slug: string): Promise<ResourceItem> => {
-  const slugs = await possibleSlugs();
-  const record = slugs.find((x: any) => x.slug === slug);
+  const slugs = (await possibleSlugs()) as Array<{ id: string; slug: string }>;
+  const record = slugs.find((x) => x.slug === slug);
   if (!record) {
     console.error("Invalid slug:", slug);
     // Is this the best way to do this?
@@ -69,7 +69,7 @@ const getResourceData = async (slug: string): Promise<ResourceItem> => {
     };
   }
   const id = record.id;
-  const data: any = await getResourceById(id);
+  const data: AirtableRecord = await getResourceById(id);
 
   // First, clean up the subresources
   // console.log(data);

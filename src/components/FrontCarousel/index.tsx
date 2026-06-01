@@ -2,13 +2,14 @@
 
 import Carousel from "@/components/Carousel";
 import { SlideList } from "./slides";
+import { QuoteRecord } from "@/types/index";
 
 const FrontCarousel = ({
   quotes,
   // newResources, // this is needed for SlideList.newResources
 }: {
-  quotes: any;
-  // newResources: any;
+  quotes: QuoteRecord[];
+  // newResources: ResourceItem[];
 }) => {
   return (
     <Carousel>

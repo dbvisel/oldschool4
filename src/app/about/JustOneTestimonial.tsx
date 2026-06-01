@@ -3,12 +3,17 @@
 import { useEffect, useState } from "react";
 import { useInView } from "react-intersection-observer";
 import styles from "./page.module.css";
+import { QuoteRecord } from "@/types/index";
 
-export const JustOneTestimonial = ({ quotes }: any) => {
+export const JustOneTestimonial = ({
+  quotes,
+}: {
+  quotes: QuoteRecord[];
+}) => {
   const { ref, inView } = useInView({
     threshold: 0,
   });
-  const [thisQuote, setThisQuote] = useState<any>({});
+  const [thisQuote, setThisQuote] = useState<QuoteRecord | null>(null);
   const [flipped, setFlipped] = useState(false);
   useEffect(() => {
     if (quotes.length) {

@@ -2,26 +2,22 @@
 
 import ResourceCard from "../ResourceCard";
 import styles from "./styles.module.css";
+import { AlgoliaHit } from "@/types/index";
 
-interface ResourceRecord {
-  title: string;
-  slug: string;
-}
-
-const Hit = ({ hit }: { hit: any }) => {
+const Hit = ({ hit }: { hit: AlgoliaHit }) => {
   // console.log("hit", hit);
   if (hit.resultType === "event") {
     const cleanedHit = {
-      title: hit.title,
-      id: hit.id,
+      title: hit.title ?? "",
+      id: hit.id ?? hit.objectID,
       shortDescription: hit.description,
       slug: `/events/`,
       image: {
-        id: hit.id,
+        id: hit.id ?? hit.objectID,
         extension: "",
         width: 0,
         height: 0,
-        alt: hit.title,
+        alt: hit.title ?? "",
         path: "",
         blurPath: "",
       },
@@ -38,17 +34,17 @@ const Hit = ({ hit }: { hit: any }) => {
     );
   }
   const cleanedHit = {
-    title: hit["Title"],
-    id: hit.id,
-    slug: hit.slug,
+    title: hit["Title"] ?? "",
+    id: hit.id ?? hit.objectID,
+    slug: hit.slug ?? "",
     types: hit["Types"],
     isNew: Boolean(hit.ShowOnFrontPage),
     hideTitle: Boolean(hit["hideTitle"]),
     image: {
       path: `/images/resources/${hit.image?.id}.${hit.image?.extension}`,
       blurPath: `/Images/resources/${hit.image?.id}.${hit.image?.extension}`,
-      width: hit.image?.width,
-      height: hit.image?.height,
+      width: hit.image?.width ?? 0,
+      height: hit.image?.height ?? 0,
       alt: hit["Short_Description"] || hit.title || "",
     },
     shortDescription: hit["Short_Description"],

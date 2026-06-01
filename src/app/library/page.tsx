@@ -19,12 +19,12 @@ const noSupplies = definedTypes
 export default async function LearnPage() {
   const rawSubjectTypes = await getCollections();
   const subjectTypes = rawSubjectTypes
-    .map((x: any) => ({
-      name: x.fields.Collection,
-      id: x.fields.slug,
-      tag: x.fields.Description || "",
+    .map((x: { fields: Record<string, any>; id: string }) => ({
+      name: x.fields.Collection as string,
+      id: x.fields.slug as string,
+      tag: (x.fields.Description as string) || "",
     }))
-    .sort((a: any, b: any) => {
+    .sort((a: { name: string }, b: { name: string }) => {
       if (a.name < b.name) return -1;
       if (a.name > b.name) return 1;
       return 0;

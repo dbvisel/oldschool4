@@ -1,6 +1,7 @@
 import { getQuotes } from "@/utils/airtable";
 import Carousel from "@/components/Carousel";
 import styles from "./page.module.css";
+import { QuoteRecord } from "@/types/index";
 
 // const getQuoteType = (quote: any) => {
 //   if (quote.fields.Offering && quote.fields.Offering.length) {
@@ -20,7 +21,7 @@ export const TestimonialCarousel = async ({ justWorkshops = false }) => {
     <Carousel
       header={<h2 className={styles.quoteHeader}>What people are saying:</h2>}
     >
-      {quotes.map((quote: any) => (
+      {quotes.map((quote: QuoteRecord) => (
         <div
           className={styles.emblaSlide}
           style={{ backgroundColor: "var(--white" }}
