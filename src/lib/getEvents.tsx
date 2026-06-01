@@ -1,20 +1,7 @@
-import striptags from "striptags";
 import { getEvents } from "@/utils/airtable";
 import type { AirtableRecord, EventRecord } from "../types";
 import { cleanDate } from "./dates";
-
-const cleanDescriptionText = (text: string): string =>
-  striptags(text.replace(/(?:\r\n|\r|\n)/g, "<br />"), [
-    "br",
-    "p",
-    "a",
-    "em",
-    "strong",
-    "i",
-    "b",
-  ])
-    .replace("Program:", "<strong>Program:</strong>")
-    .replace("Event By:", "<strong>Event By:</strong>");
+import { cleanDescriptionText } from "../utils/text";
 
 const cleanEvent = (data: AirtableRecord): EventRecord => {
   return {

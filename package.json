@@ -10,7 +10,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "postbuild": "node scripts/algolia-next.js"
+    "postbuild": "node scripts/algolia-next.js",
+    "test": "TZ=UTC jest",
+    "test:watch": "TZ=UTC jest --watch"
   },
   "dependencies": {
     "@netlify/functions": "^5.2.0",
@@ -53,6 +55,8 @@
   },
   "devDependencies": {
     "@netlify/plugin-nextjs": "^5.15.9",
+    "@types/jest": "^30.0.0",
+    "jest": "^30.4.2",
     "prettier": "^3.8.3"
   },
   "overrides": {
