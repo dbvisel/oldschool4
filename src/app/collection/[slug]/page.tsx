@@ -2,7 +2,7 @@
 // import Image from "next/image";
 // import { Link } from "next-view-transitions";
 import { possibleCollections } from "@/utils/airtable";
-import { LanguageGroup, ResourceItem } from "@/types/index";
+import type { LanguageGroup, ResourceItem } from "@/types/index";
 import CardHolder from "@/components/CardHolder";
 import styles from "./page.module.css";
 import getCollectionData from "@/lib/getCollectionData";

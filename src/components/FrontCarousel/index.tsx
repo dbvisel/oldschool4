@@ -2,7 +2,7 @@
 
 import Carousel from "@/components/Carousel";
 import { SlideList } from "./slides";
-import { QuoteRecord } from "@/types/index";
+import type { QuoteRecord } from "@/types/index";
 
 const FrontCarousel = ({
   quotes,

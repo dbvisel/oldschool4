@@ -1,6 +1,6 @@
 // import striptags from "striptags";
 import { getTeam } from "@/utils/airtable";
-import { AirtableRecord, PersonRecord } from "../types";
+import type { AirtableRecord, PersonRecord } from "../types";
 
 const cleanPerson = (data: AirtableRecord): PersonRecord => {
   return {

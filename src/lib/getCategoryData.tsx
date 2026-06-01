@@ -4,7 +4,7 @@ import { getCategoryById, getResourcesOfType } from "./../utils/airtable";
 import { allTypes } from "./../utils/categories";
 import { cleanResource } from "./resource";
 import { slugify } from "./../utils/misc";
-import { CategoryPageData, FlatAirtableResource } from "../types";
+import type { CategoryPageData, FlatAirtableResource } from "../types";
 
 const getCategoryData = async ({
   params,

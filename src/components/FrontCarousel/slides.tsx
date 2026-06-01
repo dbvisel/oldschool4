@@ -3,7 +3,7 @@ import { Link } from "next-view-transitions";
 import { JustOneTestimonial } from "@/app/about/JustOneTestimonial";
 import { CategorySlide } from "./CategorySlide/";
 import { TopResourcesSlide } from "@/components/TopResources/TopResourcesSlide";
-import { QuoteRecord, ResourceItem } from "@/types/index";
+import type { QuoteRecord, ResourceItem } from "@/types/index";
 
 export const SlideList = {
   whatIsOldSchool: (

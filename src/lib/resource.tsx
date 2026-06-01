@@ -1,4 +1,4 @@
-import { AirtableRecord, ResourceItem } from "@/types/index";
+import type { AirtableRecord, ResourceItem } from "@/types/index";
 
 export const cleanResource = (
   resource: AirtableRecord,

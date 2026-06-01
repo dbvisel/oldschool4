@@ -3,7 +3,7 @@ import { getPlaiceholder } from "plaiceholder";
 import { getNewResources } from "./../utils/airtable";
 import { cleanResource } from "./resource";
 import { slugify } from "./../utils/misc";
-import { FlatAirtableResource, ResourceItem } from "../types";
+import type { FlatAirtableResource, ResourceItem } from "../types";
 
 const getNewestData = async (): Promise<{
   resources: ResourceItem[];

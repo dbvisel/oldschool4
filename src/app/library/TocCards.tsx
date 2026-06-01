@@ -1,6 +1,6 @@
 import { Link } from "next-view-transitions";
 import styles from "./page.module.css";
-import { CategoryType } from "@/types/index";
+import type { CategoryType } from "@/types/index";
 
 export default function TocCards({
   types,

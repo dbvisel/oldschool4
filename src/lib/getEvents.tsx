@@ -1,6 +1,6 @@
 import striptags from "striptags";
 import { getEvents } from "@/utils/airtable";
-import { AirtableRecord, EventRecord } from "../types";
+import type { AirtableRecord, EventRecord } from "../types";
 import { cleanDate } from "./dates";
 
 const cleanDescriptionText = (text: string): string =>

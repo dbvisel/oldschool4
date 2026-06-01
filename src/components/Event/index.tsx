@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useLayoutEffect } from "react";
-import { EventRecord } from "@/types";
+import type { EventRecord } from "@/types";
 import { cleanDate } from "@/lib/dates";
 import styles from "./index.module.css";
 

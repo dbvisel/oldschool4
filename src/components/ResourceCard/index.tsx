@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { Link } from "next-view-transitions";
-import { ResourceItem } from "@/types/index";
+import type { ResourceItem } from "@/types/index";
 import styles from "./page.module.css";
 import calendarIcon from "./images/calendar.svg";
 import { getDefinedName } from "@/utils/categories";

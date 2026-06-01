@@ -2,7 +2,7 @@
 
 import CardHolder from "@/components/CardHolder";
 import styles from "./styles.module.css";
-import { ResourceItem } from "@/types/index";
+import type { ResourceItem } from "@/types/index";
 
 export const TopResourcesSlide = ({
   resources,

@@ -1,6 +1,6 @@
 "use client";
 
-import { ResourceItem } from "@/types/index";
+import type { ResourceItem } from "@/types/index";
 import ResourceCard from "@/components/ResourceCard";
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
 import styles from "./index.module.css";

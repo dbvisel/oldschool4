@@ -4,7 +4,7 @@ import { Fukidashi } from "react-fukidashi";
 import "react-fukidashi/style.css";
 import ResourceCard from "@/components/ResourceCard";
 import styles from "./page.module.css";
-import { ResourceItem } from "@/types/index";
+import type { ResourceItem } from "@/types/index";
 
 import useWidth from "@/hooks/useWidth";
 

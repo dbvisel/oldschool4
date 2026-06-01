@@ -4,7 +4,7 @@ import { getCollectionById, getResourceById } from "./../utils/airtable";
 import { possibleCollections } from "@/utils/airtable";
 import { cleanResource } from "./resource";
 import { slugify } from "./../utils/misc";
-import { AirtableRecord, CollectionPageData } from "../types";
+import type { AirtableRecord, CollectionPageData } from "../types";
 
 const getCollectionData = async ({
   params,

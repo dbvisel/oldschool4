@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { useInView } from "react-intersection-observer";
 import styles from "./page.module.css";
-import { QuoteRecord } from "@/types/index";
+import type { QuoteRecord } from "@/types/index";
 
 export const JustOneTestimonial = ({
   quotes,

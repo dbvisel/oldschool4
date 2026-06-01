@@ -2,7 +2,7 @@
 
 import styles from "./styles.module.css";
 import { usePathname } from "next/navigation";
-import MailchimpSubscribe, { FormHooks, DefaultFormFields } from "react-mailchimp-subscribe";
+import MailchimpSubscribe, { type FormHooks, type DefaultFormFields } from "react-mailchimp-subscribe";
 import Config from "@/config";
 import EmailListForm from "./EmailListForm";
 import SocialMediaLink from "./SocialMediaLink";

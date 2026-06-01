@@ -1,7 +1,7 @@
 import fs from "fs/promises";
 import { getPlaiceholder } from "plaiceholder";
 import { possibleSlugs, getResourceById } from "@/utils/airtable";
-import { AirtableRecord, ResourceItem } from "@/types/index";
+import type { AirtableRecord, ResourceItem } from "@/types/index";
 import { slugify } from "@/utils/misc";
 import { cleanResource } from "./resource";
 

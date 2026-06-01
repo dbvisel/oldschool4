@@ -16,7 +16,7 @@ import { InstantSearchNext } from "react-instantsearch-nextjs";
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
 
 import Hit from "./Hit";
-import { AlgoliaHit } from "@/types/index";
+import type { AlgoliaHit } from "@/types/index";
 
 import styles from "./styles.module.css";
 

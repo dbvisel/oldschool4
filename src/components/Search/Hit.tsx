@@ -2,7 +2,7 @@
 
 import ResourceCard from "../ResourceCard";
 import styles from "./styles.module.css";
-import { AlgoliaHit } from "@/types/index";
+import type { AlgoliaHit } from "@/types/index";
 
 const Hit = ({ hit }: { hit: AlgoliaHit }) => {
   // console.log("hit", hit);
