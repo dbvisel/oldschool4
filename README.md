@@ -24,6 +24,7 @@ View transitions courtesy of this: https://github.com/shuding/next-view-transiti
  - Maybe: figure out how to cache blurPaths? How much time are we spending on that?
  - [ ] make subresources that are PDFs open in their own page with local PDF.
  - [ ] accessibility testing
+ - [ ] update to Next 16 (see NEXTJS_MIGRATION.md)
 
 ## Remember
 
