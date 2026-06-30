@@ -82,6 +82,17 @@ export default function WinterSchoolPage() {
             </p>
           </div>
         </div>
+        <h2 style={{ textAlign: "center", marginTop: "var(--paddingOutside)" }}>
+          <a
+            href="https://winter-school.raiselysite.com/en/"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{ textDecoration: "underline" }}
+            className={styles.fullLink}
+          >
+            Register here!
+          </a>
+        </h2>
       </section>
     </article>
   );
