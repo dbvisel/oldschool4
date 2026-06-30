@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-
+import Image from "next/image";
 import styles from "./page.module.css";
 
 export default function WinterSchoolPage() {
@@ -34,6 +34,20 @@ export default function WinterSchoolPage() {
           <br />
           Not just because it’s in Guadalajara, Mexico.
         </h3>
+        <a
+          href="https://winter-school.raiselysite.com/en/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <Image
+            src="/images/carousel/winterschool.jpg"
+            placeholder="blur"
+            blurDataURL={"/images/1.jpg"}
+            alt="header"
+            width={800}
+            height={(800 * 1250) / 2000}
+          />
+        </a>
         <div className={styles.topDiv}>
           <div>
             <p>

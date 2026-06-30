@@ -152,12 +152,17 @@ export const SlideList = {
       className={`${styles.emblaSlide} ${styles.winterSchoolSlide}`}
       style={{
         backgroundColor: "var(--black)",
-        backgroundImage: `url(images/carousel/15th-17th.png)`,
+        backgroundImage: `url(images/carousel/winterschool.jpg)`,
         backgroundSize: "contain",
         backgroundRepeat: "no-repeat",
       }}
     >
-      <Link href="/events/winter-school" className={styles.fullLink} />
+      <a
+        href="https://winter-school.raiselysite.com/en/"
+        target="_blank"
+        rel="noopener noreferrer"
+        className={styles.fullLink}
+      />
     </div>
   ),
 };
