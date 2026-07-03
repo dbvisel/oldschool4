@@ -9,17 +9,25 @@ export default function WinterSchoolPage() {
         <h2
           style={{
             textAlign: "center",
-            fontStyle: "italic",
+            fontStyle: "normal",
             lineHeight: "1.1 !important",
           }}
         >
-          Save the date—
-          <br />
-          <span style={{ fontStyle: "normal" }}>January 15-17, 2027</span>
-          <br />
-          —for Winter School.
+          {" "}
+          <a
+            href="https://winter-school.raiselysite.com/en/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Winter School
+            <br />
+            <span style={{ fontStyle: "italic" }}>January 15-17, 2027</span>
+            <br />
+            Registration now open!
+          </a>
         </h2>
-        <h3
+
+        {/* <h3
           style={{
             textAlign: "center",
             fontSize: "1.5em",
@@ -33,7 +41,7 @@ export default function WinterSchoolPage() {
           It’s going to be hot.
           <br />
           Not just because it’s in Guadalajara, Mexico.
-        </h3>
+        </h3> */}
         <a
           href="https://winter-school.raiselysite.com/en/"
           target="_blank"
@@ -49,7 +57,7 @@ export default function WinterSchoolPage() {
           />
         </a>
         <div className={styles.topDiv}>
-          <div>
+          {/*<!--<div>
             <p>
               In August, 2024, Old School hosted its first in-person convening,
               in Montréal, Canada. Forty age advocates came together for
@@ -80,9 +88,9 @@ export default function WinterSchoolPage() {
               newsletter. And save the date. There was a waiting list in 2024,
               just sayin’, and we’ve come a long way since then.
             </p>
-          </div>
+          </div>-->*/}
         </div>
-        <h2 style={{ textAlign: "center", marginTop: "var(--paddingOutside)" }}>
+        {/* <h2 style={{ textAlign: "center", marginTop: "var(--paddingOutside)" }}>
           <a
             href="https://winter-school.raiselysite.com/en/"
             target="_blank"
@@ -92,7 +100,7 @@ export default function WinterSchoolPage() {
           >
             Register here!
           </a>
-        </h2>
+        </h2> */}
       </section>
     </article>
   );
