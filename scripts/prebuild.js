@@ -113,17 +113,18 @@ const prebuild = async () => {
     console.log("Team cache is up to date. Skipping team image download.");
   } else {
     console.log(
-      "Team cache not found or out of date. Downloading team images."
+      "Team cache not found or out of date. Downloading team images.",
     );
-    for (let i = 0; i < team.length; i++) {
-      if (team[i].fields["Name"] && team[i].fields["Attachments"].length) {
+    const teamLength = team?.length || 0;
+    for (let i = 0; i < teamLength; i++) {
+      if (team[i].fields["Name"] && team[i]?.fields["Attachments"]?.length) {
         const thisAttachment = team[i].fields["Attachments"][0];
         const theUrl = thisAttachment.thumbnails.large.url; // because this is 200 x 200
         const theFilename = team[i].id;
         const theExtension = thisAttachment.filename.split(".").pop();
         const done = await downloadFile(
           theUrl,
-          `./public/images/team/${theFilename}.${theExtension}`
+          `./public/images/team/${theFilename}.${theExtension}`,
         );
         // console.log(thisAttachment, done);
       } else {
@@ -151,11 +152,11 @@ const prebuild = async () => {
 
   if (resourcesCache === resourcesCurrent) {
     console.log(
-      "Resource image cache is up to date. Skipping resource image download."
+      "Resource image cache is up to date. Skipping resource image download.",
     );
   } else {
     console.log(
-      "Resource image cache not found or out of date. Downloading resource images."
+      "Resource image cache not found or out of date. Downloading resource images.",
     );
     // TODO: would it be better to do this as await Promise.all(resources.map(async (x) => { ... }))?
     // it seems like this works, though using await in a loop is bad.
@@ -171,7 +172,7 @@ const prebuild = async () => {
         } else {
           const done = await downloadFile(
             theUrl,
-            `./public/images/resources/${theFilename}.${theExtension}`
+            `./public/images/resources/${theFilename}.${theExtension}`,
           );
         }
         // console.log(done);
@@ -209,7 +210,7 @@ const prebuild = async () => {
         const theExtension = "pdf";
         const done = await downloadPdf(
           thisUrl,
-          `./public/pdfs/${theFilename}.${theExtension}`
+          `./public/pdfs/${theFilename}.${theExtension}`,
         );
         if (done) {
           console.log(
@@ -217,7 +218,7 @@ const prebuild = async () => {
             "Downloaded PDF as",
             thisResourceId,
             ": ",
-            thisUrl
+            thisUrl,
           );
 
           pdfsCurrent.push(thisResourceId);
@@ -241,7 +242,7 @@ const prebuild = async () => {
             const theExtension = "pdf";
             const done = await downloadPdf(
               downloadURL,
-              `./public/pdfs/${theFilename}.${theExtension}`
+              `./public/pdfs/${theFilename}.${theExtension}`,
             );
             if (done) {
               console.log(
@@ -249,7 +250,7 @@ const prebuild = async () => {
                 "Downloaded Google PDF as",
                 thisResourceId,
                 ": ",
-                downloadURL
+                downloadURL,
               );
 
               pdfsCurrent.push(thisResourceId);
@@ -261,7 +262,7 @@ const prebuild = async () => {
               console.log(
                 "Google PDF failed:",
                 resources[i].fields.Title,
-                thisUrl
+                thisUrl,
               );
             }
           } catch (e) {
@@ -282,7 +283,7 @@ const prebuild = async () => {
     failureList
       .map((x, i) => i + 1 + ": " + x.title + " – " + x.url)
       .join("\n"),
-    "\n\n"
+    "\n\n",
   );
 
   console.log("Prebuild done!");
