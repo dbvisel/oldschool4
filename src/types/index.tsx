@@ -48,7 +48,7 @@ export interface EventRecord {
 export interface PersonRecord {
   id: string;
   name: string;
-  type: "team" | "collaborator" | "Fellow";
+  type: "team" | "collaborator" | "Fellow" | "advisory";
   image: Image;
   title: string;
   bio: string;
@@ -133,8 +133,8 @@ export interface AlgoliaHit {
   Types?: string[];
   ShowOnFrontPage?: boolean;
   hideTitle?: boolean;
-  "Short_Description"?: string;
-  "Resource_URL"?: string;
+  Short_Description?: string;
+  Resource_URL?: string;
   image?: {
     id: string;
     extension: string;

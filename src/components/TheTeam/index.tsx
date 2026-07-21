@@ -7,6 +7,7 @@ const TheTeam = async () => {
   const team = await getCleanTeam();
   const theTeam = team.filter((x) => x.type === "team");
   const theFellows = team.filter((x) => x.type === "Fellow");
+  const advisory = team.filter((x) => x.type === "advisory");
   // const collaborators = team.filter((x) => x.type === "collaborator");
   return (
     <div className={styles.teamWrapper}>
@@ -52,6 +53,46 @@ const TheTeam = async () => {
       <h2>Fellows</h2>
       <div>
         {theFellows.map((person, index) => {
+          const hasWebsite = person.website.length;
+          <div className={styles.person}>f</div>;
+          return (
+            <div className={styles.person} key={index}>
+              <Image
+                src={person.image.path}
+                alt={person.name}
+                width={person.image.width}
+                height={person.image.height}
+                style={{ transform: `rotate(${index % 2 ? -3 : 3}deg)` }}
+                priority
+              />
+              <div>
+                <h3>
+                  {hasWebsite ? (
+                    <a
+                      href={person.website}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {person.name}
+                    </a>
+                  ) : (
+                    person.name
+                  )}{" "}
+                  <span>{person.title}</span>
+                </h3>
+                <p
+                  dangerouslySetInnerHTML={{
+                    __html: person.bio,
+                  }}
+                />
+              </div>
+            </div>
+          );
+        })}
+      </div>
+      <h2>Advisory Board</h2>
+      <div>
+        {advisory.map((person, index) => {
           const hasWebsite = person.website.length;
           <div className={styles.person}>f</div>;
           return (
