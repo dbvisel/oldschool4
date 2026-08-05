@@ -12,6 +12,18 @@ export default function AboutPage() {
       <section className={styles.theTeam} style={{ scrollSnapAlign: "none" }}>
         <div>
           <TheTeam />
+          <p
+            style={{
+              color: "var(--black)",
+              maxWidth: "600px",
+              margin: "0 auto",
+              textAlign: "center",
+            }}
+          >
+            Old School Hub&rsquo;s fiscal sponsor is Social and Environmental
+            Entrepreneurs (SEE), a registered public charity, which provides
+            non-profit status. Your donation is fully tax-deductible.
+          </p>
         </div>
       </section>
     </article>
