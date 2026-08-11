@@ -8,6 +8,7 @@ import styles from "./styles.module.css";
 const Search = dynamic(() => import("@/components/Search"), { ssr: false });
 import logo from "./images/horizontallogo-threeline.svg";
 import { definedTypes } from "../../utils/categories";
+import Starburst from "@/components/Starburst";
 
 type RefObject = {
   current: HTMLUListElement | null;
@@ -181,6 +182,15 @@ const Menu = () => {
             </li>
           </ul>
         </div>
+      </div>
+      <div className={styles.starburstHolder}>
+        <Starburst
+          link={"/events/winter-school"}
+          text="Winter School!"
+          subtext="January 2027"
+          backgroundColor="var(--white)"
+          color="var(--orange)"
+        />
       </div>
     </header>
   );

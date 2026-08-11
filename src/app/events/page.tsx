@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 import { Link } from "next-view-transitions";
-import Starburst from "@/components/Starburst";
+// import Starburst from "@/components/Starburst";
 import dynamic from "next/dynamic";
 const Event = dynamic(() => import("@/components/Event"), { ssr: false });
 import styles from "./page.module.css";
@@ -15,11 +15,11 @@ const EventsPage = async () => {
         <h3 className={`tagline ${styles.taglineMarginTweak}`}>
           Submit events <Link href={`/events/submit`}>here</Link>!
         </h3>
-        <Starburst
+        {/* <Starburst
           link={"/events/winter-school"}
           text="Winter School!"
           subtext="January 2027"
-        />
+        /> */}
       </div>
       {events.length ? (
         events.map((event) => <Event event={event} key={event.id} />)

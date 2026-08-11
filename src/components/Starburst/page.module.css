@@ -1,7 +1,7 @@
 .star {
   font-style: italic;
-  background-color: var(--orange);
-  color: var(--white);
+  background-color: var(--starColor);
+  color: var(--textColor);
   width: 4.5em;
   height: 4.5em;
   text-align: center;
@@ -52,5 +52,5 @@
 }
 
 .star a {
-  color: var(--white);
+  color: var(--textColor);
 }
