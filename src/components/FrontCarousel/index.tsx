@@ -14,6 +14,7 @@ const FrontCarousel = ({
   return (
     <Carousel>
       {SlideList.whatIsOldSchool}
+      {SlideList.winterSchoolSlide}
       {SlideList.whereToBegin}
       {/* {SlideList.jobSlide} */}
       {SlideList.justOneTestimonal(quotes)}
@@ -25,7 +26,6 @@ const FrontCarousel = ({
       {/* {SlideList.centurySummit} */}
       {/* {SlideList.ageismAwarenessDay} */}
       {SlideList.raisely}
-      {SlideList.winterSchoolSlide}
     </Carousel>
   );
 };
