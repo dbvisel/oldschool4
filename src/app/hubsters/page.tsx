@@ -124,7 +124,7 @@ export default function ProjectsPage() {
           src="https://airtable.com/embed/appPRDpl6oe7xsRYg/paggkrte2K3lKcCiH/form"
           frameBorder="0"
           width="100%"
-          height="1200"
+          height="1400"
           // onMouseWheel=""
           style={{ background: "transparent", border: "none" }}
         ></iframe>
