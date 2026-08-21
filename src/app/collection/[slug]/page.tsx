@@ -7,11 +7,11 @@ import CardHolder from "@/components/CardHolder";
 import styles from "./page.module.css";
 import getCollectionData from "@/lib/getCollectionData";
 
-const CollectionPage = async ({
-  params: { slug },
-}: {
-  params: { slug: string };
-}) => {
+const CollectionPage = async (props: { params: Promise<{ slug: string }> }) => {
+  const params = await props.params;
+
+  const { slug } = params;
+
   const { resources, title, description } = await getCollectionData({
     params: { slug },
   });

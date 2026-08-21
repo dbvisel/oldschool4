@@ -5,6 +5,9 @@ import { useInView } from "react-intersection-observer";
 import styles from "./page.module.css";
 import type { QuoteRecord } from "@/types/index";
 
+const randomQuote = (quotes: QuoteRecord[]) =>
+  quotes.length ? quotes[Math.floor(Math.random() * quotes.length)] : null;
+
 export const JustOneTestimonial = ({
   quotes,
 }: {
@@ -13,18 +16,16 @@ export const JustOneTestimonial = ({
   const { ref, inView } = useInView({
     threshold: 0,
   });
-  const [thisQuote, setThisQuote] = useState<QuoteRecord | null>(null);
+  const [thisQuote, setThisQuote] = useState<QuoteRecord | null>(() =>
+    randomQuote(quotes)
+  );
   const [flipped, setFlipped] = useState(false);
-  useEffect(() => {
-    if (quotes.length) {
-      setThisQuote(quotes[Math.floor(Math.random() * quotes.length)]);
-    }
-  }, [quotes]);
 
   useEffect(() => {
     // if this slide comes into view, change it.
     if (inView) {
-      setThisQuote(quotes[Math.floor(Math.random() * quotes.length)]);
+      // eslint-disable-next-line react-hooks/set-state-in-effect -- reshuffles the quote shown each time this slide scrolls into view, driven by the IntersectionObserver
+      setThisQuote(randomQuote(quotes));
     }
   }, [inView, quotes]);
 
@@ -53,7 +54,7 @@ export const JustOneTestimonial = ({
             e.preventDefault();
             setFlipped(false);
             setTimeout(() => {
-              setThisQuote(quotes[Math.floor(Math.random() * quotes.length)]);
+              setThisQuote(randomQuote(quotes));
               setFlipped(true);
             }, 50);
           }}

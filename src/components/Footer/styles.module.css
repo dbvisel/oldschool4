@@ -89,7 +89,7 @@
 	opacity: 0.75;
 }
 
-.subscribediv input::placeholder-shown {
+.subscribediv input:placeholder-shown {
 	/* does this do anything? */
 	color: var(--secondaryCream) !important;
 	font-weight: normal;

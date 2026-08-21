@@ -180,6 +180,16 @@ export const getDefinedName = (airtableName) => {
   return result.length ? result[0].name : airtableName;
 };
 
+// Airtable doesn't guarantee a stable order for a record's multi-select
+// field values across separate API calls, so picking types[0] directly can
+// render differently between the server and client (a hydration mismatch).
+// This picks deterministically by our own fixed definedTypes order instead.
+export const getPrimaryType = (types) => {
+  if (!types || !types.length) return undefined;
+  const canonical = definedTypes.find((x) => types.indexOf(x.airtableName) > -1);
+  return canonical ? canonical.airtableName : types[0];
+};
+
 export const getAirTableName = (typeId) => {
   const result = definedTypes.filter((x) => x.id === typeId);
   return result.length ? result[0].airtableName : typeId;

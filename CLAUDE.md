@@ -10,7 +10,7 @@ Next.js 14 (App Router) site for Old School, an anti-ageism nonprofit, deployed 
 
 - `npm run dev` — start dev server (runs against `.env.development`)
 - `npm run build` — runs `prebuild` (downloads Airtable images/PDFs) → `next build` → `postbuild` (pushes to Algolia)
-- `npm run lint` — `next lint` (config: `next/core-web-vitals`)
+- `npm run lint` — `eslint .` (flat config in `eslint.config.mjs`, built on `eslint-config-next/core-web-vitals`)
 - `npm test` / `npm run test:watch` — Jest (`TZ=UTC` is forced so date tests are deterministic)
 - Run a single test file: `TZ=UTC npx jest src/lib/dates.test.ts`
 - `node scripts/prebuild.js` — standalone: fetch Airtable images/PDFs into `public/` and `src/caches/pdfs/cache.json`
@@ -32,10 +32,10 @@ Both scripts require `.env.development` or `.env.production` (selected via `NODE
 ### Rendering
 
 - Server components do the Airtable/data-layer fetching directly (no client-side data fetching for content).
-- A handful of interactive/browser-only pieces are loaded with `next/dynamic` and `{ ssr: false }`: `FrontCarousel` (`src/app/page.tsx`), `Search` (`src/components/Menu/index.tsx`), `Event` (`src/app/events/page.tsx`).
-- Page transitions go through `next-view-transitions` — import `Link` from `next-view-transitions`, not `next/link`, anywhere transitions matter (see the file list in `NEXTJS_MIGRATION.md` if touching this).
+- A handful of interactive/browser-only pieces are loaded with `next/dynamic` and `{ ssr: false }`: `FrontCarousel` (`src/app/page.tsx`, via `src/components/FrontCarousel/dynamic.tsx`), `Search` (`src/components/Menu/index.tsx`), `Event` (`src/app/events/page.tsx`, via `src/components/Event/dynamic.tsx`). Since Next 16, `next/dynamic(..., { ssr: false })` must be called from a Client Component, not inline in a Server Component page — hence the small `dynamic.tsx` wrapper files.
+- Page transitions go through `next-view-transitions` — import `Link` from `next-view-transitions`, not `next/link`, anywhere transitions matter.
 - Styling is CSS Modules throughout (`*.module.css` colocated with components).
-- `src/components/Search/index.tsx` still has vestigial Pages Router code (`getStaticProps`, `renderToString`) that is dead in App Router — don't treat it as a live data path.
+- `useOutsideAlerter` (`src/hooks/useOutsideAlerter.tsx`) is a shared hook for closing menus/panels on an outside click — used by `Menu` and `Search`. Define click-outside logic there rather than re-inlining it in a component (a hook defined inside a component body trips the `react-hooks/refs` lint rule).
 
 ### TypeScript
 
@@ -46,5 +46,15 @@ Both scripts require `.env.development` or `.env.production` (selected via `NODE
 ### Known constraints
 
 - `react-responsive-masonry` is pinned to an older version (used in the search results grid) due to a bug in newer releases — don't bump it without checking.
-- `experimental.serverMinification: false` in `next.config.mjs` works around a Next 14 bundler bug; the webpack config also disables `canvas`/`encoding` aliases (needed by `react-pdf`'s dependency chain).
-- This is currently pinned to Next 14 / React 18 (`package.json` has `overrides` forcing React 18.3.1). See `NEXTJS_MIGRATION.md` for the full plan and file list if asked to upgrade to Next 15/16 — notably, dynamic route `params`/`searchParams` are still synchronous props here (pre-Next-15 API), not Promises.
+- This runs on Next 16 with Turbopack (`turbopack: {}` in `next.config.mjs`; the old webpack config with `canvas`/`encoding` aliases and `experimental.serverMinification` was removed as part of the Next 14→16 migration — neither was still needed). Dynamic route `params`/`searchParams` are Promises (`await params`), not synchronous props. `next lint` was removed in Next 16; lint runs via plain `eslint .` against the flat config in `eslint.config.mjs`, built on `eslint-config-next/core-web-vitals`. React is still pinned to 18.3.1 via `overrides` in `package.json` — Next 16 supports both 18 and 19, and this hasn't been revisited.
+- `eslint-plugin-react-hooks` (pulled in by `eslint-config-next`) is now on a major version with much stricter "React Compiler" rules (no direct `setState` calls in an effect body, no impure calls like `Math.random()`/`Date.now()` during render, no reading a ref during render). Where a `setState`-in-effect call is a genuine external-system sync (embla carousel events, `IntersectionObserver`, `window.resize`, avoiding an SSR/hydration mismatch for browser-only values), it's fine to silence the rule inline with a comment explaining why, following the existing examples in `CarouselButtons.tsx`, `CategorySlide/index.tsx`, `JustOneTestimonial.tsx`, and `useWidth.tsx`. Where the value can just be computed during render instead (a `useState` lazy initializer, or no state at all), prefer that over disabling the rule.
+
+<!-- BEGIN:nextjs-agent-rules -->
+
+# This is NOT the Next.js you know
+
+This version has breaking changes — APIs, conventions, and file structure may all differ from your training data. Read the relevant guide in `node_modules/next/dist/docs/` (resolved from this file's directory; in monorepos the `next` package may not be visible from the repo root) before writing any code. Heed deprecation notices.
+
+This block is written and re-added by `next dev` — verify at `node_modules/next/dist/server/lib/generate-agent-files.js`. Removing it from a diff only re-creates the uncommitted change; committing it with your work keeps the tree clean.
+
+<!-- END:nextjs-agent-rules -->

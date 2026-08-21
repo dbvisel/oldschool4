@@ -1,44 +1,35 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Popover } from "react-tiny-popover";
 import styles from "./page.module.css";
 import aboutStyles from "./../about/page.module.css";
 
+const PopoverContent = ({ onClose }: { onClose: () => void }) => (
+  <div className={styles.popoverScrim} onClick={onClose}>
+    <div className={styles.popover}>
+      <p>
+        <strong>Aging</strong> is living. It’s how we move through life, from
+        birth to death. <strong>Ageism</strong> is discrimination and
+        stereotyping based on age. Ageism warps the way we envision our
+        futures, pits young against old, and makes it much harder to age well.
+        This is why we created Old School:{" "}
+        <strong>to educate people about ageism and how to dismantle it</strong>
+        .
+      </p>
+      <p>
+        This is why{" "}
+        <strong>your project must focus explicitly on ageism</strong> in order
+        to be included in the Old School Hub. Whether you’re developing an
+        event, a tool, a program, or something else entirely, please explain{" "}
+        <strong>how ageism is the barrier you are addressing</strong>, and{" "}
+        <strong>how your project will confront it</strong>.
+      </p>
+    </div>
+  </div>
+);
+
 const ProjectLead = () => {
   const [isPopoverOpen, setIsPopoverOpen] = useState(false);
-
-  const PopoverContent = () => (
-    <div
-      className={styles.popoverScrim}
-      onClick={() => setIsPopoverOpen(false)}
-    >
-      <div className={styles.popover}>
-        <p>
-          <strong>Aging</strong> is living. It’s how we move through life, from
-          birth to death. <strong>Ageism</strong> is discrimination and
-          stereotyping based on age. Ageism warps the way we envision our
-          futures, pits young against old, and makes it much harder to age well.
-          This is why we created Old School:{" "}
-          <strong>
-            to educate people about ageism and how to dismantle it
-          </strong>
-          .
-        </p>
-        <p>
-          This is why{" "}
-          <strong>your project must focus explicitly on ageism</strong> in order
-          to be included in the Old School Hub. Whether you’re developing an
-          event, a tool, a program, or something else entirely, please explain{" "}
-          <strong>how ageism is the barrier you are addressing</strong>, and{" "}
-          <strong>how your project will confront it</strong>.
-        </p>
-      </div>
-    </div>
-  );
-
-  // useEffect(() => {
-  //   console.log(isPopoverOpen);
-  // }, [isPopoverOpen]);
 
   return (
     <section className={aboutStyles.aboutBlock}>
@@ -54,7 +45,7 @@ const ProjectLead = () => {
           isOpen={isPopoverOpen}
           align="center"
           positions={["right", "bottom", "top", "left"]} // preferred positions by priority
-          content={<PopoverContent />}
+          content={<PopoverContent onClose={() => setIsPopoverOpen(false)} />}
           transformMode={"absolute"}
           transform={{ top: 0, left: 0 }}
           onClickOutside={() => setIsPopoverOpen(false)}
@@ -68,16 +59,13 @@ const ProjectLead = () => {
             project, —whether you’re just starting out or already making an
             impact. We welcome projects of all types and sizes—as long as they
             focus{" "}
-            <a
-              href="/#"
+            <button
+              type="button"
               className={styles.link}
-              onClick={(e) => {
-                e.preventDefault();
-                setIsPopoverOpen(!isPopoverOpen);
-              }}
+              onClick={() => setIsPopoverOpen(!isPopoverOpen)}
             >
               <strong>explicitly</strong> on ageism
-            </a>
+            </button>
             .
           </p>
         </Popover>

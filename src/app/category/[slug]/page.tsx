@@ -4,11 +4,11 @@ import styles from "./page.module.css";
 import CardHolder from "@/components/CardHolder";
 import { definedTypes } from "@/utils/categories";
 
-const CategoryPage = async ({
-  params: { slug },
-}: {
-  params: { slug: string };
-}) => {
+const CategoryPage = async (props: { params: Promise<{ slug: string }> }) => {
+  const params = await props.params;
+
+  const { slug } = params;
+
   const { resources } = await getCategoryData({ params: { slug } });
   const thisCategory = definedTypes.filter((x) => x.id === slug)[0];
   return (
@@ -31,11 +31,13 @@ export const generateStaticParams = async () => {
   return slugs.map((x) => ({ slug: x }));
 };
 
-export async function generateMetadata({
-  params: { slug },
-}: {
-  params: { slug: string };
+export async function generateMetadata(props: {
+  params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
+  const params = await props.params;
+
+  const { slug } = params;
+
   const thisCategory = definedTypes.filter((x) => x.id === slug)[0];
   const metaData = {
     title: `Old School: ${thisCategory.name}`,

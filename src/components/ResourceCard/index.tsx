@@ -3,7 +3,7 @@ import { Link } from "next-view-transitions";
 import type { ResourceItem } from "@/types/index";
 import styles from "./page.module.css";
 import calendarIcon from "./images/calendar.svg";
-import { getDefinedName } from "@/utils/categories";
+import { getDefinedName, getPrimaryType } from "@/utils/categories";
 
 const skipResourcePage = true;
 
@@ -62,7 +62,9 @@ const ResourceCard = ({
     <div className={styles.card}>
       {showType ? (
         resource.types ? (
-          <div className={styles.type}>{getDefinedName(resource.types[0])}</div>
+          <div className={styles.type}>
+            {getDefinedName(getPrimaryType(resource.types))}
+          </div>
         ) : isEvent ? (
           <div className={styles.type}>Event</div>
         ) : null

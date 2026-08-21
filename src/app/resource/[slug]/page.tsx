@@ -11,10 +11,6 @@ import PDFEmbed from "@/components/PDFEmbed";
 import VideoEmbed, { isEmbeddable } from "./VideoEmbed";
 import styles from "./page.module.css";
 import PDFList from "@/caches/pdfs/cache.json";
-import { pdfjs } from "react-pdf";
-
-pdfjs.GlobalWorkerOptions.workerSrc =
-  "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
 
 const ContactInformation = ({ resource }: { resource: ResourceItem }) => {
   if (
@@ -70,11 +66,11 @@ const ContactInformation = ({ resource }: { resource: ResourceItem }) => {
   }
 };
 
-const ResourcePage = async ({
-  params: { slug },
-}: {
-  params: { slug: string };
-}) => {
+const ResourcePage = async (props: { params: Promise<{ slug: string }> }) => {
+  const params = await props.params;
+
+  const { slug } = params;
+
   // console.log("slug:", slug);
   const resource = await getResourceData(slug);
   // console.log(resource);
@@ -163,11 +159,13 @@ export const generateStaticParams = async () => {
   return slugs.map((x) => ({ slug: x.slug }));
 };
 
-export async function generateMetadata({
-  params: { slug },
-}: {
-  params: { slug: string };
+export async function generateMetadata(props: {
+  params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
+  const params = await props.params;
+
+  const { slug } = params;
+
   const resource = await getResourceData(slug);
   const metaData = {
     title: `Old School: ${resource.title || ""}`,

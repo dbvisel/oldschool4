@@ -41,6 +41,7 @@ export const usePrevNextButtons = (
   useEffect(() => {
     if (!emblaApi) return;
 
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- primes button state from the current embla instance before subscribing to its future 'select'/'reInit' events
     onSelect(emblaApi);
     emblaApi.on("reInit", onSelect).on("select", onSelect);
   }, [emblaApi, onSelect]);

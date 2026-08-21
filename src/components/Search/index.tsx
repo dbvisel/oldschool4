@@ -1,10 +1,8 @@
 "use client";
-import { useState, Suspense, useRef, useEffect, RefObject, ComponentType } from "react";
-import { renderToString } from "react-dom/server";
+import { useState, Suspense, useRef, useCallback, ComponentType } from "react";
 import {
   InstantSearchServerState,
   InstantSearchSSRProvider,
-  getServerState,
   SearchBox,
   Configure,
 } from "react-instantsearch";
@@ -17,6 +15,7 @@ import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
 
 import Hit from "./Hit";
 import type { AlgoliaHit } from "@/types/index";
+import useOutsideAlerter from "@/hooks/useOutsideAlerter";
 
 import styles from "./styles.module.css";
 
@@ -73,28 +72,6 @@ const InfiniteHits2 = (_props: {
 export default function SearchPage({ serverState }: SearchPageProps) {
   const [currentQuery, setCurrentQuery] = useState("");
 
-  function useOutsideAlerter(ref: RefObject<HTMLDivElement>) {
-    useEffect(() => {
-      function handleClickOutside(event: MouseEvent) {
-        if (
-          ref.current &&
-          !ref.current.contains(event.target as Node) &&
-          ref.current?.clientHeight
-        ) {
-          // TODO: figure out how to close this!
-          setCurrentQuery("");
-          // Does this actually work?
-        }
-      }
-      // Bind the event listener
-      document.addEventListener("mousedown", handleClickOutside);
-      return () => {
-        // Unbind the event listener on clean up
-        document.removeEventListener("mousedown", handleClickOutside);
-      };
-    }, [ref]);
-  }
-
   const onStateChange: InstantSearchProps["onStateChange"] = ({
     uiState,
     setUiState,
@@ -105,8 +82,17 @@ export default function SearchPage({ serverState }: SearchPageProps) {
     setUiState(uiState);
   };
 
-  const wrapperRef = useRef(null);
-  useOutsideAlerter(wrapperRef);
+  const wrapperRef = useRef<HTMLDivElement>(null);
+  useOutsideAlerter(
+    wrapperRef,
+    useCallback(() => {
+      // TODO: figure out how to close this!
+      if (wrapperRef.current?.clientHeight) {
+        setCurrentQuery("");
+      }
+      // Does this actually work?
+    }, [])
+  );
 
   return (
     <Suspense fallback="Loading...">
@@ -148,13 +134,4 @@ export default function SearchPage({ serverState }: SearchPageProps) {
       </div>
     </Suspense>
   );
-}
-
-export async function getStaticProps() {
-  const serverState = await getServerState(<SearchPage />, { renderToString });
-  return {
-    props: {
-      serverState,
-    },
-  };
 }

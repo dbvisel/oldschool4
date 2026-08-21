@@ -1,8 +1,7 @@
 import { Metadata } from "next";
 import { Link } from "next-view-transitions";
 // import Starburst from "@/components/Starburst";
-import dynamic from "next/dynamic";
-const Event = dynamic(() => import("@/components/Event"), { ssr: false });
+import Event from "@/components/Event/dynamic";
 import styles from "./page.module.css";
 import { getCleanEvents } from "@/lib/getEvents";
 

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useLayoutEffect } from "react";
+import { useState } from "react";
 import type { EventRecord } from "@/types";
 import { cleanDate } from "@/lib/dates";
 import styles from "./index.module.css";
@@ -12,19 +12,15 @@ const Event = ({ event }: { event: EventRecord }) => {
     regex,
     'a target="_blank" rel="noopener noreferrer" href'
   );
-  const [cleanedDate, setCleanedDate] = useState("...");
-  const [isAlreadyPassed, setIsAlreadyPassed] = useState(false);
-
-  useLayoutEffect(() => {
-    setCleanedDate(cleanDate(event.startTime, event.endTime, event.isAllDay));
-    // Now that we're using useLayoutEffect, we could check if the event has already happened, and if so, not return anything.
-    // TODO: check if it's doing screwy things with all-day events?
-    const endPoint = new Date(event.endTime).getTime();
-    const now = new Date().getTime();
-    if (endPoint < now) {
-      setIsAlreadyPassed(true);
-    }
-  }, [event.startTime, event.endTime, event.isAllDay]);
+  const cleanedDate = cleanDate(
+    event.startTime,
+    event.endTime,
+    event.isAllDay
+  );
+  // TODO: check if it's doing screwy things with all-day events?
+  const [isAlreadyPassed] = useState(
+    () => new Date(event.endTime).getTime() < Date.now()
+  );
 
   return isAlreadyPassed ? null : (
     <div className={styles.event}>

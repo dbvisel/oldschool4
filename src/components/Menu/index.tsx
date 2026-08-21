@@ -1,7 +1,7 @@
 "use client";
 import dynamic from "next/dynamic";
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useCallback, useRef } from "react";
 import Image from "next/image";
 import { Link } from "next-view-transitions";
 import styles from "./styles.module.css";
@@ -9,10 +9,7 @@ const Search = dynamic(() => import("@/components/Search"), { ssr: false });
 import logo from "./images/horizontallogo-threeline.svg";
 import { definedTypes } from "../../utils/categories";
 import Starburst from "@/components/Starburst";
-
-type RefObject = {
-  current: HTMLUListElement | null;
-};
+import useOutsideAlerter from "@/hooks/useOutsideAlerter";
 
 const noSupplies = definedTypes.filter((x) => x.id !== "supplies");
 
@@ -20,24 +17,15 @@ const Menu = () => {
   // const [learnSubmenuShown, setLearnSubmenuShown] = useState(false);
   const [projectSubmenuShown, setProjectSubmenuShown] = useState(false);
   const [aboutSubmenuShown, setAboutSubmenuShown] = useState(false);
-  const wrapperRef = useRef(null);
+  const wrapperRef = useRef<HTMLUListElement>(null);
 
-  const useOutsideAlerter = (ref: RefObject) => {
-    useEffect(() => {
-      const handleClickOutside = (event: MouseEvent) => {
-        if (ref.current && !ref.current.contains(event.target as HTMLElement)) {
-          setProjectSubmenuShown(false);
-          setAboutSubmenuShown(false);
-        }
-      };
-      document.addEventListener("mousedown", handleClickOutside);
-      return () => {
-        document.removeEventListener("mousedown", handleClickOutside);
-      };
-    }, [ref]);
-  };
-
-  useOutsideAlerter(wrapperRef);
+  useOutsideAlerter(
+    wrapperRef,
+    useCallback(() => {
+      setProjectSubmenuShown(false);
+      setAboutSubmenuShown(false);
+    }, [])
+  );
 
   return (
     <header className={styles.header}>
