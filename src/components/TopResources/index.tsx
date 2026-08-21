@@ -1,5 +1,5 @@
 // import { useEffect, useState } from "react";
-import CardHolder from "@/components/CardHolder";
+import CardHolder from "@/components/CardHolder/dynamic";
 import getNewestData from "@/lib/getNewestData";
 
 // TODO: get rid of new, add categories
