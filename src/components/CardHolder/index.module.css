@@ -1,8 +1,3 @@
 .cardHolder {
 	margin-top: var(--paddingOutside);
 }
-
-.cardHolder > div > div {
-align-items: center;
-width: initial !important;
-}
