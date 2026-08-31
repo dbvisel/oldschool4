@@ -8,6 +8,7 @@ const SubmitComponent = () => (
     <JotFormReact
       formURL="https://form.jotform.com/212724075719054"
       allowFullScreen={true}
+      style={{ minHeight: "4000px" }}
     />
   </div>
 );
