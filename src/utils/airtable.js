@@ -141,7 +141,7 @@ const getEvents = async () => {
     // It's assuming that the Event ID coming from Google has the same content before the "_"
     // Not 100% sure if that's true?
     const maxRepetitions = 3; // the number of times something repeated should be featured
-    const theId = x.fields["Event ID"].split("_")[0];
+    const theId = x.fields["Event ID"].split("_")[0] + x.fields["Title"];
     if (memo[theId] && memo[theId] > maxRepetitions - 1) {
       return false;
     }
