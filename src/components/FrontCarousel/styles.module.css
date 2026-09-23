@@ -121,6 +121,11 @@
 .officeHoursSlide {
 	position: relative;
 	background-color: var(--white);
+  &:before{
+    background-color: var(--orange) !important;
+    opacity: 0.666 !important;
+    mix-blend-mode: initial !important;
+  }
 	@media (max-width: 1023px) {
 		background-size: cover;
 	}

@@ -57,17 +57,22 @@ export const SlideList = {
     <div
       className={`${styles.emblaSlide} ${styles.officeHoursSlide}`}
       style={{
-        backgroundImage: `url(images/carousel/officeHoursBW.jpg)`,
+        backgroundImage: `url(images/carousel/officehours.png)`,
+        // backgroundImage: `url(images/carousel/officeHoursBW.jpg)`,
       }}
     >
       <h2 className={styles.bigHeader}>
-        <Link href={"/events"} style={{ color: "var(--black) !important" }}>
+        <Link href={"/events"} style={{ color: "var(--white) !important" }}>
           Office Hours
         </Link>
       </h2>
       <p
         className={styles.description}
-        style={{ paddingBottom: "calc(4 * var(--paddingOutside)" }}
+        style={{
+          paddingBottom: "calc(4 * var(--paddingOutside)",
+          color: "var(--white) !important",
+          textShadow: " 0 0 10px var(--black)",
+        }}
       >
         Join Old School’s co-founders at <strong>Office Hours</strong>, an
         informal open forum to talk about anything ageism-related. Everyone is
@@ -79,6 +84,7 @@ export const SlideList = {
           href="https://us02web.zoom.us/meeting/register/tZAvcOivqzkpG9CtqpP6cnaL64TnxKaY_fAg"
           target="_blank"
           rel="noopener noreferrer"
+          style={{ color: "var(--white) !important" }}
         >
           Register here.
         </a>
