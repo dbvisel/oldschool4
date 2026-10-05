@@ -1,7 +1,8 @@
 export const cleanDate = (
   start: string,
   end: string,
-  allDay: boolean
+  allDay: boolean,
+  justTime?: boolean,
 ): string => {
   const startDate = new Date(start).toLocaleDateString("en-US", {
     weekday: "long",
@@ -42,6 +43,9 @@ export const cleanDate = (
   }
   if (end) {
     if (startDate === endDate) {
+      if (justTime) {
+        return `${startTime} to ${endTime}`;
+      }
       return `${startDate} from ${startTime} to ${endTime}`;
     }
     return `${startDate} at ${startTime} to ${endDate} at ${endTime}`;
