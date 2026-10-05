@@ -4,7 +4,6 @@
 // import { Link } from "next-view-transitions";
 import styles from "./page.module.css";
 import Image from "next/image";
-import cleanedDate from "./dynamic";
 import LocalTimeRange from "./LocalTimeRange";
 
 export default function OfficeHoursPage() {
@@ -36,8 +35,8 @@ export default function OfficeHoursPage() {
           Tired of the same old stories about aging? Join the movement at Old
           School Office Hours. Every Wednesday from{" "}
           <LocalTimeRange
-            start="2026-10-21T17:30:00.000Z"
-            end="2026-10-21T18:30:00.000Z"
+            start="2036-10-21T17:30:00.000Z"
+            end="2036-10-21T18:30:00.000Z"
           />
           , our co-founders and a global community of advocates gather for an
           informal, open-mic style conversation about dismantling ageism.
