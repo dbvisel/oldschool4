@@ -1,10 +1,11 @@
 // "use client";
 
 // import { Metadata } from "next";
-import { Link } from "next-view-transitions";
+// import { Link } from "next-view-transitions";
 import styles from "./page.module.css";
 import Image from "next/image";
 import cleanedDate from "./dynamic";
+import LocalTimeRange from "./LocalTimeRange";
 
 export default function OfficeHoursPage() {
   return (
@@ -33,8 +34,12 @@ export default function OfficeHoursPage() {
         </a>
         <p>
           Tired of the same old stories about aging? Join the movement at Old
-          School Office Hours. Every Wednesday from {cleanedDate}, our
-          co-founders and a global community of advocates gather for an
+          School Office Hours. Every Wednesday from{" "}
+          <LocalTimeRange
+            start="2026-10-21T17:30:00.000Z"
+            end="2026-10-21T18:30:00.000Z"
+          />
+          , our co-founders and a global community of advocates gather for an
           informal, open-mic style conversation about dismantling ageism.
           Whether you’re a seasoned activist or just starting to unlearn your
           own biases, this is your entry point.
