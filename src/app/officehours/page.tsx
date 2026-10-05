@@ -33,19 +33,19 @@ export default function OfficeHoursPage() {
         </a>
         <p>
           Tired of the same old stories about aging? Join the movement at Old
-          School Office Hours. Every Wednesday from{" "}
-          <LocalTimeRange
-            start="2036-10-21T17:30:00.000Z"
-            end="2036-10-21T18:30:00.000Z"
-          />
-          , our co-founders and a global community of advocates gather for an
-          informal, open-mic style conversation about dismantling ageism.
-          Whether you’re a seasoned activist or just starting to unlearn your
-          own biases, this is your entry point.
+          School Office Hours. Every Wednesday, our co-founders and a global
+          community of advocates gather for an informal, open-mic style
+          conversation about dismantling ageism. Whether you’re a seasoned
+          activist or just starting to unlearn your own biases, this is your
+          entry point.
         </p>
         <ul style={{ marginTop: "var(--paddingOutside" }}>
           <li>
-            <strong>When:</strong> every Wednesday
+            <strong>When:</strong> every Wednesday from{" "}
+            <LocalTimeRange
+              start="2036-10-21T17:30:00.000Z"
+              end="2036-10-21T18:30:00.000Z"
+            />
           </li>
           <li>
             <strong>The vibe:</strong> informal, honest, and welcoming
