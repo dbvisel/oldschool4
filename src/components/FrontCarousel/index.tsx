@@ -13,8 +13,8 @@ const FrontCarousel = ({
 }) => {
   return (
     <Carousel>
-      {SlideList.whatIsOldSchool}
       {SlideList.winterSchoolSlide}
+      {SlideList.whatIsOldSchool}
       {SlideList.whereToBegin}
       {/* {SlideList.jobSlide} */}
       {SlideList.justOneTestimonal(quotes)}
