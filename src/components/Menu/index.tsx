@@ -24,7 +24,7 @@ const Menu = () => {
     useCallback(() => {
       setProjectSubmenuShown(false);
       setAboutSubmenuShown(false);
-    }, [])
+    }, []),
   );
 
   return (
@@ -173,7 +173,7 @@ const Menu = () => {
       </div>
       <div className={styles.starburstHolder}>
         <Starburst
-          link={"/events/winter-school"}
+          link={"https://winter-school.raiselysite.com/en/"}
           text="Winter School!"
           subtext="January 2027"
           backgroundColor="var(--white)"

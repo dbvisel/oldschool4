@@ -15,7 +15,7 @@ const EventsPage = async () => {
           Submit events <Link href={`/events/submit`}>here</Link>!
         </h3>
         {/* <Starburst
-          link={"/events/winter-school"}
+          link={"/https://winter-school.raiselysite.com/en/"}
           text="Winter School!"
           subtext="January 2027"
         /> */}
