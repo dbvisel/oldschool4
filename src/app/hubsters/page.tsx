@@ -3,11 +3,10 @@ import aboutStyles from "./../about/page.module.css";
 import styles from "./page.module.css";
 import Project from "./Project";
 import aeaImage from "./images/Age-Equity-Alliance_blue-navy-BG-e1588618146243.jpg";
-import fufaImage from "./images/F.U.F.A-(1).png";
-import eaaImage from "./images/vcugerontology.jpg";
 import ahImage from "./images/ageismhealthcare.jpg";
 import ailaImage from "./images/Aging+Is+Living+sign_card+hi-res+artwork (1).jpg";
 import ProjectLead from "./ProjectLead";
+import LocalTimeRange from "./../officehours/LocalTimeRange";
 
 const projectData = [
   {
@@ -113,34 +112,22 @@ export default function ProjectsPage() {
         </p>
         <p style={{ textIndent: "1em" }}>
           If you answered “yes” to most or all of these questions, we’d love to
-          learn about your project!{" "}
-          <strong>Please use this form to tell us more:</strong>
+          learn about your project! You are welcome to join our meetings,
+          Thursdays from{" "}
+          <LocalTimeRange
+            start="2036-10-21T17:30:00.000Z"
+            end="2036-10-21T18:30:00.000Z"
+          />{" "}
+          on Zoom, register{" "}
+          <a
+            href="https://us02web.zoom.us/meeting/register/COHxgyGBS1SJ19qY7ZPZ_A#/registration"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            here
+          </a>
+          .
         </p>
-      </section>
-      <section className={styles.projectSection}>
-        {/* <h2 className="pageheader">Please use this form to tell us more:</h2> */}
-        <iframe
-          className="airtable-embed"
-          src="https://airtable.com/embed/appPRDpl6oe7xsRYg/paggkrte2K3lKcCiH/form"
-          frameBorder="0"
-          width="100%"
-          height="1400"
-          // onMouseWheel=""
-          style={{ background: "transparent", border: "none" }}
-        ></iframe>
-        {/*
-				
-Does your project have a name? [box]
-What type of project is it (e.g. tool, campaign, event)?  [box]
-What stage is it at? (Is it just an idea, already out in the world, or somewhere in between? [box]
-What do you hope to give and to get from joining the Hub? [box]
-What else would you like us to know about the project? [box]
-name
-Email
-If you have a file to share with us please include it here:
-
-
-				*/}
       </section>
     </article>
   );

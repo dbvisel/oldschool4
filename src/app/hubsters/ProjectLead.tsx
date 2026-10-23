@@ -10,11 +10,10 @@ const PopoverContent = ({ onClose }: { onClose: () => void }) => (
       <p>
         <strong>Aging</strong> is living. It’s how we move through life, from
         birth to death. <strong>Ageism</strong> is discrimination and
-        stereotyping based on age. Ageism warps the way we envision our
-        futures, pits young against old, and makes it much harder to age well.
-        This is why we created Old School:{" "}
-        <strong>to educate people about ageism and how to dismantle it</strong>
-        .
+        stereotyping based on age. Ageism warps the way we envision our futures,
+        pits young against old, and makes it much harder to age well. This is
+        why we created Old School:{" "}
+        <strong>to educate people about ageism and how to dismantle it</strong>.
       </p>
       <p>
         This is why{" "}
@@ -71,8 +70,7 @@ const ProjectLead = () => {
         </Popover>
         <p className={styles.projectIntroParagraph}>
           If you’d like to submit a project or learn more, scroll down for our{" "}
-          <strong>Ten Guiding Questions</strong> and the{" "}
-          <strong>Old School Hub Submission Form</strong>.
+          <strong>Ten Guiding Questions</strong>.
         </p>
       </div>
     </section>
